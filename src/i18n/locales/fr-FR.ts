@@ -1,6 +1,7 @@
 const locale = {
     translation : {
-        welcome : 'Bonjour'
+        welcome : 'Bonjour',
+        details : 'Details'
     }
 }
 

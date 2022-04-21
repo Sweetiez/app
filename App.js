@@ -8,45 +8,27 @@
 
 import React from 'react';
 import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  useColorScheme,
-} from 'react-native';
-import { useTranslation } from "react-i18next";
+import {NavigationContainer} from "@react-navigation/native";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import './src/i18n/index'
 
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
+import {DetailsScreen, HomeScreen} from "./src/pages";
 
 const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-  const { t } = useTranslation();
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  const Stack = createNativeStackNavigator();
 
   return (
       <React.StrictMode>
-        <SafeAreaView style={backgroundStyle}>
-          <ScrollView
-            contentInsetAdjustmentBehavior="automatic"
-            style={backgroundStyle}>
-            <Text>
-              {t('welcome')}
-            </Text>
-          </ScrollView>
-        </SafeAreaView>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Details" component={DetailsScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
       </React.StrictMode>
   );
 };
-
-const styles = StyleSheet.create({
-  // TODO
-});
 
 export default App;
