@@ -11,11 +11,12 @@ import type {Node} from 'react';
 import {
   SafeAreaView,
   ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
 } from 'react-native';
+import { useTranslation } from "react-i18next";
+import './src/i18n/index'
 
 import {
   Colors,
@@ -23,41 +24,29 @@ import {
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
+  const { t } = useTranslation();
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Text>
-          Hello
-        </Text>
-      </ScrollView>
-    </SafeAreaView>
+      <React.StrictMode>
+        <SafeAreaView style={backgroundStyle}>
+          <ScrollView
+            contentInsetAdjustmentBehavior="automatic"
+            style={backgroundStyle}>
+            <Text>
+              {t('welcome')}
+            </Text>
+          </ScrollView>
+        </SafeAreaView>
+      </React.StrictMode>
   );
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
+  // TODO
 });
 
 export default App;
