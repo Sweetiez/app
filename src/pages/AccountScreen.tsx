@@ -2,10 +2,8 @@ import React from 'react';
 
 import {useTranslation} from "react-i18next";
 import {Button, SafeAreaView, ScrollView, Text} from "react-native";
-// @ts-ignore
-import Home from "../assets/icons/home.svg";
 
-function HomeScreen({navigation}) {
+function AccountScreen({navigation}) {
 
     const { t } = useTranslation();
     return (
@@ -13,15 +11,14 @@ function HomeScreen({navigation}) {
             <ScrollView
                 contentInsetAdjustmentBehavior="automatic">
                 <Text>
-                    {t('welcome')}
+                    {t('account')}
                 </Text>
-                <Home width={120} height={40} />
-                <Button  title={t('details')}
-                         onPress={() => navigation.navigate('Details')}/>
+                <Button  title={t('welcome')}
+                         onPress={() => navigation.navigate('Home')}/>
             </ScrollView>
         </SafeAreaView>
 
     );
 }
 
-export default HomeScreen
+export default AccountScreen

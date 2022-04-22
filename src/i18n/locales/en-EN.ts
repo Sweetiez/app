@@ -1,7 +1,8 @@
 const locale = {
     translation : {
         welcome : 'Hello',
-        details : 'Details'
+        details : 'Details',
+        account : 'Account'
     }
 }
 
