@@ -1,13 +1,13 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {AccountScreen} from '../pages';
+import {RecipesScreen} from '../pages';
 
 const RecipesStack = createNativeStackNavigator();
 
 function RecipesStackScreen() {
   return (
     <RecipesStack.Navigator screenOptions={{headerShown: false}}>
-      <RecipesStack.Screen name="Account" component={AccountScreen} />
+      <RecipesStack.Screen name="Account" component={RecipesScreen} />
     </RecipesStack.Navigator>
   );
 }
