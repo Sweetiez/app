@@ -8,6 +8,7 @@ interface Props {
 
 const StyledText = styled.Text`
   font-family: Pompiere-Regular;
+  color: black;
 `;
 
 const Title: React.FC<Props> = ({content, numberOfLines}) => (

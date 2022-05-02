@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Title, Text} from './../atoms';
+import {Title, Text} from '../atoms';
+import {Stars} from '../molecules';
 
 interface Props {
   title: string;
   description: string;
   image: string;
+  rating: number;
 }
 
 const Content = styled.View`
@@ -27,13 +29,14 @@ const Container = styled.View`
   height: 250px;
 `;
 
-const Item: React.FC<Props> = ({title, description, image}) => {
+const Item: React.FC<Props> = ({title, description, image, rating}) => {
   return (
     <Container>
       <StyledImage source={{uri: image}} />
       <Content>
         <Title title={title} />
-        <Description numberOfLines={5} content={description} />
+        <Description numberOfLines={3} content={description} />
+        <Stars number={rating} />
       </Content>
     </Container>
   );

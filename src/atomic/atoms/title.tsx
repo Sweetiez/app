@@ -8,8 +8,8 @@ interface Props {
 const StyledText = styled.Text`
   font-size: 20px;
   text-align: center;
-  font-weight: bold;
   font-family: Pompiere-Regular;
+  color: black;
 `;
 
 const Title: React.FC<Props> = ({title}) => <StyledText>{title}</StyledText>;

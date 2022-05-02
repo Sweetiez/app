@@ -4,7 +4,7 @@ import {useTranslation} from 'react-i18next';
 import {SafeAreaView, ScrollView} from 'react-native';
 import {fakeProducts} from '../data/items';
 import {Title} from './../atomic/atoms';
-import {Item} from './../atomic/molecules';
+import {Item} from './../atomic/organisms';
 import styled from 'styled-components';
 
 const Items = styled.View`
@@ -26,6 +26,7 @@ function ShopScreen() {
               title={product.name}
               description={product.description}
               image={product.images[0]}
+              rating={product.rating}
             />
           ))}
         </Items>
