@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Title, Text} from './../atoms';
 
 interface Props {
   title: string;
@@ -10,8 +11,7 @@ interface Props {
 const Content = styled.View`
   padding: 5px;
 `;
-const Title = styled.Text``;
-const Description = styled.Text``;
+const Description = styled(Text)``;
 const StyledImage = styled.Image`
   width: 100%;
   height: 100px;
@@ -32,8 +32,8 @@ const Item: React.FC<Props> = ({title, description, image}) => {
     <Container>
       <StyledImage source={{uri: image}} />
       <Content>
-        <Title>{title}</Title>
-        <Description numberOfLines={5}>{description}</Description>
+        <Title title={title} />
+        <Description numberOfLines={5} content={description} />
       </Content>
     </Container>
   );

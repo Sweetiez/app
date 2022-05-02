@@ -2,16 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface Props {
-  title: string;
+  content: string;
+  numberOfLines: number;
 }
 
 const StyledText = styled.Text`
-  font-size: 20px;
-  text-align: center;
-  font-weight: bold;
   font-family: Pompiere-Regular;
 `;
 
-const Title: React.FC<Props> = ({title}) => <StyledText>{title}</StyledText>;
+const Title: React.FC<Props> = ({content, numberOfLines}) => (
+  <StyledText numberOfLines={numberOfLines}>{content}</StyledText>
+);
 
 export default Title;
