@@ -12,11 +12,21 @@ interface Props {
 
 const Content = styled.View`
   padding: 5px;
+  height: 80px;
+`;
+const Bottom = styled.View`
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 const Description = styled(Text)``;
+const Price = styled(Text)``;
 const StyledImage = styled.Image`
   width: 100%;
-  height: 100px;
+  height: 150px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 `;
@@ -26,18 +36,20 @@ const Container = styled.View`
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.07);
   background-color: white;
   margin: 5px;
-  height: 250px;
 `;
 
-const Item: React.FC<Props> = ({title, description, image, rating}) => {
+const Item: React.FC<Props> = ({title, description, image, rating, price}) => {
   return (
     <Container>
       <StyledImage source={{uri: image}} />
       <Content>
         <Title title={title} />
         <Description numberOfLines={3} content={description} />
-        <Stars number={rating} />
       </Content>
+      <Bottom>
+        <Price content={price + '€'} size={15} />
+        <Stars rating={rating} />
+      </Bottom>
     </Container>
   );
 };

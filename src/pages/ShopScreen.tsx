@@ -27,6 +27,7 @@ function ShopScreen() {
               description={product.description}
               image={product.images[0]}
               rating={product.rating}
+              price={product.price}
             />
           ))}
         </Items>
