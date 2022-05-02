@@ -1,14 +1,15 @@
 import React from 'react';
 
 import {useTranslation} from 'react-i18next';
-import {Button, SafeAreaView, ScrollView, Text} from 'react-native';
+import {Button, SafeAreaView, ScrollView} from 'react-native';
+import {Title} from '../atomic/atoms';
 
-function AccountScreen({navigation}) {
+function RecipesScreen({navigation}) {
   const {t} = useTranslation();
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Text>{t('account')}</Text>
+        <Title title={t('recipes.title')} />
         <Button
           title={t('welcome')}
           onPress={() => navigation.navigate('Home')}
@@ -18,4 +19,4 @@ function AccountScreen({navigation}) {
   );
 }
 
-export default AccountScreen;
+export default RecipesScreen;

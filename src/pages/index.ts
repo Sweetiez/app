@@ -1,3 +1,4 @@
-export {default as HomeScreen} from './HomeScreen';
+export {default as ShopScreen} from './ShopScreen';
 export {default as DetailsScreen} from './DetailsScreen';
-export {default as AccountScreen} from './AccountScreen';
+export {default as EventsScreen} from './EventsScreen';
+export {default as RecipesScreen} from './RecipesScreen';

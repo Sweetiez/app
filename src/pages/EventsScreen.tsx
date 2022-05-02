@@ -1,18 +1,22 @@
 import React from 'react';
 
 import {useTranslation} from 'react-i18next';
-import {SafeAreaView, ScrollView} from 'react-native';
+import {Button, SafeAreaView, ScrollView} from 'react-native';
 import {Title} from './../atomic/atoms';
 
-function DetailsScreen() {
+function EventsScreen({navigation}) {
   const {t} = useTranslation();
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Title title={t('details')} />
+        <Title title={t('events.title')} />
+        <Button
+          title={t('welcome')}
+          onPress={() => navigation.navigate('Home')}
+        />
       </ScrollView>
     </SafeAreaView>
   );
 }
 
-export default DetailsScreen;
+export default EventsScreen;
