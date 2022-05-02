@@ -3,7 +3,7 @@ import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {Button, SafeAreaView, ScrollView, Text} from 'react-native';
 
-function AccountScreen({navigation}) {
+function EventsScreen({navigation}) {
   const {t} = useTranslation();
   return (
     <SafeAreaView>
@@ -18,4 +18,4 @@ function AccountScreen({navigation}) {
   );
 }
 
-export default AccountScreen;
+export default EventsScreen;
