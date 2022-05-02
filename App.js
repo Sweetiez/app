@@ -8,26 +8,35 @@
 
 import React from 'react';
 import type {Node} from 'react';
-import {NavigationContainer} from "@react-navigation/native";
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
 
-import './src/i18n/index'
+import HomeStackScreen from './src/navigators/home';
+import AccountStackScreen from './src/navigators/account';
+import getTabIcon from './src/utils/navigator';
+import './src/i18n/index';
 
-import {DetailsScreen, HomeScreen} from "./src/pages";
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 const App: () => Node = () => {
-
-  const Stack = createNativeStackNavigator();
+  const Tab = createBottomTabNavigator();
 
   return (
-      <React.StrictMode>
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="Details" component={DetailsScreen} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </React.StrictMode>
+    <React.StrictMode>
+      <NavigationContainer>
+        <Tab.Navigator
+          screenOptions={({route}) => ({
+            headerShown: false,
+            tabBarIcon: ({focused, color, size}) => {
+              return getTabIcon(route, focused, color, size);
+            },
+            tabBarActiveTintColor: 'tomato',
+            tabBarInactiveTintColor: 'gray',
+          })}>
+          <Tab.Screen name="HomeStack" component={HomeStackScreen} />
+          <Tab.Screen name="AccountStack" component={AccountStackScreen} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </React.StrictMode>
   );
 };
 

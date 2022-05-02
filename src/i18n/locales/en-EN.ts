@@ -1,8 +1,9 @@
 const locale = {
-    translation : {
-        welcome : 'Hello',
-        details : 'Details'
-    }
-}
+  translation: {
+    welcome: 'Hello',
+    details: 'Details',
+    account: 'Account',
+  },
+};
 
-export default locale
+export default locale;
