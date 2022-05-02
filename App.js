@@ -35,8 +35,8 @@ const App: () => Node = () => {
             tabBarActiveTintColor: 'tomato',
             tabBarInactiveTintColor: 'gray',
           })}>
+            <Tab.Screen name={t('tabBar.sweets')} component={SweetsStackScreen} />
           <Tab.Screen name={t('tabBar.recipes')} component={RecipesStackScreen} />
-          <Tab.Screen name={t('tabBar.sweets')} component={SweetsStackScreen} />
           <Tab.Screen name={t('tabBar.events')} component={EventsStackScreen} />
         </Tab.Navigator>
       </NavigationContainer>
