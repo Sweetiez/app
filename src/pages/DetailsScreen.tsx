@@ -47,7 +47,7 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
             <Stars rating={rating} />
           </StarsContainer>
           <Description content={description} size={20} />
-          <Price content={price + '€'} size={15} />
+          <Price content={price + '€'} size={20} />
         </Container>
       </ScrollView>
     </SafeAreaView>
