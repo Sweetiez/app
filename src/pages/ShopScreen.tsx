@@ -12,7 +12,7 @@ const Items = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
 `;
-function ShopScreen() {
+function ShopScreen({navigation}) {
   const {t} = useTranslation();
 
   return (
@@ -21,14 +21,7 @@ function ShopScreen() {
         <Title title={t('shop.title')} />
         <Items>
           {fakeProducts.map(product => (
-            <Item
-              key={product.id}
-              title={product.name}
-              description={product.description}
-              image={product.images[0]}
-              rating={product.rating}
-              price={product.price}
-            />
+            <Item key={product.id} product={product} navigation={navigation} />
           ))}
         </Items>
       </ScrollView>

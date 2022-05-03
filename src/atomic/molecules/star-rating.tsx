@@ -13,7 +13,6 @@ const Row = styled.View`
 const Stars: React.FC<StarsProps> = ({rating}) => {
   const color = '#FFD700';
   const voidColor = '#ffffff';
-  console.log(rating);
   return (
     <Row>
       <Star color={color} fill={rating >= 1 ? color : voidColor} />

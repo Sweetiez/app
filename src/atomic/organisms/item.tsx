@@ -2,12 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import {Title, Text} from '../atoms';
 import {Stars} from '../molecules';
+import ProductCardModel from '../../model/product-card-model';
 
 interface Props {
-  title: string;
-  description: string;
-  image: string;
-  rating: number;
+  product: ProductCardModel;
+  navigation: any;
 }
 
 const Content = styled.View`
@@ -30,7 +29,7 @@ const StyledImage = styled.Image`
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 `;
-const Container = styled.View`
+const Container = styled.TouchableOpacity`
   border-radius: 10px;
   width: 47%;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.07);
@@ -38,12 +37,15 @@ const Container = styled.View`
   margin: 5px;
 `;
 
-const Item: React.FC<Props> = ({title, description, image, rating, price}) => {
+const Item: React.FC<Props> = ({product, navigation}) => {
+  const {name, description, images, rating, price} = product;
+
   return (
-    <Container>
-      <StyledImage source={{uri: image}} />
+    <Container
+      onPress={() => navigation.navigate('Details', {product: product})}>
+      <StyledImage source={{uri: images[0]}} />
       <Content>
-        <Title title={title} />
+        <Title title={name} />
         <Description numberOfLines={3} content={description} />
       </Content>
       <Bottom>
