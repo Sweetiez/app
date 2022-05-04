@@ -8,16 +8,15 @@ const locale = {
     shop:{
       title: "TODO sweets title"
     },
+    details:{
+      comment : "Commenter"
+    },
     events:{
       title: "TODO events title"
     },
     recipes:{
       title: "TODO recipes title"
     },
-    // todo delete test translation when finished
-    welcome: 'Bonjour',
-    details: 'Details',
-    account: 'Compte',
   },
 };
 

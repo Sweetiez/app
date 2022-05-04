@@ -50,7 +50,7 @@ const Item: React.FC<Props> = ({product, navigation}) => {
       </Content>
       <Bottom>
         <Price content={price + '€'} size={15} />
-        <Stars rating={rating} />
+        <Stars rating={rating} size={20} />
       </Bottom>
     </Container>
   );
