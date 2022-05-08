@@ -10,6 +10,7 @@ import ProductCardModel from '../model/product-card-model';
 import {Stars, Button} from '../atomic/molecules';
 import {Comment} from '../atomic/organisms';
 import {useTranslation} from 'react-i18next';
+import AddToBasket from '../atomic/organisms/add-to-basket';
 
 interface Props {
   product: ProductCardModel;
@@ -26,8 +27,11 @@ const Container = styled.View`
   padding-right: 5px;
   padding-left: 5px;
 `;
-const CommentButton = styled(Button)`
-  margin-bottom: 10px;
+const CommentButton = styled.View`
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
 `;
 const Price = styled(Text)``;
 const StarsContainer = styled.View`
@@ -50,7 +54,11 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
     // TODO
   };
 
-  // TODO paginate or lazy list for comment list
+  const addToBasket = quantity => {
+    //TODO
+  };
+
+  // TODO paginate or lazy list for comment list. Do an organism 'comments' managing that?
 
   return (
     <SafeAreaView>
@@ -62,15 +70,19 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
           <StarsContainer>
             <Stars rating={rating} />
           </StarsContainer>
+          <AddToBasket addToBasket={addToBasket} />
           <Description content={description} size={20} />
           <Price content={price + '€'} size={20} />
         </Container>
         <Comments>
-          <CommentButton
-            text={t('details.comment')}
-            onPress={onCommentPress}
-            iconName="pen"
-          />
+          <CommentButton>
+            <Button
+              text={t('details.comment')}
+              onPress={onCommentPress}
+              iconName="pen"
+            />
+          </CommentButton>
+
           {comments.map(comment => (
             <Comment comment={comment} />
           ))}

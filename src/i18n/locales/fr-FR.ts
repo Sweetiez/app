@@ -1,15 +1,16 @@
 const locale = {
   translation: {
     tabBar:{
-      sweets: "Sweets",
-      recipes: "Recipes",
-      events:"Events"
+      sweets: "Mignardises",
+      recipes: "Recettes",
+      events:"Evenements"
     },
     shop:{
       title: "TODO sweets title"
     },
     details:{
-      comment : "Commenter"
+      comment : "Commenter",
+      add: "Ajouter"
     },
     events:{
       title: "TODO events title"

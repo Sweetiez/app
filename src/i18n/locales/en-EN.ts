@@ -9,7 +9,8 @@ const locale = {
       title: "TODO events title"
     },
     details:{
-      comment : "Comment"
+      comment : "Comment",
+      add: "Add"
     },
     events:{
       title: "TODO events title"

@@ -1,32 +1,38 @@
 import React from 'react';
-import {Text} from 'react-native';
 import styled from 'styled-components';
 import getIcons from '../../utils/icons';
+import colors from '../../assets/colors';
 
 interface Props {
   iconName?: string;
   text: string;
+  onPress: () => void;
+  disabled?: boolean;
+  color: string;
 }
 
 const Title = styled.Text`
   color: white;
-  font-size: 15px;
+  font-size: 13px;
   margin-right: 5px;
   font-weight: bold;
 `;
-const Container = styled.View`
+const Container = styled.TouchableOpacity<{color}>`
   flex-direction: row;
-  background-color: #dba970;
+  background-color: ${({color}) => color || colors.yellow};
   align-items: center;
-  padding: 10px;
+  padding: 5px 10px;
   border-radius: 10px;
-  width: 40%;
-  justify-content: center;
-  margin: auto;
 `;
-const Button: React.FC<Props> = ({text, iconName}) => {
+const Button: React.FC<Props> = ({
+  text,
+  iconName,
+  onPress,
+  disabled = false,
+  color,
+}) => {
   return (
-    <Container>
+    <Container onPress={onPress} disabled={disabled} color={color}>
       <Title>{text}</Title>
       {iconName && getIcons(iconName)}
     </Container>
