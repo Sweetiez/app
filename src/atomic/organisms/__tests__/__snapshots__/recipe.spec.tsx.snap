@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Item renders correctly 1`] = `
+exports[`Recipe renders correctly 1`] = `
 <View
   accessible={true}
   collapsable={false}
@@ -43,7 +43,7 @@ exports[`Item renders correctly 1`] = `
         Object {
           "borderTopLeftRadius": 10,
           "borderTopRightRadius": 10,
-          "height": 150,
+          "height": 120,
           "width": "100%",
         },
       ]
@@ -53,7 +53,7 @@ exports[`Item renders correctly 1`] = `
     style={
       Array [
         Object {
-          "height": 80,
+          "marginBottom": 20,
           "paddingBottom": 5,
           "paddingLeft": 5,
           "paddingRight": 5,
@@ -63,13 +63,13 @@ exports[`Item renders correctly 1`] = `
     }
   >
     <Text
-      size={22}
+      size={24}
       style={
         Array [
           Object {
             "color": "black",
             "fontFamily": "Pompiere-Regular",
-            "fontSize": 22,
+            "fontSize": 24,
             "textAlign": "center",
           },
         ]
@@ -77,15 +77,24 @@ exports[`Item renders correctly 1`] = `
     >
       Tartelette
     </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "marginTop": 5,
+          },
+        ]
+      }
+    />
     <Text
-      numberOfLines={3}
-      size={12}
+      numberOfLines={10}
+      size={14}
       style={
         Array [
           Object {
             "color": "black",
             "fontFamily": "Pompiere-Regular",
-            "fontSize": 12,
+            "fontSize": 14,
           },
         ]
       }
@@ -97,30 +106,16 @@ exports[`Item renders correctly 1`] = `
     style={
       Array [
         Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
+          "bottom": 0,
           "marginBottom": 5,
-          "marginLeft": 5,
+          "marginRight": 5,
           "marginTop": 5,
+          "position": "absolute",
+          "right": 0,
         },
       ]
     }
   >
-    <Text
-      size={15}
-      style={
-        Array [
-          Object {
-            "color": "black",
-            "fontFamily": "Pompiere-Regular",
-            "fontSize": 15,
-          },
-        ]
-      }
-    >
-      10€
-    </Text>
     <View
       style={
         Array [

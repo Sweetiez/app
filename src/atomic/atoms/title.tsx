@@ -13,7 +13,7 @@ const StyledText = styled.Text<{size}>`
   color: black;
 `;
 
-const Title: React.FC<Props> = ({title, size = 20}) => (
+const Title: React.FC<Props> = ({title, size = 32}) => (
   <StyledText size={size}>{title}</StyledText>
 );
 

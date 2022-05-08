@@ -10,7 +10,7 @@ const locale = {
       events:"Events"
     },
     shop:{
-      title: "TODO events title"
+      title: "Sweets"
     },
     details:{
       comment : "Comment",
@@ -20,7 +20,7 @@ const locale = {
       title: "TODO events title"
     },
     recipes:{
-      title: "TODO recipes title"
+      title: "Recipes"
     },
   },
 };
