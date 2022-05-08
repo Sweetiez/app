@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text renders correctly 1`] = `
+<Text
+  size={12}
+  style={
+    Array [
+      Object {
+        "color": "black",
+        "fontFamily": "Pompiere-Regular",
+        "fontSize": 12,
+      },
+    ]
+  }
+>
+  test
+</Text>
+`;
+
+exports[`Text renders with smaller size 1`] = `
+<Text
+  size={10}
+  style={
+    Array [
+      Object {
+        "color": "black",
+        "fontFamily": "Pompiere-Regular",
+        "fontSize": 10,
+      },
+    ]
+  }
+>
+  test
+</Text>
+`;
+
+exports[`Text renders with specified number of lines 1`] = `
+<Text
+  numberOfLines={3}
+  size={12}
+  style={
+    Array [
+      Object {
+        "color": "black",
+        "fontFamily": "Pompiere-Regular",
+        "fontSize": 12,
+      },
+    ]
+  }
+>
+  test renders with specified number of lines renders with specified number of lines renders with specified number of lines renders with specified number of lines renders with specified number of lines renders with specified number of lines renders with specified number of lines renders with specified number of lines renders with specified number of lines test
+</Text>
+`;

@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comment renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 10,
+        "marginBottom": 10,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "marginTop": 10,
+        "paddingBottom": 10,
+        "paddingLeft": 10,
+        "paddingRight": 10,
+        "paddingTop": 10,
+        "shadowColor": "rgba(0, 0, 0, 0.07)",
+        "shadowOffset": Object {
+          "height": 2,
+          "width": 2,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 2,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+        },
+      ]
+    }
+  >
+    <Star
+      color="#FFD700"
+      fill="#FFD700"
+      height={15}
+      width={15}
+    />
+    <Star
+      color="#FFD700"
+      fill="#FFD700"
+      height={15}
+      width={15}
+    />
+    <Star
+      color="#FFD700"
+      fill="#FFD700"
+      height={15}
+      width={15}
+    />
+    <Star
+      color="#FFD700"
+      fill="#FFD700"
+      height={15}
+      width={15}
+    />
+    <Star
+      color="#FFD700"
+      fill="#ffffff"
+      height={15}
+      width={15}
+    />
+  </View>
+  <Text
+    numberOfLines={5}
+    onTextLayout={[Function]}
+    style={
+      Array [
+        Object {
+          "marginBottom": 5,
+          "marginTop": 10,
+        },
+      ]
+    }
+  >
+    This is a typical comment
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+          "marginTop": 5,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "fontSize": 12,
+            "fontWeight": "bold",
+          },
+        ]
+      }
+    >
+      John Doe - 
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontSize": 12,
+          },
+        ]
+      }
+    >
+      12/12/2012
+    </Text>
+  </View>
+</View>
+`;

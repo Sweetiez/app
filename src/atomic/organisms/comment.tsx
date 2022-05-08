@@ -1,7 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import styled from 'styled-components';
 import {Stars} from '../molecules';
-import {Text} from 'react-native';
 import CommentCardModel from '../../model/comment-card-model';
 import {useTranslation} from 'react-i18next';
 import {TouchableOpacity} from 'react-native';
@@ -13,6 +12,7 @@ interface Props {
 
 const Bottom = styled.View`
   flex-direction: row;
+  margin-top: 5px;
 `;
 const Author = styled.Text`
   font-size: 12px;
@@ -23,11 +23,11 @@ const Date = styled.Text`
 `;
 const Content = styled.Text`
   margin-top: 10px;
+  margin-bottom: 5px;
 `;
 const ShowMore = styled.Text`
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 10px;
-  margin-top: 5px;
   font-style: italic;
   color: ${colors.grey};
 `;

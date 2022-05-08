@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title renders correctly 1`] = `
+<Text
+  size={20}
+  style={
+    Array [
+      Object {
+        "color": "black",
+        "fontFamily": "Pompiere-Regular",
+        "fontSize": 20,
+        "textAlign": "center",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`Title renders with specified size 1`] = `
+<Text
+  size={34}
+  style={
+    Array [
+      Object {
+        "color": "black",
+        "fontFamily": "Pompiere-Regular",
+        "fontSize": 34,
+        "textAlign": "center",
+      },
+    ]
+  }
+/>
+`;
