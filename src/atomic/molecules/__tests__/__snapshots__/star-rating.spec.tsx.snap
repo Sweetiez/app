@@ -1,0 +1,259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stars renders correctly for rating 1 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+      },
+    ]
+  }
+>
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#ffffff"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#ffffff"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#ffffff"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#ffffff"
+    height={30}
+    width={30}
+  />
+</View>
+`;
+
+exports[`Stars renders correctly for rating 2 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+      },
+    ]
+  }
+>
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#ffffff"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#ffffff"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#ffffff"
+    height={30}
+    width={30}
+  />
+</View>
+`;
+
+exports[`Stars renders correctly for rating 3 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+      },
+    ]
+  }
+>
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#ffffff"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#ffffff"
+    height={30}
+    width={30}
+  />
+</View>
+`;
+
+exports[`Stars renders correctly for rating 4 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+      },
+    ]
+  }
+>
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#ffffff"
+    height={30}
+    width={30}
+  />
+</View>
+`;
+
+exports[`Stars renders correctly for rating 5 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+      },
+    ]
+  }
+>
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+</View>
+`;
+
+exports[`Stars renders with size 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+      },
+    ]
+  }
+>
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#FFD700"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#ffffff"
+    height={30}
+    width={30}
+  />
+  <Star
+    color="#FFD700"
+    fill="#ffffff"
+    height={30}
+    width={30}
+  />
+</View>
+`;
