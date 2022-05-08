@@ -13,10 +13,14 @@ const StyledText = styled.Text<{size}>`
   font-size: ${({size}) => size}px;
 `;
 
-const Title: React.FC<Props> = ({content, numberOfLines = 1, size = 12}) => (
+const Text: React.FC<Props> = ({
+  content,
+  numberOfLines = undefined,
+  size = 12,
+}) => (
   <StyledText numberOfLines={numberOfLines} size={size}>
     {content}
   </StyledText>
 );
 
-export default Title;
+export default Text;

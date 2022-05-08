@@ -1,5 +1,9 @@
 const locale = {
   translation: {
+    common:{
+      showMore: 'Show More',
+      showLess: 'Show Less'
+    },
     tabBar:{
       sweets: "Sweets",
       recipes: "Recipes",
@@ -8,16 +12,16 @@ const locale = {
     shop:{
       title: "TODO events title"
     },
+    details:{
+      comment : "Comment",
+      add: "Add"
+    },
     events:{
       title: "TODO events title"
     },
     recipes:{
       title: "TODO recipes title"
     },
-    // todo delete test translation when finished
-    welcome: 'Hello',
-    details: 'Details',
-    account: 'Account',
   },
 };
 
