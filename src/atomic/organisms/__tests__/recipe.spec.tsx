@@ -1,18 +1,17 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import '../../../utils/mocks';
-import Item from '../item';
+import Recipe from '../recipe';
 
-describe('Item', () => {
+describe('Recipe', () => {
   it('renders correctly', () => {
-    const product = {
+    const recipe = {
       name: 'Tartelette',
       description: 'This is a description',
       images: ['https://picsum.photos/1220/300'],
       rating: 5,
-      price: 10,
     };
-    const tree = renderer.create(<Item product={product} />).toJSON();
+    const tree = renderer.create(<Recipe recipe={recipe} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

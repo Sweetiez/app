@@ -2,13 +2,13 @@
 
 exports[`Title renders correctly 1`] = `
 <Text
-  size={20}
+  size={32}
   style={
     Array [
       Object {
         "color": "black",
         "fontFamily": "Pompiere-Regular",
-        "fontSize": 20,
+        "fontSize": 32,
         "textAlign": "center",
       },
     ]

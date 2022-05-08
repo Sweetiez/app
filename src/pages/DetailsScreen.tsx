@@ -8,9 +8,8 @@ import {SliderBox} from 'react-native-image-slider-box';
 import {Text, Title} from './../atomic/atoms';
 import ProductCardModel from '../model/product-card-model';
 import {Stars, Button} from '../atomic/molecules';
-import {Comment} from '../atomic/organisms';
+import {Comment, AddToBasket} from '../atomic/organisms';
 import {useTranslation} from 'react-i18next';
-import AddToBasket from '../atomic/organisms/add-to-basket';
 
 interface Props {
   product: ProductCardModel;

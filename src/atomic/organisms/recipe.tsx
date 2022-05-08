@@ -2,30 +2,31 @@ import React from 'react';
 import styled from 'styled-components';
 import {Title, Text} from '../atoms';
 import {Stars} from '../molecules';
-import ProductCardModel from '../../model/product-card-model';
+import RecipeModel from '../../model/recipes-model';
 
 interface Props {
-  product: ProductCardModel;
+  recipe: RecipeModel;
   navigation: any;
 }
 
 const Content = styled.View`
   padding: 5px;
-  height: 80px;
+  margin-bottom: 20px;
 `;
 const Bottom = styled.View`
   margin-top: 5px;
   margin-bottom: 5px;
-  margin-left: 5px;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 5px;
 `;
-const Description = styled(Text)``;
-const Price = styled(Text)``;
+const Space = styled.View`
+  margin-top: 5px;
+`;
 const StyledImage = styled.Image`
   width: 100%;
-  height: 150px;
+  height: 120px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 `;
@@ -37,23 +38,25 @@ const Container = styled.TouchableOpacity`
   margin: 5px;
 `;
 
-const Item: React.FC<Props> = ({product, navigation}) => {
-  const {name, description, images, rating, price} = product;
+const Recipe: React.FC<Props> = ({recipe, navigation}) => {
+  const {name, description, images, rating} = recipe;
 
   return (
     <Container
-      onPress={() => navigation.navigate('Details', {product: product})}>
+      onPress={
+        () => {} //navigation.navigate('RecipesDetails', {recipe: recipe})
+      }>
       <StyledImage source={{uri: images[0]}} />
       <Content>
-        <Title title={name} size={22} />
-        <Description numberOfLines={3} content={description} />
+        <Title title={name} size={24} />
+        <Space />
+        <Text numberOfLines={10} content={description} size={14} />
       </Content>
       <Bottom>
-        <Price content={price + '€'} size={15} />
         <Stars rating={rating} size={20} />
       </Bottom>
     </Container>
   );
 };
 
-export default Item;
+export default Recipe;

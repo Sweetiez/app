@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import '../../../utils/svgMocks';
+import '../../../utils/mocks';
 import Comment from '../comment';
 
 describe('Comment', () => {
