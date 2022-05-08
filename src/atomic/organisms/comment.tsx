@@ -1,7 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import styled from 'styled-components';
 import {Stars} from '../molecules';
-import {Text} from 'react-native';
 import CommentCardModel from '../../model/comment-card-model';
 import {useTranslation} from 'react-i18next';
 import {TouchableOpacity} from 'react-native';
