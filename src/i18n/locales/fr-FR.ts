@@ -1,5 +1,9 @@
 const locale = {
   translation: {
+    common:{
+      showMore: 'Montrer Plus',
+      showLess: 'Montrer Moins'
+    },
     tabBar:{
       sweets: "Mignardises",
       recipes: "Recettes",

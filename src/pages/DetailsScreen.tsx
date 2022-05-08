@@ -33,7 +33,9 @@ const CommentButton = styled.View`
   align-items: center;
   margin: 5px auto;
 `;
-const Price = styled(Text)``;
+const Price = styled.View`
+  margin: 10px auto 0;
+`;
 const StarsContainer = styled.View`
   align-items: center;
   margin-bottom: 10px;
@@ -72,7 +74,9 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
           </StarsContainer>
           <AddToBasket addToBasket={addToBasket} />
           <Description content={description} size={20} />
-          <Price content={price + '€'} size={20} />
+          <Price>
+            <Text content={price + '€'} size={22} />
+          </Price>
         </Container>
         <Comments>
           <CommentButton>
@@ -82,7 +86,6 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
               iconName="pen"
             />
           </CommentButton>
-
           {comments.map(comment => (
             <Comment comment={comment} />
           ))}
