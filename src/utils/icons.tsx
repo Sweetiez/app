@@ -8,30 +8,48 @@ import Back from './../assets/icons/arrow-back.svg';
 import CookBook from './../assets/icons/cook-book.svg';
 import Cake from './../assets/icons/cake.svg';
 import Event from './../assets/icons/event.svg';
+import Account from './../assets/icons/account.svg';
+import Eye from './../assets/icons/eye.svg';
+import Interrogation from './../assets/icons/interrogation.svg';
 import colors from '../assets/colors';
 
-const defaultOnPress = () => {};
+const defaultOnPress = null;
 
-const getIcons = (iconName, color = colors.white, onPress = defaultOnPress) => {
+const getIcons = (
+  iconName,
+  color = colors.white,
+  onPress = defaultOnPress,
+  size = 18,
+) => {
+  const props = {
+    width: size,
+    height: size,
+    color: color,
+    onPress: onPress,
+  };
   switch (iconName) {
     case 'pen':
-      return <Pen width={18} height={18} color={color} onPress={onPress} />;
+      return <Pen {...props} />;
+    case 'eye':
+      return <Eye {...props} />;
     case 'minus':
-      return <Minus width={18} height={18} color={color} onPress={onPress} />;
+      return <Minus {...props} />;
     case 'plus':
-      return <Plus width={18} height={18} color={color} onPress={onPress} />;
+      return <Plus {...props} />;
     case 'add':
-      return <Add width={18} height={18} color={color} onPress={onPress} />;
+      return <Add {...props} />;
     case 'back':
-      return <Back width={18} height={18} color={color} onPress={onPress} />;
+      return <Back {...props} />;
     case 'cake':
-      return <Cake width={18} height={18} color={color} onPress={onPress} />;
+      return <Cake {...props} />;
     case 'event':
-      return <Event width={18} height={18} color={color} onPress={onPress} />;
+      return <Event {...props} />;
     case 'cookBook':
-      return (
-        <CookBook width={18} height={18} color={color} onPress={onPress} />
-      );
+      return <CookBook {...props} />;
+    case 'account':
+      return <Account {...props} />;
+    case 'interrogation':
+      return <Interrogation {...props} />;
   }
 };
 

@@ -1,3 +1,4 @@
 export {default as Stars} from './star-rating'
 export {default as Button} from './button'
 export {default as Step} from './step'
+export {default as Input} from './input'

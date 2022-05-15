@@ -27,7 +27,7 @@ const AddToBasket: React.FC<Props> = ({addToBasket}) => {
       <TouchableOpacity
         disabled={quantity === 0}
         onPress={() => quantity > 0 && setQuantity(quantity - 1)}>
-        {getIcons('minus', quantity === 0 ? colors.grey : colors.yellow)}
+        {getIcons('minus', quantity === 0 ? colors.grey : colors.yellow, null)}
       </TouchableOpacity>
       <Text>{quantity}</Text>
       <TouchableOpacity onPress={() => setQuantity(quantity + 1)}>

@@ -7,7 +7,7 @@ const EventsStack = createNativeStackNavigator();
 function EventsStackScreen() {
   return (
     <EventsStack.Navigator screenOptions={{headerShown: false}}>
-      <EventsStack.Screen name="Account" component={EventsScreen} />
+      <EventsStack.Screen name="Events" component={EventsScreen} />
     </EventsStack.Navigator>
   );
 }

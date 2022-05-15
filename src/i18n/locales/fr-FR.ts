@@ -4,10 +4,39 @@ const locale = {
       showMore: 'Montrer Plus',
       showLess: 'Montrer Moins'
     },
+    form:{
+      incorrectEmail: 'Veuillez rentrer un email correct',
+      incorrectPassword: 'Veuillez rentrer un mot de passe correct',
+      blankInputs: "Veuillez remplir tous les champs",
+      passwordPlaceholder: "Mot de Passe",
+      passwordConfirmPlaceholder: "Confirmation de mot de Passe",
+      emailPlaceholder: "Email",
+      firstnamePlaceholder:"Prénom",
+      lastnamePlaceholder:"Nom"
+    },
     tabBar:{
       sweets: "Mignardises",
       recipes: "Recettes",
-      events:"Evenements"
+      events:"Evenements",
+      account:"Compte"
+    },
+    forgotPassword:{
+      title: "Mot de passe oublié?",
+      login: "Se Connecter",
+      validate: "Récupérer mon mot de passe"
+    },
+    login:{
+      title: "Déja inscrit? Connectez vous",
+      forgotPassword: "Mot de Passe oublié?",
+      signIn: "Connexion",
+      dontHaveAccount: "Vous n'avez pas de compte? ",
+      register: "Inscription"
+    },
+    register: {
+      title: "Inscription",
+      alreadyHaveAccount: "Vous avez déjà un compte? ",
+      login: "Se connecter",
+      register: "S'inscrire"
     },
     shop:{
       title: "Mignardises"
