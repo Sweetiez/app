@@ -42,10 +42,7 @@ const Recipe: React.FC<Props> = ({recipe, navigation}) => {
   const {name, description, images, rating} = recipe;
 
   return (
-    <Container
-      onPress={
-        () => {} //navigation.navigate('RecipesDetails', {recipe: recipe})
-      }>
+    <Container onPress={() => navigation.navigate('Recipe', {recipe: recipe})}>
       <StyledImage source={{uri: images[0]}} />
       <Content>
         <Title title={name} size={24} />

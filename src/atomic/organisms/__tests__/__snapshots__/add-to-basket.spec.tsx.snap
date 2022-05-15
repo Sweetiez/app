@@ -46,6 +46,7 @@ exports[`AddToBasket renders correctly 1`] = `
     <Minus
       color="#9CA3AF"
       height={18}
+      onPress={[Function]}
       width={18}
     />
   </View>
@@ -72,6 +73,7 @@ exports[`AddToBasket renders correctly 1`] = `
     <Plus
       color="#dba970"
       height={18}
+      onPress={[Function]}
       width={18}
     />
   </View>
@@ -122,6 +124,7 @@ exports[`AddToBasket renders correctly 1`] = `
     <Add
       color="#ffffff"
       height={18}
+      onPress={[Function]}
       width={18}
     />
   </View>

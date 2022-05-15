@@ -1,11 +1,9 @@
 import React from 'react';
 
-// @ts-ignore
-import ArrowBack from './../assets/icons/arrow-back.svg';
 import {SafeAreaView, ScrollView} from 'react-native';
 import styled from 'styled-components';
 import {SliderBox} from 'react-native-image-slider-box';
-import {Text, Title} from './../atomic/atoms';
+import {Text, Title, Back} from './../atomic/atoms';
 import ProductCardModel from '../model/product-card-model';
 import {Stars, Button} from '../atomic/molecules';
 import {Comment, AddToBasket} from '../atomic/organisms';
@@ -39,12 +37,6 @@ const StarsContainer = styled.View`
   align-items: center;
   margin-bottom: 10px;
 `;
-const Back = styled(ArrowBack)`
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  z-index: 10;
-`;
 
 const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
   const {name, description, images, rating, price, comments} =
@@ -64,7 +56,7 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Back color={'#fff'} onPress={() => navigation.goBack()} />
+        <Back navigation={navigation} />
         <StyledSliderBox images={images} />
         <Container>
           <Title title={name} size={30} />

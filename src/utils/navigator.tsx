@@ -1,16 +1,16 @@
 import React from 'react';
-import Home from './../assets/icons/home.svg';
-import Account from '../assets/icons/account.svg';
+import Event from '../assets/icons/event.svg';
+import CookBook from '../assets/icons/cook-book.svg';
+import Cake from '../assets/icons/cake.svg';
 
 const getTabIcon = (route, focused, color, size, t) => {
-  // TODO manage right icons
   switch (route.name) {
     case t('tabBar.sweets'):
-      return <Home size={size} width={24} height={24} color={color} />;
+      return <Cake size={size} width={24} height={24} color={color} />;
     case t('tabBar.recipes'):
-      return <Account size={size} width={24} height={24} color={color} />;
+      return <CookBook size={size} width={24} height={24} color={color} />;
     case t('tabBar.events'):
-      return <Account size={size} width={24} height={24} color={color} />;
+      return <Event size={size} width={24} height={24} color={color} />;
   }
 };
 
