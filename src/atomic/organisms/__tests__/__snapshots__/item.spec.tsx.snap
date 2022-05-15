@@ -78,12 +78,13 @@ exports[`Item renders correctly 1`] = `
       Tartelette
     </Text>
     <Text
+      color="#000000"
       numberOfLines={3}
       size={12}
       style={
         Array [
           Object {
-            "color": "black",
+            "color": "#000000",
             "fontFamily": "Pompiere-Regular",
             "fontSize": 12,
           },
@@ -108,11 +109,12 @@ exports[`Item renders correctly 1`] = `
     }
   >
     <Text
+      color="#000000"
       size={15}
       style={
         Array [
           Object {
-            "color": "black",
+            "color": "#000000",
             "fontFamily": "Pompiere-Regular",
             "fontSize": 15,
           },

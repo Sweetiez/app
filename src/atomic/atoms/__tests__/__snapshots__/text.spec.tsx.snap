@@ -2,11 +2,12 @@
 
 exports[`Text renders correctly 1`] = `
 <Text
+  color="#000000"
   size={12}
   style={
     Array [
       Object {
-        "color": "black",
+        "color": "#000000",
         "fontFamily": "Pompiere-Regular",
         "fontSize": 12,
       },
@@ -19,11 +20,12 @@ exports[`Text renders correctly 1`] = `
 
 exports[`Text renders with smaller size 1`] = `
 <Text
+  color="#000000"
   size={10}
   style={
     Array [
       Object {
-        "color": "black",
+        "color": "#000000",
         "fontFamily": "Pompiere-Regular",
         "fontSize": 10,
       },
@@ -36,12 +38,13 @@ exports[`Text renders with smaller size 1`] = `
 
 exports[`Text renders with specified number of lines 1`] = `
 <Text
+  color="#000000"
   numberOfLines={3}
   size={12}
   style={
     Array [
       Object {
-        "color": "black",
+        "color": "#000000",
         "fontFamily": "Pompiere-Regular",
         "fontSize": 12,
       },

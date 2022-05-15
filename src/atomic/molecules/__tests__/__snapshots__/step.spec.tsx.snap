@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Step renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+        "marginBottom": 5,
+        "paddingRight": 20,
+      },
+    ]
+  }
+>
+  <Text
+    color="#dba970"
+    size={16}
+    style={
+      Array [
+        Object {
+          "color": "#dba970",
+          "fontFamily": "Pompiere-Regular",
+          "fontSize": 16,
+        },
+      ]
+    }
+  >
+    3 . 
+  </Text>
+  <Text
+    color="#000000"
+    size={16}
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+          "fontFamily": "Pompiere-Regular",
+          "fontSize": 16,
+        },
+      ]
+    }
+  >
+    This is a text step
+  </Text>
+</View>
+`;

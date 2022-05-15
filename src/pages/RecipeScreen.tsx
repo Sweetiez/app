@@ -1,18 +1,12 @@
 import React from 'react';
 
-import {useTranslation} from 'react-i18next';
 import {SafeAreaView, ScrollView} from 'react-native';
 import {SliderBox} from 'react-native-image-slider-box';
 import {Title, Back} from '../atomic/atoms';
 import styled from 'styled-components';
 import RecipeModel from '../model/recipes-model';
 import colors from '../assets/colors';
-import Cooking from '../atomic/organisms/cooking';
-
-const Row = styled.View`
-  flex: 1;
-  flex-direction: row;
-`;
+import {Cooking, Steps} from '../atomic/organisms';
 
 const StyledSliderBox = styled(SliderBox)`
   width: 100%;
@@ -24,7 +18,6 @@ interface Props {
 }
 
 const RecipeScreen: React.FC<Props> = ({route, navigation}) => {
-  const {t} = useTranslation();
   const {
     name,
     images,
@@ -36,7 +29,9 @@ const RecipeScreen: React.FC<Props> = ({route, navigation}) => {
     level,
     cost,
     rating,
+    steps,
   } = route.params.recipe;
+
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
@@ -53,6 +48,7 @@ const RecipeScreen: React.FC<Props> = ({route, navigation}) => {
           level={level}
           portions={portions}
         />
+        <Steps steps={steps} />
       </ScrollView>
     </SafeAreaView>
   );

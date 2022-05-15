@@ -35,7 +35,7 @@ exports[`Recipe renders correctly 1`] = `
   <Image
     source={
       Object {
-        "uri": "https://picsum.photos/1220/300",
+        "uri": "https://picsum.photos/4000/1600",
       }
     }
     style={
@@ -75,7 +75,7 @@ exports[`Recipe renders correctly 1`] = `
         ]
       }
     >
-      Tartelette
+      Tartelette daim caramel
     </Text>
     <View
       style={
@@ -87,19 +87,20 @@ exports[`Recipe renders correctly 1`] = `
       }
     />
     <Text
+      color="#000000"
       numberOfLines={10}
       size={14}
       style={
         Array [
           Object {
-            "color": "black",
+            "color": "#000000",
             "fontFamily": "Pompiere-Regular",
             "fontSize": 14,
           },
         ]
       }
     >
-      This is a description
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci alias aliquam culpa, delectus expedita fugit ipsum laboriosam maiores maxime numquam reprehenderit, rerum sint unde vero! Accusamus id quod repudiandae?
     </Text>
   </View>
   <View
@@ -145,13 +146,13 @@ exports[`Recipe renders correctly 1`] = `
       />
       <Star
         color="#FFD700"
-        fill="#FFD700"
+        fill="#ffffff"
         height={20}
         width={20}
       />
       <Star
         color="#FFD700"
-        fill="#FFD700"
+        fill="#ffffff"
         height={20}
         width={20}
       />
