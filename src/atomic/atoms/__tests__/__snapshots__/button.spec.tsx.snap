@@ -2,6 +2,11 @@
 
 exports[`Button renders correctly 1`] = `
 <View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
   accessible={true}
   collapsable={false}
   focusable={true}
@@ -41,6 +46,11 @@ exports[`Button renders correctly 1`] = `
 
 exports[`Button renders loading 1`] = `
 <View
+  accessibilityState={
+    Object {
+      "disabled": true,
+    }
+  }
   accessible={true}
   collapsable={false}
   focusable={true}
@@ -54,7 +64,7 @@ exports[`Button renders loading 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#dba970",
+      "backgroundColor": "#9CA3AF",
       "borderRadius": 15,
       "opacity": 1,
       "paddingBottom": 10,
@@ -66,12 +76,18 @@ exports[`Button renders loading 1`] = `
 >
   <ActivityIndicator
     animating={true}
+    color="#ffffff"
   />
 </View>
 `;
 
 exports[`Button renders with different color 1`] = `
 <View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
   accessible={true}
   collapsable={false}
   focusable={true}

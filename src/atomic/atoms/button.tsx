@@ -26,9 +26,12 @@ const Button: React.FC<Props> = ({
   onPress,
   isLoading = false,
 }) => (
-  <StyledButton color={color} onPress={onPress}>
+  <StyledButton
+    color={isLoading ? colors.grey : color}
+    onPress={onPress}
+    disabled={isLoading}>
     {isLoading ? (
-      <ActivityIndicator animating={isLoading} />
+      <ActivityIndicator animating={isLoading} color={colors.white} />
     ) : (
       <StyledText>{text}</StyledText>
     )}
