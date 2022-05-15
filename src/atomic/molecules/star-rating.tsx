@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 // @ts-ignore
 import Star from './../../assets/icons/star.svg';
+import colors from '../../assets/colors';
 
 interface StarsProps {
   rating: number;
@@ -13,7 +14,7 @@ const Row = styled.View`
 `;
 const Stars: React.FC<StarsProps> = ({rating, size = 30}) => {
   const color = '#FFD700';
-  const voidColor = '#ffffff';
+  const voidColor = colors.white;
   return (
     <Row>
       <Star

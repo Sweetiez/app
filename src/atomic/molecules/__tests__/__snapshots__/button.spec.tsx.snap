@@ -192,6 +192,7 @@ exports[`Button renders with icon 1`] = `
   <Pen
     color="#ffffff"
     height={18}
+    onPress={[Function]}
     width={18}
   />
 </View>

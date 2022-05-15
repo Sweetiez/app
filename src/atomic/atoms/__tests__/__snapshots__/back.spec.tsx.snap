@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Back renders correctly 1`] = `
+<Back
+  color="#ffffff"
+  onPress={[Function]}
+  style={
+    Array [
+      Object {
+        "left": 5,
+        "position": "absolute",
+        "top": 5,
+        "zIndex": 10,
+      },
+    ]
+  }
+/>
+`;
