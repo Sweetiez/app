@@ -11,7 +11,11 @@ const locale = {
       account:"Compte"
     },
     login:{
-      title: "Connexion"
+      title: "Déja inscrit? Connectez vous",
+      passwordPlaceholder: "Mot de Passe",
+      emailPlaceholder: "Email",
+      forgotPassword: "Mot de Passe oublié?",
+      signIn: "Connexion"
     },
     shop:{
       title: "Mignardises"

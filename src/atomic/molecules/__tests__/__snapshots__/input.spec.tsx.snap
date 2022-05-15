@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input renders correctly 1`] = `
+<TextInput
+  onChangeText={[MockFunction]}
+  placeholder="Placeholder"
+  secureTextEntry={false}
+  style={
+    Array [
+      Object {
+        "borderColor": "#dba970",
+        "borderRadius": 15,
+        "borderStyle": "solid",
+        "borderWidth": 1,
+        "flexDirection": "row",
+        "marginBottom": 10,
+        "paddingBottom": 10,
+        "paddingLeft": 15,
+        "paddingRight": 15,
+        "paddingTop": 10,
+      },
+    ]
+  }
+  value="This is a value"
+/>
+`;
+
+exports[`Input renders correctly with keyboard type 1`] = `
+<TextInput
+  keyboardType="email-address"
+  onChangeText={[MockFunction]}
+  placeholder="Placeholder"
+  secureTextEntry={false}
+  style={
+    Array [
+      Object {
+        "borderColor": "#dba970",
+        "borderRadius": 15,
+        "borderStyle": "solid",
+        "borderWidth": 1,
+        "flexDirection": "row",
+        "marginBottom": 10,
+        "paddingBottom": 10,
+        "paddingLeft": 15,
+        "paddingRight": 15,
+        "paddingTop": 10,
+      },
+    ]
+  }
+  value="This is a value"
+/>
+`;
