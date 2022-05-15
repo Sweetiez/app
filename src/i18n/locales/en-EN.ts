@@ -4,6 +4,11 @@ const locale = {
       showMore: 'Show More',
       showLess: 'Show Less'
     },
+    form:{
+      incorrectEmail: 'Please fill in a correct email',
+      incorrectPassword: 'Please fill in a correct password',
+    blankInputs: "Please fill all the inputs"
+    },
     tabBar:{
       sweets: "Sweets",
       recipes: "Recipes",

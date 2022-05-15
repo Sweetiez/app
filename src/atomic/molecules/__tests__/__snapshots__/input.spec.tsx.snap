@@ -1,52 +1,110 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input renders correctly 1`] = `
-<TextInput
-  onChangeText={[MockFunction]}
-  placeholder="Placeholder"
-  secureTextEntry={false}
-  style={
-    Array [
-      Object {
-        "borderColor": "#dba970",
-        "borderRadius": 15,
-        "borderStyle": "solid",
-        "borderWidth": 1,
-        "flexDirection": "row",
-        "marginBottom": 10,
-        "paddingBottom": 10,
-        "paddingLeft": 15,
-        "paddingRight": 15,
-        "paddingTop": 10,
-      },
-    ]
-  }
-  value="This is a value"
-/>
+<View>
+  <TextInput
+    onChangeText={[MockFunction]}
+    placeholder="Placeholder"
+    secureTextEntry={false}
+    style={
+      Array [
+        Object {
+          "borderColor": "#dba970",
+          "borderRadius": 15,
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "marginBottom": 10,
+          "paddingBottom": 10,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 10,
+        },
+      ]
+    }
+    value="This is a value"
+  />
+</View>
 `;
 
 exports[`Input renders correctly with keyboard type 1`] = `
-<TextInput
-  keyboardType="email-address"
-  onChangeText={[MockFunction]}
-  placeholder="Placeholder"
-  secureTextEntry={false}
-  style={
-    Array [
+<View>
+  <TextInput
+    keyboardType="email-address"
+    onChangeText={[MockFunction]}
+    placeholder="Placeholder"
+    secureTextEntry={false}
+    style={
+      Array [
+        Object {
+          "borderColor": "#dba970",
+          "borderRadius": 15,
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "marginBottom": 10,
+          "paddingBottom": 10,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 10,
+        },
+      ]
+    }
+    value="This is a value"
+  />
+</View>
+`;
+
+exports[`Input renders with rightIcon 1`] = `
+<View>
+  <TextInput
+    onChangeText={[MockFunction]}
+    placeholder="Placeholder"
+    secureTextEntry={false}
+    style={
+      Array [
+        Object {
+          "borderColor": "#dba970",
+          "borderRadius": 15,
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "marginBottom": 10,
+          "paddingBottom": 10,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 10,
+        },
+      ]
+    }
+    value="This is a value"
+  />
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
       Object {
-        "borderColor": "#dba970",
-        "borderRadius": 15,
-        "borderStyle": "solid",
-        "borderWidth": 1,
-        "flexDirection": "row",
-        "marginBottom": 10,
-        "paddingBottom": 10,
-        "paddingLeft": 15,
-        "paddingRight": 15,
-        "paddingTop": 10,
-      },
-    ]
-  }
-  value="This is a value"
-/>
+        "opacity": 1,
+        "position": "absolute",
+        "right": 10,
+        "top": 10,
+      }
+    }
+  >
+    <Eye
+      color="#dba970"
+      height={20}
+      onPress={null}
+      width={20}
+    />
+  </View>
+</View>
 `;

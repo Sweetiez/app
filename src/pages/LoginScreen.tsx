@@ -8,11 +8,18 @@ import styled from 'styled-components';
 import getIcons from '../utils/icons';
 import colors from '../assets/colors';
 import {Button} from '../atomic/atoms';
+import {validateEmail, validatePassword} from '../utils/validator';
 
 const Form = styled.View`
   margin-right: 20px;
   margin-left: 20px;
   margin-top: 40px;
+`;
+const Error = styled.Text`
+  color: ${colors.red};
+  margin-bottom: 10px;
+  margin-right: auto;
+  margin-left: auto;
 `;
 const Icon = styled.View`
   margin-top: 30px;
@@ -24,12 +31,31 @@ const Icon = styled.View`
 function LoginScreen({navigation}) {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [isLoading, setisLoading] = useState<boolean>(false);
+  const [isLoading, setLoading] = useState<boolean>(false);
+  const [isSecureTextEntry, setSecureTextEntry] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
   const {t} = useTranslation();
 
   const signIn = () => {
-    // todo validate then call if no error
-    setisLoading(!isLoading);
+    if (validate()) {
+      // TODO api call
+      setLoading(!isLoading);
+    }
+  };
+
+  const validate = () => {
+    if (email === '' || password === '') {
+      setError(t('form.blankInputs'));
+      return false;
+    } else if (!validateEmail(email)) {
+      setError(t('form.incorrectEmail'));
+      return false;
+    } else if (!validatePassword(password)) {
+      setError(t('form.incorrectPassword'));
+      return false;
+    }
+    setError(null);
+    return true;
   };
 
   return (
@@ -48,8 +74,11 @@ function LoginScreen({navigation}) {
             onChangeText={setPassword}
             value={password}
             placeholder={t('login.passwordPlaceholder')}
-            secureTextEntry={true}
+            secureTextEntry={isSecureTextEntry}
+            rightIconName="eye"
+            rightIconOnPress={() => setSecureTextEntry(!isSecureTextEntry)}
           />
+          {error && <Error>{error}</Error>}
           <Button
             text={t('login.signIn')}
             onPress={signIn}

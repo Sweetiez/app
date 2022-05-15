@@ -9,6 +9,7 @@ import CookBook from './../assets/icons/cook-book.svg';
 import Cake from './../assets/icons/cake.svg';
 import Event from './../assets/icons/event.svg';
 import Account from './../assets/icons/account.svg';
+import Eye from './../assets/icons/eye.svg';
 import colors from '../assets/colors';
 
 const defaultOnPress = null;
@@ -28,6 +29,8 @@ const getIcons = (
   switch (iconName) {
     case 'pen':
       return <Pen {...props} />;
+    case 'eye':
+      return <Eye {...props} />;
     case 'minus':
       return <Minus {...props} />;
     case 'plus':

@@ -16,6 +16,20 @@ describe('Input', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('renders with rightIcon', () => {
+    const tree = renderer
+      .create(
+        <Input
+          placeholder="Placeholder"
+          value="This is a value"
+          onChangeText={jest.fn()}
+          rightIconName="eye"
+          rightIconOnPress={jest.fn()}
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   it('renders correctly with keyboard type', () => {
     const tree = renderer
       .create(

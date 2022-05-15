@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../assets/colors';
+import getIcons from '../../utils/icons';
+import {View} from 'react-native';
 
 interface Props {
   onChangeText: (value) => void;
@@ -8,6 +10,8 @@ interface Props {
   placeholder: string;
   keyboardType?: string;
   secureTextEntry?: boolean;
+  rightIconName?: string;
+  rightIconOnPress?: () => void;
 }
 
 const StyledInput = styled.TextInput`
@@ -17,21 +21,36 @@ const StyledInput = styled.TextInput`
   border-radius: 15px;
   margin-bottom: 10px;
 `;
+
+const StyledIcon = styled.TouchableOpacity`
+  position: absolute;
+  right: 10px;
+  top: 10px;
+`;
 const Input: React.FC<Props> = ({
   onChangeText,
   value,
   placeholder,
   keyboardType,
   secureTextEntry = false,
+  rightIconName,
+  rightIconOnPress,
 }) => {
   return (
-    <StyledInput
-      onChangeText={onChangeText}
-      value={value}
-      placeholder={placeholder}
-      keyboardType={keyboardType}
-      secureTextEntry={secureTextEntry}
-    />
+    <View>
+      <StyledInput
+        onChangeText={onChangeText}
+        value={value}
+        placeholder={placeholder}
+        keyboardType={keyboardType}
+        secureTextEntry={secureTextEntry}
+      />
+      {rightIconName && (
+        <StyledIcon onPress={rightIconOnPress}>
+          {getIcons(rightIconName, colors.yellow, null, 20)}
+        </StyledIcon>
+      )}
+    </View>
   );
 };
 
