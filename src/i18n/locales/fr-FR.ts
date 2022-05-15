@@ -22,6 +22,17 @@ const locale = {
     recipes:{
       title: "Recettes"
     },
+    recipe:{
+      minutes: "min",
+      totalTime: "Temps total : ",
+      preparation: "Préparation",
+      chill:"Repos",
+      cook:"Cuisson",
+      cost: "Coût",
+      level:"Niveau",
+      portions:"Portions",
+      steps: "Etapes : "
+    }
   },
 };
 
