@@ -7,7 +7,11 @@ const locale = {
     tabBar:{
       sweets: "Mignardises",
       recipes: "Recettes",
-      events:"Evenements"
+      events:"Evenements",
+      account:"Compte"
+    },
+    login:{
+      title: "Connexion"
     },
     shop:{
       title: "Mignardises"

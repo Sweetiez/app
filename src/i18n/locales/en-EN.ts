@@ -7,7 +7,11 @@ const locale = {
     tabBar:{
       sweets: "Sweets",
       recipes: "Recipes",
-      events:"Events"
+      events:"Events",
+      account:"Account"
+    },
+    login:{
+      title: "Login"
     },
     shop:{
       title: "Sweets"
