@@ -11,7 +11,7 @@ import Event from './../assets/icons/event.svg';
 import Account from './../assets/icons/account.svg';
 import colors from '../assets/colors';
 
-const defaultOnPress = () => {};
+const defaultOnPress = null;
 
 const getIcons = (
   iconName,
