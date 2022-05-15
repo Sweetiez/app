@@ -7,7 +7,9 @@ const locale = {
     form:{
       incorrectEmail: 'Veuillez rentrer un email correct',
       incorrectPassword: 'Veuillez rentrer un mot de passe correct',
-      blankInputs: "Veuillez remplir tous les champs"
+      blankInputs: "Veuillez remplir tous les champs",
+      passwordPlaceholder: "Mot de Passe",
+      emailPlaceholder: "Email",
     },
     tabBar:{
       sweets: "Mignardises",
@@ -15,10 +17,13 @@ const locale = {
       events:"Evenements",
       account:"Compte"
     },
+    forgotPassword:{
+      title: "Forgotten Password?",
+      login: "Log In",
+      validate: "Récupérer mon mot de passe"
+    },
     login:{
       title: "Déja inscrit? Connectez vous",
-      passwordPlaceholder: "Mot de Passe",
-      emailPlaceholder: "Email",
       forgotPassword: "Mot de Passe oublié?",
       signIn: "Connexion"
     },

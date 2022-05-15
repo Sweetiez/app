@@ -7,8 +7,8 @@ import {Input} from './../atomic/molecules';
 import styled from 'styled-components';
 import getIcons from '../utils/icons';
 import colors from '../assets/colors';
-import {Button} from '../atomic/atoms';
-import {validateEmail, validatePassword} from '../utils/validator';
+import {Back, Button} from '../atomic/atoms';
+import {validateEmail} from '../utils/validator';
 
 const Form = styled.View`
   margin-right: 20px;
@@ -36,13 +36,11 @@ const Link = styled.Text`
 
 function LoginScreen({navigation}) {
   const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
   const [isLoading, setLoading] = useState<boolean>(false);
-  const [isSecureTextEntry, setSecureTextEntry] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const {t} = useTranslation();
 
-  const signIn = () => {
+  const forgotPassword = () => {
     if (validate()) {
       // TODO api call
       setLoading(!isLoading);
@@ -50,14 +48,11 @@ function LoginScreen({navigation}) {
   };
 
   const validate = () => {
-    if (email === '' || password === '') {
+    if (email === '') {
       setError(t('form.blankInputs'));
       return false;
     } else if (!validateEmail(email)) {
       setError(t('form.incorrectEmail'));
-      return false;
-    } else if (!validatePassword(password)) {
-      setError(t('form.incorrectPassword'));
       return false;
     }
     setError(null);
@@ -67,32 +62,25 @@ function LoginScreen({navigation}) {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Title title={t('login.title')} />
+        <Back navigation={navigation} color={colors.black} />
+        <Title title={t('forgotPassword.title')} />
         <Form>
-          <Icon>{getIcons('account', colors.yellow, () => {}, 100)}</Icon>
+          <Icon>{getIcons('interrogation', colors.yellow, () => {}, 100)}</Icon>
           <Input
             onChangeText={setEmail}
             value={email}
             placeholder={t('form.emailPlaceholder')}
             keyboardType="email-address"
           />
-          <Input
-            onChangeText={setPassword}
-            value={password}
-            placeholder={t('form.passwordPlaceholder')}
-            secureTextEntry={isSecureTextEntry}
-            rightIconName="eye"
-            rightIconOnPress={() => setSecureTextEntry(!isSecureTextEntry)}
-          />
           {error && <Error>{error}</Error>}
           <Button
-            text={t('login.signIn')}
-            onPress={signIn}
+            text={t('forgotPassword.validate')}
+            onPress={forgotPassword}
             isLoading={isLoading}
           />
         </Form>
-        <Link onPress={() => navigation.navigate('ForgotPassword')}>
-          {t('login.forgotPassword')}
+        <Link onPress={() => navigation.navigate('Login')}>
+          {t('forgotPassword.login')}
         </Link>
       </ScrollView>
     </SafeAreaView>

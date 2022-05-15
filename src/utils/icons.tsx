@@ -10,6 +10,7 @@ import Cake from './../assets/icons/cake.svg';
 import Event from './../assets/icons/event.svg';
 import Account from './../assets/icons/account.svg';
 import Eye from './../assets/icons/eye.svg';
+import Interrogation from './../assets/icons/interrogation.svg';
 import colors from '../assets/colors';
 
 const defaultOnPress = null;
@@ -47,6 +48,8 @@ const getIcons = (
       return <CookBook {...props} />;
     case 'account':
       return <Account {...props} />;
+    case 'interrogation':
+      return <Interrogation {...props} />;
   }
 };
 

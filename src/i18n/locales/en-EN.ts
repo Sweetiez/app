@@ -7,7 +7,9 @@ const locale = {
     form:{
       incorrectEmail: 'Please fill in a correct email',
       incorrectPassword: 'Please fill in a correct password',
-    blankInputs: "Please fill all the inputs"
+      blankInputs: "Please fill all the inputs",
+      passwordPlaceholder: "Password",
+      emailPlaceholder: "Email",
     },
     tabBar:{
       sweets: "Sweets",
@@ -15,10 +17,13 @@ const locale = {
       events:"Events",
       account:"Account"
     },
+    forgotPassword:{
+      title: "Forgotten Password?",
+      login: "Log In",
+      validate: "Recover my Password"
+    },
     login:{
       title: "Already registered? Sign in",
-      passwordPlaceholder: "Password",
-      emailPlaceholder: "Email",
       forgotPassword: "Forgot Password?",
       signIn: "Sign In"
     },
