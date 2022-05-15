@@ -9,7 +9,10 @@ const locale = {
       incorrectPassword: 'Please fill in a correct password',
       blankInputs: "Please fill all the inputs",
       passwordPlaceholder: "Password",
+      passwordConfirmPlaceholder: "Confirm Password",
       emailPlaceholder: "Email",
+      firstnamePlaceholder:"Firstname",
+      lastnamePlaceholder:"Lastname"
     },
     tabBar:{
       sweets: "Sweets",
@@ -25,7 +28,15 @@ const locale = {
     login:{
       title: "Already registered? Sign in",
       forgotPassword: "Forgot Password?",
-      signIn: "Sign In"
+      signIn: "Sign In",
+      dontHaveAccount: "Don't have an account? ",
+      register: "Register"
+    },
+    register: {
+      title: "Register",
+      alreadyHaveAccount: "Already have an account? ",
+      login: "Sign in",
+      register: "Register"
     },
     shop:{
       title: "Sweets"

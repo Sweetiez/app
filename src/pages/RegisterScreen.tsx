@@ -39,15 +39,20 @@ const Register = styled.Text`
   margin-top: 30px;
 `;
 
-function LoginScreen({navigation}) {
+function RegisterScreen({navigation}) {
+  const [firstname, setFirstname] = useState<string>('');
+  const [lastname, setLastname] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [passwordConfirm, setPasswordConfirm] = useState<string>('');
   const [isLoading, setLoading] = useState<boolean>(false);
   const [isSecureTextEntry, setSecureTextEntry] = useState<boolean>(true);
+  const [isSecureTextEntryConfirm, setSecureTextEntryConfirm] =
+    useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const {t} = useTranslation();
 
-  const signIn = () => {
+  const register = () => {
     if (validate()) {
       // TODO api call
       setLoading(!isLoading);
@@ -55,13 +60,24 @@ function LoginScreen({navigation}) {
   };
 
   const validate = () => {
-    if (email === '' || password === '') {
+    // TODO
+    if (
+      email === '' ||
+      password === '' ||
+      passwordConfirm === '' ||
+      firstname === '' ||
+      lastname === ''
+    ) {
       setError(t('form.blankInputs'));
       return false;
     } else if (!validateEmail(email)) {
       setError(t('form.incorrectEmail'));
       return false;
-    } else if (!validatePassword(password)) {
+    } else if (
+      !validatePassword(password) ||
+      !validatePassword(passwordConfirm) ||
+      password !== passwordConfirm
+    ) {
       setError(t('form.incorrectPassword'));
       return false;
     }
@@ -72,9 +88,19 @@ function LoginScreen({navigation}) {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Title title={t('login.title')} />
+        <Title title={t('register.title')} />
         <Form>
           <Icon>{getIcons('account', colors.yellow, () => {}, 100)}</Icon>
+          <Input
+            onChangeText={setFirstname}
+            value={firstname}
+            placeholder={t('form.firstnamePlaceholder')}
+          />
+          <Input
+            onChangeText={setLastname}
+            value={lastname}
+            placeholder={t('form.lastnamePlaceholder')}
+          />
           <Input
             onChangeText={setEmail}
             value={email}
@@ -89,20 +115,27 @@ function LoginScreen({navigation}) {
             rightIconName="eye"
             rightIconOnPress={() => setSecureTextEntry(!isSecureTextEntry)}
           />
+          <Input
+            onChangeText={setPasswordConfirm}
+            value={passwordConfirm}
+            placeholder={t('form.passwordConfirmPlaceholder')}
+            secureTextEntry={isSecureTextEntryConfirm}
+            rightIconName="eye"
+            rightIconOnPress={() =>
+              setSecureTextEntryConfirm(!isSecureTextEntryConfirm)
+            }
+          />
           {error && <Error>{error}</Error>}
           <Button
-            text={t('login.signIn')}
-            onPress={signIn}
+            text={t('register.register')}
+            onPress={register}
             isLoading={isLoading}
           />
         </Form>
-        <Link onPress={() => navigation.navigate('ForgotPassword')}>
-          {t('login.forgotPassword')}
-        </Link>
         <Register>
-          {t('login.dontHaveAccount')}
-          <Link onPress={() => navigation.navigate('Register')}>
-            {t('login.register')}
+          {t('register.alreadyHaveAccount')}
+          <Link onPress={() => navigation.navigate('Login')}>
+            {t('register.login')}
           </Link>
         </Register>
       </ScrollView>
@@ -110,4 +143,4 @@ function LoginScreen({navigation}) {
   );
 }
 
-export default LoginScreen;
+export default RegisterScreen;

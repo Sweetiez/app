@@ -9,7 +9,10 @@ const locale = {
       incorrectPassword: 'Veuillez rentrer un mot de passe correct',
       blankInputs: "Veuillez remplir tous les champs",
       passwordPlaceholder: "Mot de Passe",
+      passwordConfirmPlaceholder: "Confirmation de mot de Passe",
       emailPlaceholder: "Email",
+      firstnamePlaceholder:"Prénom",
+      lastnamePlaceholder:"Nom"
     },
     tabBar:{
       sweets: "Mignardises",
@@ -18,14 +21,22 @@ const locale = {
       account:"Compte"
     },
     forgotPassword:{
-      title: "Forgotten Password?",
-      login: "Log In",
+      title: "Mot de passe oublié?",
+      login: "Se Connecter",
       validate: "Récupérer mon mot de passe"
     },
     login:{
       title: "Déja inscrit? Connectez vous",
       forgotPassword: "Mot de Passe oublié?",
-      signIn: "Connexion"
+      signIn: "Connexion",
+      dontHaveAccount: "Vous n'avez pas de compte? ",
+      register: "Inscription"
+    },
+    register: {
+      title: "Inscription",
+      alreadyHaveAccount: "Vous avez déjà un compte? ",
+      login: "Se connecter",
+      register: "S'inscrire"
     },
     shop:{
       title: "Mignardises"
