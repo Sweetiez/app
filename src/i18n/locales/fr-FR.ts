@@ -17,8 +17,9 @@ const locale = {
     tabBar:{
       sweets: "Mignardises",
       recipes: "Recettes",
-      events:"Evenements",
-      account:"Compte"
+      events: "Evenements",
+      cart: "Panier",
+      account: "Compte"
     },
     forgotPassword:{
       title: "Mot de passe oublié?",
@@ -63,6 +64,9 @@ const locale = {
       steps: "Etapes : "
     }
   },
+  cart:{
+    title: "Votre Panier"
+  }
 };
 
 export default locale;

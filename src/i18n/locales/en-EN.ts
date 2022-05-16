@@ -18,6 +18,7 @@ const locale = {
       sweets: "Sweets",
       recipes: "Recipes",
       events:"Events",
+      cart: "Cart",
       account:"Account"
     },
     forgotPassword:{
@@ -63,6 +64,9 @@ const locale = {
       steps: "Steps : "
     }
   },
+  cart:{
+    title: "Your Cart"
+  }
 };
 
 export default locale;
