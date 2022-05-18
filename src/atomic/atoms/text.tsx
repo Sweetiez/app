@@ -4,7 +4,7 @@ import colors from '../../assets/colors';
 
 interface Props {
   content: string;
-  numberOfLines: number;
+  numberOfLines?: number;
   size: string;
   color?: string;
 }

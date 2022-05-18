@@ -1,9 +1,9 @@
 import {ADD_ITEM_TO_CART, REMOVE_ITEM_FROM_CART} from '../constants';
 
-export function addItemToCart(item) {
+export function addItemToCart(item, quantity) {
   return {
     type: ADD_ITEM_TO_CART,
-    payload: item,
+    payload: {item, quantity},
   };
 }
 export function removeItemFromCart(item) {

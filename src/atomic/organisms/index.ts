@@ -1,4 +1,5 @@
 export {default as Item} from './item'
+export {default as CartItem} from './cart-item'
 export {default as Comment} from './comment'
 export {default as AddToBasket} from './add-to-basket'
 export {default as Recipe} from './recipe'

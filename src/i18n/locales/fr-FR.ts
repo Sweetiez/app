@@ -2,7 +2,8 @@ const locale = {
   translation: {
     common:{
       showMore: 'Montrer Plus',
-      showLess: 'Montrer Moins'
+      showLess: 'Montrer Moins',
+      euros : "€"
     },
     form:{
       incorrectEmail: 'Veuillez rentrer un email correct',
@@ -62,6 +63,12 @@ const locale = {
       level:"Niveau",
       portions:"Portions",
       steps: "Etapes : "
+    },
+    cart:{
+      quantity: "quantity : ",
+      title: "Votre Panier",
+      empty: "Vous n'avez rien dans votre panier pour l'instant ! ",
+      checkout: "Payer "
     }
   },
   cart:{

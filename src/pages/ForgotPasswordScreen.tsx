@@ -65,7 +65,7 @@ function LoginScreen({navigation}) {
         <Back navigation={navigation} color={colors.black} />
         <Title title={t('forgotPassword.title')} />
         <Form>
-          <Icon>{getIcons('interrogation', colors.yellow, () => {}, 100)}</Icon>
+          <Icon>{getIcons('interrogation', colors.yellow, 100)}</Icon>
           <Input
             onChangeText={setEmail}
             value={email}

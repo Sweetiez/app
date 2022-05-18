@@ -3,16 +3,32 @@ const initialState = {
   cart: [],
 };
 const cartReducer = (state = initialState, action) => {
+  const item = action.payload;
   switch (action.type) {
     case ADD_ITEM_TO_CART:
+      let newCart = [...state.cart];
+      const existingItem = newCart.find(
+        cartItem => item.item === cartItem.item,
+      );
+      if (existingItem) {
+        existingItem.quantity = existingItem.quantity += item.quantity;
+      } else {
+        newCart.push(item);
+      }
       return {
         ...state,
-        cart: state.cart.push(action.payload),
+        cart: newCart,
       };
     case REMOVE_ITEM_FROM_CART:
+      const newData = [];
+      state.cart.forEach(cartItem => {
+        if (cartItem !== item) {
+          newData.push(cartItem);
+        }
+      });
       return {
         ...state,
-        cart: state.cart.filter(item => item === action.payload),
+        cart: newData,
       };
     default:
       return state;

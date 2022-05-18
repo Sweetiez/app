@@ -12,10 +12,14 @@ import './src/i18n/index';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useTranslation} from "react-i18next";
+import {useSelector} from "react-redux";
+import {itemsQuantityIntoCartSelector} from "./src/store/selectors/cart";
 
 const App: () => Node = () => {
   const Tab = createBottomTabNavigator();
     const {t} = useTranslation();
+    const itemsIntoCart = useSelector(itemsQuantityIntoCartSelector);
+    console.log(itemsIntoCart)
 
   return (
     <React.StrictMode>
@@ -32,7 +36,9 @@ const App: () => Node = () => {
             <Tab.Screen name={t('tabBar.sweets')} component={SweetsStackScreen} />
             <Tab.Screen name={t('tabBar.recipes')} component={RecipesStackScreen} />
             <Tab.Screen name={t('tabBar.events')} component={EventsStackScreen} />
-            <Tab.Screen name={t('tabBar.cart')} component={CartStackScreen} />
+            <Tab.Screen name={t('tabBar.cart')} component={CartStackScreen}
+                        options={itemsIntoCart > 0 ? { tabBarBadge: itemsIntoCart} : null}
+            />
             <Tab.Screen name={t('tabBar.account')} component={AccountStackScreen} />
         </Tab.Navigator>
       </NavigationContainer>

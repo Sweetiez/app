@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {Title, Text} from '../atoms';
 import {Stars} from '../molecules';
 import ProductCardModel from '../../model/product-card-model';
+import {useTranslation} from 'react-i18next';
 
 interface Props {
   product: ProductCardModel;
@@ -39,7 +40,7 @@ const Container = styled.TouchableOpacity`
 
 const Item: React.FC<Props> = ({product, navigation}) => {
   const {name, description, images, rating, price} = product;
-
+  const {t} = useTranslation();
   return (
     <Container
       onPress={() => navigation.navigate('Details', {product: product})}>
@@ -49,7 +50,7 @@ const Item: React.FC<Props> = ({product, navigation}) => {
         <Description numberOfLines={3} content={description} />
       </Content>
       <Bottom>
-        <Price content={price + '€'} size={15} />
+        <Price content={price + t('common.euros')} size={15} />
         <Stars rating={rating} size={20} />
       </Bottom>
     </Container>

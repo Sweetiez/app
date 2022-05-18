@@ -24,7 +24,7 @@ exports[`AddToBasket renders correctly 1`] = `
   <View
     accessibilityState={
       Object {
-        "disabled": true,
+        "disabled": false,
       }
     }
     accessible={true}
@@ -44,15 +44,12 @@ exports[`AddToBasket renders correctly 1`] = `
     }
   >
     <Minus
-      color="#9CA3AF"
+      color="#dba970"
       height={18}
-      onPress={null}
       width={18}
     />
   </View>
-  <Text>
-    0
-  </Text>
+  <Text />
   <View
     accessible={true}
     collapsable={false}
@@ -73,14 +70,13 @@ exports[`AddToBasket renders correctly 1`] = `
     <Plus
       color="#dba970"
       height={18}
-      onPress={null}
       width={18}
     />
   </View>
   <View
     accessibilityState={
       Object {
-        "disabled": true,
+        "disabled": false,
       }
     }
     accessible={true}
@@ -96,7 +92,7 @@ exports[`AddToBasket renders correctly 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#9CA3AF",
+        "backgroundColor": "#dba970",
         "borderRadius": 10,
         "flexDirection": "row",
         "opacity": 1,
@@ -124,7 +120,6 @@ exports[`AddToBasket renders correctly 1`] = `
     <Add
       color="#ffffff"
       height={18}
-      onPress={null}
       width={18}
     />
   </View>
