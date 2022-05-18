@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 interface Props {
   title: string;
-  size: string;
+  size?: string;
 }
 
 const StyledText = styled.Text<{size}>`

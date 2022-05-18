@@ -1,11 +1,10 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {ForgotPasswordScreen, LoginScreen} from '../pages';
-import RegisterScreen from '../pages/RegisterScreen';
+import {ForgotPasswordScreen, LoginScreen, RegisterScreen} from '../pages';
 
 const AccountStack = createNativeStackNavigator();
 
-function EventsStackScreen() {
+function AccountStackScreen() {
   return (
     <AccountStack.Navigator screenOptions={{headerShown: false}}>
       <AccountStack.Screen name="Login" component={LoginScreen} />
@@ -18,4 +17,4 @@ function EventsStackScreen() {
   );
 }
 
-export default EventsStackScreen;
+export default AccountStackScreen;

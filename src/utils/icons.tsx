@@ -11,21 +11,15 @@ import Event from './../assets/icons/event.svg';
 import Account from './../assets/icons/account.svg';
 import Eye from './../assets/icons/eye.svg';
 import Interrogation from './../assets/icons/interrogation.svg';
+import Cart from './../assets/icons/cart.svg';
+import Trash from './../assets/icons/trash.svg';
 import colors from '../assets/colors';
 
-const defaultOnPress = null;
-
-const getIcons = (
-  iconName,
-  color = colors.white,
-  onPress = defaultOnPress,
-  size = 18,
-) => {
+const getIcons = (iconName, color = colors.white, size = 18) => {
   const props = {
     width: size,
     height: size,
     color: color,
-    onPress: onPress,
   };
   switch (iconName) {
     case 'pen':
@@ -50,6 +44,10 @@ const getIcons = (
       return <Account {...props} />;
     case 'interrogation':
       return <Interrogation {...props} />;
+    case 'cart':
+      return <Cart {...props} />;
+    case 'trash':
+      return <Trash {...props} />;
   }
 };
 

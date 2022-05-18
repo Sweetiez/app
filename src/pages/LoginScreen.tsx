@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import {useTranslation} from 'react-i18next';
-import {SafeAreaView, ScrollView, Text} from 'react-native';
+import {SafeAreaView, ScrollView} from 'react-native';
 import {Title} from './../atomic/atoms';
 import {Input} from './../atomic/molecules';
 import styled from 'styled-components';
@@ -74,7 +74,7 @@ function LoginScreen({navigation}) {
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <Title title={t('login.title')} />
         <Form>
-          <Icon>{getIcons('account', colors.yellow, () => {}, 100)}</Icon>
+          <Icon>{getIcons('account', colors.yellow, 100)}</Icon>
           <Input
             onChangeText={setEmail}
             value={email}

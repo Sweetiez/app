@@ -47,7 +47,7 @@ const Input: React.FC<Props> = ({
       />
       {rightIconName && (
         <StyledIcon onPress={rightIconOnPress}>
-          {getIcons(rightIconName, colors.yellow, null, 20)}
+          {getIcons(rightIconName, colors.yellow, 20)}
         </StyledIcon>
       )}
     </View>

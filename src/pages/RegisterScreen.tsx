@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import {useTranslation} from 'react-i18next';
-import {SafeAreaView, ScrollView, Text} from 'react-native';
+import {SafeAreaView, ScrollView} from 'react-native';
 import {Title} from './../atomic/atoms';
 import {Input} from './../atomic/molecules';
 import styled from 'styled-components';
@@ -90,7 +90,7 @@ function RegisterScreen({navigation}) {
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <Title title={t('register.title')} />
         <Form>
-          <Icon>{getIcons('account', colors.yellow, () => {}, 100)}</Icon>
+          <Icon>{getIcons('account', colors.yellow, 100)}</Icon>
           <Input
             onChangeText={setFirstname}
             value={firstname}

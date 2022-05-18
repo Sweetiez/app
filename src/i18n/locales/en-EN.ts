@@ -2,7 +2,8 @@ const locale = {
   translation: {
     common:{
       showMore: 'Show More',
-      showLess: 'Show Less'
+      showLess: 'Show Less',
+      euros : "€"
     },
     form:{
       incorrectEmail: 'Please fill in a correct email',
@@ -18,6 +19,7 @@ const locale = {
       sweets: "Sweets",
       recipes: "Recipes",
       events:"Events",
+      cart: "Cart",
       account:"Account"
     },
     forgotPassword:{
@@ -61,6 +63,12 @@ const locale = {
       level:"Level",
       portions:"Portions",
       steps: "Steps : "
+    },
+    cart:{
+      title: "Your Cart",
+      quantity: "quantity : ",
+      empty: "You have nothing in your cart yet ! ",
+      checkout: "Checkout "
     }
   },
 };

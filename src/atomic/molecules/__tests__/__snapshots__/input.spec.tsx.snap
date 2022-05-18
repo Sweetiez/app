@@ -102,7 +102,6 @@ exports[`Input renders with rightIcon 1`] = `
     <Eye
       color="#dba970"
       height={20}
-      onPress={null}
       width={20}
     />
   </View>

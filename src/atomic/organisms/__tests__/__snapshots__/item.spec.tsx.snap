@@ -121,7 +121,7 @@ exports[`Item renders correctly 1`] = `
         ]
       }
     >
-      10€
+      10common.euros
     </Text>
     <View
       style={

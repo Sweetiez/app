@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {SafeAreaView, ScrollView} from 'react-native';
 import styled from 'styled-components';
@@ -8,6 +8,8 @@ import ProductCardModel from '../model/product-card-model';
 import {Stars, Button} from '../atomic/molecules';
 import {Comment, AddToBasket} from '../atomic/organisms';
 import {useTranslation} from 'react-i18next';
+import {addItemToCart} from '../store/actions/cart';
+import {useDispatch} from 'react-redux';
 
 interface Props {
   product: ProductCardModel;
@@ -42,13 +44,16 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
   const {name, description, images, rating, price, comments} =
     route.params.product;
   const {t} = useTranslation();
+  const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState<number>(0);
 
   const onCommentPress = () => {
     // TODO
   };
 
-  const addToBasket = quantity => {
-    //TODO
+  const addToBasket = () => {
+    dispatch(addItemToCart(route.params.product, quantity));
+    setQuantity(0);
   };
 
   // TODO paginate or lazy list for comment list. Do an organism 'comments' managing that?
@@ -63,7 +68,11 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
           <StarsContainer>
             <Stars rating={rating} />
           </StarsContainer>
-          <AddToBasket addToBasket={addToBasket} />
+          <AddToBasket
+            addToBasket={addToBasket}
+            quantity={quantity}
+            setQuantity={setQuantity}
+          />
           <Description content={description} size={20} />
           <Price>
             <Text content={price + '€'} size={22} />
