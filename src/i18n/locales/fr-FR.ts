@@ -73,7 +73,8 @@ const locale = {
     comment:{
       title: "Commenter",
       send: 'Envoyer',
-      commentPlaceholder: 'Votre commentaire'
+      commentPlaceholder: 'Votre commentaire',
+      errorStar: 'Veuillez renseigner une note'
     }
   }
 };

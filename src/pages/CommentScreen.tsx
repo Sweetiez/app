@@ -21,30 +21,50 @@ const Space = styled.View`
   height: 50px;
 `;
 const StyledStars = styled.View`
-  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
 `;
 const Icon = styled.View`
   margin-right: auto;
   margin-left: auto;
   margin-top: 30px;
 `;
+const Error = styled.Text`
+  color: ${colors.red};
+  margin-bottom: 10px;
+  margin-right: auto;
+  margin-left: auto;
+`;
 
 const CommentScreen: React.FC<Props> = ({route, navigation}) => {
   const {productId} = route.params;
   const {t} = useTranslation();
   const [comment, setComment] = useState<string>('');
-  const [rating, setRating] = useState<number>(0);
+  const [rating, setRating] = useState<number>(undefined);
   const [isLoading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+
+  const validateComment = () => {
+    if (!rating) {
+      setError(true);
+      return false;
+    }
+    setError(false);
+    return true;
+  };
 
   const onCommentPress = () => {
-    // TODO send comment on the API
-    setLoading(true);
-    const data = {
-      productId,
-      comment,
-      rating,
-    };
-    // then go back
+    if (validateComment()) {
+      // TODO send comment on the API
+      setLoading(true);
+      const data = {
+        productId,
+        comment,
+        rating,
+      };
+      // then go back
+    }
   };
 
   return (
@@ -54,6 +74,9 @@ const CommentScreen: React.FC<Props> = ({route, navigation}) => {
         <Title title={t('comment.title')} />
         <Icon>{getIcons('pen', colors.yellow, 80)}</Icon>
         <Content>
+          <StyledStars>
+            <Stars rating={rating} setRating={setRating} size={30} />
+          </StyledStars>
           <TextArea
             onChangeText={setComment}
             value={comment}
@@ -61,10 +84,8 @@ const CommentScreen: React.FC<Props> = ({route, navigation}) => {
             multiline={true}
             numberOfLines={10}
           />
-          <StyledStars>
-            <Stars rating={rating} setRating={setRating} size={30} />
-          </StyledStars>
           <Space />
+          {error && <Error>{t('comment.errorStar')}</Error>}
           <Button
             text={t('comment.send')}
             onPress={onCommentPress}
