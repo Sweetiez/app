@@ -8,7 +8,7 @@ interface Props {
   text: string;
   onPress: () => void;
   disabled?: boolean;
-  color: string;
+  color?: string;
 }
 
 const Title = styled.Text`

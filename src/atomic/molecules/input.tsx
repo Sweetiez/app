@@ -12,14 +12,18 @@ interface Props {
   secureTextEntry?: boolean;
   rightIconName?: string;
   rightIconOnPress?: () => void;
+  multiline?: boolean;
+  numberOfLines?: number;
 }
 
-const StyledInput = styled.TextInput`
+const StyledInput = styled.TextInput<{numberOfLines}>`
   flex-direction: row;
   padding: 10px 15px;
   border: solid 1px ${colors.yellow};
   border-radius: 15px;
   margin-bottom: 10px;
+  ${({numberOfLines}) =>
+    numberOfLines ? 'height:' + numberOfLines * 10 + 'px' : null};
 `;
 
 const StyledIcon = styled.TouchableOpacity`
@@ -35,6 +39,8 @@ const Input: React.FC<Props> = ({
   secureTextEntry = false,
   rightIconName,
   rightIconOnPress,
+  multiline = false,
+  numberOfLines = undefined,
 }) => {
   return (
     <View>
@@ -44,6 +50,8 @@ const Input: React.FC<Props> = ({
         placeholder={placeholder}
         keyboardType={keyboardType}
         secureTextEntry={secureTextEntry}
+        multiline={multiline}
+        numberOfLines={numberOfLines}
       />
       {rightIconName && (
         <StyledIcon onPress={rightIconOnPress}>

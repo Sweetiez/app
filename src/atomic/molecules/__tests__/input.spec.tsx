@@ -16,6 +16,20 @@ describe('Input', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('renders with multiline', () => {
+    const tree = renderer
+      .create(
+        <Input
+          placeholder="Placeholder"
+          value="This is a value"
+          onChangeText={jest.fn()}
+          multiline={true}
+          numberOfLines={10}
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   it('renders with rightIcon', () => {
     const tree = renderer
       .create(

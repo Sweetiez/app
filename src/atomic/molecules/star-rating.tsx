@@ -6,47 +6,30 @@ import colors from '../../assets/colors';
 
 interface StarsProps {
   rating: number;
+  setRating?: (rating: number) => void;
   size?: number;
 }
 
 const Row = styled.View`
   flex-direction: row;
 `;
-const Stars: React.FC<StarsProps> = ({rating, size = 30}) => {
+const Stars: React.FC<StarsProps> = ({setRating, rating, size = 30}) => {
   const color = '#FFD700';
   const voidColor = colors.white;
+  const ratings = [1, 2, 3, 4, 5];
   return (
     <Row>
-      <Star
-        color={color}
-        fill={rating >= 1 ? color : voidColor}
-        height={size}
-        width={size}
-      />
-      <Star
-        color={color}
-        fill={rating >= 2 ? color : voidColor}
-        height={size}
-        width={size}
-      />
-      <Star
-        color={color}
-        fill={rating >= 3 ? color : voidColor}
-        height={size}
-        width={size}
-      />
-      <Star
-        color={color}
-        fill={rating >= 4 ? color : voidColor}
-        height={size}
-        width={size}
-      />
-      <Star
-        color={color}
-        fill={rating >= 5 ? color : voidColor}
-        height={size}
-        width={size}
-      />
+      {ratings.map(r => {
+        return (
+          <Star
+            color={color}
+            fill={rating >= r ? color : voidColor}
+            onPress={() => setRating(r)}
+            height={size}
+            width={size}
+          />
+        );
+      })}
     </Row>
   );
 };

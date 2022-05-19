@@ -69,6 +69,11 @@ const locale = {
       quantity: "quantity : ",
       empty: "You have nothing in your cart yet ! ",
       checkout: "Checkout "
+    },
+    comment:{
+      title: "Comment",
+      send: 'Send',
+      commentPlaceholder: 'Your comment'
     }
   },
 };

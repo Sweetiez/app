@@ -39,30 +39,35 @@ exports[`Comment renders correctly 1`] = `
       color="#FFD700"
       fill="#FFD700"
       height={15}
+      onPress={[Function]}
       width={15}
     />
     <Star
       color="#FFD700"
       fill="#FFD700"
       height={15}
+      onPress={[Function]}
       width={15}
     />
     <Star
       color="#FFD700"
       fill="#FFD700"
       height={15}
+      onPress={[Function]}
       width={15}
     />
     <Star
       color="#FFD700"
       fill="#FFD700"
       height={15}
+      onPress={[Function]}
       width={15}
     />
     <Star
       color="#FFD700"
       fill="#ffffff"
       height={15}
+      onPress={[Function]}
       width={15}
     />
   </View>

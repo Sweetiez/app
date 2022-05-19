@@ -41,14 +41,14 @@ const StarsContainer = styled.View`
 `;
 
 const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
-  const {name, description, images, rating, price, comments} =
+  const {id, name, description, images, rating, price, comments} =
     route.params.product;
   const {t} = useTranslation();
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState<number>(0);
 
   const onCommentPress = () => {
-    // TODO
+    navigation.navigate('Comment', {productId: id});
   };
 
   const addToBasket = () => {

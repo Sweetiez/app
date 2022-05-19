@@ -12,6 +12,12 @@ describe('Stars', () => {
     });
   });
 
+  it('renders with setRating', () => {
+    const tree = renderer
+      .create(<Stars rating={3} size={30} setRating={jest.fn()} />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   it('renders with size', () => {
     const tree = renderer.create(<Stars rating={3} size={30} />).toJSON();
     expect(tree).toMatchSnapshot();
