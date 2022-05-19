@@ -69,10 +69,12 @@ const locale = {
       title: "Votre Panier",
       empty: "Vous n'avez rien dans votre panier pour l'instant ! ",
       checkout: "Payer "
+    },
+    comment:{
+      title: "Commenter",
+      send: 'Envoyer',
+      commentPlaceholder: 'Votre commentaire'
     }
-  },
-  cart:{
-    title: "Votre Panier"
   }
 };
 

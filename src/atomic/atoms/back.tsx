@@ -6,7 +6,7 @@ import colors from '../../assets/colors';
 
 interface Props {
   navigation: any;
-  color: string;
+  color?: string;
 }
 const Arrow = styled(ArrowBack)`
   position: absolute;

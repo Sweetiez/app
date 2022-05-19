@@ -77,30 +77,35 @@ exports[`Cooking renders correctly 1`] = `
         color="#FFD700"
         fill="#FFD700"
         height={20}
+        onPress={[Function]}
         width={20}
       />
       <Star
         color="#FFD700"
         fill="#FFD700"
         height={20}
+        onPress={[Function]}
         width={20}
       />
       <Star
         color="#FFD700"
         fill="#FFD700"
         height={20}
+        onPress={[Function]}
         width={20}
       />
       <Star
         color="#FFD700"
         fill="#FFD700"
         height={20}
+        onPress={[Function]}
         width={20}
       />
       <Star
         color="#FFD700"
         fill="#ffffff"
         height={20}
+        onPress={[Function]}
         width={20}
       />
     </View>

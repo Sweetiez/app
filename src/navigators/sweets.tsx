@@ -1,6 +1,6 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {DetailsScreen, ShopScreen} from '../pages';
+import {DetailsScreen, ShopScreen, CommentScreen} from '../pages';
 
 const SweetsStack = createNativeStackNavigator();
 
@@ -8,6 +8,7 @@ function SweetsStackScreen() {
   return (
     <SweetsStack.Navigator screenOptions={{headerShown: false}}>
       <SweetsStack.Screen name="Home" component={ShopScreen} />
+      <SweetsStack.Screen name="Comment" component={CommentScreen} />
       <SweetsStack.Screen name="Details" component={DetailsScreen} />
     </SweetsStack.Navigator>
   );

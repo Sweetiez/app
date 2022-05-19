@@ -7,3 +7,4 @@ export {default as LoginScreen} from './LoginScreen';
 export {default as ForgotPasswordScreen} from './ForgotPasswordScreen';
 export {default as RegisterScreen} from './RegisterScreen';
 export {default as CartScreen} from './CartScreen';
+export {default as CommentScreen} from './CommentScreen';

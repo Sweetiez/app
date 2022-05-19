@@ -3,6 +3,7 @@
 exports[`Input renders correctly 1`] = `
 <View>
   <TextInput
+    multiline={false}
     onChangeText={[MockFunction]}
     placeholder="Placeholder"
     secureTextEntry={false}
@@ -31,6 +32,7 @@ exports[`Input renders correctly with keyboard type 1`] = `
 <View>
   <TextInput
     keyboardType="email-address"
+    multiline={false}
     onChangeText={[MockFunction]}
     placeholder="Placeholder"
     secureTextEntry={false}
@@ -55,9 +57,40 @@ exports[`Input renders correctly with keyboard type 1`] = `
 </View>
 `;
 
+exports[`Input renders with multiline 1`] = `
+<View>
+  <TextInput
+    multiline={true}
+    numberOfLines={10}
+    onChangeText={[MockFunction]}
+    placeholder="Placeholder"
+    secureTextEntry={false}
+    style={
+      Array [
+        Object {
+          "borderColor": "#dba970",
+          "borderRadius": 15,
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "height": 100,
+          "marginBottom": 10,
+          "paddingBottom": 10,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 10,
+        },
+      ]
+    }
+    value="This is a value"
+  />
+</View>
+`;
+
 exports[`Input renders with rightIcon 1`] = `
 <View>
   <TextInput
+    multiline={false}
     onChangeText={[MockFunction]}
     placeholder="Placeholder"
     secureTextEntry={false}
