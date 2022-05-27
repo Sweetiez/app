@@ -63,7 +63,7 @@ function CartScreen() {
         }}>
         <CartContainer>
           {cart.map(cartItem => (
-            <CartItem cartItem={cartItem} />
+            <CartItem cartItem={cartItem} key={cartItem.item.id} />
           ))}
         </CartContainer>
       </ScrollView>

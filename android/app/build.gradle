@@ -78,6 +78,12 @@ import org.apache.tools.ant.taskdefs.condition.Os
  * ]
  */
 
+project.ext.envConfigFiles = [
+                                  debug: ".env.development",
+                                  release: ".env.production",
+                              ]
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
 project.ext.react = [
     enableHermes: false,  // clean and rebuild if changing
 ]

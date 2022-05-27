@@ -43,7 +43,7 @@ const Item: React.FC<Props> = ({product, navigation}) => {
   const {t} = useTranslation();
   return (
     <Container
-      onPress={() => navigation.navigate('Details', {product: product})}>
+      onPress={() => navigation.navigate('Details', {productId: product.id})}>
       <StyledImage source={{uri: images[0]}} />
       <Content>
         <Title title={name} size={22} />

@@ -3,12 +3,12 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 import {ScrollView} from 'react-native';
 
-import {fakeProducts} from '../data/items';
 import {Title} from './../atomic/atoms';
 import {Item} from './../atomic/organisms';
 import styled from 'styled-components';
 import {updateShop} from '../store/actions/shop';
 import productSelector from '../store/selectors/shop';
+import {getPublishedProducts} from '../store/api/shop';
 
 const Items = styled.View`
   flex: 1;
@@ -21,7 +21,9 @@ function ShopScreen({navigation}) {
   const shop = useSelector(productSelector);
 
   useEffect(() => {
-    dispatch(updateShop(fakeProducts)); // todo call api
+    getPublishedProducts().then(products => {
+      dispatch(updateShop(products));
+    });
   }, [dispatch]);
 
   return (
