@@ -32,7 +32,8 @@ const locale = {
       forgotPassword: "Mot de Passe oublié?",
       signIn: "Connexion",
       dontHaveAccount: "Vous n'avez pas de compte? ",
-      register: "Inscription"
+      register: "Inscription",
+      loginError : "La connexion a échoué"
     },
     register: {
       title: "Inscription",
@@ -75,6 +76,10 @@ const locale = {
       send: 'Envoyer',
       commentPlaceholder: 'Votre commentaire',
       errorStar: 'Veuillez renseigner une note'
+    },
+    account:{
+      title: "Bonjour ",
+      logout: "Se déconnecter"
     }
   }
 };

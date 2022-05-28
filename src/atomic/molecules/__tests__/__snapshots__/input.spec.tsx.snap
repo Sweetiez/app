@@ -16,10 +16,10 @@ exports[`Input renders correctly 1`] = `
           "borderWidth": 1,
           "flexDirection": "row",
           "marginBottom": 10,
-          "paddingBottom": 10,
+          "paddingBottom": 5,
           "paddingLeft": 15,
           "paddingRight": 15,
-          "paddingTop": 10,
+          "paddingTop": 5,
         },
       ]
     }
@@ -45,10 +45,10 @@ exports[`Input renders correctly with keyboard type 1`] = `
           "borderWidth": 1,
           "flexDirection": "row",
           "marginBottom": 10,
-          "paddingBottom": 10,
+          "paddingBottom": 5,
           "paddingLeft": 15,
           "paddingRight": 15,
-          "paddingTop": 10,
+          "paddingTop": 5,
         },
       ]
     }
@@ -75,10 +75,10 @@ exports[`Input renders with multiline 1`] = `
           "flexDirection": "row",
           "height": 100,
           "marginBottom": 10,
-          "paddingBottom": 10,
+          "paddingBottom": 5,
           "paddingLeft": 15,
           "paddingRight": 15,
-          "paddingTop": 10,
+          "paddingTop": 5,
         },
       ]
     }
@@ -103,10 +103,10 @@ exports[`Input renders with rightIcon 1`] = `
           "borderWidth": 1,
           "flexDirection": "row",
           "marginBottom": 10,
-          "paddingBottom": 10,
+          "paddingBottom": 5,
           "paddingLeft": 15,
           "paddingRight": 15,
-          "paddingTop": 10,
+          "paddingTop": 5,
         },
       ]
     }

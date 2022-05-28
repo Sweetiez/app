@@ -18,7 +18,7 @@ interface Props {
 
 const StyledInput = styled.TextInput<{numberOfLines}>`
   flex-direction: row;
-  padding: 10px 15px;
+  padding: 5px 15px;
   border: solid 1px ${colors.yellow};
   border-radius: 15px;
   margin-bottom: 10px;

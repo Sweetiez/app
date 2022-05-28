@@ -8,4 +8,8 @@ export default class State {
   shop: {
     products: ProductCardModel[];
   };
+  user: {
+    token?: string;
+    refreshToken?: string;
+  };
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {Title, Text} from '../atoms';
 import {Stars} from '../molecules';
-import RecipeModel from '../../model/recipes-model';
+import {Recipe as RecipeModel} from '../../model';
 
 interface Props {
   recipe: RecipeModel;
@@ -50,7 +50,7 @@ const Recipe: React.FC<Props> = ({recipe, navigation}) => {
         <Text numberOfLines={10} content={description} size={14} />
       </Content>
       <Bottom>
-        <Stars rating={rating} size={20} />
+        <Stars rating={rating} size={20} itemId={name + rating} />
       </Bottom>
     </Container>
   );

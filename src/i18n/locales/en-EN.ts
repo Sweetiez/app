@@ -32,7 +32,8 @@ const locale = {
       forgotPassword: "Forgot Password?",
       signIn: "Sign In",
       dontHaveAccount: "Don't have an account? ",
-      register: "Register"
+      register: "Register",
+      loginError : "Login failed"
     },
     register: {
       title: "Register",
@@ -75,6 +76,10 @@ const locale = {
       send: 'Send',
       commentPlaceholder: 'Your comment',
       errorStar: 'Please choose a rating'
+    },
+    account:{
+      title: "Hello ",
+      logout: "Logout"
     }
   },
 };

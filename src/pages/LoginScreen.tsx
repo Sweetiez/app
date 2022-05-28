@@ -9,6 +9,10 @@ import getIcons from '../utils/icons';
 import colors from '../assets/colors';
 import {Button} from '../atomic/atoms';
 import {validateEmail, validatePassword} from '../utils/validator';
+import {loginRequest} from '../store/api/user';
+import {useDispatch} from 'react-redux';
+import {login} from '../store/actions/user';
+import {LOGIN_ERROR} from '../store/constants';
 
 const Form = styled.View`
   margin-right: 20px;
@@ -46,11 +50,23 @@ function LoginScreen({navigation}) {
   const [isSecureTextEntry, setSecureTextEntry] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const {t} = useTranslation();
+  const dispatch = useDispatch();
 
   const signIn = () => {
     if (validate()) {
-      // TODO api call
-      setLoading(!isLoading);
+      setLoading(true);
+      loginRequest({username: email, password}).then(result => {
+        setLoading(false);
+        if (result === LOGIN_ERROR) {
+          setError(t('login.loginError'));
+        } else {
+          dispatch(login(result));
+          navigation.reset({
+            index: 1,
+            routes: [{name: 'Home'}],
+          });
+        }
+      });
     }
   };
 

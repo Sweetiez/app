@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import {updateShop} from '../store/actions/shop';
 import productSelector from '../store/selectors/shop';
 import {getPublishedProducts} from '../store/api/shop';
+import {PRODUCT_ERROR} from '../store/constants';
 
 const Items = styled.View`
   flex: 1;
@@ -22,7 +23,11 @@ function ShopScreen({navigation}) {
 
   useEffect(() => {
     getPublishedProducts().then(products => {
-      dispatch(updateShop(products));
+      if (products === PRODUCT_ERROR) {
+        // TODO display error modal
+      } else {
+        dispatch(updateShop(products));
+      }
     });
   }, [dispatch]);
 

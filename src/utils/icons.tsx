@@ -13,6 +13,7 @@ import Eye from './../assets/icons/eye.svg';
 import Interrogation from './../assets/icons/interrogation.svg';
 import Cart from './../assets/icons/cart.svg';
 import Trash from './../assets/icons/trash.svg';
+import NoImage from './../assets/icons/no-image.svg';
 import colors from '../assets/colors';
 
 const getIcons = (iconName, color = colors.white, size = 18) => {
@@ -48,6 +49,8 @@ const getIcons = (iconName, color = colors.white, size = 18) => {
       return <Cart {...props} />;
     case 'trash':
       return <Trash {...props} />;
+    case 'noImage':
+      return <NoImage {...props} />;
   }
 };
 

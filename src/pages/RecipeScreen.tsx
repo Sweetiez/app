@@ -4,7 +4,7 @@ import {SafeAreaView, ScrollView} from 'react-native';
 import {SliderBox} from 'react-native-image-slider-box';
 import {Title, Back} from '../atomic/atoms';
 import styled from 'styled-components';
-import RecipeModel from '../model/recipes-model';
+import {Recipe} from '../model';
 import colors from '../assets/colors';
 import {Cooking, Steps} from '../atomic/organisms';
 
@@ -14,7 +14,7 @@ const StyledSliderBox = styled(SliderBox)`
 `;
 
 interface Props {
-  recipe: RecipeModel;
+  recipe: Recipe;
 }
 
 const RecipeScreen: React.FC<Props> = ({route, navigation}) => {

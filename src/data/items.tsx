@@ -1,6 +1,6 @@
-import ProductCardModel from '../model/product-card-model';
+import {ProductCard} from '../model';
 
-export const fakeProducts: ProductCardModel[] = [
+export const fakeProducts: ProductCard[] = [
   {
     id: '1',
     name: 'Tartelette daim caramel',

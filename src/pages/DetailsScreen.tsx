@@ -1,21 +1,21 @@
 import React, {useEffect, useState} from 'react';
 
-import {ActivityIndicator, SafeAreaView, ScrollView} from 'react-native';
+import {SafeAreaView, ScrollView} from 'react-native';
 import styled from 'styled-components';
 import {SliderBox} from 'react-native-image-slider-box';
 import {Text, Title, Back} from './../atomic/atoms';
-import ProductCardModel from '../model/product-card-model';
+import {ProductCard} from '../model';
 import {Stars, Button} from '../atomic/molecules';
 import {Comment, AddToBasket} from '../atomic/organisms';
 import {useTranslation} from 'react-i18next';
 import {addItemToCart} from '../store/actions/cart';
 import {useDispatch} from 'react-redux';
-import {getProduct, getPublishedProducts} from '../store/api/shop';
-import {updateShop} from '../store/actions/shop';
+import {getProduct} from '../store/api/shop';
 import colors from '../assets/colors';
+import getIcons from '../utils/icons';
 
 interface Props {
-  product: ProductCardModel;
+  product: ProductCard;
 }
 const StyledSliderBox = styled(SliderBox)`
   width: 100%;
@@ -49,18 +49,22 @@ const StyledLoader = styled.ActivityIndicator`
   margin: auto;
 `;
 
+const NoImage = styled.View`
+  margin: auto;
+`;
+
 const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
   const id = route.params.productId;
   const {t} = useTranslation();
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState<number>(0);
-  const [product, setProduct] = useState<ProductCardModel>(undefined);
+  const [product, setProduct] = useState<ProductCard>(undefined);
 
   useEffect(() => {
     getProduct(id).then(data => {
       setProduct(data);
     });
-  }, [dispatch]);
+  }, [id]);
 
   const onCommentPress = () => {
     navigation.navigate('Comment', {productId: id});
@@ -77,15 +81,22 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
     return <StyledLoader size="large" color={colors.yellow} />;
   }
 
+  console.log(product.images);
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <Back navigation={navigation} />
-        <StyledSliderBox images={product.images} />
+        {product.images &&
+        product.images.length > 0 &&
+        product.images[0] !== '' ? (
+          <StyledSliderBox images={product.images} />
+        ) : (
+          <NoImage>{getIcons('noImage', colors.yellow, 100)}</NoImage>
+        )}
         <Container>
           <Title title={product.name} size={30} />
           <StarsContainer>
-            <Stars rating={product.rating} />
+            <Stars rating={product.rating} itemId={id} />
           </StarsContainer>
           <AddToBasket
             addToBasket={addToBasket}
