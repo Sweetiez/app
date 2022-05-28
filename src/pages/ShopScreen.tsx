@@ -23,6 +23,7 @@ function ShopScreen({navigation}) {
 
   useEffect(() => {
     getPublishedProducts().then(products => {
+      console.log('products : ', products);
       if (products === PRODUCT_ERROR) {
         // TODO display error modal
       } else {
