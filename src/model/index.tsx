@@ -6,3 +6,4 @@ export {default as ProductCard} from './product-card-model';
 export {default as Recipe} from './recipes-model';
 export {default as RecipeStep} from './recipe-step-model';
 export {default as Store} from './store-model';
+export {default as RegisterRequest} from './register-request-model';

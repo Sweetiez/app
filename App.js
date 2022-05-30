@@ -23,8 +23,6 @@ const App: () => Node = () => {
     const itemsIntoCart = useSelector(itemsQuantityIntoCartSelector);
     const hasToken = useSelector(tokenSelector)
 
-    console.log(hasToken)
-
   return (
     <React.StrictMode>
       <NavigationContainer>

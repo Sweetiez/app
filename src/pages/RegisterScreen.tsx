@@ -8,7 +8,14 @@ import styled from 'styled-components';
 import getIcons from '../utils/icons';
 import colors from '../assets/colors';
 import {Button} from '../atomic/atoms';
-import {validateEmail, validatePassword} from '../utils/validator';
+import {
+  validateEmail,
+  validatePassword,
+  validatePhone,
+} from '../utils/validator';
+import {registerRequest} from '../store/api/user';
+import {REGISTER_OK} from '../store/constants';
+import {RegisterRequest} from '../model';
 
 const Form = styled.View`
   margin-right: 20px;
@@ -44,6 +51,7 @@ function RegisterScreen({navigation}) {
   const [lastname, setLastname] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [phone, setPhone] = useState<string>('');
   const [passwordConfirm, setPasswordConfirm] = useState<string>('');
   const [isLoading, setLoading] = useState<boolean>(false);
   const [isSecureTextEntry, setSecureTextEntry] = useState<boolean>(true);
@@ -54,13 +62,26 @@ function RegisterScreen({navigation}) {
 
   const register = () => {
     if (validate()) {
-      // TODO api call
-      setLoading(!isLoading);
+      setLoading(true);
+      const data: RegisterRequest = {
+        firstName: firstname,
+        lastName: lastname,
+        email: email,
+        password: password,
+        phone: phone,
+      };
+      registerRequest(data).then(result => {
+        setLoading(false);
+        if (result === REGISTER_OK) {
+          navigation.navigate('Login');
+        } else {
+          setError(t('register.registerError'));
+        }
+      });
     }
   };
 
   const validate = () => {
-    // TODO
     if (
       email === '' ||
       password === '' ||
@@ -79,6 +100,10 @@ function RegisterScreen({navigation}) {
       password !== passwordConfirm
     ) {
       setError(t('form.incorrectPassword'));
+      return false;
+    }
+    if (phone !== '' && !validatePhone(phone)) {
+      setError(t('form.incorrectPhone'));
       return false;
     }
     setError(null);
@@ -124,6 +149,12 @@ function RegisterScreen({navigation}) {
             rightIconOnPress={() =>
               setSecureTextEntryConfirm(!isSecureTextEntryConfirm)
             }
+          />
+          <Input
+            onChangeText={setPhone}
+            value={phone}
+            placeholder={t('form.phonePlaceholder')}
+            keyboardType="phone-pad"
           />
           {error && <Error>{error}</Error>}
           <Button

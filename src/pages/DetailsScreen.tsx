@@ -81,7 +81,6 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
     return <StyledLoader size="large" color={colors.yellow} />;
   }
 
-  console.log(product.images);
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">

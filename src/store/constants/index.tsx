@@ -12,3 +12,5 @@ export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
 export const REGISTER = 'REGISTER';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
+export const REGISTER_OK = 'REGISTER_OK';
+export const REGISTER_ERROR = 'REGISTER_ERROR';

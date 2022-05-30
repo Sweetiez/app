@@ -13,7 +13,9 @@ const locale = {
       passwordConfirmPlaceholder: "Confirm Password",
       emailPlaceholder: "Email",
       firstnamePlaceholder:"Firstname",
-      lastnamePlaceholder:"Lastname"
+      lastnamePlaceholder:"Lastname",
+      phonePlaceholder:'Phone number',
+      incorrectPhone: 'Incorrect phone number'
     },
     tabBar:{
       sweets: "Sweets",
@@ -39,7 +41,8 @@ const locale = {
       title: "Register",
       alreadyHaveAccount: "Already have an account? ",
       login: "Sign in",
-      register: "Register"
+      register: "Register",
+      registerError: "Registration failed"
     },
     shop:{
       title: "Sweets"

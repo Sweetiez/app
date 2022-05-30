@@ -1,6 +1,5 @@
-import Config from 'react-native-config';
-import {LOGIN_ERROR} from '../constants';
-import {LoginRequest, LoginResponse} from '../../model';
+import {LOGIN_ERROR, REGISTER_OK, REGISTER_ERROR} from '../constants';
+import {LoginRequest, LoginResponse, RegisterRequest} from '../../model';
 import {cleanToken} from '../../utils/user';
 import {getUrl} from '../../utils/api';
 
@@ -27,7 +26,27 @@ export const loginRequest = async (
       return LOGIN_ERROR;
     }
   } catch (error) {
-    console.error(error);
     return LOGIN_ERROR;
+  }
+};
+export const registerRequest = async (
+  registerData: RegisterRequest,
+): Promise<typeof REGISTER_ERROR | typeof REGISTER_OK> => {
+  try {
+    const response = await fetch(getUrl('/auth/subscribe'), {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(registerData),
+    });
+    if (response.status === 201) {
+      return REGISTER_OK;
+    } else {
+      return REGISTER_ERROR;
+    }
+  } catch (error) {
+    return REGISTER_ERROR;
   }
 };
