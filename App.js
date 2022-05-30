@@ -5,8 +5,9 @@ import {NavigationContainer} from '@react-navigation/native';
 import SweetsStackScreen from './src/navigators/sweets';
 import RecipesStackScreen from './src/navigators/recipes';
 import EventsStackScreen from './src/navigators/events';
-import AccountStackScreen from './src/navigators/account';
 import CartStackScreen from './src/navigators/cart';
+import AccountNotConnectedStackScreen from "./src/navigators/account-not-connected";
+import AccountConnectedStackScreen from "./src/navigators/account-connected";
 import getTabIcon from './src/utils/navigator';
 import './src/i18n/index';
 
@@ -14,12 +15,13 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useTranslation} from "react-i18next";
 import {useSelector} from "react-redux";
 import {itemsQuantityIntoCartSelector} from "./src/store/selectors/cart";
+import {tokenSelector} from "./src/store/selectors/user";
 
 const App: () => Node = () => {
   const Tab = createBottomTabNavigator();
     const {t} = useTranslation();
     const itemsIntoCart = useSelector(itemsQuantityIntoCartSelector);
-    console.log(itemsIntoCart)
+    const hasToken = useSelector(tokenSelector)
 
   return (
     <React.StrictMode>
@@ -39,7 +41,12 @@ const App: () => Node = () => {
             <Tab.Screen name={t('tabBar.cart')} component={CartStackScreen}
                         options={itemsIntoCart > 0 ? { tabBarBadge: itemsIntoCart} : null}
             />
-            <Tab.Screen name={t('tabBar.account')} component={AccountStackScreen} />
+            {
+                hasToken ?
+                    <Tab.Screen name={t('tabBar.account')} component={AccountConnectedStackScreen} />
+                    :
+                    <Tab.Screen name={t('tabBar.account')} component={AccountNotConnectedStackScreen} />
+            }
         </Tab.Navigator>
       </NavigationContainer>
     </React.StrictMode>

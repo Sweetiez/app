@@ -1,3 +1,5 @@
+import {RecipeStep} from './index';
+
 export default class RecipeModel {
   id: string | undefined;
   name: string | undefined;
@@ -12,10 +14,4 @@ export default class RecipeModel {
   cost: number | undefined;
   level: string | undefined;
   steps: RecipeStep[] | undefined;
-}
-
-export class RecipeStep {
-  id: string | undefined;
-  number: number | undefined;
-  description: string | undefined;
 }

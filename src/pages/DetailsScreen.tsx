@@ -1,18 +1,21 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {SafeAreaView, ScrollView} from 'react-native';
 import styled from 'styled-components';
 import {SliderBox} from 'react-native-image-slider-box';
 import {Text, Title, Back} from './../atomic/atoms';
-import ProductCardModel from '../model/product-card-model';
+import {ProductCard} from '../model';
 import {Stars, Button} from '../atomic/molecules';
 import {Comment, AddToBasket} from '../atomic/organisms';
 import {useTranslation} from 'react-i18next';
 import {addItemToCart} from '../store/actions/cart';
 import {useDispatch} from 'react-redux';
+import {getProduct} from '../store/api/shop';
+import colors from '../assets/colors';
+import getIcons from '../utils/icons';
 
 interface Props {
-  product: ProductCardModel;
+  product: ProductCard;
 }
 const StyledSliderBox = styled(SliderBox)`
   width: 100%;
@@ -40,42 +43,68 @@ const StarsContainer = styled.View`
   margin-bottom: 10px;
 `;
 
+const StyledLoader = styled.ActivityIndicator`
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+`;
+
+const NoImage = styled.View`
+  margin: auto;
+`;
+
 const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
-  const {id, name, description, images, rating, price, comments} =
-    route.params.product;
+  const id = route.params.productId;
   const {t} = useTranslation();
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState<number>(0);
+  const [product, setProduct] = useState<ProductCard>(undefined);
+
+  useEffect(() => {
+    getProduct(id).then(data => {
+      setProduct(data);
+    });
+  }, [id]);
 
   const onCommentPress = () => {
     navigation.navigate('Comment', {productId: id});
   };
 
   const addToBasket = () => {
-    dispatch(addItemToCart(route.params.product, quantity));
+    dispatch(addItemToCart(product, quantity));
     setQuantity(0);
   };
 
   // TODO paginate or lazy list for comment list. Do an organism 'comments' managing that?
 
+  if (!product) {
+    return <StyledLoader size="large" color={colors.yellow} />;
+  }
+
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <Back navigation={navigation} />
-        <StyledSliderBox images={images} />
+        {product.images &&
+        product.images.length > 0 &&
+        product.images[0] !== '' ? (
+          <StyledSliderBox images={product.images} />
+        ) : (
+          <NoImage>{getIcons('noImage', colors.yellow, 100)}</NoImage>
+        )}
         <Container>
-          <Title title={name} size={30} />
+          <Title title={product.name} size={30} />
           <StarsContainer>
-            <Stars rating={rating} />
+            <Stars rating={product.rating} itemId={id} />
           </StarsContainer>
           <AddToBasket
             addToBasket={addToBasket}
             quantity={quantity}
             setQuantity={setQuantity}
           />
-          <Description content={description} size={20} />
+          <Description content={product.description} size={20} />
           <Price>
-            <Text content={price + '€'} size={22} />
+            <Text content={product.price + '€'} size={22} />
           </Price>
         </Container>
         <Comments>
@@ -86,7 +115,7 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
               iconName="pen"
             />
           </CommentButton>
-          {comments.map(comment => (
+          {product.comments.map(comment => (
             <Comment comment={comment} />
           ))}
         </Comments>

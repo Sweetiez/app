@@ -1,13 +1,13 @@
 import React, {useCallback, useState} from 'react';
 import styled from 'styled-components';
 import {Stars} from '../molecules';
-import CommentCardModel from '../../model/comment-card-model';
+import {CommentCard} from '../../model';
 import {useTranslation} from 'react-i18next';
 import {TouchableOpacity} from 'react-native';
 import colors from '../../assets/colors';
 
 interface Props {
-  comment: CommentCardModel;
+  comment: CommentCard;
 }
 
 const Bottom = styled.View`
@@ -44,16 +44,13 @@ const Comment: React.FC<Props> = ({comment}) => {
   const {t} = useTranslation();
   const [showMore, setShowMore] = useState<boolean>(false);
   const [canShowMore, setCanShowMore] = useState<boolean>(false);
-  const onTextLayout = useCallback(
-    e => {
-      setCanShowMore(e.nativeEvent.lines.length > 4);
-    },
-    [canShowMore],
-  );
+  const onTextLayout = useCallback(e => {
+    setCanShowMore(e.nativeEvent.lines.length > 4);
+  }, []);
 
   return (
     <Container>
-      <Stars rating={rating} size={15} />
+      <Stars rating={rating} size={15} itemId={author + date + rating} />
       <Content
         onTextLayout={onTextLayout}
         numberOfLines={showMore ? undefined : 5}>

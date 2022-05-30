@@ -6,6 +6,7 @@ import colors from '../../assets/colors';
 
 interface StarsProps {
   rating: number;
+  itemId: string;
   setRating?: (rating: number) => void;
   size?: number;
 }
@@ -13,7 +14,12 @@ interface StarsProps {
 const Row = styled.View`
   flex-direction: row;
 `;
-const Stars: React.FC<StarsProps> = ({setRating, rating, size = 30}) => {
+const Stars: React.FC<StarsProps> = ({
+  setRating,
+  rating,
+  size = 30,
+  itemId,
+}) => {
   const color = '#FFD700';
   const voidColor = colors.white;
   const ratings = [1, 2, 3, 4, 5];
@@ -27,6 +33,7 @@ const Stars: React.FC<StarsProps> = ({setRating, rating, size = 30}) => {
             onPress={() => setRating(r)}
             height={size}
             width={size}
+            key={r + '-' + itemId}
           />
         );
       })}

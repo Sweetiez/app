@@ -1,6 +1,6 @@
-import RecipeModel from '../model/recipes-model';
+import {Recipe} from '../model';
 
-export const fakeRecipes: RecipeModel[] = [
+export const fakeRecipes: Recipe[] = [
   {
     id: '1',
     name: 'Tartelette daim caramel',

@@ -3,14 +3,14 @@ import React, {useState} from 'react';
 import {SafeAreaView, ScrollView} from 'react-native';
 import styled from 'styled-components';
 import {Title, Back, Button} from './../atomic/atoms';
-import ProductCardModel from '../model/product-card-model';
+import {ProductCard} from '../model';
 import {Stars, Input} from '../atomic/molecules';
 import {useTranslation} from 'react-i18next';
 import colors from '../assets/colors';
 import getIcons from '../utils/icons';
 
 interface Props {
-  product: ProductCardModel;
+  product: ProductCard;
 }
 const TextArea = styled(Input)``;
 const Content = styled.View`
@@ -75,7 +75,12 @@ const CommentScreen: React.FC<Props> = ({route, navigation}) => {
         <Icon>{getIcons('pen', colors.yellow, 80)}</Icon>
         <Content>
           <StyledStars>
-            <Stars rating={rating} setRating={setRating} size={30} />
+            <Stars
+              rating={rating}
+              setRating={setRating}
+              size={30}
+              itemId={rating}
+            />
           </StyledStars>
           <TextArea
             onChangeText={setComment}

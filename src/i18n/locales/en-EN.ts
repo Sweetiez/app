@@ -13,7 +13,9 @@ const locale = {
       passwordConfirmPlaceholder: "Confirm Password",
       emailPlaceholder: "Email",
       firstnamePlaceholder:"Firstname",
-      lastnamePlaceholder:"Lastname"
+      lastnamePlaceholder:"Lastname",
+      phonePlaceholder:'Phone number',
+      incorrectPhone: 'Incorrect phone number'
     },
     tabBar:{
       sweets: "Sweets",
@@ -32,13 +34,15 @@ const locale = {
       forgotPassword: "Forgot Password?",
       signIn: "Sign In",
       dontHaveAccount: "Don't have an account? ",
-      register: "Register"
+      register: "Register",
+      loginError : "Login failed"
     },
     register: {
       title: "Register",
       alreadyHaveAccount: "Already have an account? ",
       login: "Sign in",
-      register: "Register"
+      register: "Register",
+      registerError: "Registration failed"
     },
     shop:{
       title: "Sweets"
@@ -75,6 +79,10 @@ const locale = {
       send: 'Send',
       commentPlaceholder: 'Your comment',
       errorStar: 'Please choose a rating'
+    },
+    account:{
+      title: "Hello ",
+      logout: "Logout"
     }
   },
 };

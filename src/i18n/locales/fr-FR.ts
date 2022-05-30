@@ -13,7 +13,9 @@ const locale = {
       passwordConfirmPlaceholder: "Confirmation de mot de Passe",
       emailPlaceholder: "Email",
       firstnamePlaceholder:"Prénom",
-      lastnamePlaceholder:"Nom"
+      lastnamePlaceholder:"Nom",
+      phonePlaceholder:'Numéro de téléphone',
+      incorrectPhone: 'Numéro de téléphone incorrect'
     },
     tabBar:{
       sweets: "Mignardises",
@@ -32,13 +34,15 @@ const locale = {
       forgotPassword: "Mot de Passe oublié?",
       signIn: "Connexion",
       dontHaveAccount: "Vous n'avez pas de compte? ",
-      register: "Inscription"
+      register: "Inscription",
+      loginError : "La connexion a échoué"
     },
     register: {
       title: "Inscription",
       alreadyHaveAccount: "Vous avez déjà un compte? ",
       login: "Se connecter",
-      register: "S'inscrire"
+      register: "S'inscrire",
+      registerError: "L'inscription a échoué"
     },
     shop:{
       title: "Mignardises"
@@ -75,6 +79,10 @@ const locale = {
       send: 'Envoyer',
       commentPlaceholder: 'Votre commentaire',
       errorStar: 'Veuillez renseigner une note'
+    },
+    account:{
+      title: "Bonjour ",
+      logout: "Se déconnecter"
     }
   }
 };

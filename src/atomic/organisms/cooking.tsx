@@ -64,7 +64,11 @@ const Cooking: React.FC<Props> = ({
         </Bold>
       </CenteredRow>
       <CenteredRow>
-        <Stars rating={rating} size={20} />
+        <Stars
+          rating={rating}
+          size={20}
+          itemId={level + cook + chill + totalTime + portions + rating}
+        />
       </CenteredRow>
       <Row>
         <Column>

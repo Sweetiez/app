@@ -2,7 +2,7 @@ import React from 'react';
 import {Text} from 'react-native';
 import styled from 'styled-components';
 import {Text as SpecialText} from '../atoms';
-import CartItemModel from '../../model/cart-item-model';
+import {Cart} from '../../model';
 import getIcons from '../../utils/icons';
 import colors from '../../assets/colors';
 import {useDispatch} from 'react-redux';
@@ -10,7 +10,7 @@ import {removeItemFromCart} from '../../store/actions/cart';
 import {useTranslation} from 'react-i18next';
 
 interface Props {
-  cartItem: CartItemModel;
+  cartItem: Cart;
 }
 
 const Content = styled.View`

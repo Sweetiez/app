@@ -2,17 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import {Title, Text} from '../atoms';
 import {Stars} from '../molecules';
-import ProductCardModel from '../../model/product-card-model';
+import {ProductCard} from '../../model';
 import {useTranslation} from 'react-i18next';
+import getIcons from '../../utils/icons';
+import colors from '../../assets/colors';
 
 interface Props {
-  product: ProductCardModel;
+  product: ProductCard;
   navigation: any;
 }
 
 const Content = styled.View`
   padding: 5px;
   height: 80px;
+`;
+const NoImage = styled.View`
+  margin: auto;
 `;
 const Bottom = styled.View`
   margin-top: 5px;
@@ -39,19 +44,23 @@ const Container = styled.TouchableOpacity`
 `;
 
 const Item: React.FC<Props> = ({product, navigation}) => {
-  const {name, description, images, rating, price} = product;
+  const {name, description, images, rating, price, id} = product;
   const {t} = useTranslation();
   return (
     <Container
-      onPress={() => navigation.navigate('Details', {product: product})}>
-      <StyledImage source={{uri: images[0]}} />
+      onPress={() => navigation.navigate('Details', {productId: product.id})}>
+      {images && images.length > 0 && images[0] !== '' ? (
+        <StyledImage source={{uri: images[0]}} />
+      ) : (
+        <NoImage>{getIcons('noImage', colors.yellow, 100)}</NoImage>
+      )}
       <Content>
         <Title title={name} size={22} />
         <Description numberOfLines={3} content={description} />
       </Content>
       <Bottom>
         <Price content={price + t('common.euros')} size={15} />
-        <Stars rating={rating} size={20} />
+        <Stars rating={rating} size={20} itemId={id} />
       </Bottom>
     </Container>
   );
