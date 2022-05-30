@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 import {ScrollView} from 'react-native';
@@ -10,6 +10,7 @@ import {updateShop} from '../store/actions/shop';
 import productSelector from '../store/selectors/shop';
 import {getPublishedProducts} from '../store/api/shop';
 import {PRODUCT_ERROR} from '../store/constants';
+import Loader from '../atomic/atoms/loader';
 
 const Items = styled.View`
   flex: 1;
@@ -20,9 +21,14 @@ function ShopScreen({navigation}) {
   const {t} = useTranslation();
   const dispatch = useDispatch();
   const shop = useSelector(productSelector);
+  const [isLoading, setLoading] = useState<boolean>(false);
+
+  // TODO loader !
 
   useEffect(() => {
+    setLoading(true);
     getPublishedProducts().then(products => {
+      setLoading(false);
       if (products === PRODUCT_ERROR) {
         // TODO display error modal
       } else {
@@ -31,6 +37,9 @@ function ShopScreen({navigation}) {
     });
   }, [dispatch]);
 
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic">
       <Title title={t('shop.title')} />

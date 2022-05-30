@@ -1,7 +1,8 @@
-import {LOGIN, LOGOUT} from '../constants';
+import {LOGIN, LOGOUT, SET_USER} from '../constants';
 const initialState = {
   token: undefined,
   refreshToken: undefined,
+  user: undefined,
 };
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -16,6 +17,11 @@ const userReducer = (state = initialState, action) => {
         ...state,
         token: undefined,
         refreshToken: undefined,
+      };
+    case SET_USER:
+      return {
+        ...state,
+        user: action.payload,
       };
     default:
       return state;

@@ -1,15 +1,15 @@
-import ProductCardModel from './product-card-model';
-import CartModel from './cart-item-model';
+import {ProductCard, Cart, User} from './index';
 
 export default class State {
   cart: {
-    cart: CartModel[];
+    cart: Cart[];
   };
   shop: {
-    products: ProductCardModel[];
+    products: ProductCard[];
   };
   user: {
     token?: string;
     refreshToken?: string;
+    user?: User;
   };
 }
