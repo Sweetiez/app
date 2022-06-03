@@ -83,7 +83,14 @@ const locale = {
     },
     account:{
       title: "Hello ",
-      logout: "Logout"
+      logout: "Logout",
+      edit: "Edit info",
+      firstname: "Firstname : ",
+      lastname: "Lastname : ",
+      email: "Email : ",
+      phone: "Phone : ",
+      unknown: "Unknown",
+      editPassword: "Edit Password"
     }
   },
 };

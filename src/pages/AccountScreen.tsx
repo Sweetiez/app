@@ -11,8 +11,27 @@ import {getUserRequest} from '../store/api/user';
 import {tokenSelector, userSelector} from '../store/selectors/user';
 import {GET_USER_ERROR} from '../store/constants';
 import {Text} from '../atomic/atoms';
+import getIcons from '../utils/icons';
+import colors from '../assets/colors';
 
-const Container = styled.View``;
+const Container = styled.View`
+  margin-top: 30px;
+`;
+const Space = styled.View`
+  margin-top: 10px;
+`;
+const Icon = styled.View`
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+`;
+const MainContainer = styled.View`
+  margin-top: 30px;
+  padding: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+`;
 
 function AccountScreen({navigation}) {
   const {t} = useTranslation();
@@ -33,6 +52,13 @@ function AccountScreen({navigation}) {
     });
   }, [dispatch, token]);
 
+  const handleEdit = () => {
+    // TODO
+  };
+  const handleEditPassword = () => {
+    // TODO
+  };
+
   const handleLogout = () => {
     dispatch(logout());
     navigation.reset({
@@ -45,16 +71,32 @@ function AccountScreen({navigation}) {
     return <Loader />;
   }
 
+  // TODO insert fidelity points
+
+  const phone = user.phone ? user.phone : t('account.unknown');
+
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Title title={t('account.title')} />
-        <Text content={user.firstName} size={12} />
-        <Text content={user.lastName} size={12} />
-        <Text content={user.email} size={12} />
-        <Container>
-          <Button text={t('account.logout')} onPress={handleLogout} />
-        </Container>
+        <Title title={t('account.title') + user.firstName} />
+        <Icon>{getIcons('account', colors.yellow, 100)}</Icon>
+        <MainContainer>
+          <Text content={t('account.firstname') + user.firstName} size={20} />
+          <Text content={t('account.lastname') + user.lastName} size={20} />
+          <Text content={t('account.email') + user.email} size={20} />
+          <Text content={t('account.phone') + phone} size={20} />
+
+          <Container>
+            <Button
+              text={t('account.editPassword')}
+              onPress={handleEditPassword}
+            />
+            <Space />
+            <Button text={t('account.edit')} onPress={handleEdit} />
+            <Space />
+            <Button text={t('account.logout')} onPress={handleLogout} />
+          </Container>
+        </MainContainer>
       </ScrollView>
     </SafeAreaView>
   );

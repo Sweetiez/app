@@ -23,6 +23,7 @@ const Container = styled.TouchableOpacity<{color}>`
   align-items: center;
   padding: 5px 10px;
   border-radius: 10px;
+  justify-content: center;
 `;
 const Button: React.FC<Props> = ({
   text,
