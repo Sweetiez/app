@@ -41,7 +41,7 @@ function AccountScreen({navigation}) {
     });
   };
 
-  if (isLoading) {
+  if (isLoading || !user) {
     return <Loader />;
   }
 

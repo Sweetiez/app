@@ -1,4 +1,4 @@
-import {LOGIN, LOGOUT, GET_USER} from '../constants';
+import {LOGIN, LOGOUT, SET_USER} from '../constants';
 import {User} from '../../model';
 
 export function login(tokens) {
@@ -14,7 +14,7 @@ export function logout() {
 }
 export function setUser(user: User) {
   return {
-    type: GET_USER,
+    type: SET_USER,
     payload: user,
   };
 }

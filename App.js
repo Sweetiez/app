@@ -42,7 +42,7 @@ const App: () => Node = () => {
                         options={itemsIntoCart > 0 ? { tabBarBadge: itemsIntoCart} : null}
             />
             {
-                hasToken ?
+                !!hasToken ?
                     <Tab.Screen name={t('tabBar.account')} component={AccountConnectedStackScreen} />
                     :
                     <Tab.Screen name={t('tabBar.account')} component={AccountNotConnectedStackScreen} />

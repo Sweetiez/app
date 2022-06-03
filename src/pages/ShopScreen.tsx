@@ -9,8 +9,11 @@ import styled from 'styled-components';
 import {updateShop} from '../store/actions/shop';
 import productSelector from '../store/selectors/shop';
 import {getPublishedProducts} from '../store/api/shop';
-import {PRODUCT_ERROR} from '../store/constants';
+import {GET_USER_ERROR, PRODUCT_ERROR} from '../store/constants';
 import Loader from '../atomic/atoms/loader';
+import {getUserRequest} from '../store/api/user';
+import {setUser} from '../store/actions/user';
+import {tokenSelector, userSelector} from '../store/selectors/user';
 
 const Items = styled.View`
   flex: 1;
@@ -21,9 +24,22 @@ function ShopScreen({navigation}) {
   const {t} = useTranslation();
   const dispatch = useDispatch();
   const shop = useSelector(productSelector);
+  const token = useSelector(tokenSelector);
+  const user = useSelector(userSelector);
   const [isLoading, setLoading] = useState<boolean>(false);
 
-  // TODO loader !
+  useEffect(() => {
+    if (!user && token) {
+      getUserRequest(token).then(data => {
+        setLoading(false);
+        if (data === GET_USER_ERROR) {
+          // todo display error modal
+        } else {
+          dispatch(setUser(data));
+        }
+      });
+    }
+  }, [dispatch, token, user]);
 
   useEffect(() => {
     setLoading(true);

@@ -9,10 +9,10 @@ import getIcons from '../utils/icons';
 import colors from '../assets/colors';
 import {Button} from '../atomic/atoms';
 import {validateEmail, validatePassword} from '../utils/validator';
-import {loginRequest} from '../store/api/user';
+import {getUserRequest, loginRequest} from '../store/api/user';
 import {useDispatch} from 'react-redux';
-import {login} from '../store/actions/user';
-import {LOGIN_ERROR} from '../store/constants';
+import {login, setUser} from '../store/actions/user';
+import {GET_USER_ERROR, LOGIN_ERROR} from '../store/constants';
 
 const Form = styled.View`
   margin-right: 20px;

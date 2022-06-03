@@ -33,7 +33,7 @@ export const buildRequest = async (
       headers,
       body: JSON.stringify(data),
     });
-    if (response.status === 200) {
+    if (response.status === 200 || response.status === 201) {
       return onSuccess(response);
     } else {
       return onError();

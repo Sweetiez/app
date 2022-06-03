@@ -51,7 +51,7 @@ export const getUserRequest = async (
 ): Promise<User | typeof GET_USER_ERROR> => {
   return buildRequest(
     'GET',
-    '/user',
+    '/user/me',
     undefined,
     () => {
       return GET_USER_ERROR;
