@@ -19,3 +19,4 @@ export const GET_USER_ERROR = 'GET_USER_ERROR';
 
 // evaluation
 export const COMMENT_ERROR = 'COMMENT_ERROR';
+export const COMMENT_OK = 'COMMENT_OK';

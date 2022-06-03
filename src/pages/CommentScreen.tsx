@@ -53,10 +53,10 @@ const CommentScreen: React.FC<Props> = ({route, navigation}) => {
 
   const validateComment = () => {
     if (!rating) {
-      setError(true);
+      setError(t('comment.errorStar'));
       return false;
     }
-    setError(false);
+    setError(undefined);
     return true;
   };
 
@@ -74,7 +74,7 @@ const CommentScreen: React.FC<Props> = ({route, navigation}) => {
         if (result === COMMENT_ERROR) {
           setError(t('comment.commentError'));
         } else {
-          navigation.goBack(); // will this suffice to update detail?
+          navigation.reset({index: 1, routes: [{name: 'Home'}]});
         }
       });
     }
@@ -103,7 +103,7 @@ const CommentScreen: React.FC<Props> = ({route, navigation}) => {
             numberOfLines={10}
           />
           <Space />
-          {error && <Error>{t('comment.errorStar')}</Error>}
+          {error && <Error>{error}</Error>}
           <Button
             text={t('comment.send')}
             onPress={onCommentPress}

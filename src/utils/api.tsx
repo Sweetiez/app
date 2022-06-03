@@ -26,7 +26,6 @@ export const buildRequest = async (
   token,
 ) => {
   const headers = buildHeaders(token);
-
   try {
     const response = await fetch(getUrl(url), {
       method: method,

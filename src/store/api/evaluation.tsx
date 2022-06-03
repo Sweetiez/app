@@ -1,7 +1,7 @@
-import {COMMENT_ERROR} from '../constants';
+import {COMMENT_ERROR, COMMENT_OK} from '../constants';
 import {buildRequest} from '../../utils/api';
 
-export function commentRequest(token, data) {
+export function commentRequest(data, token) {
   return buildRequest(
     'POST',
     '/evaluations',
@@ -9,8 +9,8 @@ export function commentRequest(token, data) {
     () => {
       return COMMENT_ERROR;
     },
-    response => {
-      return response.json();
+    () => {
+      return COMMENT_OK;
     },
     token,
   );

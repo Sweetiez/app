@@ -30,7 +30,7 @@ const Stars: React.FC<StarsProps> = ({
           <Star
             color={color}
             fill={rating >= r ? color : voidColor}
-            onPress={() => setRating(r)}
+            onPress={() => (setRating ? setRating(r) : {})}
             height={size}
             width={size}
             key={r + '-' + itemId}
