@@ -78,7 +78,8 @@ const locale = {
       title: "Commenter",
       send: 'Envoyer',
       commentPlaceholder: 'Votre commentaire',
-      errorStar: 'Veuillez renseigner une note'
+      errorStar: 'Veuillez renseigner une note',
+      commentError: "Une erreur est survenue pendant la publication du commentaire"
     },
     account:{
       title: "Bonjour ",

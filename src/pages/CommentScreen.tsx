@@ -3,11 +3,15 @@ import React, {useState} from 'react';
 import {SafeAreaView, ScrollView} from 'react-native';
 import styled from 'styled-components';
 import {Title, Back, Button} from './../atomic/atoms';
-import {ProductCard} from '../model';
+import {CommentRequest, ProductCard} from '../model';
 import {Stars, Input} from '../atomic/molecules';
 import {useTranslation} from 'react-i18next';
 import colors from '../assets/colors';
 import getIcons from '../utils/icons';
+import {COMMENT_ERROR} from '../store/constants';
+import {commentRequest} from '../store/api/evaluation';
+import {useSelector} from 'react-redux';
+import {tokenSelector, userSelector} from '../store/selectors/user';
 
 interface Props {
   product: ProductCard;
@@ -40,6 +44,8 @@ const Error = styled.Text`
 const CommentScreen: React.FC<Props> = ({route, navigation}) => {
   const {productId} = route.params;
   const {t} = useTranslation();
+  const token = useSelector(tokenSelector);
+  const user = useSelector(userSelector);
   const [comment, setComment] = useState<string>('');
   const [rating, setRating] = useState<number>(undefined);
   const [isLoading, setLoading] = useState<boolean>(false);
@@ -47,23 +53,30 @@ const CommentScreen: React.FC<Props> = ({route, navigation}) => {
 
   const validateComment = () => {
     if (!rating) {
-      setError(true);
+      setError(t('comment.errorStar'));
       return false;
     }
-    setError(false);
+    setError(undefined);
     return true;
   };
 
   const onCommentPress = () => {
-    if (validateComment()) {
-      // TODO send comment on the API
+    if (validateComment() && user) {
       setLoading(true);
-      const data = {
-        productId,
-        comment,
-        rating,
+      const data: CommentRequest = {
+        author: user.id,
+        subject: productId,
+        content: comment,
+        mark: rating,
       };
-      // then go back
+      commentRequest(data, token).then(result => {
+        setLoading(false);
+        if (result === COMMENT_ERROR) {
+          setError(t('comment.commentError'));
+        } else {
+          navigation.reset({index: 1, routes: [{name: 'Home'}]});
+        }
+      });
     }
   };
 
@@ -90,7 +103,7 @@ const CommentScreen: React.FC<Props> = ({route, navigation}) => {
             numberOfLines={10}
           />
           <Space />
-          {error && <Error>{t('comment.errorStar')}</Error>}
+          {error && <Error>{error}</Error>}
           <Button
             text={t('comment.send')}
             onPress={onCommentPress}

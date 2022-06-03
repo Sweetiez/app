@@ -78,7 +78,8 @@ const locale = {
       title: "Comment",
       send: 'Send',
       commentPlaceholder: 'Your comment',
-      errorStar: 'Please choose a rating'
+      errorStar: 'Please choose a rating',
+      commentError: "There was an error with publishing the comment",
     },
     account:{
       title: "Hello ",

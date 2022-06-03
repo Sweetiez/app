@@ -3,16 +3,17 @@ import React, {useEffect, useState} from 'react';
 import {SafeAreaView, ScrollView} from 'react-native';
 import styled from 'styled-components';
 import {SliderBox} from 'react-native-image-slider-box';
-import {Text, Title, Back} from './../atomic/atoms';
+import {Text, Title, Back, Loader} from './../atomic/atoms';
 import {ProductCard} from '../model';
 import {Stars, Button} from '../atomic/molecules';
 import {Comment, AddToBasket} from '../atomic/organisms';
 import {useTranslation} from 'react-i18next';
 import {addItemToCart} from '../store/actions/cart';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {getProduct} from '../store/api/shop';
 import colors from '../assets/colors';
 import getIcons from '../utils/icons';
+import {tokenSelector} from '../store/selectors/user';
 
 interface Props {
   product: ProductCard;
@@ -43,12 +44,6 @@ const StarsContainer = styled.View`
   margin-bottom: 10px;
 `;
 
-const StyledLoader = styled.ActivityIndicator`
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-`;
-
 const NoImage = styled.View`
   margin: auto;
 `;
@@ -57,11 +52,15 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
   const id = route.params.productId;
   const {t} = useTranslation();
   const dispatch = useDispatch();
+  const token = useSelector(tokenSelector);
   const [quantity, setQuantity] = useState<number>(0);
   const [product, setProduct] = useState<ProductCard>(undefined);
+  const [isLoading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
+    setLoading(true);
     getProduct(id).then(data => {
+      setLoading(false);
       setProduct(data);
     });
   }, [id]);
@@ -77,8 +76,8 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
 
   // TODO paginate or lazy list for comment list. Do an organism 'comments' managing that?
 
-  if (!product) {
-    return <StyledLoader size="large" color={colors.yellow} />;
+  if (!product || isLoading) {
+    return <Loader />;
   }
 
   return (
@@ -108,13 +107,16 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
           </Price>
         </Container>
         <Comments>
-          <CommentButton>
-            <Button
-              text={t('details.comment')}
-              onPress={onCommentPress}
-              iconName="pen"
-            />
-          </CommentButton>
+          {!!token && (
+            <CommentButton>
+              <Button
+                text={t('details.comment')}
+                onPress={onCommentPress}
+                iconName="pen"
+              />
+            </CommentButton>
+          )}
+
           {product.comments.map(comment => (
             <Comment comment={comment} />
           ))}

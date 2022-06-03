@@ -15,6 +15,8 @@ const Recipes = styled.View`
 
 function RecipesScreen({navigation}) {
   const {t} = useTranslation();
+  // TODO get receipes from api with a loader
+
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
