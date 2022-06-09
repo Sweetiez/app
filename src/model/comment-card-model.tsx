@@ -4,4 +4,5 @@ export default class CommentCardModel {
   content: string | undefined;
   rating: number | undefined;
   date: string | undefined;
+  authorName: string | undefined;
 }

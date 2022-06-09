@@ -40,7 +40,7 @@ const Container = styled.View`
 `;
 
 const Comment: React.FC<Props> = ({comment}) => {
-  const {author, content, date, rating} = comment;
+  const {author, authorName, content, date, rating} = comment;
   const {t} = useTranslation();
   const [showMore, setShowMore] = useState<boolean>(false);
   const [canShowMore, setCanShowMore] = useState<boolean>(false);
@@ -64,7 +64,7 @@ const Comment: React.FC<Props> = ({comment}) => {
         </TouchableOpacity>
       )}
       <Bottom>
-        <Author>{author + ' - '}</Author>
+        <Author>{authorName + ' - '}</Author>
         <Date>{date}</Date>
       </Bottom>
     </Container>

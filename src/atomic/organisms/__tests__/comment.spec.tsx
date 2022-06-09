@@ -7,7 +7,8 @@ describe('Comment', () => {
   it('renders correctly', () => {
     const comment = {
       id: '1',
-      author: 'John Doe',
+      author: 'abcd123',
+      authorName: 'John Doe',
       content: 'This is a typical comment',
       rating: 4,
       date: '12/12/2012',
