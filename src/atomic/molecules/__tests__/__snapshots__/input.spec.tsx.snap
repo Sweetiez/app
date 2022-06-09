@@ -128,7 +128,7 @@ exports[`Input renders with rightIcon 1`] = `
         "opacity": 1,
         "position": "absolute",
         "right": 10,
-        "top": 10,
+        "top": 5,
       }
     }
   >
