@@ -8,8 +8,14 @@ const locale = {
     form:{
       incorrectEmail: 'Please fill in a correct email',
       incorrectPassword: 'Please fill in a correct password',
-      blankInputs: "Please fill all the inputs",
+      incorrectFirstname: 'Please fill in a correct firstname',
+      incorrectLastname: 'Please fill in a correct firstname',
+      fillPasswords: "Please fill the current, new password and password confirm inputs",
+      blankInputs: "Please fill all the mandatory inputs (first and last name, email)",
+      blankInputsWithPassword: "Please fill all the mandatory inputs (first and last name, email, password)",
       passwordPlaceholder: "Password",
+      newPasswordPlaceholder: "New Password",
+      currentPasswordPlaceholder: 'Current Password',
       passwordConfirmPlaceholder: "Confirm Password",
       emailPlaceholder: "Email",
       firstnamePlaceholder:"Firstname",
@@ -91,6 +97,14 @@ const locale = {
       phone: "Phone : ",
       unknown: "Unknown",
       editPassword: "Edit Password"
+    },
+    editAccount:{
+      title: "Edit your info",
+      save: "Save",
+      error: "An error occurred saving your info"
+    },
+    editPassword:{
+      title: "Edit your password"
     }
   },
 };

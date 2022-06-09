@@ -2,11 +2,11 @@ import React from 'react';
 
 import {SafeAreaView, ScrollView} from 'react-native';
 import {SliderBox} from 'react-native-image-slider-box';
-import {Title, Back} from '../atomic/atoms';
+import {Title, Back} from '../../atomic/atoms';
 import styled from 'styled-components';
-import {Recipe} from '../model';
-import colors from '../assets/colors';
-import {Cooking, Steps} from '../atomic/organisms';
+import {Recipe} from '../../model';
+import colors from '../../assets/colors';
+import {Cooking, Steps} from '../../atomic/organisms';
 
 const StyledSliderBox = styled(SliderBox)`
   width: 100%;

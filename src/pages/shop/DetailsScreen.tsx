@@ -3,17 +3,17 @@ import React, {useEffect, useState} from 'react';
 import {SafeAreaView, ScrollView} from 'react-native';
 import styled from 'styled-components';
 import {SliderBox} from 'react-native-image-slider-box';
-import {Text, Title, Back, Loader} from './../atomic/atoms';
-import {ProductCard} from '../model';
-import {Stars, Button} from '../atomic/molecules';
-import {Comment, AddToBasket} from '../atomic/organisms';
+import {Text, Title, Back, Loader} from '../../atomic/atoms';
+import {ProductCard} from '../../model';
+import {Stars, Button} from '../../atomic/molecules';
+import {Comment, AddToBasket} from '../../atomic/organisms';
 import {useTranslation} from 'react-i18next';
-import {addItemToCart} from '../store/actions/cart';
+import {addItemToCart} from '../../store/actions/cart';
 import {useDispatch, useSelector} from 'react-redux';
-import {getProduct} from '../store/api/shop';
-import colors from '../assets/colors';
-import getIcons from '../utils/icons';
-import {tokenSelector} from '../store/selectors/user';
+import {getProduct} from '../../store/api/shop';
+import colors from '../../assets/colors';
+import getIcons from '../../utils/icons';
+import {tokenSelector} from '../../store/selectors/user';
 
 interface Props {
   product: ProductCard;

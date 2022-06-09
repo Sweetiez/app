@@ -2,7 +2,7 @@ import React from 'react';
 
 import {useTranslation} from 'react-i18next';
 import {Button, SafeAreaView, ScrollView} from 'react-native';
-import {Title} from './../atomic/atoms';
+import {Title} from '../../atomic/atoms';
 
 function EventsScreen({navigation}) {
   const {t} = useTranslation();

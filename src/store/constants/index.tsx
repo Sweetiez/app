@@ -16,6 +16,10 @@ export const REGISTER_OK = 'REGISTER_OK';
 export const REGISTER_ERROR = 'REGISTER_ERROR';
 export const SET_USER = 'SET_USER';
 export const GET_USER_ERROR = 'GET_USER_ERROR';
+export const UPDATE_OK = 'UPDATE_OK';
+export const UPDATE_ERROR = 'UPDATE_ERROR';
+export const UPDATE_PASSWORD_OK = 'UPDATE_PASSWORD_OK';
+export const UPDATE_PASSWORD_ERROR = 'UPDATE_PASSWORD_ERROR';
 
 // evaluation
 export const COMMENT_ERROR = 'COMMENT_ERROR';

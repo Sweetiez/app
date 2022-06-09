@@ -2,9 +2,9 @@ import React from 'react';
 
 import {useTranslation} from 'react-i18next';
 import {SafeAreaView, ScrollView} from 'react-native';
-import {fakeRecipes} from '../data/recipes';
-import {Title} from '../atomic/atoms';
-import {Recipe} from '../atomic/organisms';
+import {fakeRecipes} from '../../data/recipes';
+import {Title} from '../../atomic/atoms';
+import {Recipe} from '../../atomic/organisms';
 import styled from 'styled-components';
 
 const Recipes = styled.View`

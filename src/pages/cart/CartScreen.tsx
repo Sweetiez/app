@@ -2,12 +2,12 @@ import React, {useState} from 'react';
 
 import {useTranslation} from 'react-i18next';
 import {ScrollView} from 'react-native';
-import {Title} from './../atomic/atoms';
+import {Title} from '../../atomic/atoms';
 import styled from 'styled-components';
 import {useSelector} from 'react-redux';
-import {cartSelector, totalPriceSelector} from '../store/selectors/cart';
-import {CartItem} from '../atomic/organisms';
-import {Button} from '../atomic/atoms';
+import {cartSelector, totalPriceSelector} from '../../store/selectors/cart';
+import {CartItem} from '../../atomic/organisms';
+import {Button} from '../../atomic/atoms';
 
 const CartContainer = styled.View`
   flex: 1;

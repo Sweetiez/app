@@ -8,8 +8,14 @@ const locale = {
     form:{
       incorrectEmail: 'Veuillez rentrer un email correct',
       incorrectPassword: 'Veuillez rentrer un mot de passe correct',
-      blankInputs: "Veuillez remplir tous les champs",
+      incorrectFirstname: 'Veuillez rentrer un prénom correct',
+      incorrectLastname: 'Veuillez rentrer un nom correct',
+      fillPasswords: "Veuillez remplir le mot de passe actuel, nouveau et sa confirmation",
+      blankInputs: "Veuillez remplir tous les champs obligatoires (prénom, nom et email)",
+      blankInputsWithPassword: "Veuillez remplir tous les champs obligatoires (prénom, nom, mot de passe et email)",
       passwordPlaceholder: "Mot de Passe",
+      currentPasswordPlaceholder: 'Mot de passe actuel',
+      newPasswordPlaceholder: "Nouveau mot de passe",
       passwordConfirmPlaceholder: "Confirmation de mot de Passe",
       emailPlaceholder: "Email",
       firstnamePlaceholder:"Prénom",
@@ -90,7 +96,15 @@ const locale = {
       email: "Email : ",
       phone: "Téléphone : ",
       unknown: "Non renseigné",
-      editPassword: "Modifier le mot de passe"
+      editPassword: "Modifier le mot de passe",
+    },
+    editAccount:{
+      title: "Modifiez vos informations",
+      save: "Enregistrer",
+      error: "Une erreur est survenue lors de la sauvegarde des informations"
+    },
+    editPassword:{
+      title: "Modifier votre mot de passe"
     }
   }
 };

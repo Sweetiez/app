@@ -3,17 +3,17 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 import {ScrollView} from 'react-native';
 
-import {Title} from './../atomic/atoms';
-import {Item} from './../atomic/organisms';
+import {Title} from '../../atomic/atoms';
+import {Item} from '../../atomic/organisms';
 import styled from 'styled-components';
-import {updateShop} from '../store/actions/shop';
-import productSelector from '../store/selectors/shop';
-import {getPublishedProducts} from '../store/api/shop';
-import {GET_USER_ERROR, PRODUCT_ERROR} from '../store/constants';
-import Loader from '../atomic/atoms/loader';
-import {getUserRequest} from '../store/api/user';
-import {setUser} from '../store/actions/user';
-import {tokenSelector, userSelector} from '../store/selectors/user';
+import {updateShop} from '../../store/actions/shop';
+import productSelector from '../../store/selectors/shop';
+import {getPublishedProducts} from '../../store/api/shop';
+import {GET_USER_ERROR, PRODUCT_ERROR} from '../../store/constants';
+import Loader from '../../atomic/atoms/loader';
+import {getUserRequest} from '../../store/api/user';
+import {setUser} from '../../store/actions/user';
+import {tokenSelector, userSelector} from '../../store/selectors/user';
 
 const Items = styled.View`
   flex: 1;

@@ -7,5 +7,7 @@ export {default as Recipe} from './recipes-model';
 export {default as RecipeStep} from './recipe-step-model';
 export {default as Store} from './store-model';
 export {default as RegisterRequest} from './register-request-model';
+export {default as UpdateRequest} from './update-request-model';
+export {default as UpdatePasswordRequest} from './update-password-request-model';
 export {default as CommentRequest} from './comment-request-model';
 export {default as User} from './user-model';

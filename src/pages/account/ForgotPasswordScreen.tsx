@@ -2,24 +2,18 @@ import React, {useState} from 'react';
 
 import {useTranslation} from 'react-i18next';
 import {SafeAreaView, ScrollView} from 'react-native';
-import {Title} from './../atomic/atoms';
-import {Input} from './../atomic/molecules';
+import {Title} from '../../atomic/atoms';
+import {Input} from '../../atomic/molecules';
 import styled from 'styled-components';
-import getIcons from '../utils/icons';
-import colors from '../assets/colors';
-import {Back, Button} from '../atomic/atoms';
-import {validateEmail} from '../utils/validator';
+import getIcons from '../../utils/icons';
+import colors from '../../assets/colors';
+import {Back, Button, Error} from '../../atomic/atoms';
+import {validateEmail} from '../../utils/validator';
 
 const Form = styled.View`
   margin-right: 20px;
   margin-left: 20px;
   margin-top: 40px;
-`;
-const Error = styled.Text`
-  color: ${colors.red};
-  margin-bottom: 10px;
-  margin-right: auto;
-  margin-left: auto;
 `;
 const Icon = styled.View`
   margin-top: 30px;
@@ -72,7 +66,7 @@ function LoginScreen({navigation}) {
             placeholder={t('form.emailPlaceholder')}
             keyboardType="email-address"
           />
-          {error && <Error>{error}</Error>}
+          {error && <Error content={error} />}
           <Button
             text={t('forgotPassword.validate')}
             onPress={forgotPassword}

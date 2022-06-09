@@ -2,31 +2,25 @@ import React, {useState} from 'react';
 
 import {useTranslation} from 'react-i18next';
 import {SafeAreaView, ScrollView} from 'react-native';
-import {Title} from './../atomic/atoms';
-import {Input} from './../atomic/molecules';
+import {Title, Error, Button} from '../../atomic/atoms';
+import {Input} from '../../atomic/molecules';
 import styled from 'styled-components';
-import getIcons from '../utils/icons';
-import colors from '../assets/colors';
-import {Button} from '../atomic/atoms';
+import getIcons from '../../utils/icons';
+import colors from '../../assets/colors';
 import {
   validateEmail,
+  validateName,
   validatePassword,
   validatePhone,
-} from '../utils/validator';
-import {registerRequest} from '../store/api/user';
-import {REGISTER_OK} from '../store/constants';
-import {RegisterRequest} from '../model';
+} from '../../utils/validator';
+import {registerRequest} from '../../store/api/user';
+import {REGISTER_OK} from '../../store/constants';
+import {RegisterRequest} from '../../model';
 
 const Form = styled.View`
   margin-right: 20px;
   margin-left: 20px;
   margin-top: 40px;
-`;
-const Error = styled.Text`
-  color: ${colors.red};
-  margin-bottom: 10px;
-  margin-right: auto;
-  margin-left: auto;
 `;
 const Icon = styled.View`
   margin-top: 30px;
@@ -89,7 +83,13 @@ function RegisterScreen({navigation}) {
       firstname === '' ||
       lastname === ''
     ) {
-      setError(t('form.blankInputs'));
+      setError(t('form.blankInputsWithPassword'));
+      return false;
+    } else if (!validateName(firstname)) {
+      setError(t('form.incorrectFirstname'));
+      return false;
+    } else if (!validateName(lastname)) {
+      setError(t('form.incorrectLastname'));
       return false;
     } else if (!validateEmail(email)) {
       setError(t('form.incorrectEmail'));
@@ -156,7 +156,7 @@ function RegisterScreen({navigation}) {
             placeholder={t('form.phonePlaceholder')}
             keyboardType="phone-pad"
           />
-          {error && <Error>{error}</Error>}
+          {error && <Error content={error} />}
           <Button
             text={t('register.register')}
             onPress={register}

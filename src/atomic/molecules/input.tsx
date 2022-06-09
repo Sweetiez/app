@@ -29,7 +29,7 @@ const StyledInput = styled.TextInput<{numberOfLines}>`
 const StyledIcon = styled.TouchableOpacity`
   position: absolute;
   right: 10px;
-  top: 10px;
+  top: 5px;
 `;
 const Input: React.FC<Props> = ({
   onChangeText,
