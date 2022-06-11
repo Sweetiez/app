@@ -11,7 +11,7 @@ import {ReportEvaluationRequest} from '../../model';
 import {useSelector} from 'react-redux';
 import {tokenSelector, userSelector} from '../../store/selectors/user';
 import {reportRequest} from '../../store/api/evaluation';
-import {REPORT_OK} from '../../store/constants';
+import {REPORT_ALREADY_MADE, REPORT_OK} from '../../store/constants';
 
 interface Props {
   show: boolean;
@@ -21,10 +21,11 @@ interface Props {
 
 const Container = styled.View`
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   width: 100%;
 `;
 const Row = styled.View`
+  margin-top: 20px;
   flex-direction: row;
   justify-content: space-between;
   width: 70%;
@@ -34,7 +35,7 @@ const ReportModal: React.FC<Props> = ({show, setShow, evaluationId}) => {
   const {t} = useTranslation();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [reason, setReason] = useState<string | undefined>(undefined);
-  const [error, setError] = useState<boolean | undefined>(undefined);
+  const [error, setError] = useState<string | undefined>(undefined);
 
   const user = useSelector(userSelector);
   const token = useSelector(tokenSelector);
@@ -50,10 +51,12 @@ const ReportModal: React.FC<Props> = ({show, setShow, evaluationId}) => {
     reportRequest(data, token).then(response => {
       setIsLoading(false);
       if (response === REPORT_OK) {
-        setError(false);
+        setError(undefined);
         setShow(false);
+      } else if (response === REPORT_ALREADY_MADE) {
+        setError(t('reportModal.errorAlreadyMade'));
       } else {
-        setError(true);
+        setError(t('reportModal.error'));
       }
     });
   };
@@ -125,7 +128,7 @@ const ReportModal: React.FC<Props> = ({show, setShow, evaluationId}) => {
           items={options}
         />
       </Container>
-      {error && <Error content={t('reportModal.error')} />}
+      {error && <Error content={error} />}
       <Row>
         <Button
           disabled={!reason}
