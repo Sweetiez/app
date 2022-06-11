@@ -1,17 +1,21 @@
-import React, {useEffect, useState} from 'react';
-
+import React, {useCallback, useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {SafeAreaView, ScrollView} from 'react-native';
-import {Title, Loader, Text, Link} from '../../../atomic/atoms';
-import styled from 'styled-components';
-import {Button} from '../../../atomic/molecules';
 import {useDispatch, useSelector} from 'react-redux';
+import styled from 'styled-components';
+
+import {ErrorModal} from '../../../atomic/organisms';
+import {Title, Loader, Text, Link} from '../../../atomic/atoms';
+import {Button} from '../../../atomic/molecules';
+
 import {logout, setUser} from '../../../store/actions/user';
 import {getUserRequest} from '../../../store/api/user';
 import {tokenSelector, userSelector} from '../../../store/selectors/user';
 import {GET_USER_ERROR} from '../../../store/constants';
+
 import getIcons from '../../../utils/icons';
 import colors from '../../../assets/colors';
+import {checkConnectivity} from '../../../utils/connectivity';
 
 const Container = styled.View`
   margin-top: 30px;
@@ -38,18 +42,33 @@ function AccountScreen({navigation}) {
   const token = useSelector(tokenSelector);
   const user = useSelector(userSelector);
   const [isLoading, setLoading] = useState<boolean>(false);
+  const [showErrorModal, setShowErrorModal] = useState<boolean>(false);
 
-  useEffect(() => {
+  const getData = useCallback(() => {
     setLoading(true);
     getUserRequest(token).then(data => {
       setLoading(false);
       if (data === GET_USER_ERROR) {
-        // todo display error modal
+        setShowErrorModal(true);
       } else {
         dispatch(setUser(data));
       }
     });
   }, [dispatch, token]);
+
+  useEffect(() => {
+    checkConnectivity().then(isConnected => {
+      if (!isConnected && !showErrorModal) {
+        setShowErrorModal(true);
+      } else {
+        getData();
+      }
+    });
+  }, [getData, showErrorModal]);
+
+  useEffect(() => {
+    getData();
+  }, [getData, dispatch, token]);
 
   const handleEdit = () => {
     navigation.navigate('EditAccount');
@@ -77,6 +96,7 @@ function AccountScreen({navigation}) {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <ErrorModal show={showErrorModal} setShow={setShowErrorModal} />
         <Title title={t('account.title') + user.firstName} />
         <Icon>{getIcons('account', colors.yellow, 100)}</Icon>
         <MainContainer>

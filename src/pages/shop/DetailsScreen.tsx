@@ -1,19 +1,24 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 
+import {useDispatch, useSelector} from 'react-redux';
 import {SafeAreaView, ScrollView} from 'react-native';
+import {useTranslation} from 'react-i18next';
 import styled from 'styled-components';
 import {SliderBox} from 'react-native-image-slider-box';
+
 import {Text, Title, Back, Loader} from '../../atomic/atoms';
-import {ProductCard} from '../../model';
 import {Stars, Button} from '../../atomic/molecules';
 import {Comment, AddToBasket} from '../../atomic/organisms';
-import {useTranslation} from 'react-i18next';
+
 import {addItemToCart} from '../../store/actions/cart';
-import {useDispatch, useSelector} from 'react-redux';
 import {getProduct} from '../../store/api/shop';
+import {tokenSelector} from '../../store/selectors/user';
+import {PRODUCT_ERROR} from '../../store/constants';
+
+import {ProductCard} from '../../model';
 import colors from '../../assets/colors';
 import getIcons from '../../utils/icons';
-import {tokenSelector} from '../../store/selectors/user';
+import {checkConnectivity} from '../../utils/connectivity';
 
 interface Props {
   product: ProductCard;
@@ -56,14 +61,33 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
   const [quantity, setQuantity] = useState<number>(0);
   const [product, setProduct] = useState<ProductCard>(undefined);
   const [isLoading, setLoading] = useState<boolean>(false);
+  const [showErrorModal, setShowErrorModal] = useState<boolean>(false);
 
-  useEffect(() => {
+  const getData = useCallback(() => {
     setLoading(true);
     getProduct(id).then(data => {
       setLoading(false);
-      setProduct(data);
+      if (data !== PRODUCT_ERROR) {
+        setProduct(data);
+      } else if (!showErrorModal) {
+        setShowErrorModal(true);
+      }
     });
-  }, [id]);
+  }, [id, showErrorModal]);
+
+  useEffect(() => {
+    checkConnectivity().then(isConnected => {
+      if (!isConnected && !showErrorModal) {
+        setShowErrorModal(true);
+      } else {
+        getData();
+      }
+    });
+  }, [getData, showErrorModal]);
+
+  useEffect(() => {
+    getData();
+  }, [getData, id]);
 
   const onCommentPress = () => {
     navigation.navigate('Comment', {productId: id});
