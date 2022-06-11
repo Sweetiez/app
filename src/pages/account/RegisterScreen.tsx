@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import {useTranslation} from 'react-i18next';
 import {SafeAreaView, ScrollView} from 'react-native';
-import {Title, Error, Button} from '../../atomic/atoms';
+import {Title, Error, Button, Back, Link} from '../../atomic/atoms';
 import {Input} from '../../atomic/molecules';
 import styled from 'styled-components';
 import getIcons from '../../utils/icons';
@@ -27,12 +27,6 @@ const Icon = styled.View`
   margin-bottom: 30px;
   justify-content: center;
   align-items: center;
-`;
-const Link = styled.Text`
-  text-decoration: underline;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 30px;
 `;
 const Register = styled.Text`
   margin-right: auto;
@@ -113,6 +107,7 @@ function RegisterScreen({navigation}) {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <Back navigation={navigation} color={colors.black} />
         <Title title={t('register.title')} />
         <Form>
           <Icon>{getIcons('account', colors.yellow, 100)}</Icon>
@@ -165,10 +160,15 @@ function RegisterScreen({navigation}) {
         </Form>
         <Register>
           {t('register.alreadyHaveAccount')}
-          <Link onPress={() => navigation.navigate('Login')}>
-            {t('register.login')}
-          </Link>
+          <Link
+            onPress={() => navigation.navigate('Login')}
+            content={t('register.login')}
+          />
         </Register>
+        <Link
+          content={t('cgu.title')}
+          onPress={() => navigation.navigate('Common', {screen: 'CGU'})}
+        />
       </ScrollView>
     </SafeAreaView>
   );

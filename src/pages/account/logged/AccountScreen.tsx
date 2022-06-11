@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 import {useTranslation} from 'react-i18next';
 import {SafeAreaView, ScrollView} from 'react-native';
-import {Title, Loader} from '../../../atomic/atoms';
+import {Title, Loader, Text, Link} from '../../../atomic/atoms';
 import styled from 'styled-components';
 import {Button} from '../../../atomic/molecules';
 import {useDispatch, useSelector} from 'react-redux';
@@ -10,7 +10,6 @@ import {logout, setUser} from '../../../store/actions/user';
 import {getUserRequest} from '../../../store/api/user';
 import {tokenSelector, userSelector} from '../../../store/selectors/user';
 import {GET_USER_ERROR} from '../../../store/constants';
-import {Text} from '../../../atomic/atoms';
 import getIcons from '../../../utils/icons';
 import colors from '../../../assets/colors';
 
@@ -97,6 +96,10 @@ function AccountScreen({navigation}) {
             <Button text={t('account.logout')} onPress={handleLogout} />
           </Container>
         </MainContainer>
+        <Link
+          onPress={() => navigation.navigate('Common', {screen: 'CGU'})}
+          content={t('cgu.title')}
+        />
       </ScrollView>
     </SafeAreaView>
   );
