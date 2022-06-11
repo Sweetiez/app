@@ -129,7 +129,8 @@ const locale = {
         illegalContent: "Contient des contenus ou des activités illégaux",
         other: "Autre..."
       },
-      error: 'Une erreur est survenue, veuillez réessayer plus tard'
+      error: 'Une erreur est survenue, veuillez réessayer plus tard',
+      errorAlreadyMade: 'Vous avez déjà signalé ce commentaire'
     }
   }
 };

@@ -129,7 +129,8 @@ const locale = {
         illegalContent: "Contains illegal content or activity",
         other: "Other..."
       },
-      error: 'An error occurred, please try again later'
+      error: 'An error occurred, please try again later',
+      errorAlreadyMade: 'You have already reported this comment'
     }
   },
 };

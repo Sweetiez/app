@@ -34,6 +34,8 @@ export const buildRequest = async (
     });
     if (response.status === 200 || response.status === 201) {
       return onSuccess(response);
+    } else if (response.status === 409) {
+      return onSuccess('409');
     } else {
       return onError();
     }
