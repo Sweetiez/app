@@ -5,8 +5,14 @@ import CommonStack from './src/navigators/common';
 import './src/i18n/index';
 import TabStack from "./src/navigators/tabs";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import moment from "moment";
+import "moment/min/locales";
+import i18next from "i18next";
 
 const App: () => Node = () => {
+
+  const locale =  i18next.language
+  moment.locale(locale);
 
   const Stack = createNativeStackNavigator();
   return (

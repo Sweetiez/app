@@ -1,4 +1,5 @@
 import React, {useCallback, useState} from 'react';
+import moment from 'moment';
 import styled from 'styled-components';
 import {Stars} from '../molecules';
 import {CommentCard} from '../../model';
@@ -47,7 +48,7 @@ const Comment: React.FC<Props> = ({comment}) => {
   const onTextLayout = useCallback(e => {
     setCanShowMore(e.nativeEvent.lines.length > 4);
   }, []);
-
+  console.log(moment.locale());
   return (
     <Container>
       <Stars rating={rating} size={15} itemId={author + date + rating} />
@@ -65,7 +66,7 @@ const Comment: React.FC<Props> = ({comment}) => {
       )}
       <Bottom>
         <Author>{authorName + ' - '}</Author>
-        <Date>{date}</Date>
+        <Date>{moment(date).format('DD MMMM YYYY, h:mm')}</Date>
       </Bottom>
     </Container>
   );
