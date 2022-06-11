@@ -1,4 +1,4 @@
-import CommentCardModel from './comment-card-model';
+import {CommentCard, Evaluation} from './index';
 
 export default class ProductCardModel {
   id: string | undefined;
@@ -7,6 +7,6 @@ export default class ProductCardModel {
   description: string | undefined;
   price: number | undefined;
   images: string[] | undefined;
-  rating: number | undefined;
-  comments: CommentCardModel[] | undefined;
+  evaluation: Evaluation | undefined;
+  comments: CommentCard[] | undefined;
 }

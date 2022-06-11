@@ -94,7 +94,7 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
         <Container>
           <Title title={product.name} size={30} />
           <StarsContainer>
-            <Stars rating={product.rating} itemId={id} />
+            <Stars rating={product.evaluation.mark} itemId={id} />
           </StarsContainer>
           <AddToBasket
             addToBasket={addToBasket}
