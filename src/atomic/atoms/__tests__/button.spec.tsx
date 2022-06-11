@@ -28,4 +28,10 @@ describe('Button', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('renders disabled', () => {
+    const tree = renderer
+      .create(<Button onPress={jest.fn()} text="This is a Button" disabled />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

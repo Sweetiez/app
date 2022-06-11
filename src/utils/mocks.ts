@@ -23,3 +23,8 @@ jest.mock('react-i18next', () => ({
         };
     },
 }))
+
+
+
+jest.mock('react-native-picker-select', () => 'RNPickerSelect')
+jest.mock('react-native-config', () => 'Config')

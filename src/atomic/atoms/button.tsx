@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, ActivityIndicator} from 'react-native';
+import {ActivityIndicator} from 'react-native';
 import styled from 'styled-components';
 import colors from '../../assets/colors';
 
@@ -8,12 +8,14 @@ interface Props {
   text: string;
   isLoading?: boolean;
   color?: string;
+  disabled?: boolean;
 }
 const StyledButton = styled.TouchableOpacity<{color}>`
   background-color: ${({color}) => color};
   padding: 10px;
   border-radius: 15px;
   align-items: center;
+  min-width: 80px;
 `;
 
 const StyledText = styled.Text`
@@ -25,11 +27,12 @@ const Button: React.FC<Props> = ({
   color = colors.yellow,
   onPress,
   isLoading = false,
+  disabled = false,
 }) => (
   <StyledButton
-    color={isLoading ? colors.grey : color}
+    color={isLoading || disabled ? colors.grey : color}
     onPress={onPress}
-    disabled={isLoading}>
+    disabled={isLoading || disabled}>
     {isLoading ? (
       <ActivityIndicator animating={isLoading} color={colors.white} />
     ) : (

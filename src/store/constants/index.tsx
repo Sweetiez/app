@@ -24,3 +24,5 @@ export const UPDATE_PASSWORD_ERROR = 'UPDATE_PASSWORD_ERROR';
 // evaluation
 export const COMMENT_ERROR = 'COMMENT_ERROR';
 export const COMMENT_OK = 'COMMENT_OK';
+export const REPORT_OK = 'REPORT_OK';
+export const REPORT_ERROR = 'REPORT_ERROR';
