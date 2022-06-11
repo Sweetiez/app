@@ -1,18 +1,29 @@
 import React, {useCallback, useState} from 'react';
 import moment from 'moment';
 import styled from 'styled-components';
-import {Stars} from '../molecules';
+import {Stars, Button} from '../molecules';
 import {CommentCard} from '../../model';
 import {useTranslation} from 'react-i18next';
 import {TouchableOpacity} from 'react-native';
 import colors from '../../assets/colors';
+import ReportModal from './report-modal';
+import {useSelector} from 'react-redux';
+import {tokenSelector} from '../../store/selectors/user';
 
 interface Props {
   comment: CommentCard;
 }
 
+const Flex1 = styled.View`
+  flex: 1;
+`;
+const Flex3 = styled.View`
+  flex: 3;
+  flex-direction: row;
+`;
 const Bottom = styled.View`
   flex-direction: row;
+  align-items: center;
   margin-top: 5px;
 `;
 const Author = styled.Text`
@@ -41,16 +52,24 @@ const Container = styled.View`
 `;
 
 const Comment: React.FC<Props> = ({comment}) => {
-  const {author, authorName, content, date, rating} = comment;
+  const {author, authorName, content, date, rating, id} = comment;
   const {t} = useTranslation();
+  const token = useSelector(tokenSelector);
   const [showMore, setShowMore] = useState<boolean>(false);
   const [canShowMore, setCanShowMore] = useState<boolean>(false);
+  const [showReportModal, setShowReportModal] = useState<boolean>(false);
+
   const onTextLayout = useCallback(e => {
     setCanShowMore(e.nativeEvent.lines.length > 4);
   }, []);
-  console.log(moment.locale());
+
   return (
     <Container>
+      <ReportModal
+        show={showReportModal}
+        setShow={setShowReportModal}
+        evaluationId={id}
+      />
       <Stars rating={rating} size={15} itemId={author + date + rating} />
       <Content
         onTextLayout={onTextLayout}
@@ -65,8 +84,19 @@ const Comment: React.FC<Props> = ({comment}) => {
         </TouchableOpacity>
       )}
       <Bottom>
-        <Author>{authorName + ' - '}</Author>
-        <Date>{moment(date).format('DD MMMM YYYY, h:mm')}</Date>
+        <Flex3>
+          <Author>{authorName + ' - '}</Author>
+          <Date>{moment(date).format('DD MMMM YYYY, h:mm')}</Date>
+        </Flex3>
+        {token && (
+          <Flex1>
+            <Button
+              onPress={() => setShowReportModal(true)}
+              text={t('comment.report')}
+              iconName="warning"
+            />
+          </Flex1>
+        )}
       </Bottom>
     </Container>
   );

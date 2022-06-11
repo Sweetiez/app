@@ -85,7 +85,8 @@ const locale = {
       send: 'Envoyer',
       commentPlaceholder: 'Votre commentaire',
       errorStar: 'Veuillez renseigner une note',
-      commentError: "Une erreur est survenue pendant la publication du commentaire"
+      commentError: "Une erreur est survenue pendant la publication du commentaire",
+      report: "Signaler"
     },
     account:{
       title: "Bonjour ",
@@ -114,6 +115,21 @@ const locale = {
       title: "Oups !",
       content: "Une erreur est survenue... Vérifiez votre connexion internet",
       close: "Fermer"
+    },
+    reportModal:{
+      title: "Signaler ce commentaire",
+      content: "Veuillez choisir une raison au signalement de ce commentaire dans la liste ci dessous",
+      send: "Envoyer",
+      cancel: "Annuler",
+      reason: {
+        choose: "Choisir une raison",
+        uncivil: "Incivil, grossier ou vulgaire",
+        discrimination: "Discrimination",
+        localBusiness: "Site d'offres de tiers",
+        illegalContent: "Contient des contenus ou des activités illégaux",
+        other: "Autre..."
+      },
+      error: 'Une erreur est survenue, veuillez réessayer plus tard'
     }
   }
 };

@@ -86,6 +86,7 @@ const locale = {
       commentPlaceholder: 'Your comment',
       errorStar: 'Please choose a rating',
       commentError: "There was an error with publishing the comment",
+      report: "Report"
     },
     account:{
       title: "Hello ",
@@ -114,6 +115,21 @@ const locale = {
       title: "Oops !",
       content: "An error occurred... Check your internet connexion.",
       close: "Close"
+    },
+    reportModal:{
+      title: "Report this comment",
+      content: "Please select a reason for reporting this comment in the list below",
+      send: "Send",
+      cancel: "Cancel",
+      reason: {
+        choose: "Choose a reason",
+        uncivil: "Uncivil, rude or vulgar",
+        discrimination: "Discrimination",
+        localBusiness: "Third party deal site",
+        illegalContent: "Contains illegal content or activity",
+        other: "Other..."
+      },
+      error: 'An error occurred, please try again later'
     }
   },
 };

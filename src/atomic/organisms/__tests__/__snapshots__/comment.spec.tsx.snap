@@ -26,6 +26,13 @@ exports[`Comment renders correctly 1`] = `
     ]
   }
 >
+  <Modal
+    animationType="slide"
+    hardwareAccelerated={false}
+    onRequestClose={[Function]}
+    transparent={true}
+    visible={false}
+  />
   <View
     style={
       Array [
@@ -89,35 +96,49 @@ exports[`Comment renders correctly 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
           "flexDirection": "row",
           "marginTop": 5,
         },
       ]
     }
   >
-    <Text
+    <View
       style={
         Array [
           Object {
-            "fontSize": 12,
-            "fontWeight": "bold",
+            "flexBasis": 0,
+            "flexDirection": "row",
+            "flexGrow": 3,
+            "flexShrink": 1,
           },
         ]
       }
     >
-      John Doe - 
-    </Text>
-    <Text
-      style={
-        Array [
-          Object {
-            "fontSize": 12,
-          },
-        ]
-      }
-    >
-      12 December 2012, 12:00
-    </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "fontSize": 12,
+              "fontWeight": "bold",
+            },
+          ]
+        }
+      >
+        John Doe - 
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "fontSize": 12,
+            },
+          ]
+        }
+      >
+        12 December 2012, 12:00
+      </Text>
+    </View>
   </View>
 </View>
 `;
