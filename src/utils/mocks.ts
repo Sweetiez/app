@@ -11,6 +11,7 @@ jest.mock('./../assets/icons/eye.svg', () => 'Eye');
 jest.mock('./../assets/icons/trash.svg', () => 'Trash');
 jest.mock('./../assets/icons/no-image.svg', () => 'NoImage');
 jest.mock('./../assets/icons/edit.svg', () => 'Edit');
+jest.mock('./../assets/icons/warning.svg', () => 'Warning');
 
 jest.mock('react-i18next', () => ({
     useTranslation: () => {

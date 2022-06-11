@@ -52,6 +52,7 @@ const Input: React.FC<Props> = ({
         secureTextEntry={secureTextEntry}
         multiline={multiline}
         numberOfLines={numberOfLines}
+        autoCapitalize="none"
       />
       {rightIconName && (
         <StyledIcon onPress={rightIconOnPress}>

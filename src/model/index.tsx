@@ -11,3 +11,4 @@ export {default as UpdateRequest} from './update-request-model';
 export {default as UpdatePasswordRequest} from './update-password-request-model';
 export {default as CommentRequest} from './comment-request-model';
 export {default as User} from './user-model';
+export {default as Evaluation} from './evaluation-model';

@@ -6,7 +6,7 @@ import {Input} from '../../atomic/molecules';
 import styled from 'styled-components';
 import getIcons from '../../utils/icons';
 import colors from '../../assets/colors';
-import {Button, Error, Title} from '../../atomic/atoms';
+import {Button, Error, Title, Link} from '../../atomic/atoms';
 import {validateEmail, validatePassword} from '../../utils/validator';
 import {loginRequest} from '../../store/api/user';
 import {useDispatch} from 'react-redux';
@@ -23,12 +23,6 @@ const Icon = styled.View`
   margin-bottom: 30px;
   justify-content: center;
   align-items: center;
-`;
-const Link = styled.Text`
-  text-decoration: underline;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 30px;
 `;
 const Register = styled.Text`
   margin-right: auto;
@@ -105,15 +99,21 @@ function LoginScreen({navigation}) {
             isLoading={isLoading}
           />
         </Form>
-        <Link onPress={() => navigation.navigate('ForgotPassword')}>
-          {t('login.forgotPassword')}
-        </Link>
+        <Link
+          onPress={() => navigation.navigate('ForgotPassword')}
+          content={t('login.forgotPassword')}
+        />
         <Register>
           {t('login.dontHaveAccount')}
-          <Link onPress={() => navigation.navigate('Register')}>
-            {t('login.register')}
-          </Link>
+          <Link
+            onPress={() => navigation.navigate('Register')}
+            content={t('login.register')}
+          />
         </Register>
+        <Link
+          onPress={() => navigation.navigate('Common', {screen: 'CGU'})}
+          content={t('cgu.title')}
+        />
       </ScrollView>
     </SafeAreaView>
   );

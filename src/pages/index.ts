@@ -7,6 +7,7 @@ export {default as LoginScreen} from './account/LoginScreen';
 export {default as ForgotPasswordScreen} from './account/ForgotPasswordScreen';
 export {default as RegisterScreen} from './account/RegisterScreen';
 export {default as CartScreen} from './cart/CartScreen';
+export {default as CGUScreen} from './common/CGUScreen';
 export {default as CommentScreen} from './shop/CommentScreen';
 export {default as AccountScreen} from './account/logged/AccountScreen';
 export {default as EditAccountScreen} from './account/logged/EditAccountScreen';

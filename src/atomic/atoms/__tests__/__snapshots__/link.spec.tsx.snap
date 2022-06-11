@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link renders correctly 1`] = `
+<Text
+  onPress={[MockFunction]}
+  style={
+    Array [
+      Object {
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "marginTop": 30,
+        "textDecorationColor": "black",
+        "textDecorationLine": "underline",
+        "textDecorationStyle": "solid",
+      },
+    ]
+  }
+>
+  test
+</Text>
+`;
