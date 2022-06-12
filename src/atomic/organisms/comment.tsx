@@ -1,5 +1,4 @@
 import React, {useCallback, useState} from 'react';
-import moment from 'moment';
 import styled from 'styled-components';
 import {Stars, Button} from '../molecules';
 import {CommentCard} from '../../model';
@@ -9,6 +8,7 @@ import colors from '../../assets/colors';
 import ReportModal from './report-modal';
 import {useSelector} from 'react-redux';
 import {tokenSelector} from '../../store/selectors/user';
+import {formatDate} from '../../utils/date';
 
 interface Props {
   comment: CommentCard;
@@ -86,7 +86,7 @@ const Comment: React.FC<Props> = ({comment}) => {
       <Bottom>
         <Flex3>
           <Author>{authorName + ' - '}</Author>
-          <Date>{moment(date).format('DD MMMM YYYY, h:mm')}</Date>
+          <Date>{formatDate(date)}</Date>
         </Flex3>
         {token && (
           <Flex1>

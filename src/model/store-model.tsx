@@ -1,4 +1,4 @@
-import {ProductCard, Cart, User} from './index';
+import {ProductCard, Cart, User, Order} from './index';
 
 export default class State {
   cart: {
@@ -11,5 +11,8 @@ export default class State {
     token?: string;
     refreshToken?: string;
     user?: User;
+  };
+  orders: {
+    orders: Order[];
   };
 }

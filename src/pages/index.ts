@@ -12,3 +12,4 @@ export {default as CommentScreen} from './shop/CommentScreen';
 export {default as AccountScreen} from './account/logged/AccountScreen';
 export {default as EditAccountScreen} from './account/logged/EditAccountScreen';
 export {default as EditPasswordScreen} from './account/logged/EditPasswordScreen';
+export {default as OrdersScreen} from './account/logged/OrdersScreen';

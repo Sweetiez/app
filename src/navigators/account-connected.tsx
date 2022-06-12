@@ -1,6 +1,11 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {AccountScreen, EditAccountScreen, EditPasswordScreen} from '../pages';
+import {
+  AccountScreen,
+  EditAccountScreen,
+  EditPasswordScreen,
+  OrdersScreen,
+} from '../pages';
 
 const AccountConnectedStack = createNativeStackNavigator();
 
@@ -16,6 +21,7 @@ function AccountConnectedStackScreen() {
         name="EditPassword"
         component={EditPasswordScreen}
       />
+      <AccountConnectedStack.Screen name="Orders" component={OrdersScreen} />
     </AccountConnectedStack.Navigator>
   );
 }
