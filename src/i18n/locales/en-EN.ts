@@ -97,7 +97,8 @@ const locale = {
       email: "Email : ",
       phone: "Phone : ",
       unknown: "Unknown",
-      editPassword: "Edit Password"
+      editPassword: "Edit Password",
+      orders: "Your orders"
     },
     editAccount:{
       title: "Edit your info",
@@ -131,6 +132,22 @@ const locale = {
       },
       error: 'An error occurred, please try again later',
       errorAlreadyMade: 'You have already reported this comment'
+    },
+    orders:{
+      title: "Your orders",
+      empty: "You have no commands yet",
+      orderedOn: "Ordered on : ",
+      orderSchedule: "Order scheduled for : ",
+      items: "Items : ",
+      totalPrice: "Total price : ",
+      status: {
+        ordered: "ORDERED",
+        paid: "PAID",
+        created: "CREATED",
+        delivered: "DELIVERED",
+        ready: "READY",
+        unknown: "Status unknown"
+      }
     }
   },
 };

@@ -16,6 +16,7 @@ import Trash from './../assets/icons/trash.svg';
 import NoImage from './../assets/icons/no-image.svg';
 import Edit from './../assets/icons/edit.svg';
 import Warning from './../assets/icons/warning.svg';
+import Orders from './../assets/icons/orders.svg';
 import colors from '../assets/colors';
 
 const getIcons = (iconName, color = colors.white, size = 18) => {
@@ -57,6 +58,8 @@ const getIcons = (iconName, color = colors.white, size = 18) => {
       return <Edit {...props} />;
     case 'warning':
       return <Warning {...props} />;
+    case 'orders':
+      return <Orders {...props} />;
   }
 };
 

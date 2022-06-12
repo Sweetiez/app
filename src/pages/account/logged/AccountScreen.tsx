@@ -73,6 +73,11 @@ function AccountScreen({navigation}) {
   const handleEdit = () => {
     navigation.navigate('EditAccount');
   };
+
+  const handleOrders = () => {
+    navigation.navigate('Orders');
+  };
+
   const handleEditPassword = () => {
     navigation.navigate('EditPassword');
   };
@@ -106,6 +111,8 @@ function AccountScreen({navigation}) {
           <Text content={t('account.phone') + phone} size={20} />
 
           <Container>
+            <Button text={t('account.orders')} onPress={handleOrders} />
+            <Space />
             <Button
               text={t('account.editPassword')}
               onPress={handleEditPassword}

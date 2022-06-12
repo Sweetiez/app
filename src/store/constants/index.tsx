@@ -27,3 +27,7 @@ export const COMMENT_OK = 'COMMENT_OK';
 export const REPORT_OK = 'REPORT_OK';
 export const REPORT_ERROR = 'REPORT_ERROR';
 export const REPORT_ALREADY_MADE = 'REPORT_ALREADY_MADE';
+
+// orders
+export const GET_ORDERS_ERROR = 'GET_ORDERS_ERROR';
+export const SET_ORDERS = 'SET_ORDERS';

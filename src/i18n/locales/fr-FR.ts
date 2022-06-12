@@ -98,6 +98,7 @@ const locale = {
       phone: "Téléphone : ",
       unknown: "Non renseigné",
       editPassword: "Modifier le mot de passe",
+      orders: "Vos commandes"
     },
     editAccount:{
       title: "Modifiez vos informations",
@@ -131,6 +132,22 @@ const locale = {
       },
       error: 'Une erreur est survenue, veuillez réessayer plus tard',
       errorAlreadyMade: 'Vous avez déjà signalé ce commentaire'
+    },
+    orders:{
+      title: "Vos commandes",
+      empty: "Vous n'avez pas de commandes pour l'instant",
+      orderedOn: "Commandé le : ",
+      orderSchedule: "Commande pour le : ",
+      items: "Produits : ",
+      totalPrice: "Prix total : ",
+      status: {
+        ordered: "COMMANDÉ",
+        paid: "PAYÉ",
+        created: "CRÉÉ",
+        delivered: "LIVRÉ",
+        ready: "PRÊT",
+        unknown: "Status inconnu"
+      }
     }
   }
 };
