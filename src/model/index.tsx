@@ -15,3 +15,4 @@ export {default as Evaluation} from './evaluation-model';
 export {default as ReportEvaluationRequest} from './report-evaluation-model';
 export {default as Order} from './order-model';
 export {default as OrderedProduct} from './ordered-product-model';
+export {default as FilterModel} from './filter-model';

@@ -47,7 +47,7 @@ exports[`Order renders correctly 1`] = `
       orders.orderedOn
     </Text>
     <Text>
-      12 December 2022, 12:00
+      12/12/2022
     </Text>
   </View>
   <View

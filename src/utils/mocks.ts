@@ -13,6 +13,8 @@ jest.mock('./../assets/icons/no-image.svg', () => 'NoImage');
 jest.mock('./../assets/icons/edit.svg', () => 'Edit');
 jest.mock('./../assets/icons/orders.svg', () => 'Orders');
 jest.mock('./../assets/icons/warning.svg', () => 'Warning');
+jest.mock('./../assets/icons/filter.svg', () => 'Filter');
+jest.mock('./../assets/icons/cross.svg', () => 'Cross');
 
 jest.mock('react-i18next', () => ({
     useTranslation: () => {
@@ -24,8 +26,6 @@ jest.mock('react-i18next', () => ({
         };
     },
 }))
-
-
 
 jest.mock('react-native-picker-select', () => 'RNPickerSelect')
 jest.mock('react-native-config', () => 'Config')
