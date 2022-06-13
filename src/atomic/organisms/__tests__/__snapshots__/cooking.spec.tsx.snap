@@ -267,7 +267,7 @@ exports[`Cooking renders correctly 1`] = `
           ]
         }
       >
-        Débutant
+        
       </Text>
     </View>
     <View

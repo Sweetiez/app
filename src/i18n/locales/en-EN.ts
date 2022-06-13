@@ -62,7 +62,8 @@ const locale = {
       title: "TODO events title"
     },
     recipes:{
-      title: "Recipes"
+      title: "Recipes",
+      noRecipes: "No recipes"
     },
     recipe:{
       minutes: "min",
@@ -73,7 +74,13 @@ const locale = {
       cost: "Cost",
       level:"Level",
       portions:"Portions",
-      steps: "Steps : "
+      steps: "Steps : ",
+      difficulty:{
+        noob: "Beginner",
+        easy: "Easy",
+        normal: "Normal",
+        hard: "Hard"
+      }
     },
     cart:{
       title: "Your Cart",

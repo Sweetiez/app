@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import {Title, Text} from '../atoms';
 import {Stars} from '../molecules';
 import {Recipe as RecipeModel} from '../../model';
+import getIcons from '../../utils/icons';
+import colors from '../../assets/colors';
 
 interface Props {
   recipe: RecipeModel;
@@ -37,13 +39,21 @@ const Container = styled.TouchableOpacity`
   background-color: white;
   margin: 5px;
 `;
+const NoImage = styled.View`
+  margin: auto;
+`;
 
 const Recipe: React.FC<Props> = ({recipe, navigation}) => {
-  const {name, description, images, rating} = recipe;
+  const {id, name, description, images, rating} = recipe;
 
   return (
-    <Container onPress={() => navigation.navigate('Recipe', {recipe: recipe})}>
-      <StyledImage source={{uri: images[0]}} />
+    <Container onPress={() => navigation.navigate('Recipe', {recipeId: id})}>
+      {images && images.length > 0 && images[0] !== '' ? (
+        <StyledImage source={{uri: images[0]}} />
+      ) : (
+        <NoImage>{getIcons('noImage', colors.yellow, 100)}</NoImage>
+      )}
+
       <Content>
         <Title title={name} size={24} />
         <Space />
