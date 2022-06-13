@@ -14,6 +14,7 @@ exports[`ErrorModal renders correctly 1`] = `
         Object {
           "backgroundColor": "white",
           "borderRadius": 10,
+          "elevation": 50,
           "marginLeft": "auto",
           "marginRight": "auto",
           "marginTop": "60%",

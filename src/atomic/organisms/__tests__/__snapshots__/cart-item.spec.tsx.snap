@@ -8,6 +8,7 @@ exports[`CartItem renders correctly 1`] = `
         "alignItems": "center",
         "backgroundColor": "white",
         "borderRadius": 10,
+        "elevation": 50,
         "flexDirection": "row",
         "marginBottom": 5,
         "marginLeft": 5,

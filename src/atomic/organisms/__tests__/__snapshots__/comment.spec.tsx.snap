@@ -7,6 +7,7 @@ exports[`Comment renders correctly 1`] = `
       Object {
         "backgroundColor": "white",
         "borderRadius": 10,
+        "elevation": 50,
         "marginBottom": 10,
         "marginLeft": 10,
         "marginRight": 10,

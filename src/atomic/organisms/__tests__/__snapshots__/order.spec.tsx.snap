@@ -7,6 +7,7 @@ exports[`Order renders correctly 1`] = `
       Object {
         "backgroundColor": "white",
         "borderRadius": 10,
+        "elevation": 50,
         "marginBottom": 5,
         "marginLeft": 5,
         "marginRight": 5,

@@ -45,6 +45,7 @@ const ShowMore = styled.Text`
 `;
 const Container = styled.View`
   border-radius: 10px;
+  elevation: 50;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.07);
   background-color: white;
   margin: 10px;

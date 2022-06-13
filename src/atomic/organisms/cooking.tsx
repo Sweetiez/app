@@ -20,6 +20,7 @@ const Container = styled.View`
   background-color: white;
   margin: 10px;
   padding: 10px 0 10px 20px;
+  elevation: 50;
 `;
 const Row = styled.View`
   flex-direction: row;

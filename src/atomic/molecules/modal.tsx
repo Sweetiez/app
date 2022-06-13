@@ -17,6 +17,7 @@ const MainContainer = styled.View`
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   background-color: white;
   padding: 20px;
+  elevation: 50;
   margin-top: ${Platform.OS === 'ios' ? '60%' : '30%'};
   margin-right: auto;
   margin-left: auto;

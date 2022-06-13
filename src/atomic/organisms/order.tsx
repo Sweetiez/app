@@ -15,6 +15,7 @@ const Container = styled.View`
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.07);
   background-color: white;
   margin: 5px;
+  elevation: 50;
   padding: 10px;
 `;
 const Column = styled.View`
