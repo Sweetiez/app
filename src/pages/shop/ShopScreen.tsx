@@ -1,10 +1,10 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useTranslation} from 'react-i18next';
-import {ScrollView, Text} from 'react-native';
+import {ScrollView} from 'react-native';
 import styled from 'styled-components';
 
-import {Title, Loader} from '../../atomic/atoms';
+import {Title, Loader, Text} from '../../atomic/atoms';
 import {Item, ErrorModal, FiltersModal} from '../../atomic/organisms';
 import {Filters} from '../../atomic/molecules';
 
@@ -18,14 +18,12 @@ import {tokenSelector, userSelector} from '../../store/selectors/user';
 import {checkConnectivity} from '../../utils/connectivity';
 import {FilterModel} from '../../model';
 
-const CenteredText = styled(Text)`
-  font-size: 30px;
+const CenteredText = styled.View`
   text-align: center;
   margin-top: 50px;
   margin-right: auto;
   margin-left: auto;
 `;
-
 const Items = styled.View`
   flex: 1;
   flex-direction: row;
@@ -161,8 +159,6 @@ function ShopScreen({navigation}) {
     filterLength++;
   }
 
-  console.log(shop);
-
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic">
       <ErrorModal show={showErrorModal} setShow={setShowErrorModal} />
@@ -183,7 +179,9 @@ function ShopScreen({navigation}) {
             <Item key={product.id} product={product} navigation={navigation} />
           ))
         ) : (
-          <CenteredText>{t('shop.noProducts')}</CenteredText>
+          <CenteredText>
+            <Text content={t('shop.noProducts')} size={44} />
+          </CenteredText>
         )}
       </Items>
     </ScrollView>

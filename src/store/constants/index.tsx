@@ -31,3 +31,8 @@ export const REPORT_ALREADY_MADE = 'REPORT_ALREADY_MADE';
 // orders
 export const GET_ORDERS_ERROR = 'GET_ORDERS_ERROR';
 export const SET_ORDERS = 'SET_ORDERS';
+
+// recipes
+export const UPDATE_RECIPES = 'UPDATE_RECIPES';
+export const RECIPES_ERROR = 'RECIPES_ERROR';
+export const RECIPE_ERROR = 'RECIPE_ERROR';

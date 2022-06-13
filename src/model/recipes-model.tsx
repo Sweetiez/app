@@ -8,10 +8,11 @@ export default class RecipeModel {
   rating: number | undefined;
   totalTime: string | undefined;
   preparationTime: string | undefined;
-  sleepTime: string | undefined;
-  cookingTime: string | undefined;
-  portions: number | undefined;
+  chillTime: string | undefined;
+  difficulty: string | undefined;
+  cookTime: string | undefined;
+  people: number | undefined;
   cost: number | undefined;
-  level: string | undefined;
+  cookingTime: string | undefined;
   steps: RecipeStep[] | undefined;
 }

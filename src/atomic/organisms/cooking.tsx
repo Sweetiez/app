@@ -54,6 +54,23 @@ const Cooking: React.FC<Props> = ({
 }) => {
   const {t} = useTranslation();
   const min = t('recipe.minutes');
+
+  let difficulty = '';
+
+  switch (level) {
+    case 'NOOB':
+      difficulty = t('recipe.difficulty.noob');
+      break;
+    case 'EASY':
+      difficulty = t('recipe.difficulty.easy');
+      break;
+    case 'NORMAL':
+      difficulty = t('recipe.difficulty.normal');
+      break;
+    case 'HARD':
+      difficulty = t('recipe.difficulty.hard');
+      break;
+  }
   return (
     <Container>
       <CenteredRow>
@@ -96,7 +113,7 @@ const Cooking: React.FC<Props> = ({
       <Row>
         <Column>
           <Bold>{t('recipe.level')}</Bold>
-          <Time>{level}</Time>
+          <Time>{difficulty}</Time>
         </Column>
         <Column>
           <Bold>{t('recipe.cost')}</Bold>

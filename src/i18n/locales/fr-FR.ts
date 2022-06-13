@@ -62,7 +62,8 @@ const locale = {
       title: "TODO events title"
     },
     recipes:{
-      title: "Recettes"
+      title: "Recettes",
+      noRecipes: "Aucune recette"
     },
     recipe:{
       minutes: "min",
@@ -73,7 +74,13 @@ const locale = {
       cost: "Coût",
       level:"Niveau",
       portions:"Portions",
-      steps: "Etapes : "
+      steps: "Etapes : ",
+      difficulty:{
+        noob: "Débutant",
+        easy: "Facile",
+        normal: "Normal",
+        hard: "Difficile"
+      }
     },
     cart:{
       quantity: "quantity : ",

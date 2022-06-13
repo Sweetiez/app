@@ -1,4 +1,4 @@
-import {ProductCard, Cart, User, Order} from './index';
+import {ProductCard, Cart, User, Order, Recipe} from './index';
 
 export default class State {
   cart: {
@@ -14,5 +14,8 @@ export default class State {
   };
   orders: {
     orders: Order[];
+  };
+  recipes: {
+    recipes: Recipe[];
   };
 }
