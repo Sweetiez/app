@@ -17,6 +17,9 @@ import NoImage from './../assets/icons/no-image.svg';
 import Edit from './../assets/icons/edit.svg';
 import Warning from './../assets/icons/warning.svg';
 import Orders from './../assets/icons/orders.svg';
+import Filter from './../assets/icons/filter.svg';
+import Cross from './../assets/icons/cross.svg';
+import Circle from './../assets/icons/circle.svg';
 import colors from '../assets/colors';
 
 const getIcons = (iconName, color = colors.white, size = 18) => {
@@ -60,6 +63,12 @@ const getIcons = (iconName, color = colors.white, size = 18) => {
       return <Warning {...props} />;
     case 'orders':
       return <Orders {...props} />;
+    case 'filter':
+      return <Filter {...props} />;
+    case 'cross':
+      return <Cross {...props} />;
+    case 'circle':
+      return <Circle {...props} />;
   }
 };
 

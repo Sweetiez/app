@@ -51,7 +51,8 @@ const locale = {
       registerError: "L'inscription a échoué"
     },
     shop:{
-      title: "Mignardises"
+      title: "Mignardises",
+      noProducts: "Aucun produit"
     },
     details:{
       comment : "Commenter",
@@ -147,6 +148,23 @@ const locale = {
         delivered: "LIVRÉ",
         ready: "PRÊT",
         unknown: "Status inconnu"
+      }
+    },
+    filters:{
+      title: "Filtres",
+      filtersModal: {
+        title: "Filtres",
+        rating: "Note",
+        price: "Prix",
+        filter: "Filtrer",
+        clear: "Réstaurer les filtres",
+        close: "Fermer",
+        category: "Catégorie",
+        categories:{
+          sweety:"Sucré",
+          salty:"Salé",
+          mix: "Mixte"
+        }
       }
     }
   }

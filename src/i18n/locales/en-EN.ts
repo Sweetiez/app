@@ -51,7 +51,8 @@ const locale = {
       registerError: "Registration failed"
     },
     shop:{
-      title: "Sweets"
+      title: "Sweets",
+      noProducts: "No product"
     },
     details:{
       comment : "Comment",
@@ -147,6 +148,23 @@ const locale = {
         delivered: "DELIVERED",
         ready: "READY",
         unknown: "Status unknown"
+      }
+    },
+    filters:{
+      title: 'Filters',
+      filtersModal: {
+        title: "Filters",
+        rating: "Rating",
+        price: "Price",
+        filter: "Filter",
+        clear: "Reset filters",
+        close: "Close",
+        category: "Category",
+        categories:{
+          sweety:"Sweety",
+          salty:"Salty",
+          mix: "Mix"
+        }
       }
     }
   },

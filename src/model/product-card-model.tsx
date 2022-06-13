@@ -7,6 +7,7 @@ export default class ProductCardModel {
   description: string | undefined;
   price: number | undefined;
   images: string[] | undefined;
+  flavor: string | undefined;
   evaluation: Evaluation | undefined;
   comments: CommentCard[] | undefined;
 }

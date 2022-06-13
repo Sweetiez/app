@@ -25,4 +25,14 @@ describe('Modal', () => {
     const tree = renderer.create(<Modal {...basicProps} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('renders with cross', () => {
+    const tree = renderer
+      .create(
+        <Modal {...basicProps} hasCross>
+          <Text>Hello</Text>
+        </Modal>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
