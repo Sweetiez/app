@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import {useTranslation} from 'react-i18next';
 import {ScrollView} from 'react-native';
@@ -30,15 +30,13 @@ const StyledSafeAreaView = styled.SafeAreaView`
   flex: 1;
 `;
 
-function CartScreen() {
+function CartScreen({navigation}) {
   const {t} = useTranslation();
   const cart = useSelector(cartSelector);
   const totalPrice = useSelector(totalPriceSelector);
-  const [isLoading, setLoading] = useState<boolean>(false);
 
   const checkout = () => {
-    // TODO call api checkout
-    setLoading(true);
+    navigation.navigate('CartRecap');
   };
 
   if (cart.length === 0) {
@@ -71,7 +69,6 @@ function CartScreen() {
         <CheckoutButton
           text={t('cart.checkout') + totalPrice + t('common.euros')}
           onPress={checkout}
-          isLoading={isLoading}
         />
       </CheckoutButtonView>
     </StyledSafeAreaView>
