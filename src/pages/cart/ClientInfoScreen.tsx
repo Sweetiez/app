@@ -26,11 +26,11 @@ const StyledSafeAreaView = styled.SafeAreaView`
   flex: 1;
 `;
 
-function RecapCartScreen({navigation}) {
+function ClientInfoScreen({navigation}) {
   const {t} = useTranslation();
 
   const handleContinue = () => {
-    navigation.navigate('ClientInfo');
+    navigation.navigate('Payment');
   };
 
   return (
@@ -38,7 +38,7 @@ function RecapCartScreen({navigation}) {
       <Arrow>
         <Back navigation={navigation} color={colors.black} />
       </Arrow>
-      <StyledTitle title={t('cartRecap.title')} />
+      <StyledTitle title={t('clientInfo.title')} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         contentContainerStyle={{
@@ -46,7 +46,7 @@ function RecapCartScreen({navigation}) {
           flexDirection: 'column',
           justifyContent: 'space-between',
         }}>
-        <CartRecapContainer>{/*TODO recap*/}</CartRecapContainer>
+        <CartRecapContainer>{/*TODO client infos*/}</CartRecapContainer>
       </ScrollView>
       <CheckoutButtonView>
         <CheckoutButton text={t('common.continue')} onPress={handleContinue} />
@@ -55,4 +55,4 @@ function RecapCartScreen({navigation}) {
   );
 }
 
-export default RecapCartScreen;
+export default ClientInfoScreen;

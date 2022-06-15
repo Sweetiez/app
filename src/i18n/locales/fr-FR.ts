@@ -180,6 +180,9 @@ const locale = {
     payment:{
       title: "Paiement"
     },
+    clientInfo:{
+      title: "Informations Client"
+    },
     cgu:{
       title: "Conditions Générales d'Utilisation",
       cgv: {
