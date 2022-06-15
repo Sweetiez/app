@@ -3,7 +3,8 @@ const locale = {
     common:{
       showMore: 'Montrer Plus',
       showLess: 'Montrer Moins',
-      euros : "€"
+      euros : "€",
+      continue: "Continuer"
     },
     form:{
       incorrectEmail: 'Veuillez rentrer un email correct',
@@ -169,6 +170,15 @@ const locale = {
           mix: "Mixte"
         }
       }
+    },
+    cartRecap:{
+      title: "Récapitulatif du panier"
+    },
+    confirmation:{
+      title: "Confirmation"
+    },
+    payment:{
+      title: "Paiement"
     },
     cgu:{
       title: "Conditions Générales d'Utilisation",
