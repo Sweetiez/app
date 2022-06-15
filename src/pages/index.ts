@@ -13,6 +13,7 @@ export {default as AccountScreen} from './account/logged/AccountScreen';
 export {default as EditAccountScreen} from './account/logged/EditAccountScreen';
 export {default as EditPasswordScreen} from './account/logged/EditPasswordScreen';
 export {default as OrdersScreen} from './account/logged/OrdersScreen';
-export {default as ShipScreen} from './cart/ConfirmationScreen';
+export {default as ConfirmationScreen} from './cart/ConfirmationScreen';
 export {default as CartRecapScreen} from './cart/RecapCartScreen';
 export {default as PaymentScreen} from './cart/PaymentScreen';
+export {default as ClientInfoScreen} from './cart/ClientInfoScreen';
