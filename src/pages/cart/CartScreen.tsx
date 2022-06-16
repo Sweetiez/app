@@ -36,7 +36,7 @@ function CartScreen({navigation}) {
   const totalPrice = useSelector(totalPriceSelector);
 
   const checkout = () => {
-    navigation.navigate('CartRecap');
+    navigation.navigate('ClientInfo');
   };
 
   if (cart.length === 0) {

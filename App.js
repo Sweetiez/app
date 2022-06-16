@@ -16,7 +16,7 @@ const App: () => Node = () => {
 
   const Stack = createNativeStackNavigator();
   return (
-    <React.StrictMode>
+
       <NavigationContainer>
           <Stack.Navigator>
               <Stack.Screen
@@ -28,7 +28,6 @@ const App: () => Node = () => {
                             options={{ headerShown: false }}/>
           </Stack.Navigator>
       </NavigationContainer>
-    </React.StrictMode>
   );
 };
 
