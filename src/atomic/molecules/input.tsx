@@ -14,6 +14,7 @@ interface Props {
   rightIconOnPress?: () => void;
   multiline?: boolean;
   numberOfLines?: number;
+  initialValue?: string;
 }
 
 const StyledInput = styled.TextInput<{numberOfLines}>`
@@ -41,6 +42,7 @@ const Input: React.FC<Props> = ({
   rightIconOnPress,
   multiline = false,
   numberOfLines = undefined,
+  initialValue,
 }) => {
   return (
     <View>
@@ -52,6 +54,7 @@ const Input: React.FC<Props> = ({
         secureTextEntry={secureTextEntry}
         multiline={multiline}
         numberOfLines={numberOfLines}
+        defaultValue={initialValue}
         autoCapitalize="none"
       />
       {rightIconName && (

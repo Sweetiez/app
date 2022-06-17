@@ -4,7 +4,9 @@ const locale = {
       showMore: 'Show More',
       showLess: 'Show Less',
       euros : "€",
-      continue: "Continue"
+      continue: "Continue",
+      cancel: "Cancel",
+      validate: "Validate"
     },
     form:{
       incorrectEmail: 'Please fill in a correct email',
@@ -14,6 +16,7 @@ const locale = {
       fillPasswords: "Please fill the current, new password and password confirm inputs",
       blankInputs: "Please fill all the mandatory inputs (first and last name, email)",
       blankInputsWithPassword: "Please fill all the mandatory inputs (first and last name, email, password)",
+      blankInputsWithPhone: "Please fill all the mandatory inputs (first and last name, email, phone)",
       passwordPlaceholder: "Password",
       newPasswordPlaceholder: "New Password",
       currentPasswordPlaceholder: 'Current Password',
@@ -182,7 +185,9 @@ const locale = {
       title: "Payment"
     },
     clientInfo:{
-      title: "Client Info"
+      title: "Client Info",
+      pickupDateSelect: "Select a pick up date",
+      pickupDate: "Pick up date : "
     },
     cgu: {
       title: "Terms of service",
