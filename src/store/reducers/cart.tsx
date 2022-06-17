@@ -1,4 +1,8 @@
-import {ADD_ITEM_TO_CART, REMOVE_ITEM_FROM_CART} from '../constants';
+import {
+  ADD_ITEM_TO_CART,
+  CLEAR_CART,
+  REMOVE_ITEM_FROM_CART,
+} from '../constants';
 const initialState = {
   cart: [],
 };
@@ -29,6 +33,11 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         cart: newData,
+      };
+    case CLEAR_CART:
+      return {
+        ...state,
+        cart: [],
       };
     default:
       return state;

@@ -20,6 +20,7 @@ jest.mock('./../assets/icons/cross.svg', () => 'Cross');
 jest.mock('./../assets/icons/phone.svg', () => 'Phone');
 jest.mock('./../assets/icons/email.svg', () => 'Email');
 jest.mock('./../assets/icons/crown.svg', () => 'Crown');
+jest.mock('./../assets/icons/payment.svg', () => 'Payment');
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 

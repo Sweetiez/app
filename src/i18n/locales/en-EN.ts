@@ -182,7 +182,8 @@ const locale = {
       title: "Confirmation"
     },
     payment:{
-      title: "Payment"
+      title: "Payment",
+      error: "An error occurred with the payment process"
     },
     clientInfo:{
       title: "Client Info",
