@@ -23,6 +23,7 @@ import Circle from './../assets/icons/circle.svg';
 import Email from './../assets/icons/email.svg';
 import Phone from './../assets/icons/phone.svg';
 import Crown from './../assets/icons/crown.svg';
+import Payment from './../assets/icons/payment.svg';
 import colors from '../assets/colors';
 
 const getIcons = (iconName, color = colors.white, size = 18) => {
@@ -78,6 +79,8 @@ const getIcons = (iconName, color = colors.white, size = 18) => {
       return <Phone {...props} />;
     case 'crown':
       return <Crown {...props} />;
+    case 'payment':
+      return <Payment {...props} />;
   }
 };
 

@@ -3,25 +3,27 @@ import React, {useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {ScrollView} from 'react-native';
 import styled from 'styled-components';
-import {Back, Button, Error, Title} from '../../atomic/atoms';
-import {cartSelector} from '../../store/selectors/cart';
-
-import colors from '../../assets/colors';
-import {Input} from '../../atomic/molecules';
+import moment from 'moment';
+import {useSelector} from 'react-redux';
 import DatePicker from 'react-native-date-picker';
+
+import {Input} from '../../atomic/molecules';
+import {Back, Button, Error, Title} from '../../atomic/atoms';
+
+import {CREATE_AN_ORDER_ERROR} from '../../store/constants';
+import {cartSelector} from '../../store/selectors/cart';
+import ProductOrderRequestModel from '../../model/product-order-request-model';
+import CreateOrderRequestModel from '../../model/create-order-request-model';
+import {createAnOrdersRequest} from '../../store/api/orders';
+import {userSelector} from '../../store/selectors/user';
+
+import {formatDashDate} from '../../utils/date';
 import {
   validateEmail,
   validateName,
   validatePhone,
 } from '../../utils/validator';
-import {CREATE_AN_ORDER_ERROR} from '../../store/constants';
-import ProductOrderRequestModel from '../../model/product-order-request-model';
-import CreateOrderRequestModel from '../../model/create-order-request-model';
-import {useSelector} from 'react-redux';
-import {createAnOrdersRequest} from '../../store/api/orders';
-import {formatDashDate} from '../../utils/date';
-import moment from 'moment';
-import {userSelector} from '../../store/selectors/user';
+import colors from '../../assets/colors';
 
 const CartRecapContainer = styled.View`
   flex: 1;
@@ -106,7 +108,10 @@ function ClientInfoScreen({navigation}) {
       createAnOrdersRequest(request).then(response => {
         setLoading(false);
         if (response !== CREATE_AN_ORDER_ERROR) {
-          navigation.navigate('Payment', {email, orderId: response.orderId});
+          navigation.navigate('Payment', {
+            email,
+            orderId: response.orderId,
+          });
         } else {
           setError(t('form.apiError')); //TODO
         }

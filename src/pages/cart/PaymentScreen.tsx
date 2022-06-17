@@ -1,96 +1,133 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 
 import {useTranslation} from 'react-i18next';
-import {Alert, SafeAreaView, Button} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import {
   Address,
   BillingDetails,
   confirmPaymentSheetPayment,
   useStripe,
 } from '@stripe/stripe-react-native';
+import styled from 'styled-components';
+
 import {createPayementIntentRequest} from '../../store/api/orders';
 import {CREATE_PAYMENT_INTENT_ERROR} from '../../store/constants';
-import {Error} from '../../atomic/atoms';
+
+import {Back, Error, Loader, Title} from '../../atomic/atoms';
+
+import getIcons from '../../utils/icons';
+import colors from '../../assets/colors';
+import {useNavigation} from '@react-navigation/native';
+import {useDispatch} from 'react-redux';
+import {clearCart} from '../../store/actions/cart';
 
 interface PaymentScreenProps {
   orderId: string;
   email: string;
 }
 
+const Icon = styled.View`
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+`;
+const Space = styled.View`
+  margin-top: 50px;
+`;
+const Arrow = styled.View`
+  z-index: 10;
+`;
+
 const PaymentScreen: React.FC<PaymentScreenProps> = ({orderId, email}) => {
+  const navigation = useNavigation();
   const {t} = useTranslation();
+  const dispatch = useDispatch();
   const {initPaymentSheet, presentPaymentSheet} = useStripe();
-  const [isLoading, setLoading] = useState<boolean>(false);
+  const [isLoading, setLoading] = useState<boolean>(true);
   const [errorMsg, setError] = useState<string | null>(null);
 
-  const fetchPaymentSheetParams = async (): Promise<string> => {
+  const fetchPaymentSheetParams = useCallback((): Promise<string> => {
     return createPayementIntentRequest(orderId).then(response => {
-      setLoading(false);
       let res;
       if (response !== CREATE_PAYMENT_INTENT_ERROR) {
         res = response.clientSecret;
       } else {
-        setError(t('form.apiError')); //TODO
+        setError(t('payment.error'));
         res = '';
       }
       return res;
     });
-  };
+  }, [orderId, t]);
 
-  const initializePaymentSheet = async () => {
-    const paymentIntent = await fetchPaymentSheetParams();
-    const address: Address = {
-      country: 'FR',
-    };
-    const billingDetails: BillingDetails = {
-      email: email,
-      address: address,
-    };
+  const initializePaymentSheet = useCallback(() => {
+    fetchPaymentSheetParams().then(paymentIntent => {
+      const address: Address = {
+        country: 'FR',
+      };
+      const billingDetails: BillingDetails = {
+        email: email,
+        address: address,
+      };
 
-    const {error} = await initPaymentSheet({
-      paymentIntentClientSecret: paymentIntent,
-      customFlow: true,
-      merchantDisplayName: 'FI-Sweets',
-      merchantCountryCode: 'FR',
-      defaultBillingDetails: billingDetails,
+      initPaymentSheet({
+        paymentIntentClientSecret: paymentIntent,
+        customFlow: true,
+        merchantDisplayName: 'FI-Sweets',
+        merchantCountryCode: 'FR',
+        defaultBillingDetails: billingDetails,
+      }).then(data => {
+        if (data.error) {
+          setError(t(data.error.message));
+        }
+        setLoading(false);
+      });
     });
-    if (!error) {
-      setLoading(true);
-    }
-  };
+  }, [email, fetchPaymentSheetParams, initPaymentSheet, t]);
 
-  const handelConfirmPayment = async () => {
-    const {error} = await confirmPaymentSheetPayment();
-    if (error) {
-      Alert.alert(`Error code: ${error.code}`, error.message);
-    } else {
-      Alert.alert('Success', 'The payment was confirmed successfully!');
-    }
-  };
+  const handelConfirmPayment = useCallback(() => {
+    setLoading(true);
+    confirmPaymentSheetPayment().then(data => {
+      if (data.error) {
+        setError(t(data.error.message));
+      } else {
+        setError(undefined);
+        dispatch(clearCart());
+        navigation.goBack();
+        navigation.goBack();
+      }
+    });
+  }, [dispatch, navigation, t]);
 
-  const openPaymentSheet = async () => {
-    const {error} = await presentPaymentSheet();
-
-    if (error) {
-      Alert.alert(`Error code: ${error.code}`, error.message);
-    } else {
-      handelConfirmPayment();
-    }
-  };
+  const openPaymentSheet = useCallback(() => {
+    presentPaymentSheet().then(data => {
+      if (data.error) {
+        setError(t(data.error.message));
+      } else {
+        handelConfirmPayment();
+      }
+    });
+  }, [handelConfirmPayment, presentPaymentSheet, t]);
 
   useEffect(() => {
     initializePaymentSheet();
-  });
+  }, [email, initializePaymentSheet]);
+
+  useEffect(() => {
+    if (!isLoading) {
+      openPaymentSheet();
+    }
+  }, [isLoading, openPaymentSheet]);
 
   return (
     <SafeAreaView>
+      <Arrow>
+        <Back navigation={navigation} color={colors.black} />
+      </Arrow>
+      <Title title={t('payment.title')} />
+      <Icon>{getIcons('payment', colors.yellow, 100)}</Icon>
+      <Space />
       {errorMsg && <Error content={errorMsg} />}
-      <Button
-        variant="primary"
-        disabled={!isLoading}
-        title="Checkout"
-        onPress={openPaymentSheet}
-      />
+      {isLoading && <Loader />}
     </SafeAreaView>
   );
 };
