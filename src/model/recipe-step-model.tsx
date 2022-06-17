@@ -1,5 +1,5 @@
 export default class RecipeStep {
   id: string | undefined;
-  number: number | undefined;
+  order: number | undefined;
   description: string | undefined;
 }

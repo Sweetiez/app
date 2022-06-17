@@ -63,6 +63,8 @@ const RecipeScreen: React.FC<Props> = ({route, navigation}) => {
     return <Loader />;
   }
 
+  console.log(recipe);
+
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">

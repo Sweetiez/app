@@ -10,16 +10,24 @@ import {
 } from '@stripe/stripe-react-native';
 import styled from 'styled-components';
 
-import {createPayementIntentRequest} from '../../store/api/orders';
-import {CREATE_PAYMENT_INTENT_ERROR} from '../../store/constants';
+import {
+  createPayementIntentRequest,
+  getOrdersRequest,
+} from '../../store/api/orders';
+import {
+  CREATE_PAYMENT_INTENT_ERROR,
+  GET_ORDERS_ERROR,
+} from '../../store/constants';
 
 import {Back, Error, Loader, Title} from '../../atomic/atoms';
 
 import getIcons from '../../utils/icons';
 import colors from '../../assets/colors';
 import {useNavigation} from '@react-navigation/native';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {clearCart} from '../../store/actions/cart';
+import {setOrders} from '../../store/actions/orders';
+import {tokenSelector, userSelector} from '../../store/selectors/user';
 
 interface PaymentScreenProps {
   orderId: string;
@@ -42,6 +50,8 @@ const PaymentScreen: React.FC<PaymentScreenProps> = ({orderId, email}) => {
   const navigation = useNavigation();
   const {t} = useTranslation();
   const dispatch = useDispatch();
+  const user = useSelector(userSelector);
+  const token = useSelector(tokenSelector);
   const {initPaymentSheet, presentPaymentSheet} = useStripe();
   const [isLoading, setLoading] = useState<boolean>(true);
   const [errorMsg, setError] = useState<string | null>(null);
@@ -92,11 +102,19 @@ const PaymentScreen: React.FC<PaymentScreenProps> = ({orderId, email}) => {
       } else {
         setError(undefined);
         dispatch(clearCart());
+        if (user) {
+          getOrdersRequest(token).then(cartData => {
+            setLoading(false);
+            if (data !== GET_ORDERS_ERROR) {
+              dispatch(setOrders(cartData));
+            }
+          });
+        }
         navigation.goBack();
         navigation.goBack();
       }
     });
-  }, [dispatch, navigation, t]);
+  }, [dispatch, navigation, t, token, user]);
 
   const openPaymentSheet = useCallback(() => {
     presentPaymentSheet().then(data => {
