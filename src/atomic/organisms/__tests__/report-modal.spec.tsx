@@ -2,11 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import '../../../utils/mocks';
 import ReportModal from '../report-modal';
-import configureStore from '../../../store/configureStore';
+import {store} from '../../../store/configureStore';
 import ReduxProvider from '../../../utils/provider';
 
 describe('ErrorModal', () => {
-  const store = configureStore();
   it('renders correctly', () => {
     const tree = renderer
       .create(

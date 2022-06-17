@@ -3,10 +3,9 @@ import renderer from 'react-test-renderer';
 import '../../../utils/mocks';
 import ReduxProvider from '../../../utils/provider';
 import CartItem from '../cart-item';
-import configureStore from '../../../store/configureStore';
+import {store} from '../../../store/configureStore';
 
 describe('CartItem', () => {
-  const store = configureStore();
   it('renders correctly', () => {
     const cartItem = {
       quantity: 5,

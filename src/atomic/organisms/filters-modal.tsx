@@ -65,7 +65,7 @@ const FiltersModal: React.FC<Props> = ({
   const renderScale = (scale: string[]) => {
     const items = [];
     scale.map(i => {
-      items.push(<Text>{i}</Text>);
+      items.push(<Text key={i}>{i}</Text>);
     });
     return items;
   };

@@ -1,3 +1,5 @@
+import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
+
 jest.mock('./../assets/icons/pen.svg', () => 'Pen');
 jest.mock('./../assets/icons/star.svg', () => 'Star');
 jest.mock('./../assets/icons/plus.svg', () => 'Plus');
@@ -15,6 +17,11 @@ jest.mock('./../assets/icons/orders.svg', () => 'Orders');
 jest.mock('./../assets/icons/warning.svg', () => 'Warning');
 jest.mock('./../assets/icons/filter.svg', () => 'Filter');
 jest.mock('./../assets/icons/cross.svg', () => 'Cross');
+jest.mock('./../assets/icons/phone.svg', () => 'Phone');
+jest.mock('./../assets/icons/email.svg', () => 'Email');
+jest.mock('./../assets/icons/crown.svg', () => 'Crown');
+
+jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
 jest.mock('react-i18next', () => ({
     useTranslation: () => {

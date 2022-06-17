@@ -1,9 +1,22 @@
-import {createStore, combineReducers} from 'redux';
+import {combineReducers} from 'redux';
+import {configureStore} from '@reduxjs/toolkit';
 import cartReducer from './reducers/cart';
 import shopReducer from './reducers/shop';
 import userReducer from './reducers/user';
 import ordersReducer from './reducers/orders';
 import recipesReducer from './reducers/recipes';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {persistReducer, persistStore} from 'redux-persist';
+import thunk from 'redux-thunk';
+
+const persistConfig = {
+  keyPrefix: '',
+  key: 'root',
+  storage: AsyncStorage,
+  timeout: null,
+  blacklist: [],
+  // whitelist: ['user'],
+};
 
 const rootReducer = combineReducers({
   cart: cartReducer,
@@ -12,7 +25,13 @@ const rootReducer = combineReducers({
   orders: ordersReducer,
   recipes: recipesReducer,
 });
-const confStore = () => {
-  return createStore(rootReducer);
-};
-export default confStore;
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export const store = configureStore({
+  reducer: persistedReducer,
+  devTools: process.env.NODE_ENV !== 'production',
+  middleware: [thunk],
+});
+
+export const persistor = persistStore(store);
