@@ -20,8 +20,33 @@ import {checkConnectivity} from '../../../utils/connectivity';
 const Container = styled.View`
   margin-top: 30px;
 `;
+const CardContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  border-radius: 8px;
+  background-color: white;
+`;
+
+const SpaceBorder = styled.View`
+  background-color: ${colors.grey};
+  width: 100%;
+  height: 1px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+`;
+
+const HorizontalSpace = styled.View`
+  margin-right: 10px;
+`;
 const Space = styled.View`
   margin-top: 10px;
+`;
+const Row = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 `;
 const Icon = styled.View`
   margin-top: 30px;
@@ -94,7 +119,8 @@ function AccountScreen({navigation}) {
     return <Loader />;
   }
 
-  // TODO insert fidelity points
+  const fidelityPoints =
+    (user.loyalty ? user.loyalty.toString() : '0') + t('account.fidelity');
 
   const phone = user.phone ? user.phone : t('account.unknown');
 
@@ -105,11 +131,25 @@ function AccountScreen({navigation}) {
         <Title title={t('account.title') + user.firstName} />
         <Icon>{getIcons('account', colors.yellow, 100)}</Icon>
         <MainContainer>
-          <Text content={t('account.firstname') + user.firstName} size={20} />
-          <Text content={t('account.lastname') + user.lastName} size={20} />
-          <Text content={t('account.email') + user.email} size={20} />
-          <Text content={t('account.phone') + phone} size={20} />
-
+          <CardContainer>
+            <Text content={user.firstName + ' ' + user.lastName} size={20} />
+            <Row>
+              {getIcons('email', colors.grey, 18)}
+              <HorizontalSpace />
+              <Text content={user.email} size={20} />
+            </Row>
+            <Row>
+              {getIcons('phone', colors.grey, 18)}
+              <HorizontalSpace />
+              <Text content={phone} size={20} />
+            </Row>
+            <SpaceBorder />
+            <Row>
+              {getIcons('crown', colors.yellow, 22)}
+              <HorizontalSpace />
+              <Text content={fidelityPoints} size={20} />
+            </Row>
+          </CardContainer>
           <Container>
             <Button text={t('account.orders')} onPress={handleOrders} />
             <Space />

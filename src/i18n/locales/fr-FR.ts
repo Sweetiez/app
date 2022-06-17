@@ -107,7 +107,8 @@ const locale = {
       phone: "Téléphone : ",
       unknown: "Non renseigné",
       editPassword: "Modifier le mot de passe",
-      orders: "Vos commandes"
+      orders: "Vos commandes",
+      fidelity: " Points de fidélité"
     },
     editAccount:{
       title: "Modifiez vos informations",

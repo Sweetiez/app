@@ -20,6 +20,9 @@ import Orders from './../assets/icons/orders.svg';
 import Filter from './../assets/icons/filter.svg';
 import Cross from './../assets/icons/cross.svg';
 import Circle from './../assets/icons/circle.svg';
+import Email from './../assets/icons/email.svg';
+import Phone from './../assets/icons/phone.svg';
+import Crown from './../assets/icons/crown.svg';
 import colors from '../assets/colors';
 
 const getIcons = (iconName, color = colors.white, size = 18) => {
@@ -69,6 +72,12 @@ const getIcons = (iconName, color = colors.white, size = 18) => {
       return <Cross {...props} />;
     case 'circle':
       return <Circle {...props} />;
+    case 'email':
+      return <Email {...props} />;
+    case 'phone':
+      return <Phone {...props} />;
+    case 'crown':
+      return <Crown {...props} />;
   }
 };
 
