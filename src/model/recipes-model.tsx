@@ -13,6 +13,5 @@ export default class RecipeModel {
   cookTime: string | undefined;
   people: number | undefined;
   cost: number | undefined;
-  cookingTime: string | undefined;
   steps: RecipeStep[] | undefined;
 }
