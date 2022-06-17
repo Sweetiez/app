@@ -4,7 +4,9 @@ const locale = {
       showMore: 'Montrer Plus',
       showLess: 'Montrer Moins',
       euros : "€",
-      continue: "Continuer"
+      continue: "Continuer",
+      cancel: "Annuler",
+      validate: "Valider"
     },
     form:{
       incorrectEmail: 'Veuillez rentrer un email correct',
@@ -14,6 +16,7 @@ const locale = {
       fillPasswords: "Veuillez remplir le mot de passe actuel, nouveau et sa confirmation",
       blankInputs: "Veuillez remplir tous les champs obligatoires (prénom, nom et email)",
       blankInputsWithPassword: "Veuillez remplir tous les champs obligatoires (prénom, nom, mot de passe et email)",
+      blankInputsWithPhone: "Veuillez remplir tous les champs obligatoires (prénom, nom, mot de passe et téléphone)",
       passwordPlaceholder: "Mot de Passe",
       currentPasswordPlaceholder: 'Mot de passe actuel',
       newPasswordPlaceholder: "Nouveau mot de passe",
@@ -182,7 +185,9 @@ const locale = {
       title: "Paiement"
     },
     clientInfo:{
-      title: "Informations Client"
+      title: "Informations Client",
+      pickupDateSelect: "Sélectionnez une date de retrait",
+      pickupDate: "Date de retrait : "
     },
     cgu:{
       title: "Conditions Générales d'Utilisation",

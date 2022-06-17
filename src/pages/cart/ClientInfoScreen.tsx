@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import {useTranslation} from 'react-i18next';
-import {ScrollView, Text} from 'react-native';
+import {ScrollView} from 'react-native';
 import styled from 'styled-components';
 import {Back, Button, Error, Title} from '../../atomic/atoms';
 import {cartSelector} from '../../store/selectors/cart';
@@ -20,6 +20,8 @@ import CreateOrderRequestModel from '../../model/create-order-request-model';
 import {useSelector} from 'react-redux';
 import {createAnOrdersRequest} from '../../store/api/orders';
 import {formatDashDate} from '../../utils/date';
+import moment from 'moment';
+import {userSelector} from '../../store/selectors/user';
 
 const CartRecapContainer = styled.View`
   flex: 1;
@@ -47,21 +49,25 @@ const Form = styled.View`
 
 function ClientInfoScreen({navigation}) {
   const {t} = useTranslation();
-  const [firstname, setFirstname] = useState<string>('');
-  const [lastname, setLastname] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [phone, setPhone] = useState<string>('');
-  const [date, setDate] = useState(new Date());
+
+  const user = useSelector(userSelector);
+  const [firstname, setFirstname] = useState<string>(user?.firstName);
+  const [lastname, setLastname] = useState<string>(user?.lastName);
+  const [email, setEmail] = useState<string>(user?.email);
+  const [phone, setPhone] = useState<string>(user?.phone);
   const [open, setOpen] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setLoading] = useState<boolean>(false);
+  const dateInThreeDays = moment(new Date()).add(3, 'days').toDate();
+  const [date, setDate] = useState<Date>(dateInThreeDays);
+  const [dateStr, setDateStr] = useState<string>(
+    t('clientInfo.pickupDateSelect'),
+  );
   const cart = useSelector(cartSelector);
-  // const user = useSelector(userSelector);
-  // todo enrichir input pour avoir une default value
 
   const validate = () => {
     if (email === '' || phone === '' || firstname === '' || lastname === '') {
-      setError(t('form.blankInputsWithPassword'));
+      setError(t('form.blankInputsWithPhone'));
       return false;
     } else if (!validateName(firstname)) {
       setError(t('form.incorrectFirstname'));
@@ -140,21 +146,27 @@ function ClientInfoScreen({navigation}) {
               keyboardType={'phone-pad'}
             />
             <Button
-              text="Select Date"
+              text={dateStr}
               onPress={() => setOpen(true)}
               color={colors.grey}
             />
-            {date && <Text>{formatDashDate(date.toString())}</Text>}
             <DatePicker
               modal
-              title={'Séléctionner une date'}
-              cancelText={'annuler'}
-              confirmText={'valider'}
+              title={t('clientInfo.pickupDateSelect')}
+              cancelText={t('common.cancel')}
+              confirmText={t('common.validate')}
               mode={'date'}
+              minimumDate={dateInThreeDays}
               open={open}
               date={date}
               locale={'fr'}
               onConfirm={d => {
+                if (d) {
+                  setDateStr(
+                    t('clientInfo.pickupDate') +
+                      formatDashDate(date.toString()),
+                  );
+                }
                 setOpen(false);
                 setDate(d);
               }}
