@@ -32,11 +32,12 @@ export const buildRequest = async (
       headers,
       body: JSON.stringify(data),
     });
-
     if (response.status === 200 || response.status === 201) {
       return onSuccess(response);
     } else if (response.status === 409) {
       return onSuccess('409');
+    } else if (response.status === 403) {
+      return onError('403');
     } else {
       return onError();
     }

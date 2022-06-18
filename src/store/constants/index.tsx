@@ -21,6 +21,7 @@ export const UPDATE_OK = 'UPDATE_OK';
 export const UPDATE_ERROR = 'UPDATE_ERROR';
 export const UPDATE_PASSWORD_OK = 'UPDATE_PASSWORD_OK';
 export const UPDATE_PASSWORD_ERROR = 'UPDATE_PASSWORD_ERROR';
+export const TOKEN_EXPIRED = 'TOKEN_EXPIRED';
 
 // evaluation
 export const COMMENT_ERROR = 'COMMENT_ERROR';

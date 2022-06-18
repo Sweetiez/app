@@ -5,6 +5,7 @@ import {
   GET_USER_ERROR,
   UPDATE_OK,
   UPDATE_ERROR,
+  TOKEN_EXPIRED,
   UPDATE_PASSWORD_ERROR,
   UPDATE_PASSWORD_OK,
 } from '../constants';
@@ -96,12 +97,15 @@ export const updatePasswordRequest = async (
 
 export const getUserRequest = async (
   token: string,
-): Promise<User | typeof GET_USER_ERROR> => {
+): Promise<User | typeof GET_USER_ERROR | typeof TOKEN_EXPIRED> => {
   return buildRequest(
     'GET',
     '/user/me',
     undefined,
-    () => {
+    response => {
+      if (response === '403') {
+        return TOKEN_EXPIRED;
+      }
       return GET_USER_ERROR;
     },
     response => {

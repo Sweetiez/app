@@ -11,9 +11,13 @@ import {Filters} from '../../atomic/molecules';
 import {updateShop} from '../../store/actions/shop';
 import productSelector from '../../store/selectors/shop';
 import {getPublishedProducts} from '../../store/api/shop';
-import {GET_USER_ERROR, PRODUCT_ERROR} from '../../store/constants';
+import {
+  GET_USER_ERROR,
+  PRODUCT_ERROR,
+  TOKEN_EXPIRED,
+} from '../../store/constants';
 import {getUserRequest} from '../../store/api/user';
-import {setUser} from '../../store/actions/user';
+import {logout, setUser} from '../../store/actions/user';
 import {tokenSelector, userSelector} from '../../store/selectors/user';
 import {checkConnectivity} from '../../utils/connectivity';
 import {FilterModel} from '../../model';
@@ -102,6 +106,8 @@ function ShopScreen({navigation}) {
         setLoading(false);
         if (data === GET_USER_ERROR && !showErrorModal) {
           setShowErrorModal(true);
+        } else if (data === TOKEN_EXPIRED) {
+          dispatch(logout());
         } else if (data !== GET_USER_ERROR) {
           dispatch(setUser(data));
         }

@@ -11,7 +11,7 @@ import {Button} from '../../../atomic/molecules';
 import {logout, setUser} from '../../../store/actions/user';
 import {getUserRequest} from '../../../store/api/user';
 import {tokenSelector, userSelector} from '../../../store/selectors/user';
-import {GET_USER_ERROR} from '../../../store/constants';
+import {GET_USER_ERROR, TOKEN_EXPIRED} from '../../../store/constants';
 
 import getIcons from '../../../utils/icons';
 import colors from '../../../assets/colors';
@@ -75,6 +75,8 @@ function AccountScreen({navigation}) {
       setLoading(false);
       if (data === GET_USER_ERROR) {
         setShowErrorModal(true);
+      } else if (data === TOKEN_EXPIRED) {
+        dispatch(logout());
       } else {
         dispatch(setUser(data));
       }

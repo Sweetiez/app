@@ -15,8 +15,12 @@ import {
   validatePhone,
 } from '../../../utils/validator';
 import {getUserRequest, updateMeRequest} from '../../../store/api/user';
-import {GET_USER_ERROR, UPDATE_OK} from '../../../store/constants';
-import {setUser} from '../../../store/actions/user';
+import {
+  GET_USER_ERROR,
+  TOKEN_EXPIRED,
+  UPDATE_OK,
+} from '../../../store/constants';
+import {logout, setUser} from '../../../store/actions/user';
 
 const Container = styled.View`
   margin-top: 30px;
@@ -84,6 +88,8 @@ function EditAccountScreen({navigation}) {
             setLoading(false);
             if (updatedData === GET_USER_ERROR) {
               setError(t('editAccount.error'));
+            } else if (data === TOKEN_EXPIRED) {
+              dispatch(logout());
             } else {
               dispatch(setUser(updatedData));
               navigation.navigate('Account');
