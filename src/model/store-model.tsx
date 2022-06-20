@@ -5,7 +5,8 @@ export default class State {
     cart: Cart[];
   };
   shop: {
-    products: ProductCard[];
+    sweets?: ProductCard[];
+    trays?: ProductCard[];
   };
   user: {
     token?: string;
