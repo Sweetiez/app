@@ -27,8 +27,12 @@ const locale = {
       phonePlaceholder:'Numéro de téléphone',
       incorrectPhone: 'Numéro de téléphone incorrect'
     },
+    shopTabBar:{
+      trays: "Plateaux",
+      sweets:"Mignardises"
+    },
     tabBar:{
-      sweets: "Mignardises",
+      shop: "Boutique",
       recipes: "Recettes",
       events: "Evenements",
       cart: "Panier",
@@ -55,7 +59,7 @@ const locale = {
       registerError: "L'inscription a échoué"
     },
     shop:{
-      title: "Mignardises",
+      title: "Boutique",
       noProducts: "Aucun produit"
     },
     details:{

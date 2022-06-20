@@ -11,6 +11,7 @@ import {useSelector} from 'react-redux';
 import {itemsQuantityIntoCartSelector} from '../store/selectors/cart';
 import {tokenSelector} from '../store/selectors/user';
 import AccountConnectedStackScreen from './account-connected';
+import colors from '../assets/colors';
 
 function TabStackScreen() {
   const Tab = createBottomTabNavigator();
@@ -25,10 +26,10 @@ function TabStackScreen() {
         tabBarIcon: ({focused, color, size}) => {
           return getTabIcon(route, focused, color, size, t);
         },
-        tabBarActiveTintColor: 'tomato',
+        tabBarActiveTintColor: colors.yellow,
         tabBarInactiveTintColor: 'gray',
       })}>
-      <Tab.Screen name={t('tabBar.sweets')} component={SweetsStackScreen} />
+      <Tab.Screen name={t('tabBar.shop')} component={SweetsStackScreen} />
       <Tab.Screen name={t('tabBar.recipes')} component={RecipesStackScreen} />
       <Tab.Screen name={t('tabBar.events')} component={EventsStackScreen} />
       <Tab.Screen

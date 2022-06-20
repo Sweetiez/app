@@ -4,7 +4,7 @@ import {useTranslation} from 'react-i18next';
 import {ScrollView} from 'react-native';
 import styled from 'styled-components';
 
-import {Title, Loader, Text} from '../../atomic/atoms';
+import {Loader, Text} from '../../atomic/atoms';
 import {Item, ErrorModal, FiltersModal} from '../../atomic/organisms';
 import {Filters} from '../../atomic/molecules';
 
@@ -34,16 +34,19 @@ const Items = styled.View`
   flex-wrap: wrap;
 `;
 
-function ShopScreen({navigation}) {
+function ShopScreen({navigation, route}) {
   const {t} = useTranslation();
   const dispatch = useDispatch();
   const shop = useSelector(productSelector);
+  //const trays = useSelector(productSelector);
   const token = useSelector(tokenSelector);
   const user = useSelector(userSelector);
   const [isLoading, setLoading] = useState<boolean>(false);
   const [showErrorModal, setShowErrorModal] = useState<boolean>(false);
   const [showFiltersModal, setShowFiltersModal] = useState<boolean>(false);
-  const [filters, setFilters] = useState<FilterModel>([]);
+  const [filters, setFilters] = useState<FilterModel>({});
+  const isTrays = route.params.isTrays;
+  console.log(isTrays);
 
   const minRating = 0;
   const maxRating = 5;
@@ -64,10 +67,10 @@ function ShopScreen({navigation}) {
       } else {
         newData = newData.filter(product => {
           return !!(
-            product.evaluation &&
+            product.valuation &&
             filters.ratings &&
-            product.evaluation.mark >= filters.ratings[0] &&
-            product.evaluation.mark <= filters.ratings[1]
+            product.valuation.mark >= filters.ratings[0] &&
+            product.valuation.mark <= filters.ratings[1]
           );
         });
       }
@@ -174,7 +177,6 @@ function ShopScreen({navigation}) {
         setFilters={setFilters}
         filters={filters}
       />
-      <Title title={t('shop.title')} />
       <Filters
         length={filterLength}
         onPress={() => setShowFiltersModal(true)}

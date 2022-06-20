@@ -1,13 +1,46 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {DetailsScreen, ShopScreen, CommentScreen} from '../pages';
+//import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {
+  StackNavigationOptions,
+  createStackNavigator,
+} from '@react-navigation/stack';
+import {DetailsScreen, CommentScreen} from '../pages';
+import {Text} from '../atomic/atoms';
+import ShopTabs from './shopTabs';
+import colors from '../assets/colors';
+import {Platform} from 'react-native';
+import {useTranslation} from 'react-i18next';
 
-const SweetsStack = createNativeStackNavigator();
+const SweetsStack = createStackNavigator();
 
 function SweetsStackScreen() {
+  const headerStyle = {
+    backgroundColor: colors.yellow,
+    shadowColor: colors.white,
+    elevation: 10,
+  };
+  const headerOptions = (title: string): StackNavigationOptions => ({
+    headerStyle,
+    headerTintColor: colors.white,
+    headerBackTitleVisible: false,
+    headerLeft: () => null,
+    headerTitle: (): React.ReactNode => (
+      <Text content={title} size={30} color={colors.white} />
+    ),
+    headerTitleAlign: 'center',
+  });
+  const {t} = useTranslation();
+
   return (
-    <SweetsStack.Navigator screenOptions={{headerShown: false}}>
-      <SweetsStack.Screen name="Home" component={ShopScreen} />
+    <SweetsStack.Navigator
+      screenOptions={{
+        headerMode: Platform.OS === 'ios' ? 'float' : 'screen',
+      }}>
+      <SweetsStack.Screen
+        name={t('shop.title')}
+        component={ShopTabs}
+        options={headerOptions(t('shop.title'))}
+      />
       <SweetsStack.Screen name="Comment" component={CommentScreen} />
       <SweetsStack.Screen name="Details" component={DetailsScreen} />
     </SweetsStack.Navigator>
