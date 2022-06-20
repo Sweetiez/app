@@ -1,16 +1,24 @@
-import {UPDATE_SHOP} from '../constants';
+import {UPDATE_SWEET_SHOP, UPDATE_TRAY_SHOP} from '../constants';
 const initialState = {
-  products: [],
+  sweets: [],
+  trays: [],
 };
 const shopReducer = (state = initialState, action) => {
   switch (action.type) {
-    case UPDATE_SHOP:
+    case UPDATE_SWEET_SHOP:
       return {
         ...state,
-        products: action.payload,
+        sweets: action.payload,
+      };
+    case UPDATE_TRAY_SHOP:
+      console.log(action.payload);
+      return {
+        ...state,
+        trays: action.payload,
       };
     default:
       return state;
   }
 };
+
 export default shopReducer;

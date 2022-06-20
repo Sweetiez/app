@@ -1,7 +1,7 @@
-import {PRODUCT_ERROR} from '../constants';
+import {PRODUCT_ERROR, TRAY_ERROR} from '../constants';
 import {buildRequest} from '../../utils/api';
 
-export function getPublishedProducts() {
+export function getPublishedSweets() {
   return buildRequest(
     'GET',
     '/sweets/published',
@@ -19,6 +19,34 @@ export function getProduct(id: string) {
   return buildRequest(
     'GET',
     '/sweets/' + id,
+    undefined,
+    () => {
+      return PRODUCT_ERROR;
+    },
+    response => {
+      return response.json();
+    },
+    undefined,
+  );
+}
+export function getPublishedTrays() {
+  return buildRequest(
+    'GET',
+    '/trays/published',
+    undefined,
+    () => {
+      return TRAY_ERROR;
+    },
+    response => {
+      return response.json();
+    },
+    undefined,
+  );
+}
+export function getTray(id: string) {
+  return buildRequest(
+    'GET',
+    '/trays/' + id,
     undefined,
     () => {
       return PRODUCT_ERROR;

@@ -1,5 +1,9 @@
 import State from '../../model/store-model';
 
-export default function productSelector(state: State) {
-  return state.shop.products;
+export function sweetsSelector(state: State) {
+  return state.shop.sweets;
+}
+
+export function traysSelector(state: State) {
+  return state.shop.trays;
 }

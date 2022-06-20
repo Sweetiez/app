@@ -4,9 +4,11 @@ export const REMOVE_ITEM_FROM_CART = 'REMOVE_ITEM_FROM_CART';
 export const CLEAR_CART = 'CLEAR_CART';
 
 // shop
-export const UPDATE_SHOP = 'UPDATE_SHOP';
+export const UPDATE_SWEET_SHOP = 'UPDATE_SWEET_SHOP';
+export const UPDATE_TRAY_SHOP = 'UPDATE_TRAY_SHOP';
 export const GET_PRODUCTS = 'GET_PRODUCTS';
 export const PRODUCT_ERROR = 'PRODUCT_ERROR';
+export const TRAY_ERROR = 'TRAY_ERROR';
 
 // user
 export const LOGIN = 'LOGIN';
