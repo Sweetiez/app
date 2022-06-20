@@ -122,7 +122,7 @@ function ClientInfoScreen({navigation}) {
   return (
     <StyledSafeAreaView>
       <Arrow>
-        <Back navigation={navigation} color={colors.black} />
+        <Back navigation={navigation} />
       </Arrow>
       <StyledTitle title={t('clientInfo.title')} />
       <ScrollView contentInsetAdjustmentBehavior="automatic">

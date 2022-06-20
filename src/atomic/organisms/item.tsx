@@ -10,6 +10,7 @@ import colors from '../../assets/colors';
 interface Props {
   product: ProductCard;
   navigation: any;
+  isTray: boolean;
 }
 
 const Content = styled.View`
@@ -43,12 +44,14 @@ const Container = styled.TouchableOpacity`
   margin: 5px;
 `;
 
-const Item: React.FC<Props> = ({product, navigation}) => {
+const Item: React.FC<Props> = ({product, navigation, isTray}) => {
   const {name, description, images, rating, price, id} = product;
   const {t} = useTranslation();
   return (
     <Container
-      onPress={() => navigation.navigate('Details', {productId: product.id})}>
+      onPress={() =>
+        navigation.navigate('Details', {productId: product.id, isTray: isTray})
+      }>
       {images && images.length > 0 && images[0] !== '' ? (
         <StyledImage source={{uri: images[0]}} />
       ) : (

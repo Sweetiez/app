@@ -97,7 +97,7 @@ const OrdersScreen: React.FC<Props> = ({navigation}) => {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Back navigation={navigation} color={colors.black} />
+        <Back navigation={navigation} />
         <Title title={t('orders.title')} />
         <Icon>{getIcons('orders', colors.yellow, 80)}</Icon>
         {content}

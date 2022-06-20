@@ -84,7 +84,7 @@ function EditPasswordScreen({navigation}) {
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <Title title={t('editPassword.title')} />
-        <Back navigation={navigation} color={colors.black} />
+        <Back navigation={navigation} />
         <Icon>{getIcons('edit', colors.yellow, 100)}</Icon>
         <MainContainer>
           <Input

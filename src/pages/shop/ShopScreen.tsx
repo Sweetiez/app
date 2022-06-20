@@ -211,7 +211,12 @@ function ShopScreen({navigation, route}) {
       <Items>
         {filteredProducts.length > 0 ? (
           filteredProducts.map(product => (
-            <Item key={product.id} product={product} navigation={navigation} />
+            <Item
+              key={product.id}
+              product={product}
+              navigation={navigation}
+              isTray={isTrays}
+            />
           ))
         ) : (
           <CenteredText>

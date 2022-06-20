@@ -77,7 +77,7 @@ const CommentScreen: React.FC<Props> = ({route, navigation}) => {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Back navigation={navigation} color={colors.black} />
+        <Back navigation={navigation} />
         <Title title={t('comment.title')} />
         <Icon>{getIcons('pen', colors.yellow, 80)}</Icon>
         <Content>

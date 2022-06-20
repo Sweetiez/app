@@ -6,16 +6,20 @@ import colors from '../../assets/colors';
 
 interface Props {
   navigation: any;
-  color?: string;
 }
-const Arrow = styled(ArrowBack)`
+const Container = styled.TouchableOpacity`
   position: absolute;
   top: 5px;
   left: 5px;
   z-index: 10;
+  border-radius: 100px;
+  background-color: ${colors.yellow};
+  padding: 2px;
 `;
-const Back: React.FC<Props> = ({navigation, color = colors.white}) => (
-  <Arrow color={color} onPress={() => navigation.goBack()} />
+const Back: React.FC<Props> = ({navigation}) => (
+  <Container onPress={() => navigation.goBack()}>
+    <ArrowBack color={colors.white} />
+  </Container>
 );
 
 export default Back;

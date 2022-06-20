@@ -42,7 +42,11 @@ function SweetsStackScreen() {
         options={headerOptions(t('shop.title'))}
       />
       <SweetsStack.Screen name="Comment" component={CommentScreen} />
-      <SweetsStack.Screen name="Details" component={DetailsScreen} />
+      <SweetsStack.Screen
+        name="Details"
+        component={DetailsScreen}
+        options={{headerShown: false}}
+      />
     </SweetsStack.Navigator>
   );
 }

@@ -107,7 +107,7 @@ function RegisterScreen({navigation}) {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Back navigation={navigation} color={colors.black} />
+        <Back navigation={navigation} />
         <Title title={t('register.title')} />
         <Form>
           <Icon>{getIcons('account', colors.yellow, 100)}</Icon>
