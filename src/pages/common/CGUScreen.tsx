@@ -4,7 +4,6 @@ import {useTranslation} from 'react-i18next';
 import {SafeAreaView, ScrollView, Text} from 'react-native';
 import styled from 'styled-components';
 import {Back, Title} from '../../atomic/atoms';
-import colors from '../../assets/colors';
 
 const Content = styled.View`
   margin-right: 20px;
@@ -22,7 +21,7 @@ function CGUScreen({navigation}) {
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <Title title={t('cgu.title')} />
-        <Back navigation={navigation} color={colors.black} />
+        <Back navigation={navigation} />
         <Content>
           <Bold>{t('cgu.cgv.title')}</Bold>
           <Text>{t('cgu.cgv.content')}</Text>

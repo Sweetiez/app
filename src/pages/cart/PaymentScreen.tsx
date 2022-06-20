@@ -139,7 +139,7 @@ const PaymentScreen: React.FC<PaymentScreenProps> = ({orderId, email}) => {
   return (
     <SafeAreaView>
       <Arrow>
-        <Back navigation={navigation} color={colors.black} />
+        <Back navigation={navigation} />
       </Arrow>
       <Title title={t('payment.title')} />
       <Icon>{getIcons('payment', colors.yellow, 100)}</Icon>

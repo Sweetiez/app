@@ -68,7 +68,7 @@ const RecipeScreen: React.FC<Props> = ({route, navigation}) => {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Back navigation={navigation} color={colors.black} />
+        <Back navigation={navigation} />
         <Title title={recipe.name} />
         {recipe.images &&
         recipe.images.length > 0 &&

@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 import {SafeAreaView, ScrollView} from 'react-native';
 
-import {Loader, Title, Text} from '../../atomic/atoms';
+import {Loader, Text} from '../../atomic/atoms';
 import {ErrorModal, Recipe} from '../../atomic/organisms';
 
 import {checkConnectivity} from '../../utils/connectivity';
@@ -64,7 +64,6 @@ function RecipesScreen({navigation}) {
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <ErrorModal show={showErrorModal} setShow={setShowErrorModal} />
-        <Title title={t('recipes.title')} />
         {recipes && recipes.length > 0 ? (
           <Recipes>
             {recipes.map(recipe => (

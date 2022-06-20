@@ -56,7 +56,7 @@ function LoginScreen({navigation}) {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Back navigation={navigation} color={colors.black} />
+        <Back navigation={navigation} />
         <Title title={t('forgotPassword.title')} />
         <Form>
           <Icon>{getIcons('interrogation', colors.yellow, 100)}</Icon>

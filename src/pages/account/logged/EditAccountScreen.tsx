@@ -106,7 +106,7 @@ function EditAccountScreen({navigation}) {
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <Title title={t('editAccount.title')} />
-        <Back navigation={navigation} color={colors.black} />
+        <Back navigation={navigation} />
         <Icon>{getIcons('edit', colors.yellow, 100)}</Icon>
         <MainContainer>
           <Input

@@ -55,6 +55,7 @@ const NoImage = styled.View`
 
 const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
   const id = route.params.productId;
+  const isTray = route.params.isTray;
   const {t} = useTranslation();
   const dispatch = useDispatch();
   const token = useSelector(tokenSelector);
@@ -65,7 +66,7 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
 
   const getData = useCallback(() => {
     setLoading(true);
-    getProduct(id).then(data => {
+    getProduct(id, isTray).then(data => {
       setLoading(false);
       if (data !== PRODUCT_ERROR) {
         setProduct(data);
@@ -73,7 +74,7 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
         setShowErrorModal(true);
       }
     });
-  }, [id, showErrorModal]);
+  }, [id, isTray, showErrorModal]);
 
   useEffect(() => {
     checkConnectivity().then(isConnected => {

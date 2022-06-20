@@ -6,8 +6,6 @@ import styled from 'styled-components';
 
 import {Back, Button, Title} from '../../atomic/atoms';
 
-import colors from '../../assets/colors';
-
 const SubContainer = styled.View`
   flex: 1;
 `;
@@ -35,7 +33,7 @@ function ConfirmationScreen({navigation}) {
   return (
     <StyledSafeAreaView>
       <Arrow>
-        <Back navigation={navigation} color={colors.black} />
+        <Back navigation={navigation} />
       </Arrow>
       <StyledTitle title={t('confirmation.title')} />
       <ScrollView

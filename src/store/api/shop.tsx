@@ -15,10 +15,10 @@ export function getPublishedSweets() {
     undefined,
   );
 }
-export function getProduct(id: string) {
+export function getProduct(id: string, isTray: boolean) {
   return buildRequest(
     'GET',
-    '/sweets/' + id,
+    isTray ? '/trays/' + id : '/sweets/' + id,
     undefined,
     () => {
       return PRODUCT_ERROR;

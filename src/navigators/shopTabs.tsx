@@ -17,7 +17,7 @@ function TabStackScreen() {
     labelStyle: {
       fontSize: 18,
       flex: 1,
-      margin: 0,
+      margin: 'auto',
       lineHeight: 18,
       marginTop: -10,
       textTransform: 'none',
@@ -35,6 +35,7 @@ function TabStackScreen() {
         tabBarActiveTintColor: colors.yellow,
         tabBarInactiveTintColor: colors.grey,
         tabBarPressColor: colors.yellow,
+        headerLayoutPreset: 'center',
       })}>
       <Tab.Screen
         name={t('shopTabBar.trays')}
