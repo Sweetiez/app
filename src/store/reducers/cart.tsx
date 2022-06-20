@@ -24,12 +24,7 @@ const cartReducer = (state = initialState, action) => {
         cart: newCart,
       };
     case REMOVE_ITEM_FROM_CART:
-      const newData = [];
-      state.cart.forEach(cartItem => {
-        if (cartItem !== item) {
-          newData.push(cartItem);
-        }
-      });
+      const newData = state.cart.filter(cartItem => cartItem !== item);
       return {
         ...state,
         cart: newData,

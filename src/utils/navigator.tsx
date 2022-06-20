@@ -3,7 +3,7 @@ import getIcons from './icons';
 
 const getTabIcon = (route, focused, color, size, t) => {
   switch (route.name) {
-    case t('tabBar.sweets'):
+    case t('tabBar.shop'):
       return getIcons('cake', color, 24);
     case t('tabBar.recipes'):
       return getIcons('cookBook', color, 24);

@@ -118,7 +118,7 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
         <Container>
           <Title title={product.name} size={30} />
           <StarsContainer>
-            <Stars rating={product.evaluation.mark} itemId={id} />
+            <Stars rating={product.valuation.mark} itemId={id} />
           </StarsContainer>
           <AddToBasket
             addToBasket={addToBasket}
@@ -141,9 +141,8 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
             </CommentButton>
           )}
 
-          {product.comments.map(comment => (
-            <Comment comment={comment} />
-          ))}
+          {product.comments &&
+            product.comments.map(comment => <Comment comment={comment} />)}
         </Comments>
       </ScrollView>
     </SafeAreaView>
