@@ -12,7 +12,7 @@ const cartReducer = (state = initialState, action) => {
     case ADD_ITEM_TO_CART:
       let newCart = [...state.cart];
       const existingItem = newCart.find(
-        cartItem => item.item === cartItem.item,
+        cartItem => item.item.id === cartItem.item.id,
       );
       if (existingItem) {
         existingItem.quantity = existingItem.quantity += item.quantity;

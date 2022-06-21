@@ -100,7 +100,7 @@ function ClientInfoScreen({navigation}) {
         products: cart.map(item => {
           return new ProductOrderRequestModel(
             item?.item?.id ? item.item.id : '',
-            'SWEET',
+            item?.item?.type,
             item?.quantity ? item.quantity : -1,
           );
         }),
