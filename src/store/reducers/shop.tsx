@@ -11,7 +11,6 @@ const shopReducer = (state = initialState, action) => {
         sweets: action.payload,
       };
     case UPDATE_TRAY_SHOP:
-      console.log(action.payload);
       return {
         ...state,
         trays: action.payload,

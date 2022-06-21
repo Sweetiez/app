@@ -6,6 +6,7 @@ import {ProductCard} from '../../model';
 import {useTranslation} from 'react-i18next';
 import getIcons from '../../utils/icons';
 import colors from '../../assets/colors';
+import Badge from '../atoms/badge';
 
 interface Props {
   product: ProductCard;
@@ -43,10 +44,17 @@ const Container = styled.TouchableOpacity`
   background-color: white;
   margin: 5px;
 `;
+const Row = styled.View`
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+`;
 
 const Item: React.FC<Props> = ({product, navigation, isTray}) => {
-  const {name, description, images, rating, price, id} = product;
+  const {name, description, images, rating, price, id, unitPerPackage} =
+    product;
   const {t} = useTranslation();
+  console.log(product.unitPerPackage);
   return (
     <Container
       onPress={() =>
@@ -58,7 +66,11 @@ const Item: React.FC<Props> = ({product, navigation, isTray}) => {
         <NoImage>{getIcons('noImage', colors.yellow, 100)}</NoImage>
       )}
       <Content>
-        <Title title={name} size={22} />
+        <Row>
+          <Title title={name} size={22} />
+          {isTray ? <></> : <Badge text={unitPerPackage} />}
+        </Row>
+
         <Description numberOfLines={3} content={description} />
       </Content>
       <Bottom>

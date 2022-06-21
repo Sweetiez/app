@@ -64,7 +64,12 @@ const locale = {
     },
     details:{
       comment : "Commenter",
-      add: "Ajouter"
+      add: "Ajouter",
+      info: "(Lot de {{quantity}} au prix unitaire de {{price}} €)",
+      ingredients: "Ingrédients",
+      diets: "Régimes alimentaires",
+      allergens: "Allergènes",
+      sweets: "Mignardises incluses"
     },
     events:{
       title: "TODO events title"

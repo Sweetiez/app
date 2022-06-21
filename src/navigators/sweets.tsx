@@ -1,5 +1,4 @@
 import React from 'react';
-//import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   StackNavigationOptions,
   createStackNavigator,
@@ -41,7 +40,11 @@ function SweetsStackScreen() {
         component={ShopTabs}
         options={headerOptions(t('shop.title'))}
       />
-      <SweetsStack.Screen name="Comment" component={CommentScreen} />
+      <SweetsStack.Screen
+        name="Comment"
+        component={CommentScreen}
+        options={{headerShown: false}}
+      />
       <SweetsStack.Screen
         name="Details"
         component={DetailsScreen}
