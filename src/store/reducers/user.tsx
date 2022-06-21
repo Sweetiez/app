@@ -15,6 +15,7 @@ const userReducer = (state = initialState, action) => {
     case LOGOUT:
       return {
         ...state,
+        user: undefined,
         token: undefined,
         refreshToken: undefined,
       };
