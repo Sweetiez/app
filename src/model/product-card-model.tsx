@@ -21,4 +21,5 @@ export default class ProductCardModel {
       quantity: number | undefined;
     },
   ];
+  type: 'SWEET' | 'TRAY';
 }

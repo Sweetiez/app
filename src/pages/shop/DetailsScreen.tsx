@@ -102,7 +102,9 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
   };
 
   const addToBasket = () => {
-    dispatch(addItemToCart(product, quantity));
+    dispatch(
+      addItemToCart({...product, type: isTray ? 'TRAY' : 'SWEET'}, quantity),
+    );
     setQuantity(0);
   };
 
