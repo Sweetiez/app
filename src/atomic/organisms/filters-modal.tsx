@@ -184,7 +184,7 @@ const FiltersModal: React.FC<Props> = ({
       <BigSpace />
       <Row>
         <Button
-          color={colors.blue}
+          color={colors.yellow}
           onPress={() => {
             setFilters({});
             setShow(false);

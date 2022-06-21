@@ -15,4 +15,10 @@ export default class ProductCardModel {
   flavor: string | undefined;
   valuation: Evaluation | undefined;
   comments: CommentCard[] | undefined;
+  sweets: [
+    {
+      sweet: ProductCardModel;
+      quantity: number | undefined;
+    },
+  ];
 }

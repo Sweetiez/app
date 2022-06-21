@@ -7,12 +7,16 @@ interface Props {
   numberOfLines?: number;
   size: string;
   color?: string;
+  textDecoration?: string;
+  textTransform?: string;
 }
 
-const StyledText = styled.Text<{size; color}>`
+const StyledText = styled.Text<{size; color; textTransform; textDecoration}>`
   font-family: Pompiere-Regular;
   color: ${({color}) => color};
   font-size: ${({size}) => size}px;
+  text-decoration: ${({textDecoration}) => textDecoration};
+  text-transform: ${({textTransform}) => textTransform};
 `;
 
 const Text: React.FC<Props> = ({
@@ -20,8 +24,15 @@ const Text: React.FC<Props> = ({
   numberOfLines = undefined,
   size = 12,
   color = colors.black,
+  textDecoration = 'none',
+  textTransform = 'none',
 }) => (
-  <StyledText numberOfLines={numberOfLines} size={size} color={color}>
+  <StyledText
+    numberOfLines={numberOfLines}
+    size={size}
+    color={color}
+    textDecoration={textDecoration}
+    textTransform={textTransform}>
     {content}
   </StyledText>
 );

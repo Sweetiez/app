@@ -142,7 +142,6 @@ function ShopScreen({navigation, route}) {
   const getTrayData = useCallback(() => {
     setLoading(true);
     getPublishedTrays().then(traysData => {
-      console.log(traysData);
       setLoading(false);
       if (traysData === TRAY_ERROR) {
         setShowErrorModal(true);

@@ -31,7 +31,7 @@ const Description = styled(Text)``;
 const Comments = styled.View`
   margin-top: 10px;
 `;
-const Container = styled.View`
+const MainContainer = styled.View`
   padding-right: 5px;
   padding-left: 5px;
 `;
@@ -42,15 +42,22 @@ const CommentButton = styled.View`
   margin: 5px auto;
 `;
 const Price = styled.View`
-  margin: 10px auto 0;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 10px 0 10px;
 `;
 const StarsContainer = styled.View`
   align-items: center;
   margin-bottom: 10px;
 `;
-
 const NoImage = styled.View`
   margin: auto;
+`;
+const Container = styled.View`
+  margin-top: 10px;
+`;
+const ItemList = styled.View`
+  flex-direction: row;
 `;
 
 const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
@@ -116,21 +123,109 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
         ) : (
           <NoImage>{getIcons('noImage', colors.yellow, 100)}</NoImage>
         )}
-        <Container>
+        <MainContainer>
           <Title title={product.name} size={30} />
-          <StarsContainer>
-            <Stars rating={product.valuation.mark} itemId={id} />
-          </StarsContainer>
+          {product.valuation.mark >= 1 ? (
+            <StarsContainer>
+              <Stars rating={product.valuation.mark} itemId={id} />
+            </StarsContainer>
+          ) : (
+            <></>
+          )}
+
+          {isTray ? (
+            <Price>
+              <Text content={product.price + '€'} size={22} />
+            </Price>
+          ) : (
+            <Price>
+              <Text content={product.packagedPrice + '€'} size={22} />
+              <Text
+                content={t('details.info', {
+                  quantity: product.unitPerPackage,
+                  price: product.price,
+                })}
+                size={16}
+              />
+            </Price>
+          )}
           <AddToBasket
             addToBasket={addToBasket}
             quantity={quantity}
             setQuantity={setQuantity}
           />
           <Description content={product.description} size={20} />
-          <Price>
-            <Text content={product.price + '€'} size={22} />
-          </Price>
-        </Container>
+          {isTray ? (
+            <Container>
+              <Text
+                content={t('details.sweets')}
+                size={24}
+                textDecoration={'underline'}
+              />
+              {product.sweets &&
+                product.sweets.map(sweet => (
+                  <Text
+                    content={sweet.sweet.name + ' x ' + sweet.quantity}
+                    size={18}
+                  />
+                ))}
+            </Container>
+          ) : (
+            <>
+              <Container>
+                <Text
+                  content={t('details.ingredients')}
+                  size={24}
+                  textDecoration={'underline'}
+                />
+                <ItemList>
+                  {product.ingredients &&
+                    product.ingredients.map((ingredient, index) => (
+                      <Text
+                        content={(index ? ', ' : '') + ingredient}
+                        size={18}
+                        textTransform={'capitalize'}
+                      />
+                    ))}
+                </ItemList>
+              </Container>
+            </>
+          )}
+          <Container>
+            <Text
+              content={t('details.diets')}
+              size={24}
+              textDecoration={'underline'}
+            />
+            <ItemList>
+              {product.diets &&
+                product.diets.map((diet, index) => (
+                  <Text
+                    content={(index ? ', ' : '') + diet}
+                    size={18}
+                    textTransform={'capitalize'}
+                  />
+                ))}
+            </ItemList>
+          </Container>
+          <Container>
+            <Text
+              content={t('details.allergens')}
+              size={24}
+              textDecoration={'underline'}
+            />
+            <ItemList>
+              {product.allergens &&
+                product.allergens.map((allergen, index) => (
+                  <Text
+                    content={(index ? ', ' : '') + allergen}
+                    size={18}
+                    textTransform={'capitalize'}
+                  />
+                ))}
+            </ItemList>
+          </Container>
+        </MainContainer>
         <Comments>
           {!!token && (
             <CommentButton>

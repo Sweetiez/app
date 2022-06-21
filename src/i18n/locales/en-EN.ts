@@ -64,7 +64,12 @@ const locale = {
     },
     details:{
       comment : "Comment",
-      add: "Add"
+      add: "Add",
+      info: "(Set of {{quantity}} at a unit price of {{price}} €)",
+      ingredients: "Ingredients",
+      diets: "Diets",
+      allergens: "Allergens",
+      sweets: "Sweets included"
     },
     events:{
       title: "TODO events title"
