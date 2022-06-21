@@ -35,9 +35,15 @@ exports[`Steps renders correctly 1`] = `
           "color": "#dba970",
           "fontFamily": "Pompiere-Regular",
           "fontSize": 28,
+          "textDecorationColor": "black",
+          "textDecorationLine": "none",
+          "textDecorationStyle": "solid",
+          "textTransform": "none",
         },
       ]
     }
+    textDecoration="none"
+    textTransform="none"
   >
     recipe.steps
   </Text>
@@ -70,9 +76,15 @@ exports[`Steps renders correctly 1`] = `
             "color": "#dba970",
             "fontFamily": "Pompiere-Regular",
             "fontSize": 16,
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
           },
         ]
       }
+      textDecoration="none"
+      textTransform="none"
     >
       1 . 
     </Text>
@@ -85,9 +97,15 @@ exports[`Steps renders correctly 1`] = `
             "color": "#000000",
             "fontFamily": "Pompiere-Regular",
             "fontSize": 16,
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
           },
         ]
       }
+      textDecoration="none"
+      textTransform="none"
     >
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci alias aliquam culpa, delectus expedita fugit ipsum laboriosam maiores maxime numquam reprehenderit, rerum sint unde vero! Accusamus id quod repudiandae?
     </Text>
@@ -112,9 +130,15 @@ exports[`Steps renders correctly 1`] = `
             "color": "#dba970",
             "fontFamily": "Pompiere-Regular",
             "fontSize": 16,
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
           },
         ]
       }
+      textDecoration="none"
+      textTransform="none"
     >
       2 . 
     </Text>
@@ -127,9 +151,15 @@ exports[`Steps renders correctly 1`] = `
             "color": "#000000",
             "fontFamily": "Pompiere-Regular",
             "fontSize": 16,
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
           },
         ]
       }
+      textDecoration="none"
+      textTransform="none"
     >
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci alias aliquam culpa, delectus expedita fugit ipsum laboriosam maiores maxime numquam reprehenderit, rerum sint unde vero! Accusamus id quod repudiandae?
     </Text>
@@ -154,9 +184,15 @@ exports[`Steps renders correctly 1`] = `
             "color": "#dba970",
             "fontFamily": "Pompiere-Regular",
             "fontSize": 16,
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
           },
         ]
       }
+      textDecoration="none"
+      textTransform="none"
     >
       3 . 
     </Text>
@@ -169,9 +205,15 @@ exports[`Steps renders correctly 1`] = `
             "color": "#000000",
             "fontFamily": "Pompiere-Regular",
             "fontSize": 16,
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
           },
         ]
       }
+      textDecoration="none"
+      textTransform="none"
     >
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci alias aliquam culpa, delectus expedita fugit ipsum laboriosam maiores maxime numquam reprehenderit, rerum sint unde vero! Accusamus id quod repudiandae?
     </Text>

@@ -36,7 +36,7 @@ function SweetsStackScreen() {
         headerMode: Platform.OS === 'ios' ? 'float' : 'screen',
       }}>
       <SweetsStack.Screen
-        name={t('shop.title')}
+        name="Home"
         component={ShopTabs}
         options={headerOptions(t('shop.title'))}
       />

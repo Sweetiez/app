@@ -29,7 +29,7 @@ const Steps: React.FC<Props> = ({steps}) => {
       <Text content={t('recipe.steps')} size={28} color={colors.yellow} />
       <Space />
       {steps.map(step => (
-        <Step text={step.description} count={step.order} key={step.number} />
+        <Step text={step.description} count={step.order} key={step.id} />
       ))}
     </Container>
   );

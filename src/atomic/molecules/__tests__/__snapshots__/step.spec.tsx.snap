@@ -21,9 +21,15 @@ exports[`Step renders correctly 1`] = `
           "color": "#dba970",
           "fontFamily": "Pompiere-Regular",
           "fontSize": 16,
+          "textDecorationColor": "black",
+          "textDecorationLine": "none",
+          "textDecorationStyle": "solid",
+          "textTransform": "none",
         },
       ]
     }
+    textDecoration="none"
+    textTransform="none"
   >
     3 . 
   </Text>
@@ -36,9 +42,15 @@ exports[`Step renders correctly 1`] = `
           "color": "#000000",
           "fontFamily": "Pompiere-Regular",
           "fontSize": 16,
+          "textDecorationColor": "black",
+          "textDecorationLine": "none",
+          "textDecorationStyle": "solid",
+          "textTransform": "none",
         },
       ]
     }
+    textDecoration="none"
+    textTransform="none"
   >
     This is a text step
   </Text>

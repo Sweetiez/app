@@ -1,3 +1,5 @@
+import {CommentCard} from './index';
+
 class VoteModel {
   1: number;
   2: number;
@@ -10,4 +12,5 @@ export default class ProductCardModel {
   mark: number | undefined;
   voters: number | undefined;
   votes: VoteModel | undefined;
+  comments: CommentCard[] | undefined;
 }

@@ -237,8 +237,10 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
             </CommentButton>
           )}
 
-          {product.comments &&
-            product.comments.map(comment => <Comment comment={comment} />)}
+          {product.valuation.comments &&
+            product.valuation.comments.map(comment =>
+              comment.content ? <Comment comment={comment} /> : <></>,
+            )}
         </Comments>
       </ScrollView>
     </SafeAreaView>

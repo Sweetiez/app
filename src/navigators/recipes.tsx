@@ -36,7 +36,11 @@ function RecipesStackScreen() {
         component={RecipesScreen}
         options={headerOptions(t('recipes.title'))}
       />
-      <RecipesStack.Screen name="Recipe" component={RecipeScreen} />
+      <RecipesStack.Screen
+        name="Recipe"
+        component={RecipeScreen}
+        options={{headerShown: false}}
+      />
     </RecipesStack.Navigator>
   );
 }

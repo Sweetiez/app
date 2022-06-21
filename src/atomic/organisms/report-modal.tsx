@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import RNPickerSelect from 'react-native-picker-select';
 
 import {Button, Error} from '../atoms';
-import {Modal} from '../molecules';
+import {Input, Modal} from '../molecules';
 import colors from '../../assets/colors';
 import {ReportEvaluationRequest} from '../../model';
 import {useSelector} from 'react-redux';
@@ -18,6 +18,8 @@ interface Props {
   setShow: (value: boolean) => void;
   evaluationId: string;
 }
+
+const TextArea = styled(Input)``;
 
 const Container = styled.View`
   margin-top: 30px;
@@ -35,6 +37,7 @@ const ReportModal: React.FC<Props> = ({show, setShow, evaluationId}) => {
   const {t} = useTranslation();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [reason, setReason] = useState<string | undefined>(undefined);
+  const [comment, setComment] = useState<string>('');
   const [error, setError] = useState<string | undefined>(undefined);
 
   const user = useSelector(userSelector);
@@ -46,7 +49,7 @@ const ReportModal: React.FC<Props> = ({show, setShow, evaluationId}) => {
       reason,
       reporterId: user.id,
       evaluationId: evaluationId,
-      content: '',
+      content: comment,
     };
     reportRequest(data, token).then(response => {
       setIsLoading(false);
@@ -127,6 +130,15 @@ const ReportModal: React.FC<Props> = ({show, setShow, evaluationId}) => {
           onValueChange={value => setReason(value)}
           items={options}
         />
+        {reason === 'other' && (
+          <TextArea
+            onChangeText={setComment}
+            value={comment}
+            placeholder={t('comment.commentPlaceholder')}
+            multiline={true}
+            numberOfLines={10}
+          />
+        )}
       </Container>
       {error && <Error content={error} />}
       <Row>
@@ -139,7 +151,7 @@ const ReportModal: React.FC<Props> = ({show, setShow, evaluationId}) => {
           text={t('reportModal.send')}
         />
         <Button
-          color={colors.red}
+          color={colors.grey}
           onPress={() => {
             setShow(false);
           }}

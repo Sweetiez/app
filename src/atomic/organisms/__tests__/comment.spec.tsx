@@ -9,10 +9,12 @@ describe('Comment', () => {
   it('renders correctly', () => {
     const comment = {
       id: '1',
-      author: 'abcd123',
-      authorName: 'John Doe',
+      voter: {
+        id: '123',
+        name: 'John Doe',
+      },
       content: 'This is a typical comment',
-      rating: 4,
+      mark: 4,
       date: '12/12/2012',
     };
     const tree = renderer

@@ -96,9 +96,15 @@ exports[`Recipe renders correctly 1`] = `
             "color": "#000000",
             "fontFamily": "Pompiere-Regular",
             "fontSize": 14,
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
           },
         ]
       }
+      textDecoration="none"
+      textTransform="none"
     >
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci alias aliquam culpa, delectus expedita fugit ipsum laboriosam maiores maxime numquam reprehenderit, rerum sint unde vero! Accusamus id quod repudiandae?
     </Text>

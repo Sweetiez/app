@@ -25,7 +25,8 @@ const locale = {
       firstnamePlaceholder:"Prénom",
       lastnamePlaceholder:"Nom",
       phonePlaceholder:'Numéro de téléphone',
-      incorrectPhone: 'Numéro de téléphone incorrect'
+      incorrectPhone: 'Numéro de téléphone incorrect',
+      apiError: "Une erreur est survenue"
     },
     shopTabBar:{
       trays: "Plateaux",

@@ -54,7 +54,6 @@ const Item: React.FC<Props> = ({product, navigation, isTray}) => {
   const {name, description, images, rating, price, id, unitPerPackage} =
     product;
   const {t} = useTranslation();
-  console.log(product.unitPerPackage);
   return (
     <Container
       onPress={() =>
