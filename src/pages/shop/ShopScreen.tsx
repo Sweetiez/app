@@ -69,10 +69,10 @@ function ShopScreen({navigation, route}) {
       } else {
         newData = newData.filter(product => {
           return !!(
-            product.valuation &&
+            product.rating &&
             filters.ratings &&
-            product.valuation.mark >= filters.ratings[0] &&
-            product.valuation.mark <= filters.ratings[1]
+            product.rating >= filters.ratings[0] &&
+            product.rating <= filters.ratings[1]
           );
         });
       }

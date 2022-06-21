@@ -10,9 +10,15 @@ exports[`Text renders correctly 1`] = `
         "color": "#000000",
         "fontFamily": "Pompiere-Regular",
         "fontSize": 12,
+        "textDecorationColor": "black",
+        "textDecorationLine": "none",
+        "textDecorationStyle": "solid",
+        "textTransform": "none",
       },
     ]
   }
+  textDecoration="none"
+  textTransform="none"
 >
   test
 </Text>
@@ -28,9 +34,15 @@ exports[`Text renders with smaller size 1`] = `
         "color": "#000000",
         "fontFamily": "Pompiere-Regular",
         "fontSize": 10,
+        "textDecorationColor": "black",
+        "textDecorationLine": "none",
+        "textDecorationStyle": "solid",
+        "textTransform": "none",
       },
     ]
   }
+  textDecoration="none"
+  textTransform="none"
 >
   test
 </Text>
@@ -47,9 +59,15 @@ exports[`Text renders with specified number of lines 1`] = `
         "color": "#000000",
         "fontFamily": "Pompiere-Regular",
         "fontSize": 12,
+        "textDecorationColor": "black",
+        "textDecorationLine": "none",
+        "textDecorationStyle": "solid",
+        "textTransform": "none",
       },
     ]
   }
+  textDecoration="none"
+  textTransform="none"
 >
   test renders with specified number of lines renders with specified number of lines renders with specified number of lines renders with specified number of lines renders with specified number of lines renders with specified number of lines renders with specified number of lines renders with specified number of lines renders with specified number of lines test
 </Text>

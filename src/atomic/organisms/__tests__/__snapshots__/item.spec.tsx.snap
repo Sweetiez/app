@@ -62,21 +62,66 @@ exports[`Item renders correctly 1`] = `
       ]
     }
   >
-    <Text
-      size={22}
+    <View
       style={
         Array [
           Object {
-            "color": "black",
-            "fontFamily": "Pompiere-Regular",
-            "fontSize": 22,
-            "textAlign": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": "100%",
           },
         ]
       }
     >
-      Tartelette
-    </Text>
+      <Text
+        size={22}
+        style={
+          Array [
+            Object {
+              "color": "black",
+              "fontFamily": "Pompiere-Regular",
+              "fontSize": 22,
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        Tartelette
+      </Text>
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#dba970",
+              "borderRadius": 100,
+              "marginBottom": "auto",
+              "marginLeft": "auto",
+              "marginRight": "auto",
+              "marginTop": "auto",
+              "paddingBottom": 2,
+              "paddingLeft": 8,
+              "paddingRight": 8,
+              "paddingTop": 2,
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "fontFamily": "Pompiere-Regular",
+                "fontSize": 14,
+              },
+            ]
+          }
+        >
+          xundefined
+        </Text>
+      </View>
+    </View>
     <Text
       color="#000000"
       numberOfLines={3}
@@ -87,9 +132,15 @@ exports[`Item renders correctly 1`] = `
             "color": "#000000",
             "fontFamily": "Pompiere-Regular",
             "fontSize": 12,
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
           },
         ]
       }
+      textDecoration="none"
+      textTransform="none"
     >
       This is a description
     </Text>
@@ -117,9 +168,15 @@ exports[`Item renders correctly 1`] = `
             "color": "#000000",
             "fontFamily": "Pompiere-Regular",
             "fontSize": 15,
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
           },
         ]
       }
+      textDecoration="none"
+      textTransform="none"
     >
       10common.euros
     </Text>

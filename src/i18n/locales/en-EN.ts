@@ -25,7 +25,8 @@ const locale = {
       firstnamePlaceholder:"Firstname",
       lastnamePlaceholder:"Lastname",
       phonePlaceholder:'Phone number',
-      incorrectPhone: 'Incorrect phone number'
+      incorrectPhone: 'Incorrect phone number',
+      apiError: "An error occurred"
     },
     shopTabBar:{
       trays: "Trays",

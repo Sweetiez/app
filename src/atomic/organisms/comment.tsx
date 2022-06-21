@@ -52,7 +52,7 @@ const Container = styled.View`
 `;
 
 const Comment: React.FC<Props> = ({comment}) => {
-  const {author, authorName, content, date, rating, id} = comment;
+  const {voter, content, date, mark, id} = comment;
   const {t} = useTranslation();
   const token = useSelector(tokenSelector);
   const [showMore, setShowMore] = useState<boolean>(false);
@@ -70,7 +70,7 @@ const Comment: React.FC<Props> = ({comment}) => {
         setShow={setShowReportModal}
         evaluationId={id}
       />
-      <Stars rating={rating} size={15} itemId={author + date + rating} />
+      <Stars rating={mark} size={15} itemId={voter.id + date + mark} />
       <Content
         onTextLayout={onTextLayout}
         numberOfLines={showMore ? undefined : 5}>
@@ -85,7 +85,7 @@ const Comment: React.FC<Props> = ({comment}) => {
       )}
       <Bottom>
         <Flex3>
-          <Author>{authorName + ' - '}</Author>
+          <Author>{voter.name + ' - '}</Author>
           <Date>{formatDate(date)}</Date>
         </Flex3>
         {token && (

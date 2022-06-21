@@ -2,7 +2,6 @@ import React from 'react';
 import getTabIcon from '../utils/navigator';
 import SweetsStackScreen from './sweets';
 import RecipesStackScreen from './recipes';
-import EventsStackScreen from './events';
 import CartStackScreen from './cart';
 import AccountNotConnectedStackScreen from './account-not-connected';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -31,7 +30,7 @@ function TabStackScreen() {
       })}>
       <Tab.Screen name={t('tabBar.shop')} component={SweetsStackScreen} />
       <Tab.Screen name={t('tabBar.recipes')} component={RecipesStackScreen} />
-      <Tab.Screen name={t('tabBar.events')} component={EventsStackScreen} />
+      {/*<Tab.Screen name={t('tabBar.events')} component={EventsStackScreen} />*/}
       <Tab.Screen
         name={t('tabBar.cart')}
         component={CartStackScreen}
