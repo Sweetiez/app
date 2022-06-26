@@ -17,7 +17,10 @@ export function totalPriceSelector(state: State) {
   let totalPrice = 0;
 
   state.cart.cart.forEach(
-    cartItem => (totalPrice += cartItem.item.packagedPrice * cartItem.quantity),
+    cartItem =>
+      (totalPrice += cartItem.item.packagedPrice
+        ? cartItem.item.packagedPrice * cartItem.quantity
+        : cartItem.item.price * cartItem.quantity),
   );
 
   return Math.round(totalPrice * 100) / 100;

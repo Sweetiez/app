@@ -4,5 +4,5 @@ export default class UserModel {
   lastName: string;
   email: string;
   phone: string;
-  loyalty: number;
+  loyaltyPoints: number;
 }

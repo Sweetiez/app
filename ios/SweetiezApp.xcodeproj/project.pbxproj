@@ -15,6 +15,8 @@
 		31F9CD0BF876476B8E8A686B /* Pompiere-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4A844255884E6C9F1AECE8 /* Pompiere-Regular.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-SweetiezApp-SweetiezAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-SweetiezApp-SweetiezAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		B34CA2BE2868CA400012431E /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = B34CA2BD2868CA400012431E /* 120.png */; };
+		B34CA2C02868CB210012431E /* ic_launcher_round.png in Resources */ = {isa = PBXBuildFile; fileRef = B34CA2BF2868CB210012431E /* ic_launcher_round.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SweetiezApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-SweetiezApp-SweetiezAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweetiezApp-SweetiezAppTests.release.xcconfig"; path = "Target Support Files/Pods-SweetiezApp-SweetiezAppTests/Pods-SweetiezApp-SweetiezAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		9C4A844255884E6C9F1AECE8 /* Pompiere-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pompiere-Regular.ttf"; path = "../src/assets/fonts/Pompiere-Regular.ttf"; sourceTree = "<group>"; };
+		B34CA2BD2868CA400012431E /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 120.png; path = SweetiezApp/Images.xcassets/AppIcon.appiconset/120.png; sourceTree = "<group>"; };
+		B34CA2BF2868CB210012431E /* ic_launcher_round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_launcher_round.png; path = "../android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -88,6 +92,8 @@
 		13B07FAE1A68108700A75B9A /* SweetiezApp */ = {
 			isa = PBXGroup;
 			children = (
+				B34CA2BF2868CB210012431E /* ic_launcher_round.png */,
+				B34CA2BD2868CA400012431E /* 120.png */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -253,7 +259,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B34CA2C02868CB210012431E /* ic_launcher_round.png in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				B34CA2BE2868CA400012431E /* 120.png in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				31F9CD0BF876476B8E8A686B /* Pompiere-Regular.ttf in Resources */,
 			);

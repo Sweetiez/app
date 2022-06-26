@@ -122,7 +122,8 @@ function AccountScreen({navigation}) {
   }
 
   const fidelityPoints =
-    (user.loyalty ? user.loyalty.toString() : '0') + t('account.fidelity');
+    (user.loyaltyPoints ? user.loyaltyPoints.toString() : '0') +
+    t('account.fidelity');
 
   const phone = user.phone ? user.phone : t('account.unknown');
 
