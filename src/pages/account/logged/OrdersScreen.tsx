@@ -1,4 +1,5 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import * as React from 'react';
+import {useCallback, useEffect, useState} from 'react';
 
 import {SafeAreaView, ScrollView} from 'react-native';
 import styled from 'styled-components';
@@ -8,7 +9,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Title, Back, Loader} from '../../../atomic/atoms';
 import {Order} from '../../../atomic/organisms';
 
-import {ProductCard} from '../../../model';
 import colors from '../../../assets/colors';
 import getIcons from '../../../utils/icons';
 import {checkConnectivity} from '../../../utils/connectivity';
@@ -19,9 +19,6 @@ import {setOrders} from '../../../store/actions/orders';
 import {ordersSelector} from '../../../store/selectors/orders';
 import {getOrdersRequest} from '../../../store/api/orders';
 
-interface Props {
-  product: ProductCard;
-}
 const Content = styled.View`
   padding: 5px;
   margin-top: 30px;
@@ -38,7 +35,7 @@ const Container = styled.View`
   margin-top: 100px;
 `;
 
-const OrdersScreen: React.FC<Props> = ({navigation}) => {
+function OrdersScreen({navigation}) {
   const {t} = useTranslation();
   const token = useSelector(tokenSelector);
   const orders = useSelector(ordersSelector);
@@ -104,6 +101,6 @@ const OrdersScreen: React.FC<Props> = ({navigation}) => {
       </ScrollView>
     </SafeAreaView>
   );
-};
+}
 
 export default OrdersScreen;

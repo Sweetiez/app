@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import renderer from 'react-test-renderer';
 import '../../../utils/mocks';
 import Category from '../category';
@@ -8,7 +8,7 @@ describe('Category', () => {
     const tree = renderer
       .create(
         <Category
-          checked={false}
+          isChecked={false}
           setChecked={jest.fn()}
           label={'this is a checkbox'}
         />,
@@ -20,7 +20,7 @@ describe('Category', () => {
     const tree = renderer
       .create(
         <Category
-          checked={true}
+          isChecked={true}
           setChecked={jest.fn()}
           label={'this is a checkbox'}
         />,

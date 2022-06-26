@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import getTabIcon from '../utils/navigator';
 import SweetsStackScreen from './sweets';
 import RecipesStackScreen from './recipes';

@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import * as React from 'react';
+import {useState} from 'react';
 import {Text} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import styled from 'styled-components';
@@ -53,13 +54,13 @@ const FiltersModal: React.FC<Props> = ({
   const {t} = useTranslation();
   const [priceValues, setPriceValues] = useState<number[]>([0, 50]);
   const [salty, setSalty] = useState<boolean>(
-    filters.category?.find(cat => cat === 'SALTY') || false,
+    !!filters.category?.find(cat => cat === 'SALTY') || false,
   );
   const [sweety, setSweety] = useState<boolean>(
-    filters.category?.find(cat => cat === 'SWEET') || false,
+    !!filters.category?.find(cat => cat === 'SWEET') || false,
   );
   const [mix, setMix] = useState<boolean>(
-    filters.category?.find(cat => cat === 'MIXED') || false,
+    !!filters.category?.find(cat => cat === 'MIXED') || false,
   );
 
   const renderScale = (scale: string[]) => {
@@ -164,19 +165,16 @@ const FiltersModal: React.FC<Props> = ({
         <BoldText>{t('filters.filtersModal.category')}</BoldText>
         <Category
           isChecked={salty}
-          checked={salty}
           setChecked={() => handleCategoryChange('SALTY', !salty)}
           label={t('filters.filtersModal.categories.salty')}
         />
         <Category
           isChecked={sweety}
-          checked={sweety}
           setChecked={() => handleCategoryChange('SWEET', !sweety)}
           label={t('filters.filtersModal.categories.sweety')}
         />
         <Category
           isChecked={mix}
-          checked={mix}
           setChecked={() => handleCategoryChange('MIXED', !mix)}
           label={t('filters.filtersModal.categories.mix')}
         />

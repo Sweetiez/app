@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 import {Title, Text} from '../atoms';
 import {Stars} from '../molecules';
@@ -67,7 +67,11 @@ const Item: React.FC<Props> = ({product, navigation, isTray}) => {
       <Content>
         <Row>
           <Title title={name} size={22} />
-          {isTray ? <></> : <Badge text={unitPerPackage} />}
+          {isTray && unitPerPackage ? (
+            <></>
+          ) : (
+            <Badge text={unitPerPackage.toString()} />
+          )}
         </Row>
 
         <Description numberOfLines={3} content={description} />

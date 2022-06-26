@@ -1,10 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import {Text} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import styled from 'styled-components';
 
 interface Props {
-  checked: boolean;
+  isChecked: boolean;
   label: string;
   setChecked: () => void;
 }
@@ -22,6 +22,7 @@ const Space = styled.View`
 const Category: React.FC<Props> = ({isChecked, setChecked, label}) => {
   return (
     <Container>
+      {/*@ts-ignore because the lib hasn't properly typed his component*/}
       <CheckBox value={isChecked} onValueChange={setChecked} />
       <Space />
       <Text>{label}</Text>

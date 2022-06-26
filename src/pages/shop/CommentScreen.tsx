@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
-
+import * as React from 'react';
+import {useState} from 'react';
 import {SafeAreaView, ScrollView} from 'react-native';
 import styled from 'styled-components';
 import {Title, Back, Button, Error} from '../../atomic/atoms';
-import {CommentRequest, ProductCard} from '../../model';
+import {CommentRequest} from '../../model';
 import {Stars, Input} from '../../atomic/molecules';
 import {useTranslation} from 'react-i18next';
 import colors from '../../assets/colors';
@@ -13,9 +13,6 @@ import {commentRequest} from '../../store/api/evaluation';
 import {useSelector} from 'react-redux';
 import {tokenSelector, userSelector} from '../../store/selectors/user';
 
-interface Props {
-  product: ProductCard;
-}
 const TextArea = styled(Input)``;
 const Content = styled.View`
   padding: 5px;
@@ -35,7 +32,7 @@ const Icon = styled.View`
   margin-top: 30px;
 `;
 
-const CommentScreen: React.FC<Props> = ({route, navigation}) => {
+function CommentScreen({route, navigation}) {
   const {productId} = route.params;
   const {t} = useTranslation();
   const token = useSelector(tokenSelector);
@@ -107,6 +104,6 @@ const CommentScreen: React.FC<Props> = ({route, navigation}) => {
       </ScrollView>
     </SafeAreaView>
   );
-};
+}
 
 export default CommentScreen;

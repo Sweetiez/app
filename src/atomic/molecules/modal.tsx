@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {Modal, Platform} from 'react-native';
 import styled from 'styled-components';
 import getIcons from '../../utils/icons';
@@ -10,6 +10,7 @@ interface Props {
   icon: string;
   title: string;
   hasCross?: boolean;
+  children: React.ReactNode;
 }
 
 const MainContainer = styled.View`

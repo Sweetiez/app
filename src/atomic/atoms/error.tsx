@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import colors from '../../assets/colors';
 import styled from 'styled-components';
 

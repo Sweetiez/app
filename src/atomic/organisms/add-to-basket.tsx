@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
 import getIcons from '../../utils/icons';

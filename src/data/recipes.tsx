@@ -95,7 +95,7 @@ export const fakeRecipes: Recipe[] = [
     totalTime: '30',
     preparationTime: '15',
     chillTime: '5',
-    cookingTime: '10',
+    cookTime: '10',
     difficulty: 'Difficile',
     cost: 50,
     people: 4,

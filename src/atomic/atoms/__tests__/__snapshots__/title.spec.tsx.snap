@@ -13,7 +13,9 @@ exports[`Title renders correctly 1`] = `
       },
     ]
   }
-/>
+>
+  test
+</Text>
 `;
 
 exports[`Title renders with specified size 1`] = `
@@ -29,5 +31,7 @@ exports[`Title renders with specified size 1`] = `
       },
     ]
   }
-/>
+>
+  test
+</Text>
 `;

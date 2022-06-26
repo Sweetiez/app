@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 // @ts-ignore
 import Star from './../../assets/icons/star.svg';

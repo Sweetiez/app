@@ -15,11 +15,11 @@ export default class ProductCardModel {
   allergens: string[] | undefined;
   flavor: string | undefined;
   valuation: Evaluation | undefined;
-  sweets: [
-    {
-      sweet: ProductCardModel;
-      quantity: number | undefined;
-    },
-  ];
+  sweets: SweetsModel[];
   type: 'SWEET' | 'TRAY';
+}
+
+class SweetsModel {
+  sweet: ProductCardModel;
+  quantity: number | undefined;
 }

@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import * as React from 'react';
+import {useState} from 'react';
 
 import {useTranslation} from 'react-i18next';
 import {SafeAreaView, ScrollView} from 'react-native';
@@ -88,7 +89,7 @@ function EditAccountScreen({navigation}) {
             setLoading(false);
             if (updatedData === GET_USER_ERROR) {
               setError(t('editAccount.error'));
-            } else if (data === TOKEN_EXPIRED) {
+            } else if (updatedData === TOKEN_EXPIRED) {
               dispatch(logout());
             } else {
               dispatch(setUser(updatedData));
