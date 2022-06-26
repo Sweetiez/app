@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Text} from 'react-native';
 import renderer from 'react-test-renderer';
 import '../../../utils/mocks';
-import Modal from '../modal';
+import Modal from '../Modal';
 
 describe('Modal', () => {
   const basicProps = {

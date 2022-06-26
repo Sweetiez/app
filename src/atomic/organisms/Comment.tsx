@@ -6,7 +6,7 @@ import {CommentCard} from '../../model';
 import {useTranslation} from 'react-i18next';
 import {TouchableOpacity} from 'react-native';
 import colors from '../../assets/colors';
-import ReportModal from './report-modal';
+import ReportModal from './ReportModal';
 import {useSelector} from 'react-redux';
 import {tokenSelector} from '../../store/selectors/user';
 import {formatDate} from '../../utils/date';

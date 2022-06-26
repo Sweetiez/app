@@ -1,8 +1,8 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
 import '../../../utils/mocks';
-import Item from '../item';
-import ProductCardModel from '../../../model/product-card-model';
+import Item from '../Item';
+import ProductCardModel from '../../../model/ProductCardModel';
 
 describe('Item', () => {
   it('renders correctly', () => {

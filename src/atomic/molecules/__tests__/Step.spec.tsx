@@ -1,12 +1,12 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
 import '../../../utils/mocks';
-import Filters from '../filters';
+import Step from '../Step';
 
-describe('Filters', () => {
+describe('Step', () => {
   it('renders correctly', () => {
     const tree = renderer
-      .create(<Filters length={2} onPress={jest.fn()} />)
+      .create(<Step count={3} text="This is a text step" />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

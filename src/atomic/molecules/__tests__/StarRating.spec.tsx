@@ -1,7 +1,7 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
 import '../../../utils/mocks';
-import Stars from '../star-rating';
+import Stars from '../StarRating';
 
 describe('Stars', () => {
   const ratings = [1, 2, 3, 4, 5];

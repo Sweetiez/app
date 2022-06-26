@@ -1,7 +1,7 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
 import '../../../utils/mocks';
-import Comment from '../comment';
+import Comment from '../Comment';
 import {store} from '../../../store/configureStore';
 import ReduxProvider from '../../../utils/provider';
 

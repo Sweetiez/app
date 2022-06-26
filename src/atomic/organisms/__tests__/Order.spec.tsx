@@ -1,8 +1,8 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
 import '../../../utils/mocks';
-import Order from '../order';
-import OrderModel from '../../../model/order-model';
+import Order from '../Order';
+import OrderModel from '../../../model/OrderModel';
 
 describe('Order', () => {
   it('renders correctly', () => {

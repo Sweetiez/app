@@ -1,7 +1,7 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
 import '../../../utils/mocks';
-import Input from '../input';
+import Input from '../Input';
 
 describe('Input', () => {
   it('renders correctly', () => {

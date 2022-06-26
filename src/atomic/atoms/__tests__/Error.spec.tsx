@@ -1,10 +1,10 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
-import Loader from '../loader';
+import Error from '../Error';
 
-describe('Loader', () => {
+describe('Error', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<Loader />).toJSON();
+    const tree = renderer.create(<Error content={'test'} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

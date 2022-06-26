@@ -1,6 +1,6 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
-import Title from '../title';
+import Title from '../Title';
 
 describe('Title', () => {
   it('renders correctly', () => {

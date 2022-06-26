@@ -1,7 +1,7 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
 import '../../../utils/mocks';
-import Steps from '../steps';
+import Steps from '../Steps';
 import {fakeRecipes} from '../../../data/recipes';
 
 describe('Steps', () => {

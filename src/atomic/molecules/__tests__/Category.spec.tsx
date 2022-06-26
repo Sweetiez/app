@@ -1,7 +1,7 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
 import '../../../utils/mocks';
-import Category from '../category';
+import Category from '../Category';
 
 describe('Category', () => {
   it('renders correctly', () => {

@@ -1,4 +1,4 @@
-import State from '../../model/store-model';
+import State from '../../model/StoreModel';
 
 export function tokenSelector(state: State) {
   return state.user.token;

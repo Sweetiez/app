@@ -1,9 +1,9 @@
 import React from 'react';
 import type {Node} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import CommonStack from './src/navigators/common';
+import CommonStack from './src/navigators/Common';
 import './src/i18n/index';
-import TabStack from "./src/navigators/tabs";
+import TabStack from "./src/navigators/Tabs";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import moment from "moment";
 import "moment/min/locales";
