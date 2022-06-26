@@ -1,4 +1,5 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import * as React from 'react';
+import {useCallback, useEffect, useState} from 'react';
 
 import {SafeAreaView, ScrollView} from 'react-native';
 import {SliderBox} from 'react-native-image-slider-box';
@@ -23,11 +24,7 @@ const NoImage = styled.View`
   margin: auto;
 `;
 
-interface Props {
-  recipeId: string;
-}
-
-const RecipeScreen: React.FC<Props> = ({route, navigation}) => {
+function RecipeScreen({route, navigation}) {
   const id = route.params.recipeId;
   const [recipe, setRecipe] = useState<Recipe>(undefined);
   const [isLoading, setLoading] = useState<boolean>(false);
@@ -89,6 +86,6 @@ const RecipeScreen: React.FC<Props> = ({route, navigation}) => {
       </ScrollView>
     </SafeAreaView>
   );
-};
+}
 
 export default RecipeScreen;

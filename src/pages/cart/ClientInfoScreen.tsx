@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import * as React from 'react';
+import {useState} from 'react';
 
 import {useTranslation} from 'react-i18next';
 import {ScrollView} from 'react-native';
 import styled from 'styled-components';
+//@ts-ignore
 import moment from 'moment';
 import {useSelector} from 'react-redux';
 import DatePicker from 'react-native-date-picker';

@@ -1,4 +1,3 @@
-import React from 'react';
 import getIcons from './icons';
 
 const getTabIcon = (route, focused, color, size, t) => {

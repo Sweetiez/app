@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React from 'react';
+import * as React from 'react';
 import Pen from './../assets/icons/pen.svg';
 import Minus from './../assets/icons/minus.svg';
 import Plus from './../assets/icons/plus.svg';

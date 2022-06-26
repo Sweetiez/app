@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 import {Stars} from '../molecules';
 import {useTranslation} from 'react-i18next';

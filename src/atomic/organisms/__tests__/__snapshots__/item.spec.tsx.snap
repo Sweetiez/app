@@ -88,39 +88,6 @@ exports[`Item renders correctly 1`] = `
       >
         Tartelette
       </Text>
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "#dba970",
-              "borderRadius": 100,
-              "marginBottom": "auto",
-              "marginLeft": "auto",
-              "marginRight": "auto",
-              "marginTop": "auto",
-              "paddingBottom": 2,
-              "paddingLeft": 8,
-              "paddingRight": 8,
-              "paddingTop": 2,
-              "textAlign": "center",
-            },
-          ]
-        }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#ffffff",
-                "fontFamily": "Pompiere-Regular",
-                "fontSize": 14,
-              },
-            ]
-          }
-        >
-          xundefined
-        </Text>
-      </View>
     </View>
     <Text
       color="#000000"

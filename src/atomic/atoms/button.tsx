@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {ActivityIndicator} from 'react-native';
 import styled from 'styled-components';
 import colors from '../../assets/colors';

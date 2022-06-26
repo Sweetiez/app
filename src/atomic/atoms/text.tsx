@@ -1,11 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 import colors from '../../assets/colors';
 
 interface Props {
   content: string;
   numberOfLines?: number;
-  size: string;
+  size?: number;
   color?: string;
   textDecoration?: string;
   textTransform?: string;

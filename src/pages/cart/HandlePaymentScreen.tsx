@@ -1,11 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 
 import {SafeAreaView} from 'react-native';
 import {StripeProvider} from '@stripe/stripe-react-native';
 import PaymentScreen from './PaymentScreen';
 import Config from 'react-native-config';
 
-const HandlePaymentScreen: React.FC = ({route}) => {
+function HandlePaymentScreen({route}) {
   const orderId = route.params.orderId;
   const email = route.params.email;
   const stripePromise = Config.STRIPE_PUBLISHABLE_KEY;
@@ -17,6 +17,6 @@ const HandlePaymentScreen: React.FC = ({route}) => {
       </StripeProvider>
     </SafeAreaView>
   );
-};
+}
 
 export default HandlePaymentScreen;

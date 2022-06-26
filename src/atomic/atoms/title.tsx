@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
 interface Props {
   title: string;
-  size?: string;
+  size?: number;
 }
 
 const StyledText = styled.Text<{size}>`

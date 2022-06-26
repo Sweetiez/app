@@ -1,4 +1,5 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import * as React from 'react';
+import {useCallback, useEffect, useState} from 'react';
 
 import {useDispatch, useSelector} from 'react-redux';
 import {SafeAreaView, ScrollView} from 'react-native';
@@ -20,9 +21,6 @@ import colors from '../../assets/colors';
 import getIcons from '../../utils/icons';
 import {checkConnectivity} from '../../utils/connectivity';
 
-interface Props {
-  product: ProductCard;
-}
 const StyledSliderBox = styled(SliderBox)`
   width: 100%;
   height: 200px;
@@ -60,7 +58,7 @@ const ItemList = styled.View`
   flex-direction: row;
 `;
 
-const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
+function DetailsScreen({route, navigation}) {
   const id = route.params.productId;
   const isTray = route.params.isTray;
   const {t} = useTranslation();
@@ -247,6 +245,6 @@ const DetailsScreen: React.FC<Props> = ({route, navigation}) => {
       </ScrollView>
     </SafeAreaView>
   );
-};
+}
 
 export default DetailsScreen;
