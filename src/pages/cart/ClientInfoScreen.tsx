@@ -19,7 +19,7 @@ import CreateOrderRequestModel from '../../model/CreateOrderRequestModel';
 import {createAnOrdersRequest} from '../../store/api/orders';
 import {userSelector} from '../../store/selectors/user';
 
-import {formatDashDate} from '../../utils/date';
+import {formatDashDate, formatDate} from '../../utils/date';
 import {
   validateEmail,
   validateName,
@@ -69,6 +69,7 @@ function ClientInfoScreen({navigation}) {
   );
   const cart = useSelector(cartSelector);
 
+  console.log(dateStr);
   const validate = () => {
     if (email === '' || phone === '' || firstname === '' || lastname === '') {
       setError(t('form.blankInputsWithPhone'));
@@ -99,6 +100,7 @@ function ClientInfoScreen({navigation}) {
         email: email,
         phone: phone,
         pickupDate: formatDashDate(date.toString()),
+        rewardId: '',
         products: cart.map(item => {
           return new ProductOrderRequestModel(
             item?.item?.id ? item.item.id : '',
@@ -170,8 +172,7 @@ function ClientInfoScreen({navigation}) {
               onConfirm={d => {
                 if (d) {
                   setDateStr(
-                    t('clientInfo.pickupDate') +
-                      formatDashDate(date.toString()),
+                    t('clientInfo.pickupDate') + formatDate(d.toString()),
                   );
                 }
                 setOpen(false);

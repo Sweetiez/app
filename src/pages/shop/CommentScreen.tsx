@@ -83,7 +83,7 @@ function CommentScreen({route, navigation}) {
               rating={rating}
               setRating={setRating}
               size={30}
-              itemId={rating}
+              itemId={rating.toString()}
             />
           </StyledStars>
           <TextArea
@@ -94,7 +94,7 @@ function CommentScreen({route, navigation}) {
             numberOfLines={10}
           />
           <Space />
-          {error && <Error content={error} />}
+          {error && <Error content={error.toString()} />}
           <Button
             text={t('comment.send')}
             onPress={onCommentPress}

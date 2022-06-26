@@ -6,17 +6,21 @@ import CartStackScreen from './Cart';
 import AccountNotConnectedStackScreen from './AccountNotConnected';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useTranslation} from 'react-i18next';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {itemsQuantityIntoCartSelector} from '../store/selectors/cart';
 import {tokenSelector} from '../store/selectors/user';
 import AccountConnectedStackScreen from './AccountConnected';
 import colors from '../assets/colors';
+import {getUserRequest} from '../store/api/user';
+import {GET_USER_ERROR, TOKEN_EXPIRED} from '../store/constants';
+import {logout, setUser} from '../store/actions/user';
 
 function TabStackScreen() {
   const Tab = createBottomTabNavigator();
   const {t} = useTranslation();
   const itemsIntoCart = useSelector(itemsQuantityIntoCartSelector);
   const hasToken = useSelector(tokenSelector);
+  const dispatch = useDispatch();
 
   return (
     <Tab.Navigator
@@ -38,6 +42,21 @@ function TabStackScreen() {
       />
       {hasToken ? (
         <Tab.Screen
+          listeners={{
+            tabPress: () => {
+              getUserRequest(hasToken).then(updatedUser => {
+                if (
+                  updatedUser !== GET_USER_ERROR &&
+                  updatedUser !== TOKEN_EXPIRED
+                ) {
+                  dispatch(setUser(updatedUser));
+                } else if (updatedUser === TOKEN_EXPIRED) {
+                  dispatch(logout());
+                } else {
+                }
+              });
+            },
+          }}
           name={t('tabBar.account')}
           component={AccountConnectedStackScreen}
         />

@@ -6,5 +6,6 @@ export default class CreateOrderRequestModel {
   email: string;
   phone: string;
   pickupDate: string;
+  rewardId: string;
   products: ProductOrderRequestModel[];
 }

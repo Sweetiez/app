@@ -105,14 +105,13 @@ const PaymentScreen: React.FC<PaymentScreenProps> = ({orderId, email}) => {
         dispatch(clearCart());
         if (user) {
           getOrdersRequest(token).then(cartData => {
-            setLoading(false);
             if (data !== GET_ORDERS_ERROR) {
               dispatch(setOrders(cartData));
+              navigation.goBack();
+              navigation.goBack();
             }
           });
         }
-        navigation.goBack();
-        navigation.goBack();
       }
     });
   }, [dispatch, navigation, t, token, user]);

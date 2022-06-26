@@ -82,7 +82,7 @@ const CartItem: React.FC<Props> = ({order}) => {
         <List>
           {order.products.map(product => (
             <Text>
-              {product.name} X {product.quantity}
+              {product.name} × {product.quantity}
             </Text>
           ))}
         </List>
