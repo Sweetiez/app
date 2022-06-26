@@ -1,4 +1,4 @@
-import ProductCardModel from './product-card-model';
+import ProductCardModel from './ProductCardModel';
 
 export default class CartModel {
   item: ProductCardModel | undefined;

@@ -1,4 +1,4 @@
-import State from '../../model/store-model';
+import State from '../../model/StoreModel';
 
 export function cartSelector(state: State) {
   return state.cart.cart;

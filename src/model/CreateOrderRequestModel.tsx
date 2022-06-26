@@ -1,4 +1,4 @@
-import ProductOrderRequestModel from './product-order-request-model';
+import ProductOrderRequestModel from './ProductOrderRequestModel';
 
 export default class CreateOrderRequestModel {
   firstName: string;

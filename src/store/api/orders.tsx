@@ -5,7 +5,7 @@ import {
 } from '../constants';
 import {User} from '../../model';
 import {buildRequest} from '../../utils/api';
-import CreateOrderRequestModel from '../../model/create-order-request-model';
+import CreateOrderRequestModel from '../../model/CreateOrderRequestModel';
 
 export const getOrdersRequest = async (
   token: string,

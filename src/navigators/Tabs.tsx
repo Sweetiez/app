@@ -1,15 +1,15 @@
 import * as React from 'react';
 import getTabIcon from '../utils/navigator';
-import SweetsStackScreen from './sweets';
-import RecipesStackScreen from './recipes';
-import CartStackScreen from './cart';
-import AccountNotConnectedStackScreen from './account-not-connected';
+import SweetsStackScreen from './Sweets';
+import RecipesStackScreen from './Recipes';
+import CartStackScreen from './Cart';
+import AccountNotConnectedStackScreen from './AccountNotConnected';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useTranslation} from 'react-i18next';
 import {useSelector} from 'react-redux';
 import {itemsQuantityIntoCartSelector} from '../store/selectors/cart';
 import {tokenSelector} from '../store/selectors/user';
-import AccountConnectedStackScreen from './account-connected';
+import AccountConnectedStackScreen from './AccountConnected';
 import colors from '../assets/colors';
 
 function TabStackScreen() {

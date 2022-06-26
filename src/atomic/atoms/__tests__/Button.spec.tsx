@@ -1,6 +1,6 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
-import Button from '../button';
+import Button from '../Button';
 import colors from '../../../assets/colors';
 
 describe('Button', () => {

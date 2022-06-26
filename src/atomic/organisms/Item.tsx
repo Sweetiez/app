@@ -6,7 +6,7 @@ import {ProductCard} from '../../model';
 import {useTranslation} from 'react-i18next';
 import getIcons from '../../utils/icons';
 import colors from '../../assets/colors';
-import Badge from '../atoms/badge';
+import Badge from '../atoms/Badge';
 
 interface Props {
   product: ProductCard;

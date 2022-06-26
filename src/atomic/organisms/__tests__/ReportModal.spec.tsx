@@ -1,7 +1,7 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
 import '../../../utils/mocks';
-import ReportModal from '../report-modal';
+import ReportModal from '../ReportModal';
 import {store} from '../../../store/configureStore';
 import ReduxProvider from '../../../utils/provider';
 

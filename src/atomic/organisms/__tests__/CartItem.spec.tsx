@@ -2,7 +2,7 @@ import * as React from 'react';
 import renderer from 'react-test-renderer';
 import '../../../utils/mocks';
 import ReduxProvider from '../../../utils/provider';
-import CartItem from '../cart-item';
+import CartItem from '../CartItem';
 import {store} from '../../../store/configureStore';
 import {Cart} from '../../../model';
 

@@ -1,11 +1,13 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
 import '../../../utils/mocks';
-import Back from '../back';
+import ErrorModal from '../ErrorModal';
 
-describe('Back', () => {
+describe('ErrorModal', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<Back navigation={jest.fn()} />).toJSON();
+    const tree = renderer
+      .create(<ErrorModal show={true} setShow={jest.fn()} />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

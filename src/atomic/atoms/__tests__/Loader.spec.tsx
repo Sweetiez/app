@@ -1,12 +1,10 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
-import Link from '../link';
+import Loader from '../Loader';
 
-describe('Link', () => {
+describe('Loader', () => {
   it('renders correctly', () => {
-    const tree = renderer
-      .create(<Link content={'test'} onPress={jest.fn()} />)
-      .toJSON();
+    const tree = renderer.create(<Loader />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

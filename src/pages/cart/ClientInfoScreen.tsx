@@ -14,8 +14,8 @@ import {Back, Button, Error, Title} from '../../atomic/atoms';
 
 import {CREATE_AN_ORDER_ERROR} from '../../store/constants';
 import {cartSelector} from '../../store/selectors/cart';
-import ProductOrderRequestModel from '../../model/product-order-request-model';
-import CreateOrderRequestModel from '../../model/create-order-request-model';
+import ProductOrderRequestModel from '../../model/ProductOrderRequestModel';
+import CreateOrderRequestModel from '../../model/CreateOrderRequestModel';
 import {createAnOrdersRequest} from '../../store/api/orders';
 import {userSelector} from '../../store/selectors/user';
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import renderer from 'react-test-renderer';
 import '../../../utils/mocks';
-import AddToBasket from '../add-to-basket';
+import AddToBasket from '../AddToBasket';
 
 describe('AddToBasket', () => {
   it('renders correctly', () => {

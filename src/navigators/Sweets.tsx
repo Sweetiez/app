@@ -5,7 +5,7 @@ import {
 } from '@react-navigation/stack';
 import {DetailsScreen, CommentScreen} from '../pages';
 import {Text} from '../atomic/atoms';
-import ShopTabs from './shopTabs';
+import ShopTabs from './ShopTabs';
 import colors from '../assets/colors';
 import {Platform} from 'react-native';
 import {useTranslation} from 'react-i18next';
