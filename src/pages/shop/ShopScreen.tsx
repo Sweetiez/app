@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 import {ScrollView} from 'react-native';
 import styled from 'styled-components';
+import messaging from '@react-native-firebase/messaging';
 
 import {Loader, Text} from '../../atomic/atoms';
 import {Item, ErrorModal, FiltersModal} from '../../atomic/organisms';
@@ -53,6 +54,32 @@ function ShopScreen({navigation, route}) {
   const maxRating = 5;
   const minPrice = 0;
   const maxPrice = 50;
+
+  const getFcmToken = async () => {
+    const fcmToken = await messaging().getToken();
+    if (fcmToken) {
+      console.log(fcmToken);
+      console.log('Your Firebase Token is:', fcmToken);
+    } else {
+      console.log('Failed', 'No token received');
+    }
+  };
+
+  const requestUserPermission = async () => {
+    const authStatus = await messaging().requestPermission();
+    const enabled =
+      authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
+      authStatus === messaging.AuthorizationStatus.PROVISIONAL;
+
+    if (enabled) {
+      getFcmToken();
+      console.log('Authorization status:', authStatus);
+    }
+  };
+
+  useEffect(() => {
+    requestUserPermission();
+  }, []);
 
   const filteredProducts = useMemo(() => {
     const data = isTrays ? trays : sweets;
