@@ -109,6 +109,7 @@ const PaymentScreen: React.FC<PaymentScreenProps> = ({orderId, email}) => {
               dispatch(setOrders(cartData));
               navigation.goBack();
               navigation.goBack();
+              navigation.goBack();
             }
           });
         }

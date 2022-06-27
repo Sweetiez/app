@@ -16,3 +16,4 @@ export {default as ReportEvaluationRequest} from './ReportEvaluationModel';
 export {default as Order} from './OrderModel';
 export {default as OrderedProduct} from './OrderedProductModel';
 export {default as FilterModel} from './FilterModel';
+export {default as RewardModel} from './RewardModel';

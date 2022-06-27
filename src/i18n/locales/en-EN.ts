@@ -39,6 +39,17 @@ const locale = {
       cart: "Cart",
       account:"Account"
     },
+    rewards: {
+      title:"Rewards",
+      loyalty: "You have {{fidelityPoints}} fidelity points",
+      add: "Add a reward to your cart",
+      noReward: "No reward selected",
+      addOne: "Add",
+      titleAdd: "Use your fidelity points?"
+    },
+    addRewards:{
+      title: "Add rewards"
+    },
     forgotPassword:{
       title: "Forgotten Password?",
       login: "Log In",
@@ -166,7 +177,8 @@ const locale = {
         delivered: "DELIVERED",
         ready: "READY",
         unknown: "Status unknown"
-      }
+      },
+      reward: "Rewards : "
     },
     filters:{
       title: 'Filters',
