@@ -35,7 +35,6 @@ export const createAnOrdersRequest = async (
       return CREATE_AN_ORDER_ERROR;
     },
     response => {
-      console.log(request, response);
       return response.json();
     },
     undefined,

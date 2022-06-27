@@ -205,12 +205,15 @@ const locale = {
     },
     payment:{
       title: "Payment",
-      error: "An error occurred with the payment process"
+      error: "An error occurred with the payment process",
+      notAvailable: "Payment is not available yet : sales opening soon!"
     },
     clientInfo:{
       title: "Client Info",
       pickupDateSelect: "Select a pick up date",
-      pickupDate: "Pick up date : "
+      pickupDate: "Pick up date : ",
+      info: "Hand delivery by appointment, Ormesson-sur-Marne and its surroundings (max 5km), no delivery available at the moment",
+      address: "fi.sweets.94@gmail.com"
     },
     cgu: {
       title: "Terms of service",

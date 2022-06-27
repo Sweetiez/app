@@ -205,12 +205,15 @@ const locale = {
     },
     payment:{
       title: "Paiement",
-      error: "Une erreur est survenue durant le process de paiement"
+      error: "Une erreur est survenue durant le process de paiement",
+      notAvailable: "Le paiement n'est pas disponible : les ventes ouvrent bientôt !"
     },
     clientInfo:{
       title: "Informations Client",
       pickupDateSelect: "Sélectionnez une date de retrait",
-      pickupDate: "Date de retrait : "
+      pickupDate: "Date de retrait : ",
+      info: "Remise en main propre sur rendez vous, Ormesson-sur-Marne et ses alentours (max 5km), pas de livraison disponible pour le moment",
+      address: "fi.sweets.94@gmail.com"
     },
     cgu:{
       title: "Conditions Générales d'Utilisation",
