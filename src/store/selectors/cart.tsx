@@ -3,6 +3,16 @@ import State from '../../model/StoreModel';
 export function cartSelector(state: State) {
   return state.cart.cart;
 }
+
+export function rewardsSelector(state: State) {
+  return state.cart.rewards;
+}
+export function fidelityPointsSelector(state: State) {
+  return state.cart.currentFidelityPoints;
+}
+export function availableRewardsSelector(state: State) {
+  return state.cart.availableRewards;
+}
 export function itemsQuantityIntoCartSelector(state: State) {
   if (state.cart.cart.length === 0) {
     return 0;

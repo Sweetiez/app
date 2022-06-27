@@ -13,7 +13,7 @@ import {Input} from '../../atomic/molecules';
 import {Back, Button, Error, Title} from '../../atomic/atoms';
 
 import {CREATE_AN_ORDER_ERROR} from '../../store/constants';
-import {cartSelector} from '../../store/selectors/cart';
+import {cartSelector, rewardsSelector} from '../../store/selectors/cart';
 import ProductOrderRequestModel from '../../model/ProductOrderRequestModel';
 import CreateOrderRequestModel from '../../model/CreateOrderRequestModel';
 import {createAnOrdersRequest} from '../../store/api/orders';
@@ -55,6 +55,8 @@ function ClientInfoScreen({navigation}) {
   const {t} = useTranslation();
 
   const user = useSelector(userSelector);
+  const rewards = useSelector(rewardsSelector);
+
   const [firstname, setFirstname] = useState<string>(user?.firstName);
   const [lastname, setLastname] = useState<string>(user?.lastName);
   const [email, setEmail] = useState<string>(user?.email);
@@ -69,7 +71,6 @@ function ClientInfoScreen({navigation}) {
   );
   const cart = useSelector(cartSelector);
 
-  console.log(dateStr);
   const validate = () => {
     if (email === '' || phone === '' || firstname === '' || lastname === '') {
       setError(t('form.blankInputsWithPhone'));
@@ -100,7 +101,7 @@ function ClientInfoScreen({navigation}) {
         email: email,
         phone: phone,
         pickupDate: formatDashDate(date.toString()),
-        rewardId: '',
+        rewardId: rewards && rewards.length > 0 ? rewards[0].id : '',
         products: cart.map(item => {
           return new ProductOrderRequestModel(
             item?.item?.id ? item.item.id : '',

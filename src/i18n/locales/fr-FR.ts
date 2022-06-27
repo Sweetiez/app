@@ -39,6 +39,17 @@ const locale = {
       cart: "Panier",
       account: "Compte"
     },
+    rewards: {
+      title:"Récompenses",
+      loyalty: "Vous avez {{fidelityPoints}} points de fidélité",
+      add: "Ajouter une récompense à votre panier",
+      noReward: "Aucune récompense sélectionnée",
+      addOne: "Ajouter",
+      titleAdd: "Utilisez vos points de fidélité ?"
+    },
+    addRewards:{
+      title: "Ajout de récompense"
+    },
     forgotPassword:{
       title: "Mot de passe oublié?",
       login: "Se Connecter",
@@ -166,7 +177,8 @@ const locale = {
         delivered: "LIVRÉ",
         ready: "PRÊT",
         unknown: "Status inconnu"
-      }
+      },
+      reward: "Récompenses : "
     },
     filters:{
       title: "Filtres",

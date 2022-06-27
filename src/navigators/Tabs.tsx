@@ -12,8 +12,10 @@ import {tokenSelector} from '../store/selectors/user';
 import AccountConnectedStackScreen from './AccountConnected';
 import colors from '../assets/colors';
 import {getUserRequest} from '../store/api/user';
-import {GET_USER_ERROR, TOKEN_EXPIRED} from '../store/constants';
+import {GET_USER_ERROR, REWARD_ERROR, TOKEN_EXPIRED} from '../store/constants';
 import {logout, setUser} from '../store/actions/user';
+import {getRewards} from '../store/api/rewards';
+import {setAvailableRewards} from '../store/actions/cart';
 
 function TabStackScreen() {
   const Tab = createBottomTabNavigator();
@@ -39,6 +41,15 @@ function TabStackScreen() {
         name={t('tabBar.cart')}
         component={CartStackScreen}
         options={itemsIntoCart > 0 ? {tabBarBadge: itemsIntoCart} : null}
+        listeners={{
+          tabPress: () => {
+            getRewards().then(result => {
+              if (result !== REWARD_ERROR) {
+                dispatch(setAvailableRewards(result));
+              }
+            });
+          },
+        }}
       />
       {hasToken ? (
         <Tab.Screen

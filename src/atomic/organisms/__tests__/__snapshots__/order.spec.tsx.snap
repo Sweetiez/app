@@ -107,7 +107,7 @@ exports[`Order renders correctly 1`] = `
     >
       <Text>
         Pizza
-         X 
+         × 
         2
       </Text>
     </View>

@@ -5,9 +5,14 @@ import {ScrollView} from 'react-native';
 import {Title} from '../../atomic/atoms';
 import styled from 'styled-components';
 import {useSelector} from 'react-redux';
-import {cartSelector, totalPriceSelector} from '../../store/selectors/cart';
+import {
+  availableRewardsSelector,
+  cartSelector,
+  totalPriceSelector,
+} from '../../store/selectors/cart';
 import {CartItem} from '../../atomic/organisms';
 import {Button} from '../../atomic/atoms';
+import {userSelector} from '../../store/selectors/user';
 
 const CartContainer = styled.View`
   flex: 1;
@@ -34,9 +39,15 @@ function CartScreen({navigation}) {
   const {t} = useTranslation();
   const cart = useSelector(cartSelector);
   const totalPrice = useSelector(totalPriceSelector);
+  const user = useSelector(userSelector);
+  const availableRewards = useSelector(availableRewardsSelector);
 
   const checkout = () => {
-    navigation.navigate('ClientInfo');
+    if (user && availableRewards.length > 0) {
+      navigation.navigate('AddRewards');
+    } else {
+      navigation.navigate('ClientInfo');
+    }
   };
 
   if (cart.length === 0) {

@@ -1,8 +1,11 @@
-import {ProductCard, Cart, User, Order, Recipe} from './index';
+import {ProductCard, Cart, User, Order, Recipe, RewardModel} from './index';
 
 export default class State {
   cart: {
     cart: Cart[];
+    rewards: RewardModel[];
+    availableRewards: RewardModel[];
+    currentFidelityPoints: number | undefined;
   };
   shop: {
     sweets?: ProductCard[];

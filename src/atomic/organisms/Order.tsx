@@ -77,17 +77,25 @@ const CartItem: React.FC<Props> = ({order}) => {
         <BoldText>{t('orders.orderSchedule')}</BoldText>
         <Text>{formatDate(order.pickupDate)}</Text>
       </MarginedRow>
+
       <Column>
         <BoldText>{t('orders.items')}</BoldText>
         <List>
           {order.products.map(product => (
-            <Text>
+            <Text key={product.name + '-' + order.id}>
               {product.name} × {product.quantity}
             </Text>
           ))}
         </List>
       </Column>
-
+      {!!order.rewardProductName && order.rewardProductName !== '' && (
+        <Column>
+          <BoldText>{t('orders.reward')}</BoldText>
+          <List>
+            <Text>{order.rewardProductName}</Text>
+          </List>
+        </Column>
+      )}
       <SpacedRow>
         <Row>
           <YellowText>{t('orders.totalPrice')}</YellowText>

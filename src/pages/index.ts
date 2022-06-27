@@ -14,5 +14,6 @@ export {default as EditAccountScreen} from './account/logged/EditAccountScreen';
 export {default as EditPasswordScreen} from './account/logged/EditPasswordScreen';
 export {default as OrdersScreen} from './account/logged/OrdersScreen';
 export {default as ConfirmationScreen} from './cart/ConfirmationScreen';
+export {default as AddRewardsScreen} from './cart/AddRewardScreen';
 export {default as PaymentScreen} from './cart/HandlePaymentScreen';
 export {default as ClientInfoScreen} from './cart/ClientInfoScreen';

@@ -11,4 +11,5 @@ export default class OrderModel {
   products: OrderedProduct[] | undefined;
   status: string | undefined;
   totalPrice: number | undefined;
+  rewardProductName: string | undefined;
 }
