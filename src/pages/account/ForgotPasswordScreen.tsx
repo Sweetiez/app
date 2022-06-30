@@ -3,13 +3,24 @@ import {useState} from 'react';
 
 import {useTranslation} from 'react-i18next';
 import {SafeAreaView, ScrollView} from 'react-native';
-import {Title} from '../../atomic/atoms';
-import {Input} from '../../atomic/molecules';
 import styled from 'styled-components';
+
+import {Input} from '../../atomic/molecules';
+import {Title, Back, Button, Error} from '../../atomic/atoms';
+
 import getIcons from '../../utils/icons';
-import colors from '../../assets/colors';
-import {Back, Button, Error} from '../../atomic/atoms';
 import {validateEmail} from '../../utils/validator';
+import colors from '../../assets/colors';
+
+import {RESET_PASSWORD_ERROR} from '../../store/constants';
+import {resetPasswordRequest} from '../../store/api/user';
+
+const Success = styled.Text`
+  color: ${colors.green};
+  margin-bottom: 10px;
+  margin-right: auto;
+  margin-left: auto;
+`;
 
 const Form = styled.View`
   margin-right: 20px;
@@ -33,12 +44,21 @@ function LoginScreen({navigation}) {
   const [email, setEmail] = useState<string>('');
   const [isLoading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<boolean>(false);
   const {t} = useTranslation();
 
   const forgotPassword = () => {
+    setSuccess(false);
     if (validate()) {
-      // TODO api call
-      setLoading(!isLoading);
+      setLoading(true);
+      resetPasswordRequest({email}).then(result => {
+        setLoading(false);
+        if (result === RESET_PASSWORD_ERROR) {
+          setError(t('forgotPassword.error'));
+        } else {
+          setSuccess(true);
+        }
+      });
     }
   };
 
@@ -68,6 +88,7 @@ function LoginScreen({navigation}) {
             keyboardType="email-address"
           />
           {error && <Error content={error} />}
+          {success && <Success>{t('forgotPassword.success')}</Success>}
           <Button
             text={t('forgotPassword.validate')}
             onPress={forgotPassword}

@@ -8,6 +8,8 @@ import {
   TOKEN_EXPIRED,
   UPDATE_PASSWORD_ERROR,
   UPDATE_PASSWORD_OK,
+  RESET_PASSWORD_ERROR,
+  RESET_PASSWORD_OK,
 } from '../constants';
 import {
   LoginRequest,
@@ -16,6 +18,7 @@ import {
   User,
   UpdateRequest,
   UpdatePasswordRequest,
+  ResetPasswordRequest,
 } from '../../model';
 import {cleanToken} from '../../utils/user';
 import {buildRequest} from '../../utils/api';
@@ -37,6 +40,23 @@ export const loginRequest = async (
         // @ts-ignore
         refreshToken: cleanToken(response.headers.map['refresh-token']),
       };
+    },
+    undefined,
+  );
+};
+
+export const resetPasswordRequest = async (
+  resetPasswordData: ResetPasswordRequest,
+): Promise<typeof RESET_PASSWORD_OK | typeof RESET_PASSWORD_ERROR> => {
+  return buildRequest(
+    'PUT',
+    '/auth/me/password',
+    resetPasswordData,
+    () => {
+      return RESET_PASSWORD_ERROR;
+    },
+    () => {
+      return RESET_PASSWORD_OK;
     },
     undefined,
   );

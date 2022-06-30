@@ -17,3 +17,4 @@ export {default as Order} from './OrderModel';
 export {default as OrderedProduct} from './OrderedProductModel';
 export {default as FilterModel} from './FilterModel';
 export {default as RewardModel} from './RewardModel';
+export {default as ResetPasswordRequest} from './ResetPasswordRequestModel';

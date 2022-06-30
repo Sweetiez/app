@@ -53,7 +53,9 @@ const locale = {
     forgotPassword:{
       title: "Forgotten Password?",
       login: "Log In",
-      validate: "Recover my Password"
+      validate: "Recover my Password",
+      success: "A reset mail has been sent to this email address",
+      error: "An error occurred during the reset of your password"
     },
     login:{
       title: "Already registered? Sign in",
