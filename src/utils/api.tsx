@@ -32,6 +32,7 @@ export const buildRequest = async (
       headers,
       body: JSON.stringify(data),
     });
+    console.log(response);
     if (response.status === 200 || response.status === 201) {
       return onSuccess(response);
     } else if (response.status === 409) {

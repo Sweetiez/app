@@ -1,4 +1,12 @@
-import {ProductCard, Cart, User, Order, Recipe, RewardModel} from './index';
+import {
+  ProductCard,
+  Cart,
+  User,
+  Order,
+  Recipe,
+  RewardModel,
+  EventModel,
+} from './index';
 
 export default class State {
   cart: {
@@ -6,6 +14,9 @@ export default class State {
     rewards: RewardModel[];
     availableRewards: RewardModel[];
     currentFidelityPoints: number | undefined;
+  };
+  event: {
+    events: EventModel[];
   };
   shop: {
     sweets?: ProductCard[];

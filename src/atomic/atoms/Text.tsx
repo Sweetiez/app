@@ -9,7 +9,7 @@ interface Props {
   color?: string;
   textDecoration?: string;
   textTransform?: string;
-  center?: boolean;
+  textAlign?: string;
 }
 
 const StyledText = styled.Text<{
@@ -17,14 +17,14 @@ const StyledText = styled.Text<{
   color;
   textTransform;
   textDecoration;
-  center;
+  textAlign;
 }>`
   font-family: Pompiere-Regular;
   color: ${({color}) => color};
   font-size: ${({size}) => size}px;
   text-decoration: ${({textDecoration}) => textDecoration};
   text-transform: ${({textTransform}) => textTransform};
-  text-align: ${({center}) => (center ? 'center' : 'left')};
+  text-align: ${({textAlign}) => textAlign};
 `;
 
 const Text: React.FC<Props> = ({
@@ -34,14 +34,14 @@ const Text: React.FC<Props> = ({
   color = colors.black,
   textDecoration = 'none',
   textTransform = 'none',
-  center = false,
+  textAlign = 'left',
 }) => (
   <StyledText
     numberOfLines={numberOfLines}
     size={size}
     color={color}
     textDecoration={textDecoration}
-    center={center}
+    textAlign={textAlign}
     textTransform={textTransform}>
     {content}
   </StyledText>

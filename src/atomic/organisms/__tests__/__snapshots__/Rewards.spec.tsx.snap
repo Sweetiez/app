@@ -94,6 +94,7 @@ exports[`Rewards renders correctly 1`] = `
                 "color": "#000000",
                 "fontFamily": "Pompiere-Regular",
                 "fontSize": 22,
+                "textAlign": "left",
                 "textDecorationColor": "black",
                 "textDecorationLine": "none",
                 "textDecorationStyle": "solid",
@@ -101,6 +102,7 @@ exports[`Rewards renders correctly 1`] = `
               },
             ]
           }
+          textAlign="left"
           textDecoration="none"
           textTransform="none"
         >

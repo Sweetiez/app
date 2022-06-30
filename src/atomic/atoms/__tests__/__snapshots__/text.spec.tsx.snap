@@ -10,6 +10,7 @@ exports[`Text renders correctly 1`] = `
         "color": "#000000",
         "fontFamily": "Pompiere-Regular",
         "fontSize": 12,
+        "textAlign": "left",
         "textDecorationColor": "black",
         "textDecorationLine": "none",
         "textDecorationStyle": "solid",
@@ -17,6 +18,7 @@ exports[`Text renders correctly 1`] = `
       },
     ]
   }
+  textAlign="left"
   textDecoration="none"
   textTransform="none"
 >
@@ -34,6 +36,7 @@ exports[`Text renders with smaller size 1`] = `
         "color": "#000000",
         "fontFamily": "Pompiere-Regular",
         "fontSize": 10,
+        "textAlign": "left",
         "textDecorationColor": "black",
         "textDecorationLine": "none",
         "textDecorationStyle": "solid",
@@ -41,6 +44,7 @@ exports[`Text renders with smaller size 1`] = `
       },
     ]
   }
+  textAlign="left"
   textDecoration="none"
   textTransform="none"
 >
@@ -59,6 +63,7 @@ exports[`Text renders with specified number of lines 1`] = `
         "color": "#000000",
         "fontFamily": "Pompiere-Regular",
         "fontSize": 12,
+        "textAlign": "left",
         "textDecorationColor": "black",
         "textDecorationLine": "none",
         "textDecorationStyle": "solid",
@@ -66,6 +71,7 @@ exports[`Text renders with specified number of lines 1`] = `
       },
     ]
   }
+  textAlign="left"
   textDecoration="none"
   textTransform="none"
 >
