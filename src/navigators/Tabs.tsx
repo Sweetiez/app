@@ -1,21 +1,32 @@
 import * as React from 'react';
-import getTabIcon from '../utils/navigator';
-import SweetsStackScreen from './Sweets';
-import RecipesStackScreen from './Recipes';
-import CartStackScreen from './Cart';
-import AccountNotConnectedStackScreen from './AccountNotConnected';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useTranslation} from 'react-i18next';
 import {useDispatch, useSelector} from 'react-redux';
+
+import SweetsStackScreen from './Sweets';
+import RecipesStackScreen from './Recipes';
+import CartStackScreen from './Cart';
+import EventsStackScreen from './Events';
+import AccountConnectedStackScreen from './AccountConnected';
+import AccountNotConnectedStackScreen from './AccountNotConnected';
+
 import {itemsQuantityIntoCartSelector} from '../store/selectors/cart';
 import {tokenSelector} from '../store/selectors/user';
-import AccountConnectedStackScreen from './AccountConnected';
-import colors from '../assets/colors';
 import {getUserRequest} from '../store/api/user';
-import {GET_USER_ERROR, REWARD_ERROR, TOKEN_EXPIRED} from '../store/constants';
+import {
+  EVENTS_ERROR,
+  GET_USER_ERROR,
+  REWARD_ERROR,
+  TOKEN_EXPIRED,
+} from '../store/constants';
 import {logout, setUser} from '../store/actions/user';
 import {getRewards} from '../store/api/rewards';
 import {setAvailableRewards} from '../store/actions/cart';
+
+import getTabIcon from '../utils/navigator';
+import colors from '../assets/colors';
+import {getPublishedEvents} from '../store/api/event';
+import {updateEvents} from '../store/actions/event';
 
 function TabStackScreen() {
   const Tab = createBottomTabNavigator();
@@ -36,7 +47,19 @@ function TabStackScreen() {
       })}>
       <Tab.Screen name={t('tabBar.shop')} component={SweetsStackScreen} />
       <Tab.Screen name={t('tabBar.recipes')} component={RecipesStackScreen} />
-      {/*<Tab.Screen name={t('tabBar.events')} component={EventsStackScreen} />*/}
+      <Tab.Screen
+        name={t('tabBar.events')}
+        component={EventsStackScreen}
+        listeners={{
+          tabPress: () => {
+            getPublishedEvents().then(result => {
+              if (result !== EVENTS_ERROR) {
+                dispatch(updateEvents(result));
+              }
+            });
+          },
+        }}
+      />
       <Tab.Screen
         name={t('tabBar.cart')}
         component={CartStackScreen}

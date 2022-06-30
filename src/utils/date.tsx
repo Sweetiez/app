@@ -7,3 +7,7 @@ export const formatDate = (date: string) => {
 export const formatDashDate = (date: string) => {
   return moment(date).format('YYYY-MM-DD');
 };
+
+export const formatHourDate = (date: string) => {
+  return moment(date).format('hh:mm');
+};

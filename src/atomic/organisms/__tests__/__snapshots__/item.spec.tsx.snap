@@ -99,6 +99,7 @@ exports[`Item renders correctly 1`] = `
             "color": "#000000",
             "fontFamily": "Pompiere-Regular",
             "fontSize": 12,
+            "textAlign": "left",
             "textDecorationColor": "black",
             "textDecorationLine": "none",
             "textDecorationStyle": "solid",
@@ -106,6 +107,7 @@ exports[`Item renders correctly 1`] = `
           },
         ]
       }
+      textAlign="left"
       textDecoration="none"
       textTransform="none"
     >
@@ -135,6 +137,7 @@ exports[`Item renders correctly 1`] = `
             "color": "#000000",
             "fontFamily": "Pompiere-Regular",
             "fontSize": 15,
+            "textAlign": "left",
             "textDecorationColor": "black",
             "textDecorationLine": "none",
             "textDecorationStyle": "solid",
@@ -142,6 +145,7 @@ exports[`Item renders correctly 1`] = `
           },
         ]
       }
+      textAlign="left"
       textDecoration="none"
       textTransform="none"
     >

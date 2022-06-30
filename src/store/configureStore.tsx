@@ -5,6 +5,7 @@ import shopReducer from './reducers/shop';
 import userReducer from './reducers/user';
 import ordersReducer from './reducers/orders';
 import recipesReducer from './reducers/recipes';
+import eventReducer from './reducers/event';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {persistReducer, persistStore} from 'redux-persist';
 import thunk from 'redux-thunk';
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
   user: userReducer,
   orders: ordersReducer,
   recipes: recipesReducer,
+  event: eventReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

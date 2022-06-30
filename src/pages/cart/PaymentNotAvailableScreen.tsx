@@ -41,7 +41,11 @@ const PaymentNotAvailableScreen: React.FC = ({}) => {
       <Icon>{getIcons('payment', colors.yellow, 100)}</Icon>
       <Space />
       <Content>
-        <StyledText content={t('payment.notAvailable')} size={50} center />
+        <StyledText
+          content={t('payment.notAvailable')}
+          size={50}
+          textAlign={'center'}
+        />
       </Content>
     </SafeAreaView>
   );

@@ -35,7 +35,7 @@ const locale = {
     tabBar:{
       shop: "Boutique",
       recipes: "Recettes",
-      events: "Evenements",
+      events: "Évènements",
       cart: "Panier",
       account: "Compte"
     },
@@ -86,7 +86,13 @@ const locale = {
       sweets: "Mignardises incluses"
     },
     events:{
-      title: "TODO events title"
+      title: "Évènements",
+      noEvents: "Pas d'évènement pour l'instant",
+      availability: "{{availablePlaces}} places disponibles sur {{totalPlaces}}",
+      schedule: "de {{start}} à {{end}}, le {{date}}",
+      subscribe: "S'inscrire",
+      error: "Vous ne pouvez pas vous inscrire à cet évènement",
+      success: "Vous êtes inscrits à cet évènement!"
     },
     recipes:{
       title: "Recettes",

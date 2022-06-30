@@ -86,7 +86,13 @@ const locale = {
       sweets: "Sweets included"
     },
     events:{
-      title: "TODO events title"
+      title: "Events",
+      noEvents: "No events for now",
+      availability: "{{availablePlaces}} available places on {{totalPlaces}}",
+      schedule: "from {{start}} to {{end}, the {{date}}",
+      subscribe: "Subscribe",
+      error: "You can't subscribe to this event",
+      success: "You have subscribe to this event!"
     },
     recipes:{
       title: "Recipes",

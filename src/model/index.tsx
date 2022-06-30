@@ -18,3 +18,7 @@ export {default as OrderedProduct} from './OrderedProductModel';
 export {default as FilterModel} from './FilterModel';
 export {default as RewardModel} from './RewardModel';
 export {default as ResetPasswordRequest} from './ResetPasswordRequestModel';
+export {default as EventModel} from './EventModel';
+export {default as Localisation} from './LocalisationModel';
+export {default as Schedule} from './ScheduleModel';
+export {default as Availability} from './AvailabilityModel';

@@ -1,0 +1,195 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Event renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "borderRadius": 10,
+        "flexDirection": "row",
+        "marginBottom": 5,
+        "marginLeft": 5,
+        "marginRight": 5,
+        "marginTop": 5,
+        "paddingBottom": 5,
+        "paddingLeft": 5,
+        "paddingRight": 5,
+        "paddingTop": 5,
+        "shadowColor": "rgba(0, 0, 0, 0.07)",
+        "shadowOffset": Object {
+          "height": 2,
+          "width": 2,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 2,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <Text
+      color="#dba970"
+      size={22}
+      style={
+        Array [
+          Object {
+            "color": "#dba970",
+            "fontFamily": "Pompiere-Regular",
+            "fontSize": 22,
+            "textAlign": "center",
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
+          },
+        ]
+      }
+      textAlign="center"
+      textDecoration="none"
+      textTransform="none"
+    >
+      title
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "height": 10,
+          },
+        ]
+      }
+    />
+    <Text
+      color="#000000"
+      size={18}
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+            "fontFamily": "Pompiere-Regular",
+            "fontSize": 18,
+            "textAlign": "left",
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
+          },
+        ]
+      }
+      textAlign="left"
+      textDecoration="none"
+      textTransform="none"
+    >
+      descritpion
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "height": 10,
+          },
+        ]
+      }
+    />
+    <Text
+      color="#000000"
+      size={14}
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+            "fontFamily": "Pompiere-Regular",
+            "fontSize": 14,
+            "textAlign": "left",
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
+          },
+        ]
+      }
+      textAlign="left"
+      textDecoration="none"
+      textTransform="none"
+    >
+      address, zipCode city
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "height": 10,
+          },
+        ]
+      }
+    />
+    <Text
+      color="#000000"
+      size={14}
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+            "fontFamily": "Pompiere-Regular",
+            "fontSize": 14,
+            "textAlign": "right",
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
+          },
+        ]
+      }
+      textAlign="right"
+      textDecoration="none"
+      textTransform="none"
+    >
+      events.availability
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "height": 5,
+          },
+        ]
+      }
+    />
+    <Text
+      color="#000000"
+      size={14}
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+            "fontFamily": "Pompiere-Regular",
+            "fontSize": 14,
+            "textAlign": "right",
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
+          },
+        ]
+      }
+      textAlign="right"
+      textDecoration="none"
+      textTransform="none"
+    >
+      events.schedule
+    </Text>
+  </View>
+</View>
+`;
