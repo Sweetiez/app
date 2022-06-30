@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "android": "ENVFILE=.env.development react-native run-android",
-    "android-build-release": "cd ./android && rm -rf app/src/main/res/drawable* && ./gradlew bundleRelease",
+    "android-build-release": "cd ./android && ./gradlew bundleRelease",
     "ios": "ENVFILE=.env.development react-native run-ios",
     "start": "react-native start",
     "test": "jest",

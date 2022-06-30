@@ -53,7 +53,9 @@ const locale = {
     forgotPassword:{
       title: "Mot de passe oublié?",
       login: "Se Connecter",
-      validate: "Récupérer mon mot de passe"
+      validate: "Récupérer mon mot de passe",
+      success: "Un email de renouvellement du mot de passe vous a été envoyé à cet email",
+      error: "Une erreur est survenue durant la réinitialisation du mot de passe"
     },
     login:{
       title: "Déja inscrit? Connectez vous",
