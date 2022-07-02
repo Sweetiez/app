@@ -102,7 +102,7 @@ export const updatePasswordRequest = async (
   token: string,
 ): Promise<typeof UPDATE_PASSWORD_ERROR | typeof UPDATE_PASSWORD_OK> => {
   return buildRequest(
-    'PUT',
+    'POST',
     '/auth/me/password',
     updateData,
     () => {

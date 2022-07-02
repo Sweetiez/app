@@ -3,9 +3,9 @@ import {useState} from 'react';
 
 import {useTranslation} from 'react-i18next';
 import {SafeAreaView, ScrollView} from 'react-native';
-import {Back, Error, Title} from '../../../atomic/atoms';
+import {Back, Error, Title, Button} from '../../../atomic/atoms';
 import styled from 'styled-components';
-import {Button, Input} from '../../../atomic/molecules';
+import {Input} from '../../../atomic/molecules';
 import {useDispatch, useSelector} from 'react-redux';
 import {tokenSelector, userSelector} from '../../../store/selectors/user';
 import getIcons from '../../../utils/icons';
