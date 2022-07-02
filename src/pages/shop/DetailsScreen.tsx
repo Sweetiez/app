@@ -12,11 +12,11 @@ import {Stars, Button} from '../../atomic/molecules';
 import {Comment, AddToBasket} from '../../atomic/organisms';
 
 import {addItemToCart} from '../../store/actions/cart';
-import {getProduct} from '../../store/api/shop';
-import {tokenSelector} from '../../store/selectors/user';
-import {PRODUCT_ERROR} from '../../store/constants';
+import {getProduct, verifyPurchase} from '../../store/api/shop';
+import {tokenSelector, userSelector} from '../../store/selectors/user';
+import {PRODUCT_ERROR, VERIFY_PURCHASE_ERROR} from '../../store/constants';
 
-import {ProductCard} from '../../model';
+import {ProductCard, VerifyPurchaseRequest} from '../../model';
 import colors from '../../assets/colors';
 import getIcons from '../../utils/icons';
 import {checkConnectivity} from '../../utils/connectivity';
@@ -64,22 +64,37 @@ function DetailsScreen({route, navigation}) {
   const {t} = useTranslation();
   const dispatch = useDispatch();
   const token = useSelector(tokenSelector);
+  const user = useSelector(userSelector);
   const [quantity, setQuantity] = useState<number>(0);
   const [product, setProduct] = useState<ProductCard>(undefined);
   const [isLoading, setLoading] = useState<boolean>(false);
+  const [isPurchase, setIsPurchase] = useState<boolean>(false);
   const [showErrorModal, setShowErrorModal] = useState<boolean>(false);
 
   const getData = useCallback(() => {
     setLoading(true);
     getProduct(id, isTray).then(data => {
-      setLoading(false);
       if (data !== PRODUCT_ERROR) {
         setProduct(data);
+        if (token) {
+          const request: VerifyPurchaseRequest = {
+            email: user.email || '',
+            productId: id,
+          };
+          verifyPurchase(token, request).then(res => {
+            setLoading(false);
+            if (res !== VERIFY_PURCHASE_ERROR) {
+              setIsPurchase(res.isPurchaseProduct);
+            }
+          });
+        } else {
+          setLoading(false);
+        }
       } else if (!showErrorModal) {
         setShowErrorModal(true);
       }
     });
-  }, [id, isTray, showErrorModal]);
+  }, [id, isTray, showErrorModal, token, user.email]);
 
   useEffect(() => {
     checkConnectivity().then(isConnected => {
@@ -227,7 +242,7 @@ function DetailsScreen({route, navigation}) {
           </Container>
         </MainContainer>
         <Comments>
-          {!!token && (
+          {!!token && isPurchase && (
             <CommentButton>
               <Button
                 text={t('details.comment')}

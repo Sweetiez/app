@@ -22,3 +22,4 @@ export {default as EventModel} from './EventModel';
 export {default as Localisation} from './LocalisationModel';
 export {default as Schedule} from './ScheduleModel';
 export {default as Availability} from './AvailabilityModel';
+export {default as VerifyPurchaseRequest} from './VerifyPurchaseRequestModel';

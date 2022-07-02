@@ -1,5 +1,6 @@
-import {PRODUCT_ERROR, TRAY_ERROR} from '../constants';
+import {PRODUCT_ERROR, TRAY_ERROR, VERIFY_PURCHASE_ERROR} from '../constants';
 import {buildRequest} from '../../utils/api';
+import {VerifyPurchaseRequest} from '../../model';
 
 export function getPublishedSweets() {
   return buildRequest(
@@ -27,6 +28,24 @@ export function getProduct(id: string, isTray: boolean) {
       return response.json();
     },
     undefined,
+  );
+}
+
+export function verifyPurchase(
+  token: string,
+  purchaseRequest: VerifyPurchaseRequest,
+) {
+  return buildRequest(
+    'POST',
+    '/order/me',
+    purchaseRequest,
+    () => {
+      return VERIFY_PURCHASE_ERROR;
+    },
+    response => {
+      return response.json();
+    },
+    token,
   );
 }
 export function getPublishedTrays() {
