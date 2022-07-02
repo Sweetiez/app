@@ -110,8 +110,13 @@ const PaymentScreen: React.FC<PaymentScreenProps> = ({orderId, email}) => {
               navigation.goBack();
               navigation.goBack();
               navigation.goBack();
+            } else {
+              setError(t(data.error.message));
             }
           });
+        } else {
+          navigation.goBack();
+          navigation.goBack();
         }
       }
     });

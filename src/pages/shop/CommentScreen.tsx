@@ -83,7 +83,7 @@ function CommentScreen({route, navigation}) {
               rating={rating}
               setRating={setRating}
               size={30}
-              itemId={rating.toString()}
+              itemId={productId}
             />
           </StyledStars>
           <TextArea

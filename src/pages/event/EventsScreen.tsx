@@ -74,7 +74,6 @@ function EventsScreen() {
     return <Loader />;
   }
 
-  console.log(events);
   return (
     <SafeAreaView>
       <ErrorModal show={showErrorModal} setShow={setShowErrorModal} />
@@ -85,7 +84,12 @@ function EventsScreen() {
         {events.length > 0 ? (
           <Events>
             {events.map(event => (
-              <Event event={event} token={token} userId={user.id} />
+              <Event
+                event={event}
+                token={token}
+                userId={user?.id}
+                key={event.id}
+              />
             ))}
           </Events>
         ) : (

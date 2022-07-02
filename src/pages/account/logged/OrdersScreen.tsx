@@ -75,7 +75,7 @@ function OrdersScreen({navigation}) {
 
   let content;
 
-  if (orders.length === 0) {
+  if (!orders || orders.length === 0) {
     content = (
       <Container>
         <Title title={t('orders.empty')} size={40} />

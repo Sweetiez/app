@@ -1,4 +1,4 @@
-import {SET_ORDERS} from '../constants';
+import {LOGOUT, SET_ORDERS} from '../constants';
 const initialState = {
   orders: [],
 };
@@ -8,6 +8,11 @@ const orderReducer = (state = initialState, action) => {
       return {
         ...state,
         orders: action.payload,
+      };
+    case LOGOUT:
+      return {
+        ...state,
+        orders: [],
       };
     default:
       return state;
