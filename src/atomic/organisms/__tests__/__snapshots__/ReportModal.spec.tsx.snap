@@ -1,0 +1,263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorModal renders correctly 1`] = `
+<Modal
+  animationType="slide"
+  hardwareAccelerated={false}
+  onRequestClose={[Function]}
+  transparent={true}
+  visible={true}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "white",
+          "borderRadius": 10,
+          "marginLeft": "auto",
+          "marginRight": "auto",
+          "marginTop": "60%",
+          "paddingBottom": 20,
+          "paddingLeft": 20,
+          "paddingRight": 20,
+          "paddingTop": 20,
+          "shadowColor": "rgba(0, 0, 0, 0.5)",
+          "shadowOffset": Object {
+            "height": 10,
+            "width": 10,
+          },
+          "shadowOpacity": 1,
+          "shadowRadius": 10,
+          "width": "80%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+          },
+        ]
+      }
+    >
+      <Warning
+        color="#dba970"
+        height={70}
+        width={70}
+      />
+      <View
+        style={
+          Array [
+            Object {
+              "marginTop": 10,
+            },
+          ]
+        }
+      />
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#dba970",
+              "fontSize": 25,
+              "fontWeight": "bold",
+            },
+          ]
+        }
+      >
+        reportModal.title
+      </Text>
+      <View
+        style={
+          Array [
+            Object {
+              "marginTop": 10,
+            },
+          ]
+        }
+      />
+      <Text>
+        reportModal.content
+      </Text>
+      <View
+        style={
+          Array [
+            Object {
+              "marginBottom": 10,
+              "marginTop": 30,
+              "width": "100%",
+            },
+          ]
+        }
+      >
+        <RNPickerSelect
+          items={
+            Array [
+              Object {
+                "label": "reportModal.reason.uncivil",
+                "value": "uncivil",
+              },
+              Object {
+                "label": "reportModal.reason.discrimination",
+                "value": "discrimination",
+              },
+              Object {
+                "label": "reportModal.reason.localBusiness",
+                "value": "localBusiness",
+              },
+              Object {
+                "label": "reportModal.reason.illegalContent",
+                "value": "illegalContent",
+              },
+              Object {
+                "label": "reportModal.reason.other",
+                "value": "other",
+              },
+            ]
+          }
+          onValueChange={[Function]}
+          placeholder={
+            Object {
+              "label": "reportModal.reason.choose",
+              "value": undefined,
+            }
+          }
+          style={
+            Object {
+              "inputAndroid": Object {
+                "alignSelf": "stretch",
+                "borderColor": "#dba970",
+                "borderRadius": 15,
+                "borderWidth": 1,
+                "color": "black",
+                "flexDirection": "row",
+                "fontSize": 14,
+                "marginBottom": 10,
+                "paddingHorizontal": 15,
+                "paddingRight": 30,
+                "paddingVertical": 5,
+                "placeholderColor": "#9CA3AF",
+              },
+              "inputIOS": Object {
+                "alignSelf": "stretch",
+                "borderColor": "#dba970",
+                "borderRadius": 15,
+                "borderWidth": 1,
+                "color": "black",
+                "flexDirection": "row",
+                "fontSize": 14,
+                "marginBottom": 10,
+                "paddingHorizontal": 15,
+                "paddingRight": 30,
+                "paddingVertical": 5,
+                "placeholderColor": "#9CA3AF",
+              },
+            }
+          }
+          useNativeAndroidPickerStyle={false}
+        />
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "marginTop": 20,
+              "width": "70%",
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#9CA3AF",
+              "borderRadius": 15,
+              "minWidth": 80,
+              "opacity": 1,
+              "paddingBottom": 10,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "paddingTop": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                },
+              ]
+            }
+          >
+            reportModal.send
+          </Text>
+        </View>
+        <View
+          accessibilityState={
+            Object {
+              "disabled": false,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#9CA3AF",
+              "borderRadius": 15,
+              "minWidth": 80,
+              "opacity": 1,
+              "paddingBottom": 10,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "paddingTop": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                },
+              ]
+            }
+          >
+            reportModal.cancel
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</Modal>
+`;

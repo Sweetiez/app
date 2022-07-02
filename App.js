@@ -1,52 +1,34 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  useColorScheme,
-} from 'react-native';
-import { useTranslation } from "react-i18next";
-import './src/i18n/index'
-
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
+import {NavigationContainer} from '@react-navigation/native';
+import CommonStack from './src/navigators/Common';
+import './src/i18n/index';
+import TabStack from "./src/navigators/Tabs";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import moment from "moment";
+import "moment/min/locales";
+import i18next from "i18next";
 
 const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-  const { t } = useTranslation();
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  const locale =  i18next.language
+  moment.locale(locale);
 
+  const Stack = createNativeStackNavigator();
   return (
-      <React.StrictMode>
-        <SafeAreaView style={backgroundStyle}>
-          <ScrollView
-            contentInsetAdjustmentBehavior="automatic"
-            style={backgroundStyle}>
-            <Text>
-              {t('welcome')}
-            </Text>
-          </ScrollView>
-        </SafeAreaView>
-      </React.StrictMode>
+
+      <NavigationContainer>
+          <Stack.Navigator>
+              <Stack.Screen
+                  name="Tab"
+                  component={TabStack}
+                  options={{ headerShown: false }}
+              />
+              <Stack.Screen name="Common" component={CommonStack}
+                            options={{ headerShown: false }}/>
+          </Stack.Navigator>
+      </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  // TODO
-});
 
 export default App;

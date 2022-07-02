@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddToBasket renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginBottom": "auto",
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "marginTop": "auto",
+        "paddingBottom": 10,
+        "paddingLeft": 10,
+        "paddingRight": 10,
+        "paddingTop": 10,
+        "width": 300,
+      },
+    ]
+  }
+>
+  <View
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <Minus
+      color="#dba970"
+      height={18}
+      width={18}
+    />
+  </View>
+  <Text>
+    1
+  </Text>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <Plus
+      color="#dba970"
+      height={18}
+      width={18}
+    />
+  </View>
+  <View
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#dba970",
+        "borderRadius": 10,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "opacity": 1,
+        "paddingBottom": 5,
+        "paddingLeft": 10,
+        "paddingRight": 10,
+        "paddingTop": 5,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "white",
+            "fontSize": 13,
+            "fontWeight": "bold",
+            "marginRight": 5,
+          },
+        ]
+      }
+    >
+      details.add
+    </Text>
+    <Add
+      color="#ffffff"
+      height={18}
+      width={18}
+    />
+  </View>
+</View>
+`;

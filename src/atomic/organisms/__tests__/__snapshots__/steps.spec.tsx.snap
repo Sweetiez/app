@@ -1,0 +1,236 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Steps renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 10,
+        "marginBottom": 10,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "marginTop": 0,
+        "paddingBottom": 10,
+        "paddingLeft": 20,
+        "paddingRight": 0,
+        "paddingTop": 10,
+        "shadowColor": "rgba(0, 0, 0, 0.07)",
+        "shadowOffset": Object {
+          "height": 2,
+          "width": 2,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 2,
+      },
+    ]
+  }
+>
+  <Text
+    color="#dba970"
+    size={28}
+    style={
+      Array [
+        Object {
+          "color": "#dba970",
+          "fontFamily": "Pompiere-Regular",
+          "fontSize": 28,
+          "textAlign": "left",
+          "textDecorationColor": "black",
+          "textDecorationLine": "none",
+          "textDecorationStyle": "solid",
+          "textTransform": "none",
+        },
+      ]
+    }
+    textAlign="left"
+    textDecoration="none"
+    textTransform="none"
+  >
+    recipe.steps
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "marginBottom": 10,
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+          "marginBottom": 5,
+          "paddingRight": 20,
+        },
+      ]
+    }
+  >
+    <Text
+      color="#dba970"
+      size={16}
+      style={
+        Array [
+          Object {
+            "color": "#dba970",
+            "fontFamily": "Pompiere-Regular",
+            "fontSize": 16,
+            "textAlign": "left",
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
+          },
+        ]
+      }
+      textAlign="left"
+      textDecoration="none"
+      textTransform="none"
+    >
+      1 . 
+    </Text>
+    <Text
+      color="#000000"
+      size={16}
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+            "fontFamily": "Pompiere-Regular",
+            "fontSize": 16,
+            "textAlign": "left",
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
+          },
+        ]
+      }
+      textAlign="left"
+      textDecoration="none"
+      textTransform="none"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci alias aliquam culpa, delectus expedita fugit ipsum laboriosam maiores maxime numquam reprehenderit, rerum sint unde vero! Accusamus id quod repudiandae?
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+          "marginBottom": 5,
+          "paddingRight": 20,
+        },
+      ]
+    }
+  >
+    <Text
+      color="#dba970"
+      size={16}
+      style={
+        Array [
+          Object {
+            "color": "#dba970",
+            "fontFamily": "Pompiere-Regular",
+            "fontSize": 16,
+            "textAlign": "left",
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
+          },
+        ]
+      }
+      textAlign="left"
+      textDecoration="none"
+      textTransform="none"
+    >
+      2 . 
+    </Text>
+    <Text
+      color="#000000"
+      size={16}
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+            "fontFamily": "Pompiere-Regular",
+            "fontSize": 16,
+            "textAlign": "left",
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
+          },
+        ]
+      }
+      textAlign="left"
+      textDecoration="none"
+      textTransform="none"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci alias aliquam culpa, delectus expedita fugit ipsum laboriosam maiores maxime numquam reprehenderit, rerum sint unde vero! Accusamus id quod repudiandae?
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+          "marginBottom": 5,
+          "paddingRight": 20,
+        },
+      ]
+    }
+  >
+    <Text
+      color="#dba970"
+      size={16}
+      style={
+        Array [
+          Object {
+            "color": "#dba970",
+            "fontFamily": "Pompiere-Regular",
+            "fontSize": 16,
+            "textAlign": "left",
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
+          },
+        ]
+      }
+      textAlign="left"
+      textDecoration="none"
+      textTransform="none"
+    >
+      3 . 
+    </Text>
+    <Text
+      color="#000000"
+      size={16}
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+            "fontFamily": "Pompiere-Regular",
+            "fontSize": 16,
+            "textAlign": "left",
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
+          },
+        ]
+      }
+      textAlign="left"
+      textDecoration="none"
+      textTransform="none"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci alias aliquam culpa, delectus expedita fugit ipsum laboriosam maiores maxime numquam reprehenderit, rerum sint unde vero! Accusamus id quod repudiandae?
+    </Text>
+  </View>
+</View>
+`;

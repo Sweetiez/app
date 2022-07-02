@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Category renders checked 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginTop": 10,
+        "width": "100%",
+      },
+    ]
+  }
+>
+  <View
+    accessibilityRole="checkbox"
+    accessibilityState={
+      Object {
+        "checked": true,
+        "disabled": false,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "text": "on",
+      }
+    }
+    accessible={true}
+    pointerEvents="auto"
+  >
+    <RNCCheckbox
+      forwardedRef={null}
+      onValueChange={[Function]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "height": 32,
+            "width": 32,
+          },
+          undefined,
+        ]
+      }
+      value={true}
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "width": 10,
+        },
+      ]
+    }
+  />
+  <Text>
+    this is a checkbox
+  </Text>
+</View>
+`;
+
+exports[`Category renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginTop": 10,
+        "width": "100%",
+      },
+    ]
+  }
+>
+  <View
+    accessibilityRole="checkbox"
+    accessibilityState={
+      Object {
+        "checked": false,
+        "disabled": false,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "text": "off",
+      }
+    }
+    accessible={true}
+    pointerEvents="auto"
+  >
+    <RNCCheckbox
+      forwardedRef={null}
+      onValueChange={[Function]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "height": 32,
+            "width": 32,
+          },
+          undefined,
+        ]
+      }
+      value={false}
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "width": 10,
+        },
+      ]
+    }
+  />
+  <Text>
+    this is a checkbox
+  </Text>
+</View>
+`;

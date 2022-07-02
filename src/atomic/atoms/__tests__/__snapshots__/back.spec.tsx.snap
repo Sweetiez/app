@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Back renders correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#dba970",
+      "borderRadius": 100,
+      "left": 5,
+      "opacity": 1,
+      "paddingBottom": 2,
+      "paddingLeft": 2,
+      "paddingRight": 2,
+      "paddingTop": 2,
+      "position": "absolute",
+      "top": 5,
+      "zIndex": 10,
+    }
+  }
+>
+  <Back
+    color="#ffffff"
+  />
+</View>
+`;

@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders correctly 1`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#dba970",
+      "borderRadius": 10,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingBottom": 5,
+      "paddingLeft": 10,
+      "paddingRight": 10,
+      "paddingTop": 5,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "white",
+          "fontSize": 13,
+          "fontWeight": "bold",
+          "marginRight": 5,
+        },
+      ]
+    }
+  >
+    test
+  </Text>
+</View>
+`;
+
+exports[`Button renders disabled 1`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": true,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#dba970",
+      "borderRadius": 10,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingBottom": 5,
+      "paddingLeft": 10,
+      "paddingRight": 10,
+      "paddingTop": 5,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "white",
+          "fontSize": 13,
+          "fontWeight": "bold",
+          "marginRight": 5,
+        },
+      ]
+    }
+  >
+    test
+  </Text>
+</View>
+`;
+
+exports[`Button renders with different color 1`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#FFF000",
+      "borderRadius": 10,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingBottom": 5,
+      "paddingLeft": 10,
+      "paddingRight": 10,
+      "paddingTop": 5,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "white",
+          "fontSize": 13,
+          "fontWeight": "bold",
+          "marginRight": 5,
+        },
+      ]
+    }
+  >
+    test
+  </Text>
+</View>
+`;
+
+exports[`Button renders with icon 1`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#dba970",
+      "borderRadius": 10,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingBottom": 5,
+      "paddingLeft": 10,
+      "paddingRight": 10,
+      "paddingTop": 5,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "white",
+          "fontSize": 13,
+          "fontWeight": "bold",
+          "marginRight": 5,
+        },
+      ]
+    }
+  >
+    test
+  </Text>
+  <Pen
+    color="#ffffff"
+    height={18}
+    width={18}
+  />
+</View>
+`;

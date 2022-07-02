@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input renders correctly 1`] = `
+<View>
+  <TextInput
+    autoCapitalize="none"
+    multiline={false}
+    onChangeText={[MockFunction]}
+    placeholder="Placeholder"
+    secureTextEntry={false}
+    style={
+      Array [
+        Object {
+          "borderColor": "#dba970",
+          "borderRadius": 15,
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "marginBottom": 10,
+          "paddingBottom": 5,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 5,
+        },
+      ]
+    }
+    value="This is a value"
+  />
+</View>
+`;
+
+exports[`Input renders correctly with keyboard type 1`] = `
+<View>
+  <TextInput
+    autoCapitalize="none"
+    keyboardType="email-address"
+    multiline={false}
+    onChangeText={[MockFunction]}
+    placeholder="Placeholder"
+    secureTextEntry={false}
+    style={
+      Array [
+        Object {
+          "borderColor": "#dba970",
+          "borderRadius": 15,
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "marginBottom": 10,
+          "paddingBottom": 5,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 5,
+        },
+      ]
+    }
+    value="This is a value"
+  />
+</View>
+`;
+
+exports[`Input renders with multiline 1`] = `
+<View>
+  <TextInput
+    autoCapitalize="none"
+    multiline={true}
+    numberOfLines={10}
+    onChangeText={[MockFunction]}
+    placeholder="Placeholder"
+    secureTextEntry={false}
+    style={
+      Array [
+        Object {
+          "borderColor": "#dba970",
+          "borderRadius": 15,
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "height": 100,
+          "marginBottom": 10,
+          "paddingBottom": 5,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 5,
+        },
+      ]
+    }
+    value="This is a value"
+  />
+</View>
+`;
+
+exports[`Input renders with rightIcon 1`] = `
+<View>
+  <TextInput
+    autoCapitalize="none"
+    multiline={false}
+    onChangeText={[MockFunction]}
+    placeholder="Placeholder"
+    secureTextEntry={false}
+    style={
+      Array [
+        Object {
+          "borderColor": "#dba970",
+          "borderRadius": 15,
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "marginBottom": 10,
+          "paddingBottom": 5,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 5,
+        },
+      ]
+    }
+    value="This is a value"
+  />
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+        "position": "absolute",
+        "right": 10,
+        "top": 5,
+      }
+    }
+  >
+    <Eye
+      color="#dba970"
+      height={20}
+      width={20}
+    />
+  </View>
+</View>
+`;

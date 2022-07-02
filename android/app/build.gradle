@@ -78,6 +78,12 @@ import org.apache.tools.ant.taskdefs.condition.Os
  * ]
  */
 
+project.ext.envConfigFiles = [
+                                  debug: ".env.development",
+                                  release: ".env.production",
+                              ]
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
 project.ext.react = [
     enableHermes: false,  // clean and rebuild if changing
 ]
@@ -138,7 +144,7 @@ android {
         applicationId "com.sweetiezapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
+        versionCode 4
         versionName "1.0"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
 
@@ -311,7 +317,6 @@ task copyDownloadableDepsToLibs(type: Copy) {
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
-
 def isNewArchitectureEnabled() {
     // To opt-in for the New Architecture, you can either:
     // - Set `newArchEnabled` to true inside the `gradle.properties` file

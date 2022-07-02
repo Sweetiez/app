@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item renders correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "white",
+      "borderRadius": 10,
+      "marginBottom": 5,
+      "marginLeft": 5,
+      "marginRight": 5,
+      "marginTop": 5,
+      "opacity": 1,
+      "shadowColor": "rgba(0, 0, 0, 0.07)",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 2,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 2,
+      "width": "47%",
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://picsum.photos/1220/300",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "borderTopLeftRadius": 10,
+          "borderTopRightRadius": 10,
+          "height": 150,
+          "width": "100%",
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "height": 80,
+          "paddingBottom": 5,
+          "paddingLeft": 5,
+          "paddingRight": 5,
+          "paddingTop": 5,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": "100%",
+          },
+        ]
+      }
+    >
+      <Text
+        size={22}
+        style={
+          Array [
+            Object {
+              "color": "black",
+              "fontFamily": "Pompiere-Regular",
+              "fontSize": 22,
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        Tartelette
+      </Text>
+    </View>
+    <Text
+      color="#000000"
+      numberOfLines={3}
+      size={12}
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+            "fontFamily": "Pompiere-Regular",
+            "fontSize": 12,
+            "textAlign": "left",
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
+          },
+        ]
+      }
+      textAlign="left"
+      textDecoration="none"
+      textTransform="none"
+    >
+      This is a description
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 5,
+          "marginLeft": 5,
+          "marginTop": 5,
+        },
+      ]
+    }
+  >
+    <Text
+      color="#000000"
+      size={15}
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+            "fontFamily": "Pompiere-Regular",
+            "fontSize": 15,
+            "textAlign": "left",
+            "textDecorationColor": "black",
+            "textDecorationLine": "none",
+            "textDecorationStyle": "solid",
+            "textTransform": "none",
+          },
+        ]
+      }
+      textAlign="left"
+      textDecoration="none"
+      textTransform="none"
+    >
+      10common.euros
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <Star
+        color="#FFD700"
+        fill="#FFD700"
+        height={20}
+        onPress={[Function]}
+        width={20}
+      />
+      <Star
+        color="#FFD700"
+        fill="#FFD700"
+        height={20}
+        onPress={[Function]}
+        width={20}
+      />
+      <Star
+        color="#FFD700"
+        fill="#FFD700"
+        height={20}
+        onPress={[Function]}
+        width={20}
+      />
+      <Star
+        color="#FFD700"
+        fill="#FFD700"
+        height={20}
+        onPress={[Function]}
+        width={20}
+      />
+      <Star
+        color="#FFD700"
+        fill="#FFD700"
+        height={20}
+        onPress={[Function]}
+        width={20}
+      />
+    </View>
+  </View>
+</View>
+`;
