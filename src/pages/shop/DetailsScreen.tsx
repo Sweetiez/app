@@ -78,7 +78,7 @@ function DetailsScreen({route, navigation}) {
         setProduct(data);
         if (token) {
           const request: VerifyPurchaseRequest = {
-            email: user.email || '',
+            email: user?.email || '',
             productId: id,
           };
           verifyPurchase(token, request).then(res => {
@@ -94,7 +94,7 @@ function DetailsScreen({route, navigation}) {
         setShowErrorModal(true);
       }
     });
-  }, [id, isTray, showErrorModal, token, user.email]);
+  }, [id, isTray, showErrorModal, token, user?.email]);
 
   useEffect(() => {
     checkConnectivity().then(isConnected => {
