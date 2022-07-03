@@ -1,8 +1,9 @@
-import {LOGIN, LOGOUT, SET_USER} from '../constants';
+import {LOGIN, LOGOUT, SET_MY_EVENTS, SET_USER} from '../constants';
 const initialState = {
   token: undefined,
   refreshToken: undefined,
   user: undefined,
+  myEvents: [],
 };
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -23,6 +24,11 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         user: action.payload,
+      };
+    case SET_MY_EVENTS:
+      return {
+        ...state,
+        myEvents: action.payload,
       };
     default:
       return state;

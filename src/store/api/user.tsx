@@ -10,6 +10,7 @@ import {
   UPDATE_PASSWORD_OK,
   RESET_PASSWORD_ERROR,
   RESET_PASSWORD_OK,
+  GET_MY_EVENTS_ERROR,
 } from '../constants';
 import {
   LoginRequest,
@@ -19,6 +20,7 @@ import {
   UpdateRequest,
   UpdatePasswordRequest,
   ResetPasswordRequest,
+  EventModel,
 } from '../../model';
 import {cleanToken} from '../../utils/user';
 import {buildRequest} from '../../utils/api';
@@ -127,6 +129,24 @@ export const getUserRequest = async (
         return TOKEN_EXPIRED;
       }
       return GET_USER_ERROR;
+    },
+    response => {
+      return response.json();
+    },
+    token,
+  );
+};
+
+export const getMyEventsRequest = async (
+  id: string,
+  token: string,
+): Promise<EventModel[] | typeof GET_MY_EVENTS_ERROR> => {
+  return buildRequest(
+    'GET',
+    '/events/face-to-face/subscribers/' + id,
+    undefined,
+    () => {
+      return GET_MY_EVENTS_ERROR;
     },
     response => {
       return response.json();

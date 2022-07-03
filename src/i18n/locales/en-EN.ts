@@ -94,6 +94,10 @@ const locale = {
       error: "You can't subscribe to this event",
       success: "You have subscribe to this event!"
     },
+    myEvents:{
+      title: "My events",
+      empty: "You have no events comming"
+    },
     recipes:{
       title: "Recipes",
       noRecipes: "No recipes"
@@ -140,6 +144,7 @@ const locale = {
       unknown: "Unknown",
       editPassword: "Edit Password",
       orders: "Your orders",
+      myEvents: "Your events",
       fidelity: " Fidelity points"
     },
     editAccount:{

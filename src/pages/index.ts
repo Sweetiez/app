@@ -18,3 +18,4 @@ export {default as AddRewardsScreen} from './cart/AddRewardScreen';
 export {default as PaymentScreen} from './cart/HandlePaymentScreen';
 export {default as PaymentNotAvailableScreen} from './cart/PaymentNotAvailableScreen';
 export {default as ClientInfoScreen} from './cart/ClientInfoScreen';
+export {default as MyEventsScreen} from './account/logged/MyEventsScreen';
