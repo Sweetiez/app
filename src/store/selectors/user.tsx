@@ -7,3 +7,7 @@ export function tokenSelector(state: State) {
 export function userSelector(state: State) {
   return state.user.user;
 }
+
+export function myEventsSelector(state: State) {
+  return state.user.myEvents;
+}

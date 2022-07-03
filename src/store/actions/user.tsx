@@ -1,5 +1,5 @@
-import {LOGIN, LOGOUT, SET_USER} from '../constants';
-import {User} from '../../model';
+import {LOGIN, LOGOUT, SET_USER, SET_MY_EVENTS} from '../constants';
+import {User, EventModel} from '../../model';
 
 export function login(tokens) {
   return {
@@ -16,5 +16,11 @@ export function setUser(user: User) {
   return {
     type: SET_USER,
     payload: user,
+  };
+}
+export function setMyEvents(events: EventModel[]) {
+  return {
+    type: SET_MY_EVENTS,
+    payload: events,
   };
 }

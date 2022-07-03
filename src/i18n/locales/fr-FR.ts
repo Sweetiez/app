@@ -94,6 +94,10 @@ const locale = {
       error: "Vous ne pouvez pas vous inscrire à cet évènement",
       success: "Vous êtes inscrits à cet évènement!"
     },
+    myEvents:{
+      title: "Mes évènements",
+      empty: "Vous n'avez pas d'évènement à venir"
+    },
     recipes:{
       title: "Recettes",
       noRecipes: "Aucune recette"
@@ -140,6 +144,7 @@ const locale = {
       unknown: "Non renseigné",
       editPassword: "Modifier le mot de passe",
       orders: "Vos commandes",
+      myEvents: "Vos évènements",
       fidelity: " Points de fidélité"
     },
     editAccount:{
