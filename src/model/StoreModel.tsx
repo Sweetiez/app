@@ -26,6 +26,7 @@ export default class State {
     token?: string;
     refreshToken?: string;
     user?: User;
+    myEvents: EventModel[];
   };
   orders: {
     orders: Order[];

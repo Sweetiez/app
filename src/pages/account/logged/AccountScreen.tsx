@@ -106,6 +106,10 @@ function AccountScreen({navigation}) {
     navigation.navigate('Orders');
   };
 
+  const handleMyEvents = () => {
+    navigation.navigate('MyEvents');
+  };
+
   const handleEditPassword = () => {
     navigation.navigate('EditPassword');
   };
@@ -156,6 +160,8 @@ function AccountScreen({navigation}) {
           </CardContainer>
           <Container>
             <Button text={t('account.orders')} onPress={handleOrders} />
+            <Space />
+            <Button text={t('account.myEvents')} onPress={handleMyEvents} />
             <Space />
             <Button
               text={t('account.editPassword')}

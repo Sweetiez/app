@@ -5,6 +5,7 @@ import {
   EditAccountScreen,
   EditPasswordScreen,
   OrdersScreen,
+  MyEventsScreen,
 } from '../pages';
 
 const AccountConnectedStack = createNativeStackNavigator();
@@ -22,6 +23,10 @@ function AccountConnectedStackScreen() {
         component={EditPasswordScreen}
       />
       <AccountConnectedStack.Screen name="Orders" component={OrdersScreen} />
+      <AccountConnectedStack.Screen
+        name="MyEvents"
+        component={MyEventsScreen}
+      />
     </AccountConnectedStack.Navigator>
   );
 }
