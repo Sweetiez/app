@@ -24,13 +24,13 @@ const StyledText = styled.Text`
 
 const Button: React.FC<Props> = ({
   text,
-  color = colors.yellow,
+  color,
   onPress,
   isLoading = false,
   disabled = false,
 }) => (
   <StyledButton
-    color={isLoading || disabled ? colors.grey : color}
+    color={color ? color : isLoading || disabled ? colors.grey : colors.yellow}
     onPress={onPress}
     disabled={isLoading || disabled}>
     {isLoading ? (

@@ -93,7 +93,8 @@ const locale = {
       schedule: "de {{start}} à {{end}}, le {{date}}",
       subscribe: "S'inscrire",
       error: "Vous ne pouvez pas vous inscrire à cet évènement",
-      success: "Vous êtes inscrits à cet évènement!"
+      success: "Vous êtes inscrit à cet évènement!",
+      registered: "Inscrit"
     },
     myEvents:{
       title: "Mes évènements",

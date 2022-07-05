@@ -6,8 +6,10 @@ import {EventModel} from '../../model';
 import {formatDate, formatHourDate} from '../../utils/date';
 import colors from '../../assets/colors';
 import {useState} from 'react';
-import {registerToEvents} from '../../store/api/event';
-import {SUBSCRIBE_ERROR} from '../../store/constants';
+import {getPublishedEvents, registerToEvents} from '../../store/api/event';
+import {EVENTS_ERROR, SUBSCRIBE_ERROR} from '../../store/constants';
+import {updateEvents} from '../../store/actions/event';
+import {useDispatch} from 'react-redux';
 
 interface Props {
   event: EventModel;
@@ -20,12 +22,6 @@ const Error = styled.Text`
   font-size: 12px;
   margin-right: auto;
   margin-left: auto;
-`;
-const Success = styled.Text`
-  color: ${colors.green};
-  margin-right: auto;
-  margin-left: auto;
-  font-size: 12px;
 `;
 const Content = styled.View`
   flex: 1;
@@ -57,12 +53,11 @@ const SubscribeButton = styled.View`
 
 const Event: React.FC<Props> = ({event, token, userId}) => {
   const {t} = useTranslation();
+  const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
-  const [success, setSuccess] = useState<boolean>(false);
 
   const subscribe = () => {
-    setSuccess(false);
     setIsLoading(true);
     const request = {eventId: event.id, subscriber: userId};
     registerToEvents(request, token).then(data => {
@@ -71,8 +66,12 @@ const Event: React.FC<Props> = ({event, token, userId}) => {
         setError(true);
       } else {
         setError(false);
-        setSuccess(true);
       }
+      getPublishedEvents().then(result => {
+        if (result !== EVENTS_ERROR) {
+          dispatch(updateEvents(result));
+        }
+      });
     });
   };
 
@@ -95,6 +94,8 @@ const Event: React.FC<Props> = ({event, token, userId}) => {
 
   const schedule = t('events.schedule', {start: startTime, end: endTime, date});
 
+  const alreadySubscribe =
+    userId && event.subscribers && event.subscribers.find(s => s === userId);
   return (
     <Container>
       <Content>
@@ -110,10 +111,7 @@ const Event: React.FC<Props> = ({event, token, userId}) => {
         <SpecialText content={address} size={14} />
         <Space />
         {token && (
-          <Messages>
-            {success && <Success>{t('events.success')}</Success>}
-            {error && <Error>{t('events.error')}</Error>}
-          </Messages>
+          <Messages>{error && <Error>{t('events.error')}</Error>}</Messages>
         )}
         <SpecialText content={availability} size={14} textAlign={'right'} />
         <SmallSpace />
@@ -121,9 +119,15 @@ const Event: React.FC<Props> = ({event, token, userId}) => {
         {token && (
           <SubscribeButton>
             <Button
-              text={t('events.subscribe')}
+              text={
+                alreadySubscribe
+                  ? t('events.registered')
+                  : t('events.subscribe')
+              }
               onPress={() => subscribe()}
               isLoading={isLoading}
+              disabled={!!alreadySubscribe}
+              color={alreadySubscribe ? colors.green : undefined}
             />
           </SubscribeButton>
         )}

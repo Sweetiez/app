@@ -7,4 +7,5 @@ export default class EventModel {
   localisation: Localisation;
   schedule: Schedule;
   availability: Availability;
+  subscribers: string[];
 }

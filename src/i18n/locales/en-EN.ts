@@ -93,7 +93,8 @@ const locale = {
       schedule: "from {{start}} to {{end}, the {{date}}",
       subscribe: "Subscribe",
       error: "You can't subscribe to this event",
-      success: "You have subscribe to this event!"
+      success: "You have subscribe to this event!",
+      registered: "Registered"
     },
     myEvents:{
       title: "My events",
