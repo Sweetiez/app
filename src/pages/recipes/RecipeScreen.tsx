@@ -6,7 +6,7 @@ import {SliderBox} from 'react-native-image-slider-box';
 import styled from 'styled-components';
 
 import {Cooking, Steps} from '../../atomic/organisms';
-import {Title, Back, Loader} from '../../atomic/atoms';
+import {Loader} from '../../atomic/atoms';
 
 import {RECIPE_ERROR} from '../../store/constants';
 import {getRecipe} from '../../store/api/recipes';
@@ -24,7 +24,7 @@ const NoImage = styled.View`
   margin: auto;
 `;
 
-function RecipeScreen({route, navigation}) {
+function RecipeScreen({route}) {
   const id = route.params.recipeId;
   const [recipe, setRecipe] = useState<Recipe>(undefined);
   const [isLoading, setLoading] = useState<boolean>(false);
@@ -63,8 +63,6 @@ function RecipeScreen({route, navigation}) {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Back navigation={navigation} />
-        <Title title={recipe.name} />
         {recipe.images &&
         recipe.images.length > 0 &&
         recipe.images[0] !== '' ? (

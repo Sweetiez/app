@@ -77,6 +77,7 @@ const locale = {
       noProducts: "Aucun produit"
     },
     details:{
+      title: "Détails",
       comment : "Commenter",
       add: "Ajouter",
       info: "(Lot de {{quantity}} au prix unitaire de {{price}} €)",
@@ -103,6 +104,7 @@ const locale = {
       noRecipes: "Aucune recette"
     },
     recipe:{
+      title: "Détail de la recette",
       minutes: "min",
       totalTime: "Temps total : ",
       preparation: "Préparation",

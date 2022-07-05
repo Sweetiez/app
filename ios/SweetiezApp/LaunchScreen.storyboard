@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_launcher_round.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xuk-Re-yZI">
-                                <rect key="frame" x="86" y="414" width="240.0000000000002" height="128.00000000000011"/>
+                                <rect key="frame" x="67" y="269" width="240.0000000000002" height="128.00000000000011"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                             </imageView>

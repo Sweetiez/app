@@ -3,7 +3,7 @@ import {useState} from 'react';
 
 import {useTranslation} from 'react-i18next';
 import {SafeAreaView, ScrollView} from 'react-native';
-import {Back, Error, Title, Button} from '../../../atomic/atoms';
+import {Error, Button} from '../../../atomic/atoms';
 import styled from 'styled-components';
 import {Input} from '../../../atomic/molecules';
 import {useSelector} from 'react-redux';
@@ -84,8 +84,6 @@ function EditPasswordScreen({navigation}) {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Title title={t('editPassword.title')} />
-        <Back navigation={navigation} />
         <Icon>{getIcons('edit', colors.yellow, 100)}</Icon>
         <MainContainer>
           <Input

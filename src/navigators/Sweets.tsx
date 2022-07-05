@@ -1,8 +1,6 @@
 import * as React from 'react';
-import {
-  StackNavigationOptions,
-  createStackNavigator,
-} from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {StackNavigationOptions} from '@react-navigation/stack';
 import {DetailsScreen, CommentScreen} from '../pages';
 import {Text} from '../atomic/atoms';
 import ShopTabs from './ShopTabs';
@@ -10,7 +8,7 @@ import colors from '../assets/colors';
 import {Platform} from 'react-native';
 import {useTranslation} from 'react-i18next';
 
-const SweetsStack = createStackNavigator();
+const SweetsStack = createNativeStackNavigator();
 
 function SweetsStackScreen() {
   const headerStyle = {
@@ -43,12 +41,12 @@ function SweetsStackScreen() {
       <SweetsStack.Screen
         name="Comment"
         component={CommentScreen}
-        options={{headerShown: false}}
+        options={headerOptions(t('comment.title'))}
       />
       <SweetsStack.Screen
         name="Details"
         component={DetailsScreen}
-        options={{headerShown: false}}
+        options={headerOptions(t('details.title'))}
       />
     </SweetsStack.Navigator>
   );

@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import {useTranslation} from 'react-i18next';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {Title, Back, Loader} from '../../../atomic/atoms';
+import {Title, Loader} from '../../../atomic/atoms';
 import {Order} from '../../../atomic/organisms';
 
 import colors from '../../../assets/colors';
@@ -35,7 +35,7 @@ const Container = styled.View`
   margin-top: 100px;
 `;
 
-function OrdersScreen({navigation}) {
+function OrdersScreen() {
   const {t} = useTranslation();
   const token = useSelector(tokenSelector);
   const orders = useSelector(ordersSelector);
@@ -94,8 +94,6 @@ function OrdersScreen({navigation}) {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Back navigation={navigation} />
-        <Title title={t('orders.title')} />
         <Icon>{getIcons('orders', colors.yellow, 80)}</Icon>
         {content}
       </ScrollView>

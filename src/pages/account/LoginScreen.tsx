@@ -7,7 +7,7 @@ import {Input} from '../../atomic/molecules';
 import styled from 'styled-components';
 import getIcons from '../../utils/icons';
 import colors from '../../assets/colors';
-import {Button, Error, Title, Link} from '../../atomic/atoms';
+import {Button, Error, Link} from '../../atomic/atoms';
 import {validateEmail, validatePassword} from '../../utils/validator';
 import {loginRequest} from '../../store/api/user';
 import {useDispatch} from 'react-redux';
@@ -76,7 +76,6 @@ function LoginScreen({navigation}) {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Title title={t('login.title')} />
         <Form>
           <Icon>{getIcons('account', colors.yellow, 100)}</Icon>
           <Input

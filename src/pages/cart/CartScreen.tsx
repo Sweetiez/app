@@ -22,9 +22,6 @@ const Container = styled.View`
   align-items: center;
   justify-content: center;
 `;
-const StyledTitle = styled(Title)`
-  flex: 1;
-`;
 const CheckoutButton = styled(Button)`
   flex: 1;
 `;
@@ -62,7 +59,6 @@ function CartScreen({navigation}) {
 
   return (
     <StyledSafeAreaView>
-      <StyledTitle title={t('cart.title')} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         contentContainerStyle={{

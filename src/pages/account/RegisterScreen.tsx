@@ -3,7 +3,7 @@ import {useState} from 'react';
 
 import {useTranslation} from 'react-i18next';
 import {SafeAreaView, ScrollView} from 'react-native';
-import {Title, Error, Button, Back, Link} from '../../atomic/atoms';
+import {Error, Button, Link} from '../../atomic/atoms';
 import {Input} from '../../atomic/molecules';
 import styled from 'styled-components';
 import getIcons from '../../utils/icons';
@@ -108,8 +108,6 @@ function RegisterScreen({navigation}) {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Back navigation={navigation} />
-        <Title title={t('register.title')} />
         <Form>
           <Icon>{getIcons('account', colors.yellow, 100)}</Icon>
           <Input

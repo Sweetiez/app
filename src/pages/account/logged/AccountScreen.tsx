@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import styled from 'styled-components';
 
 import {ErrorModal} from '../../../atomic/organisms';
-import {Title, Loader, Text, Link} from '../../../atomic/atoms';
+import {Loader, Text, Link} from '../../../atomic/atoms';
 import {Button} from '../../../atomic/molecules';
 
 import {logout, setUser} from '../../../store/actions/user';
@@ -136,7 +136,6 @@ function AccountScreen({navigation}) {
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <ErrorModal show={showErrorModal} setShow={setShowErrorModal} />
-        <Title title={t('account.title') + user.firstName} />
         <Icon>{getIcons('account', colors.yellow, 100)}</Icon>
         <MainContainer>
           <CardContainer>

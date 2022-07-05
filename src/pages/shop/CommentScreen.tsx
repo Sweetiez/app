@@ -2,7 +2,7 @@ import * as React from 'react';
 import {useState} from 'react';
 import {SafeAreaView, ScrollView} from 'react-native';
 import styled from 'styled-components';
-import {Title, Back, Button, Error} from '../../atomic/atoms';
+import {Button, Error} from '../../atomic/atoms';
 import {CommentRequest} from '../../model';
 import {Stars, Input} from '../../atomic/molecules';
 import {useTranslation} from 'react-i18next';
@@ -74,8 +74,6 @@ function CommentScreen({route, navigation}) {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Back navigation={navigation} />
-        <Title title={t('comment.title')} />
         <Icon>{getIcons('pen', colors.yellow, 80)}</Icon>
         <Content>
           <StyledStars>

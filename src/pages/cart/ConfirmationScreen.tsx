@@ -4,19 +4,13 @@ import {useTranslation} from 'react-i18next';
 import {ScrollView} from 'react-native';
 import styled from 'styled-components';
 
-import {Back, Button, Title} from '../../atomic/atoms';
+import {Button} from '../../atomic/atoms';
 
 const SubContainer = styled.View`
   flex: 1;
 `;
-const StyledTitle = styled(Title)`
-  flex: 1;
-`;
 const CheckoutButton = styled(Button)`
   flex: 1;
-`;
-const Arrow = styled.View`
-  z-index: 10;
 `;
 const CheckoutButtonView = styled.View`
   margin: 5px;
@@ -25,17 +19,13 @@ const StyledSafeAreaView = styled.SafeAreaView`
   flex: 1;
 `;
 
-function ConfirmationScreen({navigation}) {
+function ConfirmationScreen() {
   const {t} = useTranslation();
 
   const handleContinue = () => {};
 
   return (
     <StyledSafeAreaView>
-      <Arrow>
-        <Back navigation={navigation} />
-      </Arrow>
-      <StyledTitle title={t('confirmation.title')} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         contentContainerStyle={{

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import {Stars} from '../molecules';
 import {useTranslation} from 'react-i18next';
 
 interface Props {
@@ -47,7 +46,6 @@ const Cooking: React.FC<Props> = ({
   cook,
   chill,
   totalTime,
-  rating,
   level,
   portions,
   cost,
@@ -80,13 +78,13 @@ const Cooking: React.FC<Props> = ({
           {min}
         </Bold>
       </CenteredRow>
-      <CenteredRow>
-        <Stars
-          rating={rating}
-          size={20}
-          itemId={level + cook + chill + totalTime + portions + rating}
-        />
-      </CenteredRow>
+      {/*<CenteredRow>*/}
+      {/*  <Stars*/}
+      {/*    rating={rating}*/}
+      {/*    size={20}*/}
+      {/*    itemId={level + cook + chill + totalTime + portions + rating}*/}
+      {/*  />*/}
+      {/*</CenteredRow>*/}
       <Row>
         <Column>
           <Bold>{t('recipe.preparation')}</Bold>

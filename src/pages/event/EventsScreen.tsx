@@ -6,7 +6,7 @@ import {SafeAreaView, ScrollView} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import styled from 'styled-components';
 
-import {Loader, Text, Title} from '../../atomic/atoms';
+import {Loader, Text} from '../../atomic/atoms';
 import {ErrorModal, Event} from '../../atomic/organisms';
 
 import getIcons from '../../utils/icons';
@@ -78,7 +78,6 @@ function EventsScreen() {
     <SafeAreaView>
       <ErrorModal show={showErrorModal} setShow={setShowErrorModal} />
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Title title={t('events.title')} />
         <Icon>{getIcons('event', colors.yellow, 100)}</Icon>
 
         {events.length > 0 ? (

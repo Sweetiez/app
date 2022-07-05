@@ -77,6 +77,7 @@ const locale = {
       noProducts: "No product"
     },
     details:{
+      title: "Details",
       comment : "Comment",
       add: "Add",
       info: "(Set of {{quantity}} at a unit price of {{price}} €)",
@@ -103,6 +104,7 @@ const locale = {
       noRecipes: "No recipes"
     },
     recipe:{
+      title: "Recipe detail",
       minutes: "min",
       totalTime: "Total time : ",
       preparation: "Preparation",

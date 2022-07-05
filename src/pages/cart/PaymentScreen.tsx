@@ -20,7 +20,7 @@ import {
   GET_ORDERS_ERROR,
 } from '../../store/constants';
 
-import {Back, Error, Loader, Title} from '../../atomic/atoms';
+import {Error, Loader} from '../../atomic/atoms';
 
 import getIcons from '../../utils/icons';
 import colors from '../../assets/colors';
@@ -42,9 +42,6 @@ const Icon = styled.View`
 `;
 const Space = styled.View`
   margin-top: 50px;
-`;
-const Arrow = styled.View`
-  z-index: 10;
 `;
 
 const PaymentScreen: React.FC<PaymentScreenProps> = ({orderId, email}) => {
@@ -144,10 +141,6 @@ const PaymentScreen: React.FC<PaymentScreenProps> = ({orderId, email}) => {
 
   return (
     <SafeAreaView>
-      <Arrow>
-        <Back navigation={navigation} />
-      </Arrow>
-      <Title title={t('payment.title')} />
       <Icon>{getIcons('payment', colors.yellow, 100)}</Icon>
       <Space />
       {errorMsg && <Error content={errorMsg} />}

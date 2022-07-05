@@ -3,7 +3,6 @@ import * as React from 'react';
 import {useTranslation} from 'react-i18next';
 import {SafeAreaView, ScrollView, Text} from 'react-native';
 import styled from 'styled-components';
-import {Back, Title} from '../../atomic/atoms';
 
 const Content = styled.View`
   margin-right: 20px;
@@ -15,13 +14,11 @@ const Bold = styled.Text`
   font-weight: bold;
 `;
 
-function CGUScreen({navigation}) {
+function CGUScreen() {
   const {t} = useTranslation();
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Title title={t('cgu.title')} />
-        <Back navigation={navigation} />
         <Content>
           <Bold>{t('cgu.cgv.title')}</Bold>
           <Text>{t('cgu.cgv.content')}</Text>

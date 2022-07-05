@@ -6,7 +6,7 @@ import {SafeAreaView, ScrollView} from 'react-native';
 import styled from 'styled-components';
 
 import {Input} from '../../atomic/molecules';
-import {Title, Back, Button, Error} from '../../atomic/atoms';
+import {Button, Error} from '../../atomic/atoms';
 
 import getIcons from '../../utils/icons';
 import {validateEmail} from '../../utils/validator';
@@ -77,8 +77,6 @@ function LoginScreen({navigation}) {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Back navigation={navigation} />
-        <Title title={t('forgotPassword.title')} />
         <Form>
           <Icon>{getIcons('interrogation', colors.yellow, 100)}</Icon>
           <Input

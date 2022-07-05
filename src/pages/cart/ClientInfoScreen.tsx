@@ -10,7 +10,7 @@ import {useSelector} from 'react-redux';
 import DatePicker from 'react-native-date-picker';
 
 import {Input} from '../../atomic/molecules';
-import {Back, Button, Error, Title, Text} from '../../atomic/atoms';
+import {Button, Error, Text} from '../../atomic/atoms';
 
 import {CREATE_AN_ORDER_ERROR} from '../../store/constants';
 import {cartSelector, rewardsSelector} from '../../store/selectors/cart';
@@ -30,17 +30,11 @@ import colors from '../../assets/colors';
 const CartRecapContainer = styled.View`
   flex: 1;
 `;
-const StyledTitle = styled(Title)`
-  flex: 1;
-`;
 const CheckoutButton = styled(Button)`
   flex: 1;
 `;
 const CheckoutButtonView = styled.View`
   margin: 5px;
-`;
-const Arrow = styled.View`
-  z-index: 10;
 `;
 const Space = styled.View`
   height: 30px;
@@ -129,10 +123,6 @@ function ClientInfoScreen({navigation}) {
 
   return (
     <StyledSafeAreaView>
-      <Arrow>
-        <Back navigation={navigation} />
-      </Arrow>
-      <StyledTitle title={t('clientInfo.title')} />
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <CartRecapContainer>
           <Form>

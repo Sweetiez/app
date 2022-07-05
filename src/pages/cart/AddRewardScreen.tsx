@@ -5,7 +5,7 @@ import {ScrollView} from 'react-native';
 import styled from 'styled-components';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {Back, Button, Title} from '../../atomic/atoms';
+import {Button} from '../../atomic/atoms';
 
 import {userSelector} from '../../store/selectors/user';
 import Rewards from '../../atomic/organisms/Rewards';
@@ -40,10 +40,6 @@ const SubTitle = styled.Text`
 const CenteredText = styled.Text`
   text-align: center;
 `;
-const StyledTitle = styled(Title)``;
-const Arrow = styled.View`
-  z-index: 10;
-`;
 const Icon = styled.View`
   margin-top: 30px;
   margin-right: auto;
@@ -70,10 +66,6 @@ function AddRewardScreen({navigation}) {
 
   return (
     <StyledSafeAreaView>
-      <Arrow>
-        <Back navigation={navigation} />
-      </Arrow>
-      <StyledTitle title={t('addRewards.title')} />
       <Icon>{getIcons('reward', colors.yellow, 100)}</Icon>
       <Space />
       <SubTitle>{t('rewards.titleAdd')}</SubTitle>

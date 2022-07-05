@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import {useTranslation} from 'react-i18next';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {Title, Back, Loader} from '../../../atomic/atoms';
+import {Title, Loader} from '../../../atomic/atoms';
 import {Event} from '../../../atomic/organisms';
 
 import colors from '../../../assets/colors';
@@ -41,7 +41,7 @@ const Container = styled.View`
   margin-top: 100px;
 `;
 
-function MyEventsScreen({navigation}) {
+function MyEventsScreen() {
   const {t} = useTranslation();
   const token = useSelector(tokenSelector);
   const user = useSelector(userSelector);
@@ -108,8 +108,6 @@ function MyEventsScreen({navigation}) {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Back navigation={navigation} />
-        <Title title={t('myEvents.title')} />
         <Icon>{getIcons('event', colors.yellow, 80)}</Icon>
         {content}
       </ScrollView>

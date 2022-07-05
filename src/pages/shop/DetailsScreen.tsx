@@ -7,7 +7,7 @@ import {useTranslation} from 'react-i18next';
 import styled from 'styled-components';
 import {SliderBox} from 'react-native-image-slider-box';
 
-import {Text, Title, Back, Loader} from '../../atomic/atoms';
+import {Text, Title, Loader} from '../../atomic/atoms';
 import {Stars, Button} from '../../atomic/molecules';
 import {Comment, AddToBasket} from '../../atomic/organisms';
 
@@ -130,7 +130,6 @@ function DetailsScreen({route, navigation}) {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Back navigation={navigation} />
         {product.images &&
         product.images.length > 0 &&
         product.images[0] !== '' ? (
